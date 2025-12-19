@@ -44,10 +44,12 @@
   </head>
 
   <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
-       <!-- Clean Modern Navbar -->
+<!-- Clean Modern Navbar -->
 <nav class="topbar">
   <div class="topbar-container">
+
     <a href="#" class="topbar-logo">
+      <img src="images/logo.png" alt="AI Aman Logo" />
       <span>AI Aman</span>
     </a>
 
@@ -59,24 +61,28 @@
             <span>Home</span>
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="DeliveryModel.html">
             <i class="bi bi-person-lines-fill"></i>
             <span>Delivery Model</span>
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="EcoSystem.html">
             <i class="bi bi-tools"></i>
             <span>Our Security Ecosystem</span>
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="capabilities.html">
             <i class="bi bi-briefcase-fill"></i>
             <span>Capabilities</span>
           </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="contact.html">
             <i class="bi bi-envelope-paper-fill"></i>
@@ -85,28 +91,138 @@
         </li>
       </ul>
     </div>
+
     <a href="contact.html" class="topbar-cta">Let's Connect</a>
+
   </div>
 </nav>
 
 
 
 
+
 <section class="hero-section">
+  <canvas id="hero-bg-canvas"></canvas>
+  <canvas id="hero-aura"></canvas>
+
   <div class="hero-text">
     <h1>
-      Welcome to <br />
-      <span class="highlight">AI Aman</span>
+      Welcome to <span class="highlight">AI Aman</span>
     </h1>
 
     <h2 class="typed-text">
-      Guiding secure digital transformation
-      — from strategy to operations.
+      Guiding secure digital transformation — from strategy to operations.
     </h2>
 
     <a href="contact.html" class="cta-button">Let’s Connect</a>
   </div>
 </section>
+
+
+<script>
+  const bgCanvas = document.getElementById("hero-bg-canvas");
+  const bgCtx = bgCanvas.getContext("2d");
+
+  const auraCanvas = document.getElementById("hero-aura");
+  const auraCtx = auraCanvas.getContext("2d");
+
+  function resize() {
+    bgCanvas.width = auraCanvas.width = window.innerWidth;
+    bgCanvas.height = auraCanvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  /* LOAD BACKGROUND IMAGE */
+  const bgImage = new Image();
+  bgImage.src = "../images/hero-bg.png"; // YOUR IMAGE
+
+  let t = 0;
+
+  function drawFloatingBackground() {
+    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+    const scale = 1.08;
+    const iw = bgImage.width * scale;
+    const ih = bgImage.height * scale;
+
+    const x = (bgCanvas.width - iw) / 2;
+    const y = (bgCanvas.height - ih) / 2;
+
+    // wave distortion
+    for (let i = 0; i < ih; i += 2) {
+      const offset =
+        Math.sin(i * 0.015 + t) * 6 +
+        Math.cos(i * 0.01 + t) * 4;
+
+      bgCtx.drawImage(
+        bgImage,
+        0, i / scale,
+        bgImage.width, 2 / scale,
+        x + offset,
+        y + i,
+        iw,
+        2
+      );
+    }
+
+    t += 0.015;
+  }
+
+  /* AURA PARTICLES */
+  const particles = Array.from({ length: 80 }, () => ({
+    x: Math.random() * auraCanvas.width,
+    y: Math.random() * auraCanvas.height,
+    r: Math.random() * 2 + 0.5,
+    vx: Math.random() * 0.25 - 0.12,
+    vy: Math.random() * 0.25 - 0.12
+  }));
+
+  let mx = window.innerWidth / 2;
+  let my = window.innerHeight / 2;
+
+  window.addEventListener("mousemove", e => {
+    mx = e.clientX;
+    my = e.clientY;
+  });
+
+  function drawAura() {
+    auraCtx.clearRect(0, 0, auraCanvas.width, auraCanvas.height);
+
+    const glow = auraCtx.createRadialGradient(mx, my, 0, mx, my, 260);
+    glow.addColorStop(0, "rgba(255,215,119,0.28)");
+    glow.addColorStop(1, "rgba(255,215,119,0)");
+
+    auraCtx.fillStyle = glow;
+    auraCtx.fillRect(0, 0, auraCanvas.width, auraCanvas.height);
+
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = auraCanvas.width;
+      if (p.x > auraCanvas.width) p.x = 0;
+      if (p.y < 0) p.y = auraCanvas.height;
+      if (p.y > auraCanvas.height) p.y = 0;
+
+      auraCtx.beginPath();
+      auraCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      auraCtx.fillStyle = "rgba(201,162,63,0.45)";
+      auraCtx.fill();
+    });
+  }
+
+  function animate() {
+    if (bgImage.complete) {
+      drawFloatingBackground();
+    }
+    drawAura();
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
 
 
 <section class="about-alaman-clean">
