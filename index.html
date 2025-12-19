@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FairDebt</title>
+    <title>Capabilities</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
 
     <!-- Bootstrap CSS CDN Link -->
     <link
@@ -40,336 +41,306 @@
 
     <!-- EmailJS Library -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
-  <!-- Navbar -->
-  <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-        <img src="images/company_logo.png" alt="Company Logo" class="navbar-logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="bi bi-list"></i>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
+       <!-- Clean Modern Navbar -->
+<nav class="topbar">
+  <div class="topbar-container">
+    <a href="#" class="topbar-logo">
+      <span>AI Aman</span>
+    </a>
+
+    <div class="nav-box">
+      <ul class="topbar-links">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-house-door-fill"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="DeliveryModel.html">
+            <i class="bi bi-person-lines-fill"></i>
+            <span>Delivery Model</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="EcoSystem.html">
+            <i class="bi bi-tools"></i>
+            <span>Our Security Ecosystem</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="capabilities.html">
+            <i class="bi bi-briefcase-fill"></i>
+            <span>Capabilities</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">
+            <i class="bi bi-envelope-paper-fill"></i>
+            <span>Contact Us</span>
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <!-- Navbar Ends Here -->
+    <a href="contact.html" class="topbar-cta">Let's Connect</a>
+  </div>
+</nav>
 
 
-<!-- Hero Section -->
-<section id="hero" class="hero section dark-background">
-  <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-      
-      <!-- Slide 1 -->
-      <div class="carousel-item active">
-          <video class="d-block w-100" autoplay loop muted>
-              <source src="images/1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-          <div class="carousel-container">
-              <h2 class="home-title"><span class="highlight">Fairdebt Solutions</span></h2>
-              <h2>Why Choose Fairdebt Solutions for Debt Collection?</h2>
-              <p>At Fairdebt Solutions, we specialize in comprehensive debt collection services to help businesses recover outstanding debts quickly and efficiently.</p>
-              <a href="getStarted.html" class="btn-get-started">Get Started</a>
-          </div>
-      </div>
 
-      <!-- Slide 2 -->
-      <div class="carousel-item">
-          <video class="d-block w-100" autoplay loop muted>
-              <source src="images/2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-          <div class="carousel-container">
-              <h2 class="home-title"><span class="highlight">Fairdebt Solutions</span></h2>
-              <h2>Redefining Customer Engagement & Debt Management</h2>
-              <p>FairDebt Service – Trusted Solutions for Telecalling, Collections, and 24/7 Multichannel Support.</p>
-              <a href="getStarted.html" class="btn-get-started">Get Started</a>
-          </div>
-      </div>
 
-      <!-- Slide 3 -->
-      <div class="carousel-item">
-          <video class="d-block w-100" autoplay loop muted>
-              <source src="images/3.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
-          <div class="carousel-container">
-              <h2 class="home-title"><span class="highlight">Fairdebt Solutions</span></h2>
-              <h2>Effortless Debt Recovery & Exceptional Customer Support</h2>
-              <p>FairDebt Service – Professional Telecalling, Chat, Email, and Customer Support Solutions Tailored to Boost Your Business.</p>
-              <a href="getStarted.html" class="btn-get-started">Get Started</a>
-          </div>
-      </div>
+<section class="hero-section">
+  <div class="hero-text">
+    <h1>
+      Welcome to <br />
+      <span class="highlight">AI Aman</span>
+    </h1>
 
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-      </button>
+    <h2 class="typed-text">
+      Guiding secure digital transformation
+      — from strategy to operations.
+    </h2>
+
+    <a href="contact.html" class="cta-button">Let’s Connect</a>
+  </div>
+</section>
+
+
+<section class="about-alaman-clean">
+  <div class="alaman-wrap">
+
+    <header class="alaman-heading">
+      <span class="alaman-kicker">About Us</span>
+      <h1>Building Secure & Resilient Digital Foundations</h1>
+    </header>
+
+    <div class="alaman-text">
+      <p>
+        <strong>Al Aman</strong> is an ICT systems integration and solutions company focused
+        on enabling secure, resilient, and scalable digital environments for modern
+        enterprises. We work with organizations operating across complex IT and
+        Operational Technology (OT) landscapes that require security solutions which
+        perform reliably in real-world conditions — not just on paper.
+      </p>
+
+      <p>
+        Our approach is grounded in <strong>trust and accountability</strong>. We earn
+        that trust by meeting commitments, delivering what we promise, and taking full
+        ownership of outcomes in every engagement. Rather than pursuing breadth, we
+        focus on <strong>niche, high-impact domains</strong> and collaborate with
+        technology partners whose solutions are proven, mature, and trusted in
+        production environments.
+      </p>
+
+      <p>
+        Al Aman supports customers across the <strong>entire technology lifecycle</strong>
+        — from advisory and assessment to solution design, implementation, and ongoing
+        operational support — ensuring technology investments deliver measurable
+        business value, long-term stability, and reduced operational risk.
+      </p>
+    </div>
+
+    <footer class="alaman-action">
+      <a href="about.html" class="alaman-link">Learn more about our approach →</a>
+    </footer>
 
   </div>
 </section>
 
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <!-- Section Title -->
-      <div class="heading text-center mb-5">
-          <h3>About Us</h3>
-      </div>
+<section class="alaman-services">
+  <div class="alaman-services-wrap">
 
-      <div class="container">
-          <div class="row">
-              <div class="content">
-                  <p>
-                      At <strong>FairDebt Solutions Private Limited</strong>, we offer a wide range of services including telecalling, customer support, email response handling, debt recovery, and chat support. Since our incorporation in 2021, we have achieved significant growth due to our team's dedication, effective project execution, and strong focus on client satisfaction.
-                  </p>
-                  <ul>
-                      <li><i class="check-icon">✔</i> Strong partnerships with top-rated NBFCs, financial institutions, telecom providers, and internet service companies.</li>
-                      <li><i class="check-icon">✔</i> Streamlined methods that deliver better results and cost-saving solutions for clients.</li>
-                      <li><i class="check-icon">✔</i> Continuous expansion of networks, teams, and innovative solutions.</li>
-                  </ul>
-              </div>
+    <header class="alaman-services-header">
+      <span class="alaman-kicker">Services</span>
+      <h2>Our Service Domains</h2>
+      <p>
+        We assist organizations in securing and modernizing their environments across
+        the following domains:
+      </p>
+    </header>
 
-              <div class="content">
-                  <p>Our mission is to become India’s top-rated service-based company by offering unparalleled services and maintaining a high level of professionalism. In a short span of time, we have developed an effective methodology to handle client projects and deliver outstanding results.</p>
-                  <a href="#" class="read-more"><span>Read More</span> →</a>
-              </div>
-          </div>
-      </div>
-  </section>
-    <!-- Skill Section Ends Here -->
+    <div class="alaman-services-list">
+      <ul>
+        <li>Systems & Storage Infrastructure</li>
+        <li>Networking & Network Security</li>
+        <li>Application & Data Security</li>
+        <li>Cloud & Hybrid Cloud Security</li>
+        <li>Data Privacy & Consent Management</li>
+        <li>IT & OT Security Assessments</li>
+      </ul>
+    </div>
 
-    <!-- Testimonial Section Starts -->
-    <section class="testimonial mt-3 pt-3" id="testimonial">
-      <div class="container">
-        <!-- Heading at the Center -->
-        <div class="heading text-center mb-5">
-          <h3>Our Happy Clients</h3>
-        </div>
-        
-        <!-- New Paragraph -->
-        <p class="text-center mb-5">
-          Our clients rely on us for effective and efficient debt recovery services that safeguard their financial health and ensure sustained growth. They appreciate our strategic approach, industry expertise, and dedication to resolving outstanding debts while maintaining positive customer relationships.
+    <div class="alaman-services-note">
+      <p>
+        Our services are designed to integrate seamlessly into existing environments
+        while aligning security controls with business priorities and operational
+        realities.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="alaman-mv-premium">
+  <div class="alaman-mv-container">
+
+    <div class="alaman-mv-item">
+      <div class="mv-icon mission-icon">🎯</div>
+      <div class="mv-content">
+        <h2>Our Mission</h2>
+        <p>
+          To help organizations adopt and operate technology securely by delivering
+          practical, reliable, and outcome-driven ICT and cybersecurity solutions
+          across IT and OT environments.
         </p>
-    
-        <!-- Scrolling Container -->
-        <div class="scrolling-wrapper">
-          <div class="logos">
-            <img src="images/Pay_Rupik.png" alt="PayRupik" />
-            <img src="images/KreditBee.png" alt="KreditBee" />
-            <img src="images/Bajaj.png" alt="Bajaj Finsarv" />
-            <img src="images/RU.png" alt="RU Loans" />
-            <img src="images/Hathway.png" alt="Hathway" />
-            <img src="images/stash.png" alt="Stashfin" />
-            <img src="images/navi.png" alt="Navi" />
-            <img src="images/Rupee.png" alt="Rupee Redee" />
-            
-            <!-- Duplicate Images for Seamless Loop -->
-            <img src="images/Pay_Rupik.png" alt="PayRupik" />
-            <img src="images/KreditBee.png" alt="KreditBee" />
-            <img src="images/Bajaj.png" alt="Bajaj Finsarv" />
-            <img src="images/RU.png" alt="RU Loans" />
-            <img src="images/Hathway.png" alt="Hathway" />
-            <img src="images/stash.png" alt="Stashfin" />
-            <img src="images/navi.png" alt="Navi" />
-            <img src="images/Rupee.png" alt="Rupee Redee" />
-          </div>
-        </div>
-      </div>
-    </section>    
-    <!-- Testimonial Section Ends Here -->
-
-    <!-- Section Title -->
-    <div class="container section-title">
-      <div class="heading text-center mb-5">
-        <h3>Our Services</h3>
-        <p class="text-center mb-5">
-          Explore the wide range of professional services we offer to meet your business needs.</p>
-      </div>
-  </div>
-
-  <div class="container">
-      <div class="service-row">
-          
-          <!-- Service 1 -->
-          <div class="service-box">
-              <h3>Telecalling Services</h3>
-              <p>Boost your customer engagement and sales with our professional telecalling services. We ensure personalized communication to strengthen client relationships.</p>
-              <ul>
-                  <li>Lead Generation & Follow-ups</li>
-                  <li>Customer Query Handling</li>
-                  <li>Appointment Scheduling</li>
-              </ul>
-          </div>
-
-          <!-- Service 2 -->
-          <div class="service-box">
-              <h3>Chat Support Services</h3>
-              <p>Provide real-time assistance to your customers through our efficient chat support services. Enhance customer satisfaction with instant solutions.</p>
-              <ul>
-                  <li>24/7 Live Chat Assistance</li>
-                  <li>Technical Support</li>
-                  <li>Customer Issue Resolution</li>
-              </ul>
-          </div>
-
-          <!-- Service 3 -->
-          <div class="service-box">
-              <h3>Email Support Services</h3>
-              <p>Streamline your email communication with our dedicated support services. Ensure timely and professional responses to your customers' queries.</p>
-              <ul>
-                  <li>Ticket Management</li>
-                  <li>Custom Email Templates</li>
-                  <li>Detailed Response Tracking</li>
-              </ul>
-          </div>
-
-          <!-- Service 4 -->
-          <div class="service-box">
-              <h3>Customer Support Solutions</h3>
-              <p>Deliver exceptional customer service experiences through our tailored support solutions. We prioritize client satisfaction at every step.</p>
-              <ul>
-                  <li>Helpdesk Services</li>
-                  <li>Complaint Management</li>
-                  <li>Customer Feedback Handling</li>
-              </ul>
-          </div>
-      </div>
-
-      <div class="company-info">
-          <p>Welcome to <strong>FairDebt Solutions Private Limited</strong> – your trusted partner for reliable and efficient business support services. Since our inception in 2021, we have been committed to delivering excellence in telecalling, customer support, debt recovery, email handling, and chat support...</p>
-      </div>
-  </div>
-
-</section>
-
-    <section class="expertise mt-3" id="service">
-      <div class="container">
-        <div class="heading text-center">
-          <h3>Why Choose FairDebt Solutions?</h3>
-        </div>
-    
-        <div class="row justify-content-evenly mt-5">
-          <!-- Service Cards -->
-          <div class="col-10 col-md-4" data-aos="fade-up">
-            <div class="service-card1">
-              <div class="img">
-                <img src="images/security.png" alt="Trusted Expertise" class="img-fluid" />
-              </div>
-              <div class="content mt-3">
-                <h4 class="text-center">Trusted Expertise</h4>
-                <p class="text-center">We deliver reliable and efficient solutions, trusted by leading NBFCs, telecom, and internet service providers.</p>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-10 col-md-4" data-aos="fade-up">
-            <div class="service-card1">
-              <div class="img">
-                <img src="images/profit.png" alt="Cost-Effective Solutions" class="img-fluid" />
-              </div>
-              <div class="content mt-3">
-                <h4 class="text-center">Cost-Effective Solutions</h4>
-                <p class="text-center">Reduce operational costs while improving outcomes with our streamlined processes.</p>
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-10 col-md-4" data-aos="fade-up">
-            <div class="service-card1">
-              <div class="img">
-                <img src="images/help-desk.png" alt="24/7 Support" class="img-fluid" />
-              </div>
-              <div class="content mt-3">
-                <h4 class="text-center">24/7 Support</h4>
-                <p class="text-center">Our round-the-clock support ensures your business never misses an opportunity.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-  <!-- Success Dialog Box -->
-  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="successModalLabel">Success!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Thank you for contacting us! Your details have been successfully submitted.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+        <p>
+          We aim to reduce complexity, minimize risk, and ensure that security enables
+          — rather than slows — digital transformation.
+        </p>
       </div>
     </div>
+
+    <div class="alaman-mv-separator">
+      <span></span>
+    </div>
+
+    <div class="alaman-mv-item">
+      <div class="mv-icon vision-icon">🚀</div>
+      <div class="mv-content">
+        <h2>Our Vision</h2>
+        <p>
+          To be a trusted long-term partner for organizations navigating digital
+          transformation, known for our execution excellence, domain expertise, and
+          ability to translate security investments into real business value.
+        </p>
+        <p>
+          We envision a future where security is embedded into systems, processes, and
+          operations — supporting agility, resilience, and sustainable growth.
+        </p>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <script>
-    // Initialize EmailJS
-    emailjs.init("YHPpA8WKsdQMlZF0u");
 
-    // JavaScript for form submission
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent default form submission
+<section class="alaman-testimonials">
+  <div class="alaman-testimonials-wrap">
 
-      // Get form data
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const mobile = document.getElementById("mobile").value;
-      const message = document.getElementById("message").value;
+    <header class="alaman-testimonials-header">
+      <span>Testimonials</span>
+      <h2>What Our Clients Say</h2>
+    </header>
 
-      // EmailJS email parameters
-      const emailParams = {
-        from_name: name,
-        email: email,
-        mobile: mobile,
-        message: message,
-      };
+    <div class="alaman-testimonials-list">
 
-      // Send email using EmailJS
-      emailjs
-        .send("service_i15deir", "template_knn971z", emailParams)
-        .then(
-          (response) => {
-            console.log("SUCCESS!", response.status, response.text);
-            // Show success dialog box
-            var myModal = new bootstrap.Modal(document.getElementById('successModal'));
-            myModal.show();
+      <div class="alaman-testimonial">
+        <p>
+          Al Aman helped us strengthen our IT and OT security posture without
+          disrupting operations. Their practical approach and accountability
+          stood out from day one.
+        </p>
+        <div class="testimonial-author">
+          <strong>Ramesh Kulkarni</strong>
+          <span>CIO, Manufacturing Enterprise – Pune</span>
+        </div>
+      </div>
 
-            // Reset the form after submission
-            document.getElementById("contactForm").reset(); 
-          },
-          (error) => {
-            console.error("FAILED...", error);
-            alert("There was an error submitting your details. Please try again.");
-          }
-        );
-    });
-  </script>
+      <div class="alaman-testimonial">
+        <p>
+          Unlike typical vendors, Al Aman focused on real-world execution.
+          Their team translated complex security requirements into
+          measurable business outcomes.
+        </p>
+        <div class="testimonial-author">
+          <strong>Anita Deshpande</strong>
+          <span>Head of IT Security, BFSI Firm – Mumbai</span>
+        </div>
+      </div>
+
+      <div class="alaman-testimonial">
+        <p>
+          The assessments conducted by Al Aman gave us clarity on risk,
+          compliance gaps, and a realistic roadmap. Their domain expertise
+          across IT and OT environments is impressive.
+        </p>
+        <div class="testimonial-author">
+          <strong>Sandeep Rao</strong>
+          <span>Director – Technology, Energy Company – Bengaluru</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="alaman-how-we-help">
+  <div class="alaman-help-wrap">
+
+    <header class="alaman-help-header">
+      <span>How We Help</span>
+      <h2>From Strategy to Secure Operations</h2>
+      <p>
+        Our engagement model is built as a security ecosystem — combining layered
+        capabilities with a pragmatic delivery approach aligned to real-world
+        operational environments.
+      </p>
+    </header>
+
+    <div class="alaman-help-flow">
+
+      <div class="help-step">
+        <div class="help-icon ecosystem">🛡️</div>
+        <div class="help-content">
+          <h3>Our Security Ecosystem</h3>
+          <p>
+            We view security as an integrated ecosystem — spanning infrastructure,
+            applications, data, cloud, and operational technology — designed to
+            function cohesively rather than as isolated controls.
+          </p>
+        </div>
+      </div>
+
+      <div class="help-connector"></div>
+
+      <div class="help-step">
+        <div class="help-icon layers">🧩</div>
+        <div class="help-content">
+          <h3>Capabilities by Layer</h3>
+          <p>
+            Our capabilities are structured across logical security layers, enabling
+            clear accountability, depth of control, and alignment with enterprise
+            architecture and risk priorities.
+          </p>
+        </div>
+      </div>
+
+      <div class="help-connector"></div>
+
+      <div class="help-step">
+        <div class="help-icon delivery">🚀</div>
+        <div class="help-content">
+          <h3>Delivery Model</h3>
+          <p>
+            We deliver through a flexible engagement model — advisory-led, project-based,
+            or operational support — ensuring seamless integration into existing teams,
+            tools, and processes.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 
 
 
@@ -385,129 +356,105 @@
 <!-- Footer Section Starts -->
 <footer class="text-center text-muted py-4">
   <div class="footer">
-  <div class="footer-container">
-    <!-- Company Logo & Name -->
-    <div class="footer-brand">
-      <img
-        src="images/company_logo.png"
-        alt="Company Logo"
-        style="height: 90px; object-fit: contain; display: block; margin: 0 auto;"
-      />
-      <h3 class="text-white pt-2" data-aos="fade-up" style="font-size: 2.5rem; font-weight: bold; letter-spacing: 1px;">
-        Fairdebt Solutions Private Limited
-      </h3>
-    </div>
+    <div class="footer-container">
 
-    <!-- Navigation Links -->
-    <div class="link-group d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
-      <a href="index.html" class="mx-2"><i class="bi bi-house-door"></i> Home</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="about.html" class="mx-2"><i class="bi bi-info-circle"></i> About</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="careers.html" class="mx-2"><i class="bi bi-briefcase"></i> Careers</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="services.html" class="mx-2"><i class="bi bi-people"></i> Services</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="contact.html" class="mx-2"><i class="bi bi-envelope"></i> Contact Us</a>
-    </div>
+      <!-- Company Logo & Name -->
+      <div class="footer-brand">
+        <h3 class="pt-2" data-aos="fade-up">
+          AI Aman  
+        </h3>
+      </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-sections">
-          <div class="footer-section">
-            <h3>Services</h3>
-            <ul class="center">
-              <li><a href="telicalling.html">Telecalling</a></li>
-              <li><a href="chat_support.html">Chat Support</a></li>
-              <li><a href="email_support.html">Email Support</a></li>
-              <li><a href="customer_support.html">Customer Support Solutions</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-section">
-            <h3>Our Company</h3>
-            <ul class="center">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="clients.html">Partner with Us</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-section">
-            <h3>Legal</h3>
-            <ul class="center">
-              <li><a href="terms.html">Terms and Conditions</a></li>
-              <li><a href="privacy_policy.html">Privacy Policy</a></li>
-              <li><a href="corporate.html">Corporate Information</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-section contact">
-            <h3>Contact Us</h3>
-            <p><i class="fas fa-globe"></i> <a href="https://www.fairdebt.in" target="_blank">www.fairdebt.in</a></p>
-            <p><i class="fas fa-envelope"></i><a href="mailto:fairdebt2@gmail.com">superadmin@fairdebt.in</a></p>
-            <p><i class="fas fa-map-marker-alt"></i>2744, 15th cross, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</p>
-        </div>
-        </div>
-    
-        <div class="social-links mt-5" data-aos="fade-up">
-          <!-- Instagram Button -->
-          <button class="rounded-pill instagram" onclick="visitInstagram()" title="Visit Instagram" aria-label="Visit Instagram">
-            <i class="bi bi-instagram"></i>
-          </button>
-      
-          <!-- Email Button -->
-          <button class="rounded-pill email" onclick="sendEmail()" title="Send Email" aria-label="Send Email">
-            <i class="bi bi-envelope"></i>
-          </button>
-      
-          <!-- Twitter Button -->
-          <button class="rounded-pill twitter" onclick="visitTwitter()" title="Visit Twitter" aria-label="Visit Twitter">
-            <i class="bi bi-twitter"></i>
-          </button>
-      
-          <!-- LinkedIn Button -->
-          <button class="rounded-pill linkedin" onclick="visitLinkedIn()" title="Visit LinkedIn" aria-label="Visit LinkedIn">
-            <i class="bi bi-linkedin"></i>
-          </button>
-        </div>
-        
-    
+      <!-- Navigation Links -->
+      <div class="link-group d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
+        <a href="index.html" class="mx-2"><i class="bi bi-house-door"></i> Home</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="DeliveryModel.html" class="mx-2"><i class="bi bi-info-circle"></i> Delivery Model</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="EcoSystem.html" class="mx-2"><i class="bi bi-briefcase"></i> Our Security Ecosystem</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="capabilities.html" class="mx-2"><i class="bi bi-people"></i> Capabilities</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="contact.html" class="mx-2"><i class="bi bi-envelope"></i> Contact Us</a>
+      </div>
+
+
         <hr class="footer-divider" />
-        <p class="copyright">&copy; 2025 Fairdebt Solutions Private Limited | All Rights Reserved.</p>
+        <p class="copyright">
+          &copy; 2025 AI Aman | All Rights Reserved.
+        </p>
       </div>
     </div>
-    </footer>
+  </div>
 
-
+  <!-- Social Buttons Script -->
+  <script>
+    function visitInstagram() {
+      window.open("https://www.instagram.com/", "_blank");
+    }
+    function sendEmail() {
+      window.location.href = "";
+    }
+    function visitTwitter() {
+      window.open("https://twitter.com/", "_blank");
+    }
+    function visitLinkedIn() {
+      window.open("https://www.linkedin.com/", "_blank");
+    }
+  </script>
+</footer>
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>
-      document.getElementById("mobileMenuToggle").addEventListener("click", function () {
-        let navMenu = document.getElementById("navbarNav");
-        if (navMenu.classList.contains("show")) {
-          navMenu.classList.remove("show");
-        } else {
-          navMenu.classList.add("show");
+      const mobileToggle = document.getElementById("mobileMenuToggle");
+      if (mobileToggle) {
+        mobileToggle.addEventListener("click", function () {
+          let navMenu = document.getElementById("navbarNav");
+          if (navMenu.classList.contains("show")) {
+            navMenu.classList.remove("show");
+          } else {
+            navMenu.classList.add("show");
+          }
+        });
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let progressBars = document.querySelectorAll(".progress-bar");
+
+        function animateProgressBars() {
+          progressBars.forEach(bar => {
+            let width = bar.getAttribute("data-width");
+            bar.style.width = width;
+          });
+        }
+
+        let expertiseSection = document.querySelector(".vconnect-expertise");
+        if (expertiseSection) {
+          let observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+              animateProgressBars();
+            }
+          }, { threshold: 0.5 });
+
+          observer.observe(expertiseSection);
         }
       });
     </script>
 
-    <!-- Bootstrap JavaScript CDN Link  -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Include AOS library script if it's not already included -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- AOS Library Script Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+
+    <!-- Bootstrap JS (Include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
     <!-- Custom JS File Linking -->
     <script src="js/script.js"></script>
-    <!-- Bootstrap JS & Dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

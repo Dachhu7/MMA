@@ -1,6 +1,6 @@
 header {
-    background-color: #1e88e5;
-    color: white;
+    background: linear-gradient(135deg, #b9ede2, #1e9a7f);
+    color: rgb(8, 8, 8);
     text-align: center;
     padding: 20px;
 }
@@ -28,24 +28,80 @@ header p {
     background-color: #f9f9f9;
 }
 
-h2 {
-    color: #1e88e5;
-    font-size: 28px;
-    margin-bottom: 10px;
+.container1 {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-p, ul {
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
+/* Headings */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #01886b;
 }
 
+.container1 h2 {
+    font-size: 1.3rem;
+    border-bottom: 2px solid #01886b;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color: #01886b;
+}
+
+.container1 h4 {
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color: #01886b;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Lists */
 ul {
     padding-left: 20px;
 }
 
 ul li {
-    margin-bottom: 8px;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container1 {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p, ul li {
+        font-size: 0.95rem;
+    }
 }
 
 /* CTA Button */
@@ -55,29 +111,37 @@ ul li {
 
 .cta-button {
     display: inline-block;
-    background-color: #1e88e5;
-    color: white;
-    padding: 12px 20px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #b9ede2, #1e9a7f);
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
 }
 .blg-button {
     display: inline-block;
-    background-color: #1e88e5;
-    color: white;
-    padding: 6px 8px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #b9ede2, #1e9a7f);
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
 }
-
 
 .cta-button:hover {
-    background-color: #1565c0;
+    transform: scale(1.1) translateY(-3px);
+    background: linear-gradient(135deg, #00dfd8, #007cf0);
 }
+
+.blg-button:hover {
+    transform: scale(1.1) translateY(-3px);
+    background: linear-gradient(135deg, #00dfd8, #007cf0);
+}
+
 .faq-section {
     max-width: 800px;
     margin: 40px auto;
@@ -106,8 +170,8 @@ ul li {
 .faq-question {
     width: 100%;
     text-align: left;
-    background: #007bff;
-    color: white;
+    background: linear-gradient(135deg, #b9ede2, #1e9a7f);
+    color: black;
     border: none;
     padding: 15px;
     font-size: 16px;
@@ -116,7 +180,7 @@ ul li {
 }
 
 .faq-question:hover {
-    background: #0056b3;
+    background: linear-gradient(135deg, #00fec7, #424343);
 }
 
 .faq-answer {
@@ -137,6 +201,24 @@ ul li {
 }
 
 .faq-question.active {
-    background: #0056b3;
+    background: #01886b;
+}
+.container1 {
+    width: 85%;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #01886b;
 }
 
+.read-more:hover {
+    text-decoration: underline;
+}

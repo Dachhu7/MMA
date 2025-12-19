@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capabilities</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- Bootstrap CSS CDN Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icon CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS Library for Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- jQuery CDN Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head>
+
+  <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
+       <!-- Clean Modern Navbar -->
+<nav class="topbar">
+  <div class="topbar-container">
+    <a href="#" class="topbar-logo">
+      <span>AI Aman</span>
+    </a>
+
+    <div class="nav-box">
+      <ul class="topbar-links">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-house-door-fill"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="DeliveryModel.html">
+            <i class="bi bi-person-lines-fill"></i>
+            <span>Delivery Model</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="EcoSystem.html">
+            <i class="bi bi-tools"></i>
+            <span>Our Security Ecosystem</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="capabilities.html">
+            <i class="bi bi-briefcase-fill"></i>
+            <span>Capabilities</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">
+            <i class="bi bi-envelope-paper-fill"></i>
+            <span>Contact Us</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="contact.html" class="topbar-cta">Let's Connect</a>
+  </div>
+</nav>
+
+
+
+<style>
+/* =====================================================
+   SECURITY ECOSYSTEM – DEFENSE-IN-DEPTH VIEW
+===================================================== */
+
+.security-ecosystem {
+  font-family: "Inter", system-ui, sans-serif;
+  padding: 120px 24px;
+  background: linear-gradient(180deg, #f4f8ff, #f7fffb);
+  color: #0f172a;
+}
+
+/* INTRO */
+.ecosystem-intro {
+  max-width: 960px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.ecosystem-intro p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #334155;
+}
+
+/* GRID */
+.ecosystem-card {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+/* BLOCK */
+.ecosystem-item {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: 26px;
+  padding: 34px 36px;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.10);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.ecosystem-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 45px 100px rgba(2, 8, 23, 0.18);
+}
+
+/* HEADER */
+.ecosystem-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.ecosystem-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0ea5e9, #0f766e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.ecosystem-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* CONTENT */
+.ecosystem-desc {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 22px;
+}
+
+/* META GRID */
+.ecosystem-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.ecosystem-meta div {
+  background: #ffffff;
+  border-left: 4px solid #0ea5e9;
+  padding: 14px 18px;
+  border-radius: 12px;
+}
+
+.ecosystem-meta strong {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0f766e;
+  margin-bottom: 6px;
+}
+
+.ecosystem-meta span {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+  .ecosystem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+
+<div class="security-ecosystem">
+
+  <div class="ecosystem-intro">
+    <p>
+      Effective cybersecurity requires more than isolated tools or point solutions.
+      It demands a layered, defense-in-depth approach where protections across data,
+      endpoints, applications, networks, and cloud infrastructure work together
+    </p>
+  </div>
+
+  <div class="ecosystem-card">
+    <div class="ecosystem-grid">
+
+      <!-- DATA SECURITY -->
+      <div class="ecosystem-item">
+        <div class="ecosystem-header">
+          <div class="ecosystem-icon">🗄️</div>
+          <div class="ecosystem-title">Data Security</div>
+        </div>
+
+        <div class="ecosystem-desc">
+          Data is at the core of every organization and remains a primary target for
+          attackers. Our data security capabilities focus on protecting sensitive,
+          regulated, and mission-critical information throughout its lifecycle. By
+          combining governance, encryption, privacy controls, and loss prevention,
+          we help organizations reduce exposure, maintain compliance, and ensure that
+          data remains accessible only to authorized users and systems.
+        </div>
+
+        <div class="ecosystem-meta">
+          <div>
+            <strong>Capabilities</strong>
+            <span>Data Governance, Masking, Encryption, DLP, Privacy</span>
+          </div>
+          <div>
+            <strong>Services Delivered</strong>
+            <span>Data protection design, enforcement, monitoring</span>
+          </div>
+          <div>
+            <strong>Customer Outcomes</strong>
+            <span>Prevent data loss, ensure compliance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENDPOINT SECURITY -->
+      <div class="ecosystem-item">
+        <div class="ecosystem-header">
+          <div class="ecosystem-icon">💻</div>
+          <div class="ecosystem-title">Endpoint Security</div>
+        </div>
+
+        <div class="ecosystem-desc">
+          Endpoints are often the initial entry point for cyber threats. Our endpoint
+          security capabilities are designed to prevent, detect, and respond to
+          malware, ransomware, and insider threats across user devices and systems.
+          Through continuous monitoring and managed response, we help contain threats
+          at the source and prevent them from spreading laterally across the
+          environment.
+        </div>
+
+        <div class="ecosystem-meta">
+          <div>
+            <strong>Capabilities</strong>
+            <span>EPP, EDR, MDR, Anti-Ransomware, MTD</span>
+          </div>
+          <div>
+            <strong>Services Delivered</strong>
+            <span>Deployment, monitoring, response</span>
+          </div>
+          <div>
+            <strong>Customer Outcomes</strong>
+            <span>Malware & ransomware prevention</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLICATION SECURITY -->
+      <div class="ecosystem-item">
+        <div class="ecosystem-header">
+          <div class="ecosystem-icon">🧩</div>
+          <div class="ecosystem-title">Application Security</div>
+        </div>
+
+        <div class="ecosystem-desc">
+          Applications and APIs form the backbone of modern digital services and are
+          frequent targets for exploitation. Our application security capabilities
+          focus on reducing attack surface through proactive testing, runtime
+          protection, and strong access controls. This ensures applications remain
+          resilient against common and advanced attack techniques while supporting
+          secure digital transformation.
+        </div>
+
+        <div class="ecosystem-meta">
+          <div>
+            <strong>Capabilities</strong>
+            <span>WAF, API Security, SAST, DAST, IAM/PAM</span>
+          </div>
+          <div>
+            <strong>Services Delivered</strong>
+            <span>Hardening, testing, access control</span>
+          </div>
+          <div>
+            <strong>Customer Outcomes</strong>
+            <span>Reduced attack surface</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NETWORK SECURITY -->
+      <div class="ecosystem-item">
+        <div class="ecosystem-header">
+          <div class="ecosystem-icon">🌐</div>
+          <div class="ecosystem-title">Network Security</div>
+        </div>
+
+        <div class="ecosystem-desc">
+          Networks provide the pathways attackers use to move within an environment.
+          Our network security capabilities emphasize visibility, segmentation, and
+          anomaly detection across enterprise and OT networks. By monitoring traffic
+          patterns and enforcing controlled access, we help identify lateral movement
+          early and limit the impact of compromised assets.
+        </div>
+
+        <div class="ecosystem-meta">
+          <div>
+            <strong>Capabilities</strong>
+            <span>NDR, NAC, ZTNA, DDoS, NPB, SWG</span>
+          </div>
+          <div>
+            <strong>Services Delivered</strong>
+            <span>Traffic monitoring, segmentation, access control</span>
+          </div>
+          <div>
+            <strong>Customer Outcomes</strong>
+            <span>Lateral movement detection</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLOUD SECURITY -->
+      <div class="ecosystem-item">
+        <div class="ecosystem-header">
+          <div class="ecosystem-icon">☁️</div>
+          <div class="ecosystem-title">Cloud Infrastructure Security</div>
+        </div>
+
+        <div class="ecosystem-desc">
+          As organizations adopt cloud and hybrid architectures, maintaining
+          visibility and control becomes increasingly complex. Our cloud
+          infrastructure security capabilities provide continuous posture management,
+          configuration monitoring, and identity protection across cloud and SaaS
+          environments. This helps prevent misconfigurations, unauthorized access,
+          and cloud-based breaches while supporting scalable operations.
+        </div>
+
+        <div class="ecosystem-meta">
+          <div>
+            <strong>Capabilities</strong>
+            <span>CSPM, CWPP, CASB, SaaS Security, IAM</span>
+          </div>
+          <div>
+            <strong>Services Delivered</strong>
+            <span>Cloud posture management, monitoring</span>
+          </div>
+          <div>
+            <strong>Customer Outcomes</strong>
+            <span>Misconfiguration & breach prevention</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECURITY OPERATIONS -->
+      <div class="ecosystem-item">
+        <div class="ecosystem-header">
+          <div class="ecosystem-icon">🛰️</div>
+          <div class="ecosystem-title">Security Operations</div>
+        </div>
+
+        <div class="ecosystem-desc">
+          Security operations unify all layers into a coordinated detection and
+          response capability. By correlating signals from data, endpoints,
+          applications, networks, and cloud platforms, our security operations
+          services enable faster threat identification, informed decision-making, and
+          effective incident response. This integrated approach significantly reduces
+          mean time to detect (MTTD) and mean time to respond (MTTR), minimizing
+          overall risk and business impact.
+        </div>
+
+        <div class="ecosystem-meta">
+          <div>
+            <strong>Capabilities</strong>
+            <span>SIEM, XDR, UEBA, Threat Intelligence, IR</span>
+          </div>
+          <div>
+            <strong>Services Delivered</strong>
+            <span>SOC operations, incident handling</span>
+          </div>
+          <div>
+            <strong>Customer Outcomes</strong>
+            <span>Reduced MTTD/MTTR</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Footer Section Starts -->
+<footer class="text-center text-muted py-4">
+  <div class="footer">
+    <div class="footer-container">
+
+      <!-- Company Logo & Name -->
+      <div class="footer-brand">
+        <h3 class="pt-2" data-aos="fade-up">
+          AI Aman  
+        </h3>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="link-group d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
+        <a href="index.html" class="mx-2"><i class="bi bi-house-door"></i> Home</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="DeliveryModel.html" class="mx-2"><i class="bi bi-info-circle"></i> Delivery Model</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="EcoSystem.html" class="mx-2"><i class="bi bi-briefcase"></i> Our Security Ecosystem</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="capabilities.html" class="mx-2"><i class="bi bi-people"></i> Capabilities</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="contact.html" class="mx-2"><i class="bi bi-envelope"></i> Contact Us</a>
+      </div>
+
+
+        <hr class="footer-divider" />
+        <p class="copyright">
+          &copy; 2025 AI Aman | All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Buttons Script -->
+  <script>
+    function visitInstagram() {
+      window.open("https://www.instagram.com/", "_blank");
+    }
+    function sendEmail() {
+      window.location.href = "";
+    }
+    function visitTwitter() {
+      window.open("https://twitter.com/", "_blank");
+    }
+    function visitLinkedIn() {
+      window.open("https://www.linkedin.com/", "_blank");
+    }
+  </script>
+</footer>
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+      const mobileToggle = document.getElementById("mobileMenuToggle");
+      if (mobileToggle) {
+        mobileToggle.addEventListener("click", function () {
+          let navMenu = document.getElementById("navbarNav");
+          if (navMenu.classList.contains("show")) {
+            navMenu.classList.remove("show");
+          } else {
+            navMenu.classList.add("show");
+          }
+        });
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let progressBars = document.querySelectorAll(".progress-bar");
+
+        function animateProgressBars() {
+          progressBars.forEach(bar => {
+            let width = bar.getAttribute("data-width");
+            bar.style.width = width;
+          });
+        }
+
+        let expertiseSection = document.querySelector(".vconnect-expertise");
+        if (expertiseSection) {
+          let observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+              animateProgressBars();
+            }
+          }, { threshold: 0.5 });
+
+          observer.observe(expertiseSection);
+        }
+      });
+    </script>
+
+    <!-- AOS Library Script Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- Bootstrap JS (Include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+    <!-- Custom JS File Linking -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

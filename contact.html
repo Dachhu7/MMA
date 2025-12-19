@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FairDebt</title>
+    <title>Capabilities</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
 
     <!-- Bootstrap CSS CDN Link -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
     />
 
     <!-- Custom CSS File -->
@@ -34,143 +33,101 @@
     <!-- AOS Library for Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <!-- jQuery CDN Link -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <!-- EmailJS Library -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <style>
-      .contact {
-  background: #f8f9fa;
-}
-
-.contact-card {
-  background: white;
-  border-radius: 10px;
-}
-
-.contact-form {
-  background: white;
-  border-radius: 10px;
-}
-
-.form-control {
-  border: 2px solid #ced4da;
-  transition: all 0.3s ease-in-out;
-}
-
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.1);
-}
-
-.btn-primary {
-  background: #007bff;
-  border: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-  background: #0056b3;
-}
-
-.contact-card i {
-  transition: transform 0.3s;
-}
-
-.contact-card i:hover {
-  transform: scale(1.1);
-}
-
-    </style>
   </head>
 
   <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <!-- Navbar -->
-  <nav id="navbar-top" class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
-      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-        <img src="images/company_logo.png" alt="Company Logo" class="navbar-logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <i class="bi bi-list"></i>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="careers.html">Careers</a></li>
-          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
+       <!-- Clean Modern Navbar -->
+<nav class="topbar">
+  <div class="topbar-container">
+    <a href="#" class="topbar-logo">
+      <span>AI Aman</span>
+    </a>
+
+    <div class="nav-box">
+      <ul class="topbar-links">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-house-door-fill"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="DeliveryModel.html">
+            <i class="bi bi-person-lines-fill"></i>
+            <span>Delivery Model</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="EcoSystem.html">
+            <i class="bi bi-tools"></i>
+            <span>Our Security Ecosystem</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="capabilities.html">
+            <i class="bi bi-briefcase-fill"></i>
+            <span>Capabilities</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">
+            <i class="bi bi-envelope-paper-fill"></i>
+            <span>Contact Us</span>
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <!-- Navbar Ends Here -->
+    <a href="contact.html" class="topbar-cta">Let's Connect</a>
+  </div>
+</nav>
 
 
-    <!-- Contact Section Starts -->
+
+
 <!-- Contact Section Starts -->
-<section class="contact py-5" id="contact">
-  <div class="container">
-    <div class="text-center mb-5">
-      <small class="text-primary">Get in Touch</small>
-      <h3 class="fw-bold">Have Questions? Contact Us</h3>
-      <p class="text-muted">
-        We’d love to hear from you! Fill out the form below and we’ll get back to you soon.
-      </p>
-    </div>
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-5 contact-details" data-aos="fade-right">
-        <div class="contact-card p-4 shadow rounded">
-          <div class="d-flex align-items-center mb-3">
-            <i class="bi bi-geo-alt-fill fs-4 text-primary me-3"></i>
-            <p class="mb-0">2744, 15th Cross, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</p>
-          </div>
-          <div class="d-flex align-items-center mb-3">
-            <i class="bi bi-send-fill fs-4 text-primary me-3"></i>
-            <p class="mb-0">superadmin@fairdebt.in</p>
-          </div>
-          <div class="d-flex align-items-center">
-            <i class="bi bi-globe fs-4 text-primary me-3"></i>
-            <p class="mb-0">
-              <a href="https://fairdebt.in" target="_blank" class="text-decoration-none text-dark">fairdebt.in</a>
-            </p>
-          </div>
-        </div>
+<section class="vconnect-contact-wrapper" id="contact">
+  <div class="vconnect-contact-intro">
+    <p class="vconnect-contact-small">Let’s Talk</p>
+    <h2 class="vconnect-contact-heading">We’d Love to Hear From You</h2>
+    <p class="vconnect-contact-desc">
+      Reach out for collaboration, queries, or a simple hello.
+    </p>
+  </div>
+
+  <div class="vconnect-contact-grid">
+    <div class="vconnect-contact-info">
+      <div class="vconnect-info-item">
+        <span class="vconnect-info-label">Address:</span>
+        <span class="vconnect-info-text"> Bengaluru</span>
       </div>
-      <div class="col-md-5 mt-4 mt-md-0" data-aos="fade-left">
-        <div class="contact-form p-4 shadow rounded bg-white">
-          <form id="contactForm" action="process_contact.php" method="POST">
-            <div class="mb-3">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="name" name="name" placeholder="Your Name" required>
-              <small class="text-danger d-none" id="nameError">Name is required.</small>
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control rounded-pill px-3 py-2" id="email" name="email" placeholder="Your Email" required>
-              <small class="text-danger d-none" id="emailError">Enter a valid email.</small>
-            </div>
-            <div class="mb-3">
-              <input type="text" class="form-control rounded-pill px-3 py-2" id="mobile" name="mobile" placeholder="Mobile Number" pattern="\d{10}" required>
-              <small class="text-danger d-none" id="mobileError">Enter a valid 10-digit mobile number.</small>
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control rounded px-3 py-2" id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-              <small class="text-danger d-none" id="messageError">Message cannot be empty.</small>
-            </div>
-            <button type="submit" class="btn btn-primary d-block mx-auto w-50 py-2 rounded-pill">
-              Send Message
-            </button>
-          </form>
-        </div>
+      <div class="vconnect-info-item">
+        <span class="vconnect-info-label">Email:</span>
+        <a href="" class="vconnect-info-text"></a>
+      </div>
+      <div class="vconnect-info-item">
+        <span class="vconnect-info-label">Website:</span>
+        <a href="" target="_blank" class="vconnect-info-text"></a>
       </div>
     </div>
+
+    <form id="contactForm" action="process_contact.php" method="POST" class="vconnect-contact-form">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <input type="text" id="mobile" name="mobile" placeholder="Mobile Number" pattern="\d{10}" required />
+      <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 </section>
 <!-- Contact Section Ends -->
-
-
 
   <!-- Success Dialog Box -->
   <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
@@ -192,7 +149,7 @@
 
   <script>
     // Initialize EmailJS
-    emailjs.init("YHPpA8WKsdQMlZF0u");
+    emailjs.init("Xm1izpSwH-ERKRusj");
 
     // JavaScript for form submission
     document.getElementById("contactForm").addEventListener("submit", function (e) {
@@ -214,7 +171,7 @@
 
       // Send email using EmailJS
       emailjs
-        .send("service_i15deir", "template_knn971z", emailParams)
+        .send("service_vgkp7hc", "template_pwwex38", emailParams)
         .then(
           (response) => {
             console.log("SUCCESS!", response.status, response.text);
@@ -233,7 +190,6 @@
     });
   </script>
 
-
     <!-- Back to Top Button -->
     <button
       type="button"
@@ -243,134 +199,108 @@
       <i class="bi bi-arrow-up"></i>
     </button>
 
-    <!-- Footer Section Starts -->
 <!-- Footer Section Starts -->
 <footer class="text-center text-muted py-4">
   <div class="footer">
-  <div class="footer-container">
-    <!-- Company Logo & Name -->
-    <div class="footer-brand">
-      <img
-        src="images/company_logo.png"
-        alt="Company Logo"
-        style="height: 90px; object-fit: contain; display: block; margin: 0 auto;"
-      />
-      <h3 class="text-white pt-2" data-aos="fade-up" style="font-size: 2.5rem; font-weight: bold; letter-spacing: 1px;">
-        Fairdebt Solutions Private Limited
-      </h3>
-    </div>
+    <div class="footer-container">
 
-    <!-- Navigation Links -->
-    <div class="link-group d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
-      <a href="index.html" class="mx-2"><i class="bi bi-house-door"></i> Home</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="about.html" class="mx-2"><i class="bi bi-info-circle"></i> About</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="careers.html" class="mx-2"><i class="bi bi-briefcase"></i> Careers</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="services.html" class="mx-2"><i class="bi bi-people"></i> Services</a>
-      <span class="mx-2 text-white">|</span>
-      <a href="contact.html" class="mx-2"><i class="bi bi-envelope"></i> Contact Us</a>
-    </div>
+      <!-- Company Logo & Name -->
+      <div class="footer-brand">
+        <h3 class="pt-2" data-aos="fade-up">
+          AI Aman  
+        </h3>
+      </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-sections">
-          <div class="footer-section">
-            <h3>Services</h3>
-            <ul class="center">
-              <li><a href="telicalling.html">Telecalling</a></li>
-              <li><a href="chat_support.html">Chat Support</a></li>
-              <li><a href="email_support.html">Email Support</a></li>
-              <li><a href="customer_support.html">Customer Support Solutions</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-section">
-            <h3>Our Company</h3>
-            <ul class="center">
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="clients.html">Partner with Us</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-section">
-            <h3>Legal</h3>
-            <ul class="center">
-              <li><a href="terms.html">Terms and Conditions</a></li>
-              <li><a href="privacy_policy.html">Privacy Policy</a></li>
-              <li><a href="corporate.html">Corporate Information</a></li>
-            </ul>
-          </div>
-    
-          <div class="footer-section contact">
-            <h3>Contact Us</h3>
-            <p><i class="fas fa-globe"></i> <a href="https://www.fairdebt.in" target="_blank">www.fairdebt.in</a></p>
-            <p><i class="fas fa-envelope"></i><a href="mailto:fairdebt2@gmail.com">superadmin@fairdebt.in</a></p>
-            <p><i class="fas fa-map-marker-alt"></i>2744, 15th cross, 1st Sector, HSR Layout, Bengaluru, Karnataka 560102</p>
-        </div>
-        </div>
-    
-        <div class="social-links mt-5" data-aos="fade-up">
-          <!-- Instagram Button -->
-          <button class="rounded-pill instagram" onclick="visitInstagram()" title="Visit Instagram" aria-label="Visit Instagram">
-            <i class="bi bi-instagram"></i>
-          </button>
-      
-          <!-- Email Button -->
-          <button class="rounded-pill email" onclick="sendEmail()" title="Send Email" aria-label="Send Email">
-            <i class="bi bi-envelope"></i>
-          </button>
-      
-          <!-- Twitter Button -->
-          <button class="rounded-pill twitter" onclick="visitTwitter()" title="Visit Twitter" aria-label="Visit Twitter">
-            <i class="bi bi-twitter"></i>
-          </button>
-      
-          <!-- LinkedIn Button -->
-          <button class="rounded-pill linkedin" onclick="visitLinkedIn()" title="Visit LinkedIn" aria-label="Visit LinkedIn">
-            <i class="bi bi-linkedin"></i>
-          </button>
-        </div>
-        
-    
+      <!-- Navigation Links -->
+      <div class="link-group d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
+        <a href="index.html" class="mx-2"><i class="bi bi-house-door"></i> Home</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="DeliveryModel.html" class="mx-2"><i class="bi bi-info-circle"></i> Delivery Model</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="EcoSystem.html" class="mx-2"><i class="bi bi-briefcase"></i> Our Security Ecosystem</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="capabilities.html" class="mx-2"><i class="bi bi-people"></i> Capabilities</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="contact.html" class="mx-2"><i class="bi bi-envelope"></i> Contact Us</a>
+      </div>
+
+
         <hr class="footer-divider" />
-        <p class="copyright">&copy; 2025 Fairdebt Solutions Private Limited | All Rights Reserved.</p>
+        <p class="copyright">
+          &copy; 2025 AI Aman | All Rights Reserved.
+        </p>
       </div>
     </div>
-    </footer>
-<!-- Footer Section Ends Here -->
+  </div>
 
-
+  <!-- Social Buttons Script -->
+  <script>
+    function visitInstagram() {
+      window.open("https://www.instagram.com/", "_blank");
+    }
+    function sendEmail() {
+      window.location.href = "";
+    }
+    function visitTwitter() {
+      window.open("https://twitter.com/", "_blank");
+    }
+    function visitLinkedIn() {
+      window.open("https://www.linkedin.com/", "_blank");
+    }
+  </script>
+</footer>
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>
-      document.getElementById("mobileMenuToggle").addEventListener("click", function () {
-        let navMenu = document.getElementById("navbarNav");
-        if (navMenu.classList.contains("show")) {
-          navMenu.classList.remove("show");
-        } else {
-          navMenu.classList.add("show");
+      const mobileToggle = document.getElementById("mobileMenuToggle");
+      if (mobileToggle) {
+        mobileToggle.addEventListener("click", function () {
+          let navMenu = document.getElementById("navbarNav");
+          if (navMenu.classList.contains("show")) {
+            navMenu.classList.remove("show");
+          } else {
+            navMenu.classList.add("show");
+          }
+        });
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let progressBars = document.querySelectorAll(".progress-bar");
+
+        function animateProgressBars() {
+          progressBars.forEach(bar => {
+            let width = bar.getAttribute("data-width");
+            bar.style.width = width;
+          });
+        }
+
+        let expertiseSection = document.querySelector(".vconnect-expertise");
+        if (expertiseSection) {
+          let observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+              animateProgressBars();
+            }
+          }, { threshold: 0.5 });
+
+          observer.observe(expertiseSection);
         }
       });
     </script>
 
-    <!-- Bootstrap JavaScript CDN Link  -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Include AOS library script if it's not already included -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- AOS Library Script Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+
+    <!-- Bootstrap JS (Include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
     <!-- Custom JS File Linking -->
     <script src="js/script.js"></script>
-    <!-- Bootstrap JS & Dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

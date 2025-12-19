@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capabilities</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- Bootstrap CSS CDN Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icon CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS Library for Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- jQuery CDN Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head>
+
+  <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
+       <!-- Clean Modern Navbar -->
+<nav class="topbar">
+  <div class="topbar-container">
+    <a href="#" class="topbar-logo">
+      <span>AI Aman</span>
+    </a>
+
+    <div class="nav-box">
+      <ul class="topbar-links">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-house-door-fill"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="DeliveryModel.html">
+            <i class="bi bi-person-lines-fill"></i>
+            <span>Delivery Model</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="EcoSystem.html">
+            <i class="bi bi-tools"></i>
+            <span>Our Security Ecosystem</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="capabilities.html">
+            <i class="bi bi-briefcase-fill"></i>
+            <span>Capabilities</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">
+            <i class="bi bi-envelope-paper-fill"></i>
+            <span>Contact Us</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <a href="contact.html" class="topbar-cta">Let's Connect</a>
+  </div>
+</nav>
+
+
+
+
+
+<style>
+/* =====================================================
+   ENTERPRISE SECURITY SERVICES – PREMIUM BLOCK DESIGN
+===================================================== */
+
+.security-page {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+/* =========================
+   SECTION WRAPPER
+========================= */
+
+.service-section {
+  padding: 120px 24px;
+  margin-bottom: 80px;
+  background: linear-gradient(180deg, #f8fafc, #eef4ff);
+}
+
+.service-section.alt-bg {
+  background: linear-gradient(180deg, #eef4ff, #f8fafc);
+}
+
+.section-header {
+  max-width: 980px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  letter-spacing: -0.4px;
+}
+
+.section-header p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #475569;
+}
+
+/* =========================
+   SERVICE GRID
+========================= */
+
+.service-card {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+/* =========================
+   SERVICE BLOCK
+========================= */
+
+.service-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 22px;
+  padding: 28px 30px;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(2, 8, 23, 0.18);
+}
+
+/* ICON */
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0ea5e9, #0f766e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+/* CONTENT */
+.service-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.service-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+/* =========================
+   DESKTOP GRID FIX
+========================= */
+
+@media (min-width: 900px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ✅ CENTER LAST CARD IF ODD COUNT */
+  .service-grid > .service-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+}
+</style>
+
+
+<div class="security-page">
+
+<!-- ================= SECTION 1 ================= -->
+<section class="service-section">
+  <div class="section-header">
+    <h2>Consulting & Advisory Services – IT & OT</h2>
+    <p>
+      Consulting and advisory services help organizations define a clear, realistic
+      security direction across IT and Operational Technology environments. We work
+      closely with stakeholders to align security strategy, architecture, and
+      governance with business objectives, operational constraints, and regulatory
+      requirements. This engagement focuses on decision-making clarity — identifying
+      what to secure, why it matters, and how to prioritize investments — before
+      moving into implementation or operations.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-grid">
+      <div class="service-item">
+        <div class="service-icon">🧭</div>
+        <div class="service-content">
+          <h4>Cybersecurity Strategy</h4>
+          <p>IT & OT security roadmap, multi-year security strategy, maturity model</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🏭</div>
+        <div class="service-content">
+          <h4>OT Security Advisory</h4>
+          <p>Purdue model design, IT–OT segmentation strategy, secure architecture</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🏗️</div>
+        <div class="service-content">
+          <h4>Security Architecture</h4>
+          <p>Zero Trust architecture (IT & OT), defense-in-depth design</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📜</div>
+        <div class="service-content">
+          <h4>GRC Advisory</h4>
+          <p>Policy framework, risk governance, security operating model</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">✅</div>
+        <div class="service-content">
+          <h4>Compliance Advisory</h4>
+          <p>ISO 27001, IEC 62443, NIST CSF, NESA, GDPR/PDPL alignment</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🧰</div>
+        <div class="service-content">
+          <h4>Vendor & Tool Advisory</h4>
+          <p>Tool rationalization, SOC tooling selection, RFP support</p>
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🎯</div>
+        <div class="service-content">
+          <h4>CISO Advisory</h4>
+          <p>Virtual CISO (vCISO) services, board-level security reporting</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 2 ================= -->
+<section class="service-section alt-bg">
+  <div class="section-header">
+    <h2>Professional Services (Design & Implementation)</h2>
+    <p>
+      Our professional services translate security strategy into working,
+      production-ready solutions. We design and implement security controls across
+      infrastructure, networks, endpoints, applications, cloud platforms, and OT
+      environments with a strong focus on stability, integration, and operational
+      impact. Every implementation is tailored to the customer’s environment and
+      delivered with an execution mindset — ensuring solutions are effective,
+      maintainable, and aligned with real-world usage.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-grid">
+      <div class="service-item"><div class="service-icon">🛡️</div><div class="service-content"><h4>OT Security Implementation</h4><p>NDR/IDS deployment, passive monitoring, sensor placement</p></div></div>
+      <div class="service-item"><div class="service-icon">🌐</div><div class="service-content"><h4>Network Security</h4><p>Firewall, segmentation, NAC, ZTNA, secure remote access</p></div></div>
+      <div class="service-item"><div class="service-icon">💻</div><div class="service-content"><h4>Endpoint Security</h4><p>EPP, EDR, MDR, ransomware protection rollout</p></div></div>
+      <div class="service-item"><div class="service-icon">📊</div><div class="service-content"><h4>SOC Build Services</h4><p>SIEM/XDR deployment, log onboarding, use-case development</p></div></div>
+      <div class="service-item"><div class="service-icon">☁️</div><div class="service-content"><h4>Cloud Security</h4><p>CSPM, CWPP, CASB implementation, secure cloud landing zones</p></div></div>
+      <div class="service-item"><div class="service-icon">🔐</div><div class="service-content"><h4>IAM / PAM</h4><p>Identity governance, privileged access deployment</p></div></div>
+      <div class="service-item"><div class="service-icon">🧪</div><div class="service-content"><h4>Application Security</h4><p>WAF, API security, SAST/DAST integration</p></div></div>
+      <div class="service-item"><div class="service-icon">🚪</div><div class="service-content"><h4>Secure Access</h4><p>PAM, vendor remote access, jump servers</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 3 ================= -->
+<section class="service-section">
+  <div class="section-header">
+    <h2>Assessments & Audits</h2>
+    <p>
+      Our assessments and audits provide organizations with a clear, evidence-based
+      understanding of their current security posture. We identify gaps, risks, and
+      exposure across IT and OT environments using structured frameworks and safe
+      assessment methodologies. The outcome is not just a report, but actionable
+      insights that support informed decision-making, remediation planning,
+      compliance readiness, and risk prioritization.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-grid">
+      <div class="service-item"><div class="service-icon">🧱</div><div class="service-content"><h4>OT Security Assessment</h4><p>IEC 62443 gap analysis, asset discovery, zone/conduit review</p></div></div>
+      <div class="service-item"><div class="service-icon">⚠️</div><div class="service-content"><h4>Cyber Risk Assessment</h4><p>Threat modeling, attack surface analysis</p></div></div>
+      <div class="service-item"><div class="service-icon">🔎</div><div class="service-content"><h4>Vulnerability Assessment</h4><p>IT & OT vulnerability scanning (safe OT methods)</p></div></div>
+      <div class="service-item"><div class="service-icon">📡</div><div class="service-content"><h4>Network Assessment</h4><p>Segmentation review, firewall rule analysis</p></div></div>
+      <div class="service-item"><div class="service-icon">☁️</div><div class="service-content"><h4>Cloud Security Assessment</h4><p>Misconfiguration & posture assessment</p></div></div>
+      <div class="service-item"><div class="service-icon">📈</div><div class="service-content"><h4>SOC Maturity Assessment</h4><p>People–process–technology gap analysis</p></div></div>
+      <div class="service-item"><div class="service-icon">🔗</div><div class="service-content"><h4>Third-Party Risk</h4><p>Vendor and supply chain security assessment</p></div></div>
+      <div class="service-item"><div class="service-icon">📋</div><div class="service-content"><h4>Compliance Gap Analysis</h4><p>ISO / IEC / regulatory readiness assessments</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 4 ================= -->
+<section class="service-section alt-bg">
+  <div class="section-header">
+    <h2>Managed Security Services (24×7 Operations)</h2>
+    <p>
+      Our managed security services provide continuous protection through
+      round-the-clock monitoring, detection, and response across IT, OT, cloud, and
+      hybrid environments. By operating security controls and analytics on behalf of
+      our customers, we help reduce detection time, improve response effectiveness,
+      and maintain consistent security coverage without disrupting business
+      operations. These services are delivered through defined SLAs, escalation
+      paths, and operational reporting.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-grid">
+      <div class="service-item"><div class="service-icon">🛰️</div><div class="service-content"><h4>Managed SOC (IT & OT)</h4><p>24×7 monitoring, alert triage, escalation</p></div></div>
+      <div class="service-item"><div class="service-icon">🚨</div><div class="service-content"><h4>Managed Detection & Response (MDR)</h4><p>Endpoint, network, cloud threat response</p></div></div>
+      <div class="service-item"><div class="service-icon">🏭</div><div class="service-content"><h4>OT Monitoring</h4><p>Passive ICS monitoring, anomaly detection</p></div></div>
+      <div class="service-item"><div class="service-icon">🧠</div><div class="service-content"><h4>SIEM / XDR Management</h4><p>Use-case tuning, log management, threat correlation</p></div></div>
+      <div class="service-item"><div class="service-icon">🔥</div><div class="service-content"><h4>Incident Response</h4><p>Remote IR, containment guidance, forensics support</p></div></div>
+      <div class="service-item"><div class="service-icon">🌍</div><div class="service-content"><h4>Threat Intelligence</h4><p>IT & OT threat intel, IOC enrichment</p></div></div>
+      <div class="service-item"><div class="service-icon">🩺</div><div class="service-content"><h4>Vulnerability Management</h4><p>Continuous scanning, prioritization, reporting</p></div></div>
+      <div class="service-item"><div class="service-icon">☁️</div><div class="service-content"><h4>Cloud Security Monitoring</h4><p>Continuous posture and threat monitoring</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 5 ================= -->
+<section class="service-section">
+  <div class="section-header">
+    <h2>Security Operations & Enablement</h2>
+    <p>
+      Security operations and enablement services focus on strengthening the
+      effectiveness of security teams, tools, and processes. We help organizations
+      build, mature, and optimize their security operations through use-case
+      development, alert tuning, playbooks, integrations, and operational workflows.
+      This ensures that security teams are not overwhelmed by alerts and are equipped
+      to respond decisively when incidents occur.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-grid">
+      <div class="service-item"><div class="service-icon">📘</div><div class="service-content"><h4>SOC Operations</h4><p>Runbooks, playbooks, escalation matrix</p></div></div>
+      <div class="service-item"><div class="service-icon">🎯</div><div class="service-content"><h4>Use Case Engineering</h4><p>MITRE ATT&CK (IT & ICS) mapped detections</p></div></div>
+      <div class="service-item"><div class="service-icon">🎚️</div><div class="service-content"><h4>Alert Tuning</h4><p>Noise reduction, false-positive optimization</p></div></div>
+      <div class="service-item"><div class="service-icon">🚒</div><div class="service-content"><h4>Incident Readiness</h4><p>IR drills, tabletop exercises</p></div></div>
+      <div class="service-item"><div class="service-icon">📊</div><div class="service-content"><h4>Reporting & Metrics</h4><p>Risk dashboards, MTTD/MTTR reporting</p></div></div>
+      <div class="service-item"><div class="service-icon">🔄</div><div class="service-content"><h4>Change & Release Support</h4><p>Secure change validation</p></div></div>
+      <div class="service-item"><div class="service-icon">🔗</div><div class="service-content"><h4>Integration Services</h4><p>IT–OT–Cloud telemetry correlation</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 6 ================= -->
+<section class="service-section alt-bg">
+  <div class="section-header">
+    <h2>Training & Knowledge Transfer</h2>
+    <p>
+      Our training and knowledge transfer services are designed to build internal
+      capability and long-term resilience. We provide role-based training for
+      technical teams, SOC analysts, and operational staff, with a strong emphasis on
+      practical understanding and real-world scenarios. These sessions help teams
+      operate security controls confidently, recognize threats early, and respond
+      effectively across both IT and OT environments.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-grid">
+      <div class="service-item"><div class="service-icon">🏭</div><div class="service-content"><h4>OT Security Training</h4><p>IEC 62443, ICS threats, protocol awareness</p></div></div>
+      <div class="service-item"><div class="service-icon">🧑‍💻</div><div class="service-content"><h4>SOC Analyst Training</h4><p>IT & OT alert triage, PCAP analysis</p></div></div>
+      <div class="service-item"><div class="service-icon">🎓</div><div class="service-content"><h4>Executive Awareness</h4><p>Board-level cyber risk sessions</p></div></div>
+      <div class="service-item"><div class="service-icon">🚑</div><div class="service-content"><h4>Incident Response Training</h4><p>Tabletop & live-fire exercises</p></div></div>
+      <div class="service-item"><div class="service-icon">🛠️</div><div class="service-content"><h4>Tool-Specific Training</h4><p>SIEM, NDR, EDR, firewall platforms</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SECTION 7 ================= -->
+<section class="service-section">
+  <div class="section-header">
+    <h2>Continuous Compliance & Governance</h2>
+    <p>
+      Continuous compliance and governance services help organizations sustain
+      security and regulatory alignment over time, not just during audits. We support
+      ongoing policy management, risk tracking, control validation, and audit
+      readiness to ensure compliance frameworks remain effective as environments
+      evolve. This approach enables organizations to demonstrate accountability,
+      maintain regulatory confidence, and embed governance into day-to-day operations.
+    </p>
+  </div>
+
+  <div class="service-card">
+    <div class="service-grid">
+      <div class="service-item"><div class="service-icon">♻️</div><div class="service-content"><h4>Continuous Compliance</h4><p>Ongoing ISO / IEC controls validation</p></div></div>
+      <div class="service-item"><div class="service-icon">📂</div><div class="service-content"><h4>Audit Support</h4><p>Evidence collection, audit remediation</p></div></div>
+      <div class="service-item"><div class="service-icon">📝</div><div class="service-content"><h4>Policy Maintenance</h4><p>Living policy updates</p></div></div>
+      <div class="service-item"><div class="service-icon">📌</div><div class="service-content"><h4>Risk Register Management</h4><p>Continuous risk tracking</p></div></div>
+      <div class="service-item"><div class="service-icon">📊</div><div class="service-content"><h4>Regulatory Reporting</h4><p>Compliance reporting & dashboards</p></div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+
+<!-- Footer Section Starts -->
+<footer class="text-center text-muted py-4">
+  <div class="footer">
+    <div class="footer-container">
+
+      <!-- Company Logo & Name -->
+      <div class="footer-brand">
+        <h3 class="pt-2" data-aos="fade-up">
+          AI Aman  
+        </h3>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="link-group d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
+        <a href="index.html" class="mx-2"><i class="bi bi-house-door"></i> Home</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="DeliveryModel.html" class="mx-2"><i class="bi bi-info-circle"></i> Delivery Model</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="EcoSystem.html" class="mx-2"><i class="bi bi-briefcase"></i> Our Security Ecosystem</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="capabilities.html" class="mx-2"><i class="bi bi-people"></i> Capabilities</a>
+        <span class="mx-2 text-white">|</span>
+        <a href="contact.html" class="mx-2"><i class="bi bi-envelope"></i> Contact Us</a>
+      </div>
+
+
+        <hr class="footer-divider" />
+        <p class="copyright">
+          &copy; 2025 AI Aman | All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social Buttons Script -->
+  <script>
+    function visitInstagram() {
+      window.open("https://www.instagram.com/", "_blank");
+    }
+    function sendEmail() {
+      window.location.href = "";
+    }
+    function visitTwitter() {
+      window.open("https://twitter.com/", "_blank");
+    }
+    function visitLinkedIn() {
+      window.open("https://www.linkedin.com/", "_blank");
+    }
+  </script>
+</footer>
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+      const mobileToggle = document.getElementById("mobileMenuToggle");
+      if (mobileToggle) {
+        mobileToggle.addEventListener("click", function () {
+          let navMenu = document.getElementById("navbarNav");
+          if (navMenu.classList.contains("show")) {
+            navMenu.classList.remove("show");
+          } else {
+            navMenu.classList.add("show");
+          }
+        });
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let progressBars = document.querySelectorAll(".progress-bar");
+
+        function animateProgressBars() {
+          progressBars.forEach(bar => {
+            let width = bar.getAttribute("data-width");
+            bar.style.width = width;
+          });
+        }
+
+        let expertiseSection = document.querySelector(".vconnect-expertise");
+        if (expertiseSection) {
+          let observer = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+              animateProgressBars();
+            }
+          }, { threshold: 0.5 });
+
+          observer.observe(expertiseSection);
+        }
+      });
+    </script>
+
+    <!-- AOS Library Script Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- Bootstrap JS (Include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+    <!-- Custom JS File Linking -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
