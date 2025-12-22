@@ -213,3 +213,12 @@ function erase() {
 document.addEventListener('DOMContentLoaded', () => {
   if (typedText && phrases.length) setTimeout(type, 800);
 });
+
+
+  const hamburger = document.querySelector(".hamburger");
+  const navBox = document.querySelector(".nav-box");
+
+  hamburger.addEventListener("click", () => {
+    navBox.classList.toggle("open");
+  });
+
