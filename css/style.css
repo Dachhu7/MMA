@@ -647,7 +647,7 @@ footer p {
       rgba(255, 255, 255, 0.75) 72%,
       rgba(255, 255, 255, 0.55) 100%
     ),
-    url("./images/About_Hero@2x-scaled.jpg");
+    url("../images/About_Hero@2x-scaled.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right center;
@@ -839,7 +839,7 @@ footer p {
       rgba(255, 255, 255, 0.55) 75%,
       #ffffff 100%
     ),
-    url("./images/December-2023-Cybercrime-Update-Extortion-Trends-Identity-Focused-Attacks-Counter-Operations-1.jpg"); /* 🔁 UPDATE IMAGE PATH */
+    url("../images/December-2023-Cybercrime-Update-Extortion-Trends-Identity-Focused-Attacks-Counter-Operations-1.jpg"); /* 🔁 UPDATE IMAGE PATH */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1091,7 +1091,7 @@ footer p {
       rgba(255,255,255,0.35) 75%,
       #ffffff 100%
     ),
-    url("./images/Services_And_Support_Hero.jpg");
+    url("../images/Services_And_Support_Hero.jpg");
   background-size: cover;
   background-position: center;
   pointer-events: none;
@@ -1559,13 +1559,13 @@ footer p {
 
 
 /* BACKGROUNDS */
-.platform-card:nth-child(1) { background-image: url("./images/pexels-cottonbro-4034007.jpg"); }
-.platform-card:nth-child(2) { background-image: url("./images/pexels-freestockpro-7444597.jpg"); }
-.platform-card:nth-child(3) { background-image: url("./images/pexels-griffinw-5309159.jpg"); }
-.platform-card:nth-child(4) { background-image: url("./images/pexels-mortywalker-31633844.jpg"); }
-.platform-card:nth-child(5) { background-image: url("./images/pexels-zkankeklik-15108227.jpg"); }
-.platform-card:nth-child(6) { background-image: url("./images/pexels-mati-5952738.jpg"); }
-.platform-card:nth-child(7) { background-image: url("./images/pexels-anete-lusina-5240541.jpg"); }
+.platform-card:nth-child(1) { background-image: url("../images/pexels-cottonbro-4034007.jpg"); }
+.platform-card:nth-child(2) { background-image: url("../images/pexels-freestockpro-7444597.jpg"); }
+.platform-card:nth-child(3) { background-image: url("../images/pexels-griffinw-5309159.jpg"); }
+.platform-card:nth-child(4) { background-image: url("../images/pexels-mortywalker-31633844.jpg"); }
+.platform-card:nth-child(5) { background-image: url("../images/pexels-zkankeklik-15108227.jpg"); }
+.platform-card:nth-child(6) { background-image: url("../images/pexels-mati-5952738.jpg"); }
+.platform-card:nth-child(7) { background-image: url("../images/pexels-anete-lusina-5240541.jpg"); }
 
 
 /* Contact */
