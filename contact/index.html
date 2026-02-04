@@ -44,303 +44,509 @@
   </head>
 
   <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
-<!-- Clean Modern Navbar -->
+<!-- ======= TOP NAVBAR ======= -->
 <nav class="topbar">
   <div class="topbar-container">
 
+    <!-- Logo -->
     <a href="/" class="topbar-logo">
-      <img src="/images/logo.png" alt="AL Aman Logo" />
+      <img src="/images/logo.png" alt="Company Logo">
     </a>
 
-    <!-- Hamburger (Mobile Only) -->
-    <button class="hamburger" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <!-- Nav -->
+    <ul class="nav-links">
 
-    <div class="nav-box">
-      <ul class="topbar-links">
-        <li class="nav-item">
-          <a class="nav-link" href="/">
-            <i class="bi bi-house-door-fill"></i>
-            <span>Home</span>
-          </a>
-        </li>
+      <!-- PLATFORM -->
+      <li class="nav-item has-dropdown">
+        <a href="/platform/index.html"><span>Platform</span></a>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/delivery-model/">
-            <i class="bi bi-person-lines-fill"></i>
-            <span>Delivery Model</span>
-          </a>
-        </li>
+        <div class="mega-menu">
+          <div class="mega-inner">
 
-        <li class="nav-item">
-          <a class="nav-link" href="/security-ecosystem/">
-            <i class="bi bi-tools"></i>
-            <span>Our Security Ecosystem</span>
-          </a>
-        </li>
+            <div class="menu-col">
+              <h4>Security Platform</h4>
+              <a class="menu-item" href="#"><span>Endpoint Security</span><small>Devices, servers & workstations</small></a>
+              <a class="menu-item" href="#"><span>Cloud Security</span><small>AWS, Azure & Kubernetes</small></a>
+              <a class="menu-item" href="#"><span>Identity Protection</span><small>Zero-trust access control</small></a>
+              <a class="menu-item" href="#"><span>Email Security</span><small>Phishing & ransomware defense</small></a>
+            </div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/capabilities/">
-            <i class="bi bi-briefcase-fill"></i>
-            <span>Capabilities</span>
-          </a>
-        </li>
+            <div class="menu-col">
+              <h4>Capabilities</h4>
+              <a class="menu-item" href="#"><span>AI Threat Detection</span><small>Behavior-based analysis</small></a>
+              <a class="menu-item" href="#"><span>Autonomous Response</span><small>Instant containment</small></a>
+              <a class="menu-item" href="#"><span>Threat Intelligence</span><small>Global attack telemetry</small></a>
+              <a class="menu-item" href="#"><span>Risk Scoring</span><small>Prioritized alerts</small></a>
+            </div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/contact/">
-            <i class="bi bi-envelope-paper-fill"></i>
-            <span>Contact Us</span>
-          </a>
-        </li>
-      </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- WHY US -->
+      <li class="nav-item has-dropdown">
+        <a href="/why-us/index.html"><span>Why Us</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+
+            <div class="menu-col">
+              <h4>Proof & Results</h4>
+              <a class="menu-item" href="#"><span>Customer Success</span><small>Real business impact</small></a>
+              <a class="menu-item" href="#"><span>Case Studies</span><small>Measured outcomes</small></a>
+              <a class="menu-item" href="#"><span>Analyst Reports</span><small>Industry validation</small></a>
+            </div>
+
+            <div class="menu-col">
+              <h4>Trust & Compliance</h4>
+              <a class="menu-item" href="#"><span>Compliance</span><small>ISO, SOC2, GDPR</small></a>
+              <a class="menu-item" href="#"><span>Certifications</span><small>Security benchmarks</small></a>
+              <a class="menu-item" href="#"><span>Leadership</span><small>Cybersecurity veterans</small></a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- SERVICES -->
+      <li class="nav-item has-dropdown">
+        <a href="/services/index.html"><span>Services</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+
+            <div class="menu-col">
+              <h4>Managed Security</h4>
+              <a class="menu-item" href="#"><span>MDR</span><small>24×7 monitoring</small></a>
+              <a class="menu-item" href="#"><span>Threat Hunting</span><small>Proactive detection</small></a>
+              <a class="menu-item" href="#"><span>Incident Response</span><small>Rapid containment</small></a>
+            </div>
+
+            <div class="menu-col">
+              <h4>Advisory</h4>
+              <a class="menu-item" href="#"><span>Deployment</span><small>Secure rollout</small></a>
+              <a class="menu-item" href="#"><span>Security Consulting</span><small>Expert guidance</small></a>
+              <a class="menu-item" href="#"><span>Training</span><small>Team readiness</small></a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- RESOURCES -->
+      <li class="nav-item has-dropdown">
+        <a href="/resources/index.html"><span>Resources</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+
+            <div class="menu-col">
+              <h4>Knowledge</h4>
+              <a class="menu-item" href="#"><span>Blogs</span><small>Insights & trends</small></a>
+              <a class="menu-item" href="#"><span>Reports</span><small>Threat research</small></a>
+              <a class="menu-item" href="#"><span>Webinars</span><small>Live & on-demand</small></a>
+            </div>
+
+            <div class="menu-col">
+              <h4>Learning</h4>
+              <a class="menu-item" href="#"><span>Cybersecurity 101</span><small>Foundations</small></a>
+              <a class="menu-item" href="#"><span>Research Labs</span><small>Advanced studies</small></a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- COMPANY -->
+      <li class="nav-item has-dropdown">
+        <a href="/company/index.html"><span>Company</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+
+            <div class="menu-col">
+              <h4>About</h4>
+              <a class="menu-item" href="#"><span>About Us</span><small>Mission & vision</small></a>
+              <a class="menu-item" href="#"><span>Leadership</span><small>Our people</small></a>
+              <a class="menu-item" href="#"><span>Careers</span><small>Join our team</small></a>
+            </div>
+
+            <div class="menu-col">
+              <h4>Connect</h4>
+              <a class="menu-item" href="#"><span>Contact</span><small>Sales & support</small></a>
+              <a class="menu-item" href="#"><span>Support</span><small>Help center</small></a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- CTA -->
+    <div class="nav-actions">
+      <a href="/get-started" class="btn primary">Get Started</a>
+      <a href="/contact" class="btn outline">Contact Us</a>
     </div>
-
-    <a href="/contact/" class="topbar-cta">Let's Connect</a>
 
   </div>
 </nav>
 
 
 <style>
-  /* ======================================================
-   CONTACT US – GOLD ENTERPRISE THEME
-====================================================== */
-
-.alaman-contact {
-  padding: 50px 24px;
-  background: linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #fff7e6 100%
-  );
-  font-family: "Inter", system-ui, sans-serif;
+  
+:root{
+  --primary:#6f5cff;
+  --bg-dark:#05060f;
+  --border:#2a2d55;
+  --text-muted:#b8bbd9;
 }
 
-/* WRAPPER */
-.alaman-contact-wrap {
-  max-width: 980px;
-  margin: 0 auto;
+.contact-section{
+  padding:90px 6%;
+  background:linear-gradient(180deg,#10132d,#333545);
+  color:#fff;
+  font-family:Inter,system-ui,sans-serif;
 }
 
 /* HEADER */
-.alaman-contact-header {
-  text-align: center;
-  margin-bottom: 70px;
+.contact-header h1{
+  font-size:52px;
+  font-weight:600;
+  margin-bottom:14px;
 }
 
-.contact-kicker {
-  display: inline-block;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #9c7a1c;
-  background: rgba(201,162,63,0.15);
-  border-radius: 999px;
-  margin-bottom: 14px;
+.contact-header p{
+  max-width:720px;
+  font-size:18px;
+  color:var(--text-muted);
 }
 
-.alaman-contact-header h1 {
-  font-size: clamp(34px, 4.5vw, 46px);
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 14px;
+/* TABS */
+.contact-tabs{
+  display:flex;
+  gap:16px;
+  margin:40px 0;
+  flex-wrap:wrap;
 }
 
-.alaman-contact-header p {
-  font-size: 17px;
-  line-height: 1.75;
-  color: #4a4a4a;
-  max-width: 620px;
-  margin: 0 auto;
+.tab-btn{
+  padding:14px 26px;
+  border-radius:40px;
+  border:1px solid var(--border);
+  background:#1a1d3a;
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  transition:.3s;
 }
 
-/* FORM CARD */
-.alaman-contact-card {
-  max-width: 620px;
-  margin: 0 auto;
-  padding: 42px 40px;
-  background: #ffffff;
-  border-radius: 22px;
-  box-shadow:
-    0 30px 90px rgba(201,162,63,0.22);
-  border: 1px solid rgba(201,162,63,0.22);
+.tab-btn.active{
+  background:var(--primary);
+  border-color:var(--primary);
+  box-shadow:0 0 0 4px rgba(111,92,255,.25);
 }
 
-/* FORM GROUP */
-.form-group {
-  margin-bottom: 26px;
+.tab-btn:hover{
+  background:var(--primary);
 }
 
-.form-group label {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #1a1a1a;
+/* GRID */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 14px 16px;
-  font-size: 15px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  background: #fafafa;
-  outline: none;
-  transition: all 0.25s ease;
+/* FORM */
+.form-card{
+  background:#fff;
+  color:#000;
+  border-radius:14px;
+  padding:40px;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #c9a23f;
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(201,162,63,0.18);
+.form-card small{
+  color:#666;
+  font-size:14px;
 }
 
-/* SUBMIT BUTTON */
-.contact-submit {
-  width: 100%;
-  padding: 16px;
-  font-size: 15.5px;
-  font-weight: 700;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  color: #1a1a1a;
+.form-card h2{
+  font-size:30px;
+  margin:6px 0 26px;
+}
 
-  background: linear-gradient(
-    135deg,
-    #c9a23f,
-    #ffd777
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group.full{
+  grid-column:1 / -1;
+}
+
+label{
+  font-size:13px;
+  margin-bottom:6px;
+}
+
+input,select{
+  padding:14px 12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+input:focus,select:focus{
+  outline:none;
+  border-color:var(--primary);
+}
+
+.submit-btn{
+  margin-top:26px;
+  background:var(--primary);
+  border:none;
+  color:#fff;
+  width:100%;
+  padding:16px;
+  font-size:16px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.form-note{
+  margin-top:14px;
+  font-size:12px;
+  color:#666;
+  line-height:1.5;
+}
+
+/* SIDE CARDS */
+.contact-side{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  margin-top: 100px;
+}
+
+.side-card{
+  position:relative;
+  border-radius:16px;
+  padding:36px;
+  background-size:cover;
+  background-position:center;
+  overflow:hidden;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.side-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(5,6,15,.55),
+    rgba(5,6,15,.85)
   );
-
-  box-shadow: 0 20px 60px rgba(201,162,63,0.55);
-  transition: all 0.3s ease;
+  z-index:0;
 }
 
-.contact-submit:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 30px 90px rgba(201,162,63,0.8);
+/* CARD CONTENT ABOVE OVERLAY */
+.side-card *{
+  position:relative;
+  z-index:1;
 }
 
-/* STATUS MESSAGE */
-.form-status {
-  margin-top: 16px;
-  font-size: 14px;
-  text-align: center;
-  color: #2f7d32;
+/* INDIVIDUAL CARD BACKGROUNDS */
+.side-card.demo{
+  background-image:url("/images/MITRE_24_Hero-Image-scaled.jpg");
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .alaman-contact {
-    padding: 90px 18px;
+.side-card.tour{
+  background-image:url("/images/HeaderImg_Contact.jpg");
+}
+
+.side-card h3{
+  font-size:26px;
+  margin-bottom:14px;
+}
+
+.side-card p{
+  font-size:15px;
+  color:#e5e7ff;
+  line-height:1.6;
+}
+
+.side-btn{
+  display:inline-flex;
+  margin-top:20px;
+  padding:14px 24px;
+  background:var(--primary);
+  border-radius:40px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .contact-grid{
+    grid-template-columns:1fr;
   }
-
-  .alaman-contact-card {
-    padding: 34px 26px;
-  }
 }
-
 </style>
 
-<!-- =========================
-     CONTACT US – ENTERPRISE
-========================= -->
+<section class="contact-section">
 
-<section class="alaman-contact">
+  <!-- HEADER -->
+  <div class="contact-header">
+    <h1>Contact Us</h1>
+    <p>
+      Our teams are ready to assist. Select the team you want to contact below
+      and let us know how MMA InfoSec can help.
+    </p>
+  </div>
 
-  <div class="alaman-contact-wrap">
+  <!-- TABS -->
+  <div class="contact-tabs">
+    <button class="tab-btn active">Contact Sales</button>
+    <button class="tab-btn">Current Customers</button>
+    <button class="tab-btn">Partners</button>
+    <button class="tab-btn">Press / Analyst</button>
+  </div>
 
-    <!-- HEADER -->
-    <header class="alaman-contact-header">
-      <span class="contact-kicker">CONTACT</span>
-      <h1>Get in Touch</h1>
-      <p>
-        Reach out to discuss your requirements. Our team will respond shortly.
-      </p>
-    </header>
+  <!-- CONTENT GRID -->
+  <div class="contact-grid">
 
     <!-- FORM CARD -->
-    <div class="alaman-contact-card">
+    <div class="form-card">
+      <small>Let's get you connected</small>
+      <h2>Contact Sales</h2>
 
-      <form id="contact-form">
+      <form>
+        <div class="form-grid">
 
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="user_name" required />
+          <div class="form-group">
+            <label>First Name*</label>
+            <input type="text" placeholder="Enter your first name">
+          </div>
+
+          <div class="form-group">
+            <label>Last Name*</label>
+            <input type="text" placeholder="Enter your last name">
+          </div>
+
+          <div class="form-group">
+            <label>Business Email*</label>
+            <input type="email" placeholder="Enter your email">
+          </div>
+
+          <div class="form-group">
+            <label>Phone*</label>
+            <input type="text" placeholder="Enter your phone number">
+          </div>
+
+          <div class="form-group">
+            <label>Company*</label>
+            <input type="text" placeholder="Where do you work?">
+          </div>
+
+          <div class="form-group">
+            <label>Job Title*</label>
+            <input type="text" placeholder="What's your title?">
+          </div>
+
+          <div class="form-group">
+            <label>Country*</label>
+            <select>
+              <option>Select...</option>
+              <option>India</option>
+              <option>USA</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Company Size*</label>
+            <select>
+              <option>Number of Employees</option>
+              <option>1–50</option>
+              <option>51–200</option>
+              <option>201–1000</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label>How can we assist you?*</label>
+            <select>
+              <option>Select...</option>
+              <option>Request Demo</option>
+              <option>Pricing</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+
         </div>
 
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="user_email" required />
-        </div>
+        <button type="submit" class="submit-btn">Submit</button>
 
-        <div class="form-group">
-          <label for="company">Company (Optional)</label>
-          <input type="text" id="company" name="user_company" />
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-
-        <button type="submit" class="contact-submit">
-          Send Message
-        </button>
-
-        <p class="form-status" id="form-status"></p>
-
+        <p class="form-note">
+          By clicking Submit, I agree to the use of my personal data in accordance
+          with MMA InfoSec Privacy Policy. Protected by reCAPTCHA.
+        </p>
       </form>
+    </div>
+
+    <!-- RIGHT SIDE CARDS -->
+    <div class="contact-side">
+
+      <div class="side-card demo">
+        <h3>Get a Free Demo</h3>
+        <p>
+          Schedule a personalized tour of the MMA InfoSec security platform
+          with one of our experts.
+        </p>
+        <a href="#" class="side-btn">Get Started →</a>
+      </div>
+
+      <div class="side-card tour">
+        <h3>Tour MMA InfoSec</h3>
+        <p>
+          Explore our products and click around to see the platform in action.
+        </p>
+        <a href="#" class="side-btn">Take a Tour →</a>
+      </div>
 
     </div>
 
   </div>
-
 </section>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<link rel="stylesheet" href="contact.css">
+<script src="contact.js"></script>
 
 <script>
-  (function(){
-    emailjs.init("VWcZ68crTcpayHm2P");
-  })();
+document.addEventListener('DOMContentLoaded', function () {
 
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+  const tabs = document.querySelectorAll('.tab-btn');
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    status.textContent = "Sending message...";
-
-    emailjs.send(
-      "service_1fu7uq9", 
-      "template_t4ywtpe", 
-      {
-        user_name: form.user_name.value,
-        user_email: form.user_email.value,
-        user_company: form.user_company.value,
-        message: form.message.value
-      }
-    ).then(
-      function() {
-        status.textContent = "Message sent successfully. Our team will contact you shortly.";
-        form.reset();
-      },
-      function(error) {
-        status.textContent = "Failed to send message. Please try again.";
-      }
-    );
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        t.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
   });
+
+});
 </script>
 
 
@@ -354,60 +560,100 @@
       <i class="bi bi-arrow-up"></i>
     </button>
 
-<!-- Footer Section Starts -->
-<footer class="text-center text-muted py-4">
-  <div class="footer">
-    <div class="footer-container">
+    <footer class="site-footer">
+  <div class="footer-container">
 
-      <!-- Company Logo & Tagline -->
-      <div class="footer-brand">
-        <img src="/images/logo.png" alt="AL Aman Enterprise IT Logo" class="footer-logo" />
+    <!-- BRAND -->
+    <div class="footer-brand">
 
-        <p class="footer-tagline">
-          Secure. Resilient. Scalable.
-        </p>
+      <div class="footer-brand-header">
+        <img 
+          src="/images/logo.png" 
+          alt="MMA InfoSec Logo" 
+          class="footer-logo"
+        />
+        <h3>MMA InfoSec</h3>
       </div>
 
-      <!-- Navigation Links -->
-      <div class="link-group d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
-        <a href="/" class="mx-2">
-          <i class="bi bi-house-door-fill"></i> Home
-        </a>
-
-        <span class="mx-2 text-white">|</span>
-
-        <a href="/delivery-model/" class="mx-2">
-          <i class="bi bi-person-lines-fill"></i> Delivery Model
-        </a>
-
-        <span class="mx-2 text-white">|</span>
-
-        <a href="/security-ecosystem/" class="mx-2">
-          <i class="bi bi-tools"></i> Our Security Ecosystem
-        </a>
-
-        <span class="mx-2 text-white">|</span>
-
-        <a href="/capabilities/" class="mx-2">
-          <i class="bi bi-briefcase-fill"></i> Capabilities
-        </a>
-
-        <span class="mx-2 text-white">|</span>
-
-        <a href="/contact/" class="mx-2">
-          <i class="bi bi-envelope-paper-fill"></i> Contact Us
-        </a>
-      </div>
-
-      <hr class="footer-divider" />
-
-      <p class="copyright">
-        &copy; 2025 AL Aman | All Rights Reserved.
+      <p class="footer-tagline">
+        Transforming organizations from <strong>Reactive</strong> to
+        <strong>Resilient</strong> through threat-driven cybersecurity,
+        detection engineering, and real-world readiness.
       </p>
 
+      <div class="footer-brand-line"></div>
+    </div>
+
+    <!-- PLATFORM -->
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#">Security Platform</a></li>
+        <li><a href="#">Endpoint & XDR</a></li>
+        <li><a href="#">Cloud Workload Security</a></li>
+        <li><a href="#">Identity & Email Defense</a></li>
+        <li><a href="#">AI Threat Intelligence</a></li>
+        <li><a href="#">Zero Trust Architecture</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Managed Detection & Response</a></li>
+        <li><a href="#">Threat Hunting</a></li>
+        <li><a href="#">Incident Response</a></li>
+        <li><a href="#">Red & Purple Teaming</a></li>
+        <li><a href="#">Cyber Readiness Programs</a></li>
+        <li><a href="#">Compliance & Governance</a></li>
+      </ul>
+    </div>
+
+    <!-- SOLUTIONS -->
+    <div class="footer-col">
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="#">Attack Surface Visibility</a></li>
+        <li><a href="#">Breach Simulation</a></li>
+        <li><a href="#">Detection Engineering</a></li>
+        <li><a href="#">Data Privacy & Resilience</a></li>
+        <li><a href="#">Threat Intelligence</a></li>
+        <li><a href="#">Identity Security</a></li>
+      </ul>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About MMA InfoSec</a></li>
+        <li><a href="#">Why MMA InfoSec</a></li>
+        <li><a href="#">Our Clients</a></li>
+        <li><a href="#">Blog & Research</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 MMA InfoSec. All Rights Reserved.</p>
+
+    <div class="footer-links">
+      <a href="#">Privacy Notice</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Security</a>
     </div>
   </div>
 </footer>
+
+
+
+
+
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>
       const mobileToggle = document.getElementById("mobileMenuToggle");
