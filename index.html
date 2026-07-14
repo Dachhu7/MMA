@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMA InfoSec — AI-Driven Cybersecurity & Enterprise Resilience</title>
+    <meta name="description" content="MMA InfoSec transforms organizations from reactive defense to operational resilience with AI-driven cybersecurity, unified threat detection, and enterprise-grade security solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MMA InfoSec — AI-Driven Cybersecurity & Enterprise Resilience">
+    <meta property="og:description" content="MMA InfoSec transforms organizations from reactive defense to operational resilience with AI-driven cybersecurity, unified threat detection, and enterprise-grade security solutions.">
+    <meta property="og:url" content="https://alaman.me/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Bootstrap CSS CDN Link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Font Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icon CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS Library for Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- jQuery CDN Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  </head>
+
+  <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
+<!-- ======= TOP NAVBAR ======= -->
+<nav class="topbar" role="navigation" aria-label="Main navigation">
+  <div class="topbar-container">
+
+    <!-- Logo -->
+    <a href="/" class="topbar-logo">
+      <img src="images/logo.png" alt="Company Logo">
+    </a>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="mobileMenuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Nav -->
+    <ul class="nav-links">
+
+      <!-- PLATFORM -->
+      <li class="nav-item has-dropdown">
+        <a href="platform/"><span>Platform</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <div class="mega-content">
+
+              <div class="menu-col">
+                <h4>Security Platform</h4>
+
+                <a class="menu-item" href="platform/">
+                  <span>Endpoint Security</span>
+                  <small>Devices, servers & workstations</small>
+                  <small>Advanced endpoint detection and response (EDR)</small>
+                </a>
+
+                <a class="menu-item" href="platform/">
+                  <span>Cloud Security</span>
+                  <small>AWS, Azure & Kubernetes</small>
+                  <small>Cloud workload protection & posture management</small>
+                </a>
+
+                <a class="menu-item" href="platform/">
+                  <span>Identity Protection</span>
+                  <small>Zero-trust access control</small>
+                  <small>Identity governance and privileged access security</small>
+                </a>
+
+                <a class="menu-item" href="platform/">
+                  <span>Email Security</span>
+                  <small>Phishing & ransomware defense</small>
+                  <small>AI-based email threat prevention system</small>
+                </a>
+              </div>
+
+              <div class="menu-col">
+                <h4>Capabilities</h4>
+
+                <a class="menu-item" href="platform/">
+                  <span>AI Threat Detection</span>
+                  <small>Behavior-based analysis</small>
+                  <small>Machine learning anomaly detection engine</small>
+                </a>
+
+                <a class="menu-item" href="platform/">
+                  <span>Autonomous Response</span>
+                  <small>Instant containment</small>
+                  <small>Automated mitigation & attack isolation</small>
+                </a>
+
+                <a class="menu-item" href="platform/">
+                  <span>Threat Intelligence</span>
+                  <small>Global attack telemetry</small>
+                  <small>Real-time intelligence feed integration</small>
+                </a>
+
+                <a class="menu-item" href="platform/">
+                  <span>Risk Scoring</span>
+                  <small>Prioritized alerts</small>
+                  <small>AI-driven vulnerability scoring engine</small>
+                </a>
+              </div>
+
+            </div>
+
+            <div class="mega-highlight">
+              <div class="highlight-badge">Enterprise Platform</div>
+              <h3>Unified AI-Driven Protection</h3>
+              <p>
+                A consolidated cybersecurity platform combining endpoint,
+                cloud, identity and AI-based detection into one intelligent defense layer.
+              </p>
+              <a href="platform/" class="highlight-btn">Explore Platform →</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- WHY US -->
+      <li class="nav-item has-dropdown">
+        <a href="why-us/"><span>Why Us</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <div class="mega-content">
+
+              <div class="menu-col">
+                <h4>Proof & Results</h4>
+
+                <a class="menu-item" href="why-us/">
+                  <span>Customer Success</span>
+                  <small>Real business impact</small>
+                  <small>Enterprise deployment success stories</small>
+                </a>
+
+                <a class="menu-item" href="why-us/">
+                  <span>Case Studies</span>
+                  <small>Measured outcomes</small>
+                  <small>Proven ROI and security performance metrics</small>
+                </a>
+
+                <a class="menu-item" href="why-us/">
+                  <span>Analyst Reports</span>
+                  <small>Industry validation</small>
+                  <small>Recognized by global security analysts</small>
+                </a>
+              </div>
+
+              <div class="menu-col">
+                <h4>Trust & Compliance</h4>
+
+                <a class="menu-item" href="why-us/">
+                  <span>Compliance</span>
+                  <small>ISO, SOC2, GDPR</small>
+                  <small>Regulatory and governance alignment</small>
+                </a>
+
+                <a class="menu-item" href="why-us/">
+                  <span>Certifications</span>
+                  <small>Security benchmarks</small>
+                  <small>Certified enterprise-grade protection</small>
+                </a>
+
+                <a class="menu-item" href="why-us/">
+                  <span>Leadership</span>
+                  <small>Cybersecurity veterans</small>
+                  <small>Experienced global security leadership team</small>
+                </a>
+              </div>
+
+            </div>
+
+            <div class="mega-highlight">
+              <div class="highlight-badge">Trusted Security</div>
+              <h3>Enterprise-Grade Trust</h3>
+              <p>
+                Recognized industry validation, measurable results,
+                and compliance-ready cybersecurity architecture.
+              </p>
+              <a href="why-us/" class="highlight-btn">Discover Why →</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- SERVICES -->
+      <li class="nav-item has-dropdown">
+        <a href="services/"><span>Services</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <div class="mega-content">
+
+              <div class="menu-col">
+                <h4>Managed Security</h4>
+
+                <a class="menu-item" href="services/">
+                  <span>MDR</span>
+                  <small>24×7 monitoring</small>
+                  <small>Managed detection & response operations</small>
+                </a>
+
+                <a class="menu-item" href="services/">
+                  <span>Threat Hunting</span>
+                  <small>Proactive detection</small>
+                  <small>Advanced adversary behavior analysis</small>
+                </a>
+
+                <a class="menu-item" href="services/">
+                  <span>Incident Response</span>
+                  <small>Rapid containment</small>
+                  <small>Immediate response & digital forensics</small>
+                </a>
+              </div>
+
+              <div class="menu-col">
+                <h4>Advisory</h4>
+
+                <a class="menu-item" href="services/">
+                  <span>Deployment</span>
+                  <small>Secure rollout</small>
+                  <small>Enterprise-grade platform integration</small>
+                </a>
+
+                <a class="menu-item" href="services/">
+                  <span>Security Consulting</span>
+                  <small>Expert guidance</small>
+                  <small>Strategic cybersecurity transformation</small>
+                </a>
+
+                <a class="menu-item" href="services/">
+                  <span>Training</span>
+                  <small>Team readiness</small>
+                  <small>Hands-on security awareness programs</small>
+                </a>
+              </div>
+
+            </div>
+
+            <div class="mega-highlight">
+              <div class="highlight-badge">Expert Services</div>
+              <h3>24×7 Security Operations</h3>
+              <p>
+                Continuous monitoring, proactive threat hunting,
+                and rapid incident containment by experts.
+              </p>
+              <a href="services/" class="highlight-btn">View Services →</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- RESOURCES -->
+      <li class="nav-item has-dropdown">
+        <a href="resources/"><span>Resources</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <div class="mega-content">
+
+              <div class="menu-col">
+                <h4>Knowledge</h4>
+
+                <a class="menu-item" href="resources/">
+                  <span>Blogs</span>
+                  <small>Insights & trends</small>
+                  <small>Latest cybersecurity thought leadership</small>
+                </a>
+
+                <a class="menu-item" href="resources/">
+                  <span>Reports</span>
+                  <small>Threat research</small>
+                  <small>In-depth global threat intelligence reports</small>
+                </a>
+
+                <a class="menu-item" href="resources/">
+                  <span>Webinars</span>
+                  <small>Live & on-demand</small>
+                  <small>Expert-led cybersecurity sessions</small>
+                </a>
+              </div>
+
+              <div class="menu-col">
+                <h4>Learning</h4>
+
+                <a class="menu-item" href="resources/">
+                  <span>Cybersecurity 101</span>
+                  <small>Foundations</small>
+                  <small>Essential security fundamentals</small>
+                </a>
+
+                <a class="menu-item" href="resources/">
+                  <span>Research Labs</span>
+                  <small>Advanced studies</small>
+                  <small>Innovation-driven security experimentation</small>
+                </a>
+              </div>
+
+            </div>
+
+            <div class="mega-highlight">
+              <div class="highlight-badge">Stay Informed</div>
+              <h3>Latest Cyber Insights</h3>
+              <p>
+                Access expert blogs, reports and research
+                to stay ahead of evolving cyber threats.
+              </p>
+              <a href="resources/" class="highlight-btn">Explore Resources →</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+      <!-- COMPANY -->
+      <li class="nav-item has-dropdown">
+        <a href="company/"><span>Company</span></a>
+
+        <div class="mega-menu">
+          <div class="mega-inner">
+            <div class="mega-content">
+
+              <div class="menu-col">
+                <h4>About</h4>
+
+                <a class="menu-item" href="company/">
+                  <span>About Us</span>
+                  <small>Mission & vision</small>
+                  <small>Our cybersecurity journey & purpose</small>
+                </a>
+
+                <a class="menu-item" href="company/">
+                  <span>Leadership</span>
+                  <small>Our people</small>
+                  <small>Executive & security leadership team</small>
+                </a>
+
+                <a class="menu-item" href="company/">
+                  <span>Careers</span>
+                  <small>Join our team</small>
+                  <small>Explore opportunities in cyber innovation</small>
+                </a>
+              </div>
+
+              <div class="menu-col">
+                <h4>Connect</h4>
+
+                <a class="menu-item" href="company/">
+                  <span>Contact</span>
+                  <small>Sales & support</small>
+                  <small>Connect with our security experts</small>
+                </a>
+
+                <a class="menu-item" href="company/">
+                  <span>Support</span>
+                  <small>Help center</small>
+                  <small>Technical assistance & documentation</small>
+                </a>
+              </div>
+
+            </div>
+
+            <div class="mega-highlight">
+              <div class="highlight-badge">Our Company</div>
+              <h3>Driven by Cyber Excellence</h3>
+              <p>
+                Built by cybersecurity veterans committed
+                to protecting digital ecosystems worldwide.
+              </p>
+              <a href="company/" class="highlight-btn">About Company →</a>
+            </div>
+
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- CTA -->
+    <div class="nav-actions">
+      <a href="contact/" class="btn primary">Get Started</a>
+      <a href="contact/" class="btn outline">Contact Us</a>
+    </div>
+
+  </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<div class="navbar-nav-mobile" id="navbarNav">
+  <button type="button" class="nav-close">&times;</button>
+  <a href="platform/">Platform</a>
+  <a href="why-us/">Why Us</a>
+  <a href="services/">Services</a>
+  <a href="resources/">Resources</a>
+  <a href="company/">Company</a>
+  <a href="contact/" class="btn primary">Get Started</a>
+  <a href="contact/" class="btn outline">Contact Us</a>
+</div>
+
+<script>
+const dropdownItems = document.querySelectorAll('.has-dropdown');
+let dropdownTimer;
+
+function openDropdown(item) {
+  clearTimeout(dropdownTimer);
+  dropdownItems.forEach(i => i.classList.remove('dropdown-open'));
+  item.classList.add('dropdown-open');
+}
+
+function closeDropdown(item) {
+  dropdownTimer = setTimeout(() => {
+    item.classList.remove('dropdown-open');
+  }, 200);
+}
+
+dropdownItems.forEach(item => {
+  const link = item.querySelector('a');
+  item.addEventListener('mouseenter', () => openDropdown(item));
+  item.addEventListener('mouseleave', () => closeDropdown(item));
+  if (link) {
+    link.addEventListener('focus', () => openDropdown(item));
+    link.addEventListener('blur', (e) => {
+      if (!item.contains(e.relatedTarget)) closeDropdown(item);
+    });
+  }
+  const menuLinks = item.querySelectorAll('.mega-menu a, .mega-menu button');
+  menuLinks.forEach(ml => {
+    ml.addEventListener('blur', (e) => {
+      if (!item.contains(e.relatedTarget)) closeDropdown(item);
+    });
+  });
+});
+</script>
+
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-text">
+    <h1>
+      PROTECTION IS A GOAL
+      <span class="highlight">
+        BUT DETECTION & RESPONSE ARE THE REQUIREMENTS
+      </span>
+    </h1>
+
+    <h2 class="typed-text"></h2>
+
+    <div class="hero-cta">
+      <a href="contact/" class="cta-primary">Free Platform Demo →</a>
+      <a href="contact/" class="cta-secondary">Calm the Chaos →</a>
+    </div>
+
+    <div class="hero-video-wrapper">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="images/hero-poster.jpg"
+      >
+        <source src="images/6963744-hd_1280_720_25fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- OUR CLIENTS SECTION -->
+<section class="our-clients">
+  <div class="clients-wrap">
+
+    <header class="clients-header">
+      <span class="clients-kicker">Trusted By</span>
+      <h2>Our Clients & Technology Partners</h2>
+      <p class="clients-subtitle">
+        Industry leaders who trust MMA Infosec to strengthen cyber resilience
+      </p>
+    </header>
+
+    <div class="clients-marquee">
+      <div class="clients-track">
+
+        <div class="client-logo">
+          <img src="images/clients/black-powerdmarc-logo.webp" alt="PowerDMARC">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/Cynerio.png" alt="Cynerio">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/Drivelock.png" alt="Drivelock">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/esen.png" alt="Esen">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/Fortinet.png" alt="Fortinet">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/Gigamon.jpeg" alt="Gigamon">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/Protiviti.png" alt="Protiviti">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/securiti.png" alt="Securiti">
+        </div>
+        <div class="client-logo">
+          <img src="images/clients/Thales-Logo.png" alt="Thales">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".clients-track");
+    if (!track) return;
+
+    const logos = Array.from(track.children);
+    logos.forEach(logo => {
+      const clone = logo.cloneNode(true);
+      track.appendChild(clone);
+    });
+  });
+</script>
+
+
+<section class="about-section">
+  <div class="about-container">
+    <div class="about-header">
+      <span class="about-badge">ABOUT US</span>
+      <h2>The Way Forward</h2>
+      <p>
+        After spending over two decades in the IT industry, we decided to alter
+        our direction.
+      </p>
+    </div>
+
+    <div class="about-grid">
+      <!-- Left Content -->
+      <div class="about-content">
+        <p class="about-highlight">
+          MMA Infosec aims to excel in transforming our customers from
+          <strong>Reactive to Resilient</strong>.
+        </p>
+
+        <p class="about-bold">
+          We are no longer securing computers.<br />
+          <span>We are securing society.</span>
+        </p>
+      </div>
+
+      <!-- Right Cards -->
+      <div class="about-cards">
+        <div class="about-card">
+          <h3>Our Approach</h3>
+          <p>
+            Through periodic attack surface analysis, we assess the total number
+            of exploitable vulnerabilities across systems, networks, and other
+            attack targets—assisting organizations in effective remediation.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Cyber Readiness</h3>
+          <p>
+            MMA InfoSec transforms customers from a prevention-only mindset into
+            building the capability to <strong>detect, contain, and recover</strong>
+            from cyber-attacks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const cards = document.querySelectorAll('.about-card');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    observer.observe(card);
+  });
+</script>
+
+
+<!-- PLATFORM VISUAL MODELS -->
+<section class="platform-models">
+  <div class="platform-container">
+
+    <!-- HEADER -->
+    <div class="platform-header">
+      <h2>
+        Where Platforms<br />
+        Meet Protection
+      </h2>
+
+      <p>
+        Secure your cloud, endpoints, and identities with AI-powered protection,
+        24/7 threat hunting, and managed services — redefining cybersecurity
+        with the power of AI.
+      </p>
+    </div>
+
+    <!-- SLIDER WRAPPER -->
+    <div class="platform-slider-wrapper">
+
+      <!-- CARD SLIDER -->
+      <div class="platform-cards">
+
+        <!-- PLATFORM -->
+        <div class="platform-card">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Security Platform</h3>
+            <p class="card-subtitle">Unified AI-Driven Protection</p>
+            <ul class="card-list">
+              <li>Endpoint & XDR Security</li>
+              <li>Cloud Workload Protection</li>
+              <li>Identity & Email Defense</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- WHY US -->
+        <div class="platform-card">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Why MMA Infosec</h3>
+            <p class="card-subtitle">Trusted Cyber Defense Partner</p>
+            <ul class="card-list">
+              <li>Enterprise-grade expertise</li>
+              <li>Compliance-ready security</li>
+              <li>Proven breach prevention</li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <!-- SERVICES -->
+        <div class="platform-card">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Security Services</h3>
+            <p class="card-subtitle">24/7 Managed Detection</p>
+            <ul class="card-list">
+              <li>MDR & SOC Operations</li>
+              <li>Threat Hunting</li>
+              <li>Incident Response</li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <!-- RESOURCES -->
+        <div class="platform-card">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Resources & Research</h3>
+            <p class="card-subtitle">Knowledge That Defends</p>
+            <ul class="card-list">
+              <li>Threat Reports</li>
+              <li>Blogs & Whitepapers</li>
+              <li>Webinars & Labs</li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <!-- ZERO TRUST -->
+        <div class="platform-card">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Zero Trust Architecture</h3>
+            <p class="card-subtitle">Never Trust, Always Verify</p>
+            <ul class="card-list">
+              <li>Continuous Validation</li>
+              <li>Least Privilege Access</li>
+              <li>Micro-Segmentation</li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <!-- AI INTELLIGENCE -->
+        <div class="platform-card">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>AI Threat Intelligence</h3>
+            <p class="card-subtitle">Predict. Detect. Respond.</p>
+            <ul class="card-list">
+              <li>Behavioral Analytics</li>
+              <li>Automated Correlation</li>
+              <li>Global Threat Feeds</li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <!-- COMPLIANCE -->
+        <div class="platform-card">
+          <div class="card-overlay"></div>
+          <div class="card-content">
+            <h3>Compliance & Governance</h3>
+            <p class="card-subtitle">Security With Confidence</p>
+            <ul class="card-list">
+              <li>ISO, SOC2, GDPR</li>
+              <li>Risk Management</li>
+              <li>Audit Readiness</li>
+            </ul>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const slider = document.querySelector(".platform-cards");
+  const nextBtn = document.querySelector(".slider-btn.next");
+  const prevBtn = document.querySelector(".slider-btn.prev");
+
+  nextBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: 380, behavior: "smooth" });
+  });
+
+  prevBtn.addEventListener("click", () => {
+    slider.scrollBy({ left: -380, behavior: "smooth" });
+  });
+
+  document.querySelectorAll(".platform-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      card.style.backgroundPosition =
+        `${50 + (x - rect.width / 2) / 40}% ${50 + (y - rect.height / 2) / 40}%`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.backgroundPosition = "center";
+    });
+  });
+</script>
+
+
+
+<section class="solutions-hero">
+  <div class="solutions-hero-bg"></div>
+
+  <div class="solutions-hero-container">
+
+    <!-- Content Side -->
+    <div class="solutions-content">
+      <span class="solutions-badge">OUR SOLUTIONS</span>
+
+      <h2>
+        Built to Outpace<br />
+        Modern Cyber Threats
+      </h2>
+
+      <p class="solutions-intro">
+        Security today is not about reacting faster — it’s about being
+        structurally ahead. Our solutions are engineered to expose risk,
+        neutralize threats, and sustain business trust in real time.
+      </p>
+
+      <ul class="solutions-points">
+        <li>Attack Surface Visibility & Adversary Simulation</li>
+        <li>Red & Purple Teaming for Real-World Readiness</li>
+        <li>Managed Detection & Rapid Response (XDR-driven)</li>
+        <li>Data Privacy, Compliance & Breach Resilience</li>
+        <li>Threat Intelligence & Cyber Fusion Analytics</li>
+        <li>Zero-Trust Digital Workspace & Identity Security</li>
+      </ul>
+
+      <a href="services/" class="solutions-link">
+        Explore Our Solutions →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="why-infosec">
+  <div class="why-container">
+
+    <header class="why-header">
+      <span class="why-badge">WHY MMA INFOSEC</span>
+      <h2>Security That Works<br />When It Matters Most</h2>
+      <p>
+        Cybersecurity isn’t about tools — it’s about outcomes.  
+        We design security programs that perform under real attack conditions.
+      </p>
+    </header>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Threat-Driven Strategy</h3>
+        <p>
+          Our approach begins with adversary behavior, not assumptions.
+          Every control is aligned to real-world attack paths.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Operational Readiness</h3>
+        <p>
+          We validate detection and response continuously so teams
+          know exactly how they’ll perform during an incident.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <h3>Business-Aligned Security</h3>
+        <p>
+          Security decisions are mapped directly to business risk,
+          regulatory exposure, and operational continuity.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BLOG MODELS SECTION -->
+<section class="blog-models">
+  <div class="blog-models-container">
+
+    <div class="blog-models-content">
+
+      <!-- MODEL 1 -->
+      <div class="model-panel active" id="model-1">
+        <div class="model-visual model-bg-1">
+          <div class="model-overlay"></div>
+
+          <div class="model-content-grid">
+            <div class="model-card">
+              <h3>Cybersecurity News</h3>
+              <span class="date">12 January 2026</span>
+              <h2>Global Surge in Ransomware Attacks Targeting SMEs</h2>
+              <p>
+                A sharp 38% increase in ransomware attacks has been recorded globally,
+                with small and mid-sized enterprises emerging as primary victims.
+                Attackers are leveraging automation, AI-generated phishing kits,
+                and exposed cloud configurations to breach networks faster than ever.
+              </p>
+              <p>
+                Security experts emphasize continuous patching, Zero-Trust architecture,
+                multi-factor authentication, and real-time threat monitoring as critical
+                countermeasures in today’s evolving threat landscape.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MODEL 2 -->
+      <div class="model-panel" id="model-2">
+        <div class="model-visual model-bg-2">
+          <div class="model-overlay"></div>
+
+          <div class="model-content-grid">
+            <div class="model-card">
+              <h3>Enterprise Security</h3>
+              <span class="date">28 February 2026</span>
+              <h2>Browser-Based Attacks Becoming the #1 Enterprise Risk</h2>
+              <p>
+                Modern browsers have become the new enterprise perimeter.
+                Over 90% of breaches now begin with phishing campaigns,
+                malicious extensions, or compromised SaaS sessions.
+              </p>
+              <p>
+                Organizations are deploying browser isolation, AI-driven
+                anomaly detection, and endpoint response systems to defend
+                against credential theft and session hijacking attacks.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MODEL 3 -->
+      <div class="model-panel" id="model-3">
+        <div class="model-visual model-bg-3">
+          <div class="model-overlay"></div>
+
+          <div class="model-content-grid">
+            <div class="model-card">
+              <h3>Ethical Hacking</h3>
+              <span class="date">5 March 2026</span>
+              <h2>Red Team vs Blue Team: The Growing Cybersecurity Talent Gap</h2>
+              <p>
+                With the cybersecurity workforce shortage exceeding 3 million globally,
+                companies are investing in red team simulations and blue team
+                defense programs to proactively detect vulnerabilities.
+              </p>
+              <p>
+                Ethical hackers are identifying zero-day exploits before malicious actors,
+                while SOC teams are strengthening real-time detection and response capabilities.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TABS -->
+    <div class="blog-model-tabs">
+      <button class="tab active" data-target="model-1">Ransomware Surge</button>
+      <button class="tab" data-target="model-2">Browser Threats</button>
+      <button class="tab" data-target="model-3">Cyber Talent Gap</button>
+      <div class="tab-indicator"></div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const tabs = document.querySelectorAll(".tab");
+  const panels = document.querySelectorAll(".model-panel");
+  const indicator = document.querySelector(".tab-indicator");
+
+  let currentIndex = 0;
+  let autoSlideInterval;
+
+  function moveIndicator(tab) {
+    indicator.style.width = tab.offsetWidth + "px";
+    indicator.style.left = tab.offsetLeft + "px";
+  }
+
+  function activateSlide(index) {
+    tabs.forEach(t => t.classList.remove("active"));
+    panels.forEach(p => p.classList.remove("active"));
+
+    tabs[index].classList.add("active");
+    panels[index].classList.add("active");
+    moveIndicator(tabs[index]);
+    currentIndex = index;
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => {
+      activateSlide(index);
+      resetAutoSlide();
+    });
+  });
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % panels.length;
+      activateSlide(currentIndex);
+    }, 6000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  window.addEventListener("load", () => {
+    moveIndicator(document.querySelector(".tab.active"));
+    startAutoSlide();
+  });
+</script>
+
+
+
+<section class="response-readiness">
+  <div class="response-bg"></div>
+
+  <div class="response-container">
+    <div class="response-content">
+      <span class="response-badge">INCIDENT RESPONSE</span>
+
+      <h2>
+        When Attacks Happen,<br />
+        Confidence Is Everything
+      </h2>
+
+      <p class="response-text">
+        Most organizations fail not because of missing tools,
+        but because response processes are untested.
+        We ensure your teams are prepared before the first alert.
+      </p>
+
+      <ul class="response-points">
+        <li>Live breach simulation & response validation</li>
+        <li>Executive-level incident decision training</li>
+        <li>Detection tuning based on attacker behavior</li>
+        <li>Post-incident improvement & resilience planning</li>
+      </ul>
+
+      <a href="contact/" class="response-cta">
+        Prepare Your Response →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="contact-forward">
+
+  <div class="contact-grid">
+
+    <!-- LEFT CONTENT -->
+    <div class="contact-content">
+
+      <span class="contact-pill">CONTACT</span>
+
+      <h1>Let’s Talk Security</h1>
+
+      <p class="lead">
+        Our teams are ready to assist. Share your details and let us know how
+        MMA InfoSec can help strengthen your security posture.
+      </p>
+
+      <p class="statement">
+        From <span>Reactive</span> to <span>Resilient</span> —<br />
+        it starts with a conversation.
+      </p>
+
+    </div>
+
+    <!-- RIGHT FORM AREA -->
+    <div class="contact-visual">
+
+      <div class="contact-bg"></div>
+
+      <form class="contact-form">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="fname">First Name*</label>
+            <input id="fname" type="text" placeholder="Enter your first name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lname">Last Name*</label>
+            <input id="lname" type="text" placeholder="Enter your last name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Business Email*</label>
+            <input id="email" type="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone*</label>
+            <input id="phone" type="text" placeholder="Enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company*</label>
+            <input id="company" type="text" placeholder="Where do you work?" required>
+          </div>
+
+          <div class="form-group">
+            <label for="title">Job Title*</label>
+            <input id="title" type="text" placeholder="What's your title?" required>
+          </div>
+
+          <div class="form-group full">
+            <label for="help">How can we assist you?*</label>
+            <select id="help" required>
+              <option value="">Select...</option>
+              <option>Request Demo</option>
+              <option>Pricing</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Contact MMA InfoSec →
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+    <!-- Back to Top Button -->
+    <button
+      type="button"
+      class="btn btn-floating btn-lg rounded-pill"
+      id="btn-back-to-top"
+    >
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- BRAND -->
+    <div class="footer-brand">
+
+      <div class="footer-brand-header">
+        <img 
+          src="images/logo.png" 
+          alt="Company Logo" 
+          class="footer-logo"
+        />
+        <h3>MMA InfoSec</h3>
+      </div>
+
+      <p class="footer-tagline">
+        Transforming organizations from <strong>Reactive</strong> to
+        <strong>Resilient</strong> through AI-driven cybersecurity,
+        unified detection, and enterprise-grade resilience.
+      </p>
+
+      <div class="footer-brand-line"></div>
+    </div>
+
+    <!-- PLATFORM -->
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="platform/">Endpoint Security</a></li>
+        <li><a href="platform/">Cloud Security</a></li>
+        <li><a href="platform/">Identity Protection</a></li>
+        <li><a href="platform/">Email Security</a></li>
+        <li><a href="platform/">AI Threat Detection</a></li>
+        <li><a href="platform/">Risk Scoring & Intelligence</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services/">Managed Detection & Response (MDR)</a></li>
+        <li><a href="services/">Threat Hunting</a></li>
+        <li><a href="services/">Incident Response</a></li>
+        <li><a href="services/">Security Consulting</a></li>
+        <li><a href="services/">Deployment & Integration</a></li>
+        <li><a href="services/">Security Training</a></li>
+      </ul>
+    </div>
+
+    <!-- SOLUTIONS -->
+    <div class="footer-col">
+      <h4>Resources & Insights</h4>
+      <ul>
+        <li><a href="resources/">Blogs</a></li>
+        <li><a href="resources/">Threat Reports</a></li>
+        <li><a href="resources/">Webinars</a></li>
+        <li><a href="resources/">Cybersecurity 101</a></li>
+        <li><a href="resources/">Research Labs</a></li>
+        <li><a href="why-us/">Case Studies</a></li>
+      </ul>
+    </div>
+
+    <!-- COMPANY -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="company/">About Us</a></li>
+        <li><a href="why-us/">Why Us</a></li>
+        <li><a href="company/">Leadership</a></li>
+        <li><a href="company/">Careers</a></li>
+        <li><a href="company/">Support</a></li>
+        <li><a href="contact/">Contact Us</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- FOOTER BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 MMA InfoSec. All Rights Reserved.</p>
+
+    <div class="footer-links">
+      <a href="/privacy-policy">Privacy Notice</a>
+      <a href="/company/">Terms of Use</a>
+      <a href="/contact/">Security</a>
+    </div>
+  </div>
+</footer>
+
+
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+      (function () {
+        var mobileToggle = document.getElementById("mobileMenuToggle");
+        var navbarNav = document.getElementById("navbarNav");
+        var navClose = document.querySelector(".navbar-nav-mobile .nav-close");
+
+        function closeMenu() {
+          if (!navbarNav || !mobileToggle) return;
+          navbarNav.classList.remove("show");
+          mobileToggle.classList.remove("active");
+          mobileToggle.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+        }
+
+        function toggleMenu() {
+          if (!navbarNav || !mobileToggle) return;
+          navbarNav.classList.toggle("show");
+          mobileToggle.classList.toggle("active");
+          var expanded = mobileToggle.getAttribute("aria-expanded") === "true";
+          mobileToggle.setAttribute("aria-expanded", !expanded);
+          if (navbarNav.classList.contains("show")) {
+            document.body.classList.add("menu-open");
+          } else {
+            document.body.classList.remove("menu-open");
+          }
+        }
+
+        if (mobileToggle) {
+          mobileToggle.addEventListener("click", toggleMenu);
+        }
+        if (navClose) {
+          navClose.addEventListener("click", closeMenu);
+        }
+        if (navbarNav) {
+          navbarNav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", closeMenu);
+          });
+        }
+      })();
+    </script>
+
+<script>
+  const text =
+    "Ultimately business protection comes at the speed at which you can hunt and contain an attack.";
+  const speed = 38;
+
+  let i = 0;
+  const target = document.querySelector(".typed-text");
+  if (!target) return;
+
+  function typeText() {
+    if (i < text.length) {
+      target.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeText, speed);
+    }
+  }
+
+  typeText();
+</script>
+    <!-- AOS Library Script Initialization -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- Bootstrap JS (Include Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Custom JS File Linking -->
+    <script src="/js/script.js"></script>
+  </body>
+</html>
+
+
