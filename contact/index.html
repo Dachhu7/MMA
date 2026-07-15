@@ -18,7 +18,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS File -->
     <link rel="stylesheet" href="../css/style.css" />
 
@@ -35,8 +35,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
     />
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- AOS Library for Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -430,7 +428,7 @@
   <a href="../services/">Services</a>
   <a href="../resources/">Resources</a>
   <a href="../company/">Company</a>
-  <a href="../contact/" class="btn primary">Get Started</a>
+  <a href="#contact-form" class="btn primary">Get Started</a>
   <a href="../contact/" class="btn outline">Contact Us</a>
 </div>
 
@@ -470,393 +468,73 @@ dropdownItems.forEach(item => {
 </script>
 
 
-<style>
-
-/* ========================================= */
-/* ========== ROOT VARIABLES =============== */
-/* ========================================= */
-:root{
-  --primary:#5b21ff;
-  --primary-soft:#7c3aed;
-  --accent:#00c2a8;
-  --accent-soft:#0ea5e9;
-  --bg-main:#f9fafc;
-  --bg-gradient:linear-gradient(120deg,#f9fafc 0%,#eef2ff 40%,#ecfeff 100%);
-  --border-soft:rgba(91,33,255,.15);
-  --text-main:#111827;
-  --text-muted:#6b7280;
-  --shadow-soft:0 30px 80px rgba(91,33,255,.08);
-  --radius-xl:0px;
-  --radius-md:0px;
-}
-
-/* ========================================= */
-/* ========== CONTACT SECTION ============== */
-/* ========================================= */
-.contact-section{
-  padding:40px 8%;
-  background:var(--bg-gradient);
-  font-family:Inter,system-ui,sans-serif;
-  color:var(--text-main);
-  position:relative;
-  overflow:hidden;
-}
-
-/* subtle mesh glow */
-.contact-section::before{
-  content:"";
-  position:absolute;
-  top:-200px;
-  left:-200px;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle, rgba(91,33,255,.15), transparent 70%);
-  filter:blur(120px);
-  z-index:0;
-}
-
-.contact-section::after{
-  content:"";
-  position:absolute;
-  bottom:-200px;
-  right:-200px;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle, rgba(0,194,168,.15), transparent 70%);
-  filter:blur(120px);
-  z-index:0;
-}
-
-/* ========================================= */
-/* ========== HEADER ======================= */
-/* ========================================= */
-.contact-header{
-  text-align:center;
-  max-width:900px;
-  margin:0 auto 110px auto;
-  position:relative;
-  z-index:2;
-}
-
-.contact-header h1{
-  font-size:72px;
-  font-weight:900;
-  margin-bottom:26px;
-  letter-spacing:-2px;
-  line-height:1.05;
-}
-
-.contact-header p{
-  font-size:20px;
-  line-height:1.9;
-  color:var(--text-muted);
-}
-
-/* ========================================= */
-/* ========== GRID ========================= */
-/* ========================================= */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:120px;
-  align-items:start;
-  position:relative;
-  z-index:2;
-}
-
-/* ========================================= */
-/* ========== FORM SECTION ================= */
-/* ========================================= */
-.form-card{
-  background:transparent;
-  padding:0;
-  border:none;
-  box-shadow:none;
-}
-
-.form-card small{
-  font-size:13px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:3px;
-  color:var(--primary-soft);
-}
-
-.form-card h2{
-  font-size:44px;
-  margin:18px 0 50px;
-  font-weight:900;
-}
-
-/* ========================================= */
-/* ========== FORM GRID ==================== */
-/* ========================================= */
-.form-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:40px;
-}
-
-.form-group{
-  display:flex;
-  flex-direction:column;
-  position:relative;
-}
-
-.form-group.full{
-  grid-column:1 / -1;
-}
-
-/* floating underline style */
-label{
-  font-size:12px;
-  margin-bottom:10px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  color:var(--text-muted);
-}
-
-input,select{
-  padding:14px 0;
-  border:none;
-  border-bottom:2px solid rgba(0,0,0,.1);
-  font-size:16px;
-  background:transparent;
-  transition:.3s ease;
-  color:var(--text-main);
-}
-
-input::placeholder{
-  color:#9ca3af;
-}
-
-input:hover,select:hover{
-  border-bottom-color:var(--primary-soft);
-}
-
-input:focus,select:focus{
-  outline:none;
-  border-bottom-color:var(--primary);
-}
-
-/* ========================================= */
-/* ========== SUBMIT BUTTON ================ */
-/* ========================================= */
-.submit-btn{
-  margin-top:60px;
-  background:none;
-  border:none;
-  font-size:18px;
-  font-weight:800;
-  cursor:pointer;
-  padding:0;
-  color:var(--primary);
-  position:relative;
-  letter-spacing:.5px;
-}
-
-.submit-btn::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:100%;
-  height:3px;
-  background:linear-gradient(90deg,var(--primary),var(--accent));
-  transition:.4s ease;
-}
-
-.submit-btn:hover::after{
-  width:40%;
-}
-
-/* ========================================= */
-/* ========== FORM NOTE ==================== */
-/* ========================================= */
-.form-note{
-  margin-top:28px;
-  font-size:13px;
-  color:var(--text-muted);
-  line-height:1.9;
-}
-
-/* ========================================= */
-/* ========== SIDE SECTION ================= */
-/* ========================================= */
-.contact-side{
-  display:flex;
-  flex-direction:column;
-  gap:90px;
-  padding-top:60px;
-}
-
-/* ========================================= */
-/* ========== SIDE BLOCKS ================== */
-/* ========================================= */
-.side-card{
-  background:transparent;
-  padding:0;
-  border:none;
-  box-shadow:none;
-}
-
-.side-card::before,
-.side-card::after{
-  display:none;
-}
-
-.side-card h3{
-  font-size:34px;
-  margin-bottom:18px;
-  font-weight:900;
-  position:relative;
-}
-
-.side-card h3::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-10px;
-  width:60px;
-  height:3px;
-  background:linear-gradient(90deg,var(--primary),var(--accent));
-}
-
-.side-card p{
-  font-size:17px;
-  line-height:1.9;
-  color:var(--text-muted);
-  margin-top:28px;
-}
-
-.side-btn{
-  display:inline-block;
-  margin-top:28px;
-  font-weight:800;
-  text-decoration:none;
-  color:var(--primary);
-  position:relative;
-}
-
-.side-btn::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-4px;
-  width:100%;
-  height:2px;
-  background:var(--primary);
-  transition:.3s ease;
-}
-
-.side-btn:hover::after{
-  width:50%;
-}
-
-/* ========================================= */
-/* ========== RESPONSIVE =================== */
-/* ========================================= */
-@media(max-width:980px){
-  .contact-grid{
-    grid-template-columns:1fr;
-    gap:80px;
-  }
-  .contact-header h1{
-    font-size:52px;
-  }
-  .form-grid{
-    grid-template-columns:1fr;
-    gap:24px;
-  }
-}
-
-@media(max-width:600px){
-  .contact-header h1{
-    font-size:38px;
-  }
-  .form-card h2{
-    font-size:30px;
-  }
-  .side-card h3{
-    font-size:26px;
-  }
-}
-
-</style>
-
-<section class="contact-section">
-
-  <div class="contact-header">
-    <h1>Contact Us</h1>
-    <p>
-      Our teams are ready to assist. Select the team you want to contact below
-      and let us know how MMA InfoSec can help.
-    </p>
-  </div>
+<!-- CONTACT FORWARD SECTION -->
+<section class="contact-forward" id="contact-form" style="padding-top: 150px;">
 
   <div class="contact-grid">
 
-    <div class="form-card">
-      <small>Let's get you connected</small>
-      <h2>Contact Us</h2>
+    <!-- LEFT CONTENT -->
+    <div class="contact-content">
 
-      <form id="contact-form">
+      <span class="contact-pill">CONTACT</span>
+
+      <h1>Let's Talk Security</h1>
+
+      <p class="lead">
+        Our teams are ready to assist. Share your details and let us know how
+        MMA InfoSec can help strengthen your security posture.
+      </p>
+
+      <p class="statement">
+        From <span>Reactive</span> to <span>Resilient</span> —<br />
+        it starts with a conversation.
+      </p>
+
+    </div>
+
+    <!-- RIGHT FORM AREA -->
+    <div class="contact-visual">
+
+      <div class="contact-bg"></div>
+
+      <form class="contact-form" id="contactForm">
+
         <div class="form-grid">
 
           <div class="form-group">
             <label for="fname">First Name*</label>
-            <input type="text" id="fname" name="fname" placeholder="Enter your first name">
+            <input id="fname" type="text" placeholder="Enter your first name" required>
           </div>
 
           <div class="form-group">
             <label for="lname">Last Name*</label>
-            <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+            <input id="lname" type="text" placeholder="Enter your last name" required>
           </div>
 
           <div class="form-group">
             <label for="email">Business Email*</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email">
+            <input id="email" type="email" placeholder="Enter your email" required>
           </div>
 
           <div class="form-group">
             <label for="phone">Phone*</label>
-            <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+            <input id="phone" type="text" placeholder="Enter your phone number" required>
           </div>
 
           <div class="form-group">
             <label for="company">Company*</label>
-            <input type="text" id="company" name="company" placeholder="Where do you work?">
+            <input id="company" type="text" placeholder="Where do you work?" required>
           </div>
 
           <div class="form-group">
             <label for="title">Job Title*</label>
-            <input type="text" id="title" name="title" placeholder="What's your title?">
-          </div>
-
-          <div class="form-group">
-            <label for="country">Country*</label>
-            <select id="country" name="country">
-              <option>Select...</option>
-              <option>India</option>
-              <option>USA</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="company-size">Company Size*</label>
-            <select id="company-size" name="company-size">
-              <option>Number of Employees</option>
-              <option>1–50</option>
-              <option>51–200</option>
-              <option>201–1000</option>
-            </select>
+            <input id="title" type="text" placeholder="What's your title?" required>
           </div>
 
           <div class="form-group full">
-            <label for="assistance">How can we assist you?*</label>
-            <select id="assistance" name="assistance">
-              <option>Select...</option>
+            <label for="help">How can we assist you?*</label>
+            <select id="help" required>
+              <option value="">Select...</option>
               <option>Request Demo</option>
               <option>Pricing</option>
               <option>General Inquiry</option>
@@ -865,59 +543,68 @@ input:focus,select:focus{
 
         </div>
 
-        <button type="submit" class="submit-btn">Submit</button>
+        <button type="submit" class="submit-btn">
+          Contact MMA InfoSec →
+        </button>
 
-        <p class="form-note">
-          By clicking Submit, I agree to the use of my personal data in accordance
-          with MMA InfoSec Privacy Policy. Protected by reCAPTCHA.
-        </p>
       </form>
-    </div>
-
-    <div class="contact-side">
-
-      <div class="side-card demo">
-        <h3>Get a Free Demo</h3>
-        <p>
-          Schedule a personalized tour of the MMA InfoSec security platform
-          with one of our experts.
-        </p>
-        <a href="#contact-form" class="side-btn">Get Started →</a>
-      </div>
-
-      <div class="side-card tour">
-        <h3>Tour MMA InfoSec</h3>
-        <p>
-          Explore our products and click around to see the platform in action.
-        </p>
-        <a href="../platform/" class="side-btn">Take a Tour →</a>
-      </div>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- contact.css and contact.js removed - styles/scripts are in style.css and script.js -->
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  const tabs = document.querySelectorAll('.tab-btn');
-
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      tabs.forEach(function (t) {
-        t.classList.remove('active');
-      });
-      this.classList.add('active');
-    });
-  });
-
-});
-</script>
-
-
+<!-- ===== DEMO MODAL OVERLAY ===== -->
+<div class="demo-modal-overlay" id="demoModal">
+  <div class="demo-modal-container">
+    <button type="button" class="demo-modal-close" onclick="document.getElementById('demoModal').classList.remove('open')">&times;</button>
+    <div class="demo-modal-body">
+      <div class="contact-visual">
+        <div class="contact-bg"></div>
+        <form class="contact-form" id="demoForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="demo-fname">First Name*</label>
+              <input id="demo-fname" type="text" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+              <label for="demo-lname">Last Name*</label>
+              <input id="demo-lname" type="text" placeholder="Enter your last name" required>
+            </div>
+            <div class="form-group">
+              <label for="demo-email">Business Email*</label>
+              <input id="demo-email" type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="demo-phone">Phone*</label>
+              <input id="demo-phone" type="text" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+              <label for="demo-company">Company*</label>
+              <input id="demo-company" type="text" placeholder="Where do you work?" required>
+            </div>
+            <div class="form-group">
+              <label for="demo-title">Job Title*</label>
+              <input id="demo-title" type="text" placeholder="What's your title?" required>
+            </div>
+            <div class="form-group full">
+              <label for="demo-help">How can we assist you?*</label>
+              <select id="demo-help" required>
+                <option value="">Select...</option>
+                <option>Request Demo</option>
+                <option>Pricing</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn">Contact MMA InfoSec →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Back to Top Button -->
     <button
@@ -998,7 +685,6 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="../company/">About Us</a></li>
         <li><a href="../why-us/">Why Us</a></li>
         <li><a href="../company/">Leadership</a></li>
-        <li><a href="../company/">Careers</a></li>
         <li><a href="../company/">Support</a></li>
         <li><a href="../contact/">Contact Us</a></li>
       </ul>
@@ -1011,13 +697,12 @@ document.addEventListener('DOMContentLoaded', function () {
     <p>© 2026 MMA InfoSec. All Rights Reserved.</p>
 
     <div class="footer-links">
-      <a href="/privacy-policy">Privacy Notice</a>
-      <a href="/company/">Terms of Use</a>
-      <a href="/contact/">Security</a>
+      <a href="../Privacy-Notice/">Privacy Notice</a>
+      <a href="../Terms-of-Use/">Terms of Use</a>
+      <a href="../Security/">Security</a>
     </div>
   </div>
 </footer>
-
 
 
     <!-- JavaScript for Mobile Menu Toggle -->
@@ -1092,6 +777,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     <!-- Custom JS File Linking -->
-    <script src="/js/script.js"></script>
+    <script src="../js/script.js"></script>
+
+<script>
+(function() {
+  var modal = document.getElementById('demoModal');
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+      }
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        modal.classList.remove('open');
+      }
+    });
+  }
+  var demoForm = document.getElementById('demoForm');
+  if (demoForm) {
+    demoForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (typeof emailjs !== 'undefined') {
+        emailjs.sendForm('service_default', 'template_default', this, 'user_default')
+          .then(function() {
+            demoForm.reset();
+            modal.classList.remove('open');
+            alert('Thank you! We will get back to you shortly.');
+          }, function(err) {
+            alert('Something went wrong. Please try again later.');
+          });
+      } else {
+        demoForm.reset();
+        modal.classList.remove('open');
+        alert('Thank you! We will get back to you shortly.');
+      }
+    });
+  }
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (typeof emailjs !== 'undefined') {
+        emailjs.sendForm('service_default', 'template_default', this, 'user_default')
+          .then(function() {
+            contactForm.reset();
+            alert('Thank you! We will get back to you shortly.');
+          }, function(err) {
+            alert('Something went wrong. Please try again later.');
+          });
+      } else {
+        contactForm.reset();
+        alert('Thank you! We will get back to you shortly.');
+      }
+    });
+  }
+})();
+</script>
   </body>
 </html>

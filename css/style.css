@@ -2451,3 +2451,116 @@ select:focus{
     font-size: 1.2rem;
   }
 }
+
+/* ===== DEMO MODAL OVERLAY ===== */
+.demo-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.demo-modal-overlay.open {
+  display: flex;
+}
+
+.demo-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  background: #f8fbff;
+  border-radius: 16px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+  animation: demoModalFadeIn 0.3s ease;
+}
+
+@keyframes demoModalFadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.demo-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 36px;
+  line-height: 1;
+  color: #475569;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+
+.demo-modal-close:hover {
+  color: #ef4444;
+}
+
+.demo-modal-body {
+  padding: 0;
+}
+
+.demo-modal-body .contact-visual {
+  min-height: auto;
+  position: relative;
+}
+
+.demo-modal-body .contact-form {
+  position: relative;
+  bottom: auto;
+  left: auto;
+  max-width: 100%;
+  padding: 48px 44px;
+  background: rgba(255,255,255,.95);
+}
+
+@media (max-width: 600px) {
+  .demo-modal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+  .demo-modal-body .contact-form {
+    padding: 32px 20px;
+  }
+  .demo-modal-body .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ===== CTA BAR BUTTONS ===== */
+.cta-bar .btn-outline {
+  border: 2px solid #06b6d4;
+  color: #06b6d4;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.cta-bar .btn-outline:hover {
+  background: linear-gradient(135deg,#22c55e,#2563eb);
+  color: #ffffff;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 35px rgba(37,99,235,0.35);
+}
+
+.cta-bar .btn-outline:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37,99,235,0.25);
+}
+
+@media (max-width: 600px) {
+  .cta-bar .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}

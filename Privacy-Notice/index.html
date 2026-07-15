@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Why MMA InfoSec — Security That Delivers Proof, Trust & Real Results</title>
-    <meta name="description" content="Discover why MMA InfoSec is the trusted partner for organizations seeking continuous validation, attacker-centric testing, and measurable security improvements.">
+    <title>Privacy Notice — MMA InfoSec</title>
+    <meta name="description" content="MMA InfoSec Privacy Notice explains how we collect, use, and protect your personal data when you interact with our cybersecurity services and website.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Why MMA InfoSec — Security That Delivers Proof, Trust & Real Results">
-    <meta property="og:description" content="Discover why MMA InfoSec is the trusted partner for organizations seeking continuous validation, attacker-centric testing, and measurable security improvements.">
-    <meta property="og:url" content="https://alaman.me/why-us/">
+    <meta property="og:title" content="Privacy Notice — MMA InfoSec">
+    <meta property="og:description" content="MMA InfoSec Privacy Notice explains how we collect, use, and protect your personal data when you interact with our cybersecurity services and website.">
+    <meta property="og:url" content="https://alaman.me/Privacy-Notice/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="../images/favicon.png">
 
@@ -18,7 +18,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Custom CSS File -->
     <link rel="stylesheet" href="../css/style.css" />
 
@@ -36,8 +36,6 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
     />
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    
     <!-- AOS Library for Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -469,761 +467,554 @@ dropdownItems.forEach(item => {
 });
 </script>
 
-
 <style>
-/* =====================================
-   WHY US – ENTERPRISE PREMIUM THEME
-   White Base + Dark Mid Sections
-===================================== */
-
-/* ---------- ROOT ---------- */
-:root {
-  --white-bg: #ffffff;
-  --light-bg: #f6f7fb;
-  --dark-bg: #05060a;
-
-  --card-bg: #ffffff;
-  --card-dark: rgba(255, 255, 255, 0.06);
-
-  --border-light: rgba(0, 110, 255, 0.15);
-  --border-dark: rgba(0, 212, 255, 0.25);
-
-  --text-dark: #0a0d14;
-  --text-gray: #4a6b80;
-  --text-muted: #5c7f95;
-  --text-light: #e5f6ff;
-
-  /* 🔥 LOGO COLOR SYSTEM */
-  --accent-green: #00c896;
-  --accent-teal: #00d4ff;
-  --accent-blue: #2a6cff;
-
-  --accent-gradient: linear-gradient(135deg, #00c896, #00d4ff, #2a6cff);
-
-  --radius-lg: 18px;
-  --radius-md: 14px;
-
-  --shadow-soft: 0 15px 40px rgba(0, 110, 255, 0.08);
-  --shadow-dark: 0 30px 80px rgba(0, 110, 255, 0.25);
+/* ============================= */
+/* ===== PREMIUM RESET ======== */
+/* ============================= */
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
 }
 
+/* ============================= */
+/* ===== LOGO COLOR SYSTEM ==== */
+/* ============================= */
+:root{
+  --brand-green:#1ec98a;
+  --brand-cyan:#1aa7e6;
+  --brand-blue:#0f5fa8;
+  --brand-dark:#0b1f33;
 
-/* ---------- GLOBAL ---------- */
-body {
-  margin: 0;
-  background: var(--white-bg);
-  color: var(--text-dark);
+  --text-main:#0b1f33;
+  --text-muted:#5c6f82;
+  --border-soft:#e3edf5;
+
+  --max-width:1180px;
 }
 
-/* ---------- PREMIUM HEADINGS ---------- */
-h1, h2, h3 {
-  font-weight: 700;
-  letter-spacing: -0.02em;
+/* ============================= */
+/* ===== DECOR (SUBTLE) ======= */
+/* ============================= */
+.decor-blob{
+  display:none;
 }
 
-h2 {
-  font-size: clamp(32px, 4vw, 40px);
-  background: linear-gradient(135deg, #111827, #374151);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* ============================= */
+/* ===== HERO ================= */
+/* ============================= */
+.hero{
+  position:relative;
+  max-width:var(--max-width);
+  margin:90px auto 60px auto;
+  padding:0 24px 40px 24px;
+
+  border-top:4px solid var(--brand-green);
+
+  border-bottom:1px solid var(--border-soft);
 }
 
-/* ---------- BUTTON ---------- */
-.whyus-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 26px;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #fff;
-  background: var(--accent-gradient);
-  box-shadow: 0 10px 30px rgba(109, 92, 255, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.hero-inner{
+  max-width:920px;
+  padding-top:30px;
 }
 
-.whyus-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 16px 45px rgba(109, 92, 255, 0.55);
-}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--brand-cyan);
 
-/* ---------- HERO ---------- */
-.whyus-hero {
-  position: relative;
-  padding: 40px 6%;
-  background: linear-gradient(
-      180deg,
-      rgba(109, 92, 255, 0.08),
-      transparent 55%
-    ),
-    var(--white-bg);
-  overflow: hidden;
-}
+  padding:6px 14px;
+  border-left:3px solid var(--brand-green);
 
-.whyus-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: radial-gradient(
-    600px 400px at 70% 20%,
-    rgba(109, 92, 255, 0.12),
-    transparent 60%
-  );
-}
-
-.whyus-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 980px;
-  margin: auto;
-  text-align: center;
-}
-
-.whyus-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(
+  background:linear-gradient(
     90deg,
-    rgba(111, 92, 255, 0.14),
-    rgba(111, 92, 255, 0.06)
+    rgba(30,201,138,0.08),
+    rgba(26,167,230,0.05)
   );
-  color: #6f5cff;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-  margin-bottom: 20px;
+
+  margin-bottom:22px;
 }
 
-.whyus-hero-content h1 {
-  font-size: clamp(42px, 5vw, 64px);
-  line-height: 1.1;
-  margin-bottom: 22px;
+.hero h1{
+  font-size:clamp(40px,4vw,56px);
+  font-weight:800;
+  margin:0 0 22px 0;
+  color:var(--brand-dark);
+
+  letter-spacing:-0.025em;
+  line-height:1.1;
+
+  text-shadow:0 1px 0 rgba(0,0,0,0.03);
 }
 
-.whyus-hero-content p {
-  font-size: 18px;
-  color: var(--text-gray);
-  max-width: 820px;
-  margin: 0 auto 16px;
+.hero p.lead{
+  font-size:19px;
+  line-height:1.9;
+  color:var(--text-muted);
+  margin:0;
+
+  max-width:880px;
+
+  letter-spacing:.01em;
 }
 
-/* ---------- INTRO ---------- */
-.whyus-intro {
-  padding: 40px 6%;
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-}
-
-.whyus-intro p {
-  font-size: 17px;
-  color: var(--text-gray);
-  max-width: 900px;
-  margin: 0 auto 14px;
-}
-
-/* ---------- BASE GRID ---------- */
-.whyus-grid {
-  display: grid;
-  gap: 28px;
-  margin-top: 50px;
-}
-
-/* ---------- CARD ---------- */
-.whyus-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: 34px 30px;
-  box-shadow: var(--shadow-soft);
-  opacity: 0;
-  transform: translateY(35px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.whyus-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.whyus-card:hover {
-  border-color: var(--accent-purple);
-  transform: translateY(-6px);
-}
-
-.whyus-card h3 {
-  font-size: 20px;
-  margin-bottom: 14px;
-}
-
-.whyus-card p {
-  font-size: 15px;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-
-/* =====================================
-   VIDEO WRAPPER (CLEAR VIDEO)
-===================================== */
-
-.mma-why-wrapper {
-  position: relative;
-  min-height: 100vh;
-  background: #000;
-  isolation: isolate;
-}
-
-/* VIDEO FILLS SECTION COMPLETELY */
-.mma-why-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        /* ✅ FIX: fills section ratio */
-  opacity: 1;
-  z-index: 0;
-  pointer-events: none;
-  filter: none;
-  box-shadow: none;
-}
-
-/* NO DARK OVERLAY */
-.mma-why-overlay {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* =====================================
-   PROOF SECTION
-===================================== */
-
-.mma-proof-section {
-  position: relative;
-  padding: 40px 6% 40px;
-  z-index: 2;
-  color: #e5e7eb;
-}
-
-.mma-proof-title {
-  text-align: center;
-  margin-bottom: 60px;
-  font-size: 42px;
-  background: linear-gradient(135deg, #ffffff, #d8b4fe, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.mma-proof-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: rgba(15, 18, 32, 0.78);
-  border-radius: 20px;
-  border: 1px solid rgba(168, 85, 247, 0.35);
-  backdrop-filter: blur(22px);
-  overflow: hidden;
-}
-
-.mma-proof-card {
-  padding: 42px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.mma-proof-card:last-child {
-  border-right: none;
-}
-
-.mma-proof-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
-}
-
-.mma-proof-card h3 {
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-.mma-proof-card p {
-  color: #d1d5db;
-  margin-bottom: 16px;
-}
-
-.mma-proof-card p:last-child {
-  margin-bottom: 0;
-}
-
-/* =====================================
-   INDUSTRY SECTION
-===================================== */
-
-.mma-industry-section {
-  position: relative;
-  padding: 30px 6% 70px;
-  z-index: 2;
-  color: #e5e7eb;
-}
-
-.mma-industry-title {
-  text-align: center;
-  margin-bottom: 60px;
-  font-size: 40px;
-  background: linear-gradient(135deg, #ffffff, #c7d2fe, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.mma-industry-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-.mma-industry-card {
-  padding: 52px;
-  background: rgba(15, 18, 32, 0.88);
-  border-radius: 22px;
-  border: 1px solid rgba(99, 102, 241, 0.35);
-  backdrop-filter: blur(18px);
-}
-
-.mma-industry-card h3 {
-  color: #ffffff;
-  margin-bottom: 16px;
-}
-
-.mma-industry-card p {
-  color: #d1d5db;
-  margin-bottom: 16px;
-}
-
-.mma-industry-card p:last-child {
-  margin-bottom: 0;
-}
-
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media (max-width: 1200px) {
-  .mma-proof-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .mma-proof-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mma-industry-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .mma-proof-card {
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .mma-proof-card:last-child {
-    border-bottom: none;
-  }
-}
-/* =====================================================
-   TRUST, COMPLIANCE & GOVERNANCE — PREMIUM WHITE THEME
-===================================================== */
-
-.whyus-trust {
-  position: relative;
-  width: 100%;
-  padding: 40px 6%;
-  background: #ffffff;
-  overflow: hidden;
-}
-
-.whyus-trust h2 {
-  font-size: 44px;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-  margin-bottom: 70px;
-  color: #00c896;
-  letter-spacing: -0.6px;
-}
-
-.whyus-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.whyus-card {
-  position: relative;
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 40px 32px;
-  border: 1px solid rgba(0, 110, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 110, 255, 0.06);
-  transition: all 0.45s ease;
-}
-
-.whyus-card:hover {
-  transform: translateY(-10px);
-  border-color: #00d4ff;
-  box-shadow: 0 18px 45px rgba(0, 110, 255, 0.15);
-}
-
-.whyus-card h3 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #062a44;
-  margin-bottom: 18px;
-  line-height: 1.3;
-}
-
-.whyus-card p {
-  font-size: 16px;
-  font-weight: 400;
-  color: #4a6b80;
-  line-height: 1.7;
-  margin-bottom: 14px;
-}
-
-.whyus-card p:last-child {
-  margin-bottom: 0;
-}
-
-.whyus-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, #00c896, #00d4ff, #2a6cff);
-  border-radius: 18px 18px 0 0;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.whyus-card:hover::before {
-  opacity: 1;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 1200px) {
-  .whyus-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .whyus-trust {
-    padding: 80px 6%;
-  }
-
-  .whyus-trust h2 {
-    font-size: 34px;
-    margin-bottom: 50px;
-  }
-
-  .whyus-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .whyus-card {
-    padding: 34px 26px;
-  }
-}
-
-/* ---------- LEADERSHIP ---------- */
-.whyus-leadership {
-  padding: 40px 6%;
-  text-align: center;
-}
-
-.whyus-leadership-card {
-  max-width: 900px;
-  margin: 40px auto 0;
-  padding: 52px;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 200, 150, 0.12),
-    rgba(0, 212, 255, 0.12)
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:1px;
+  background:linear-gradient(
+    to right,
+    transparent,
+    var(--brand-cyan),
+    transparent
   );
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
+  opacity:.15;
 }
 
-/* ---------- CTA ---------- */
-.whyus-cta {
-  padding: 40px 6%;
-  text-align: center;
-  background: linear-gradient(
-      180deg,
-      rgba(0, 200, 150, 0.12),
-      transparent 60%
-    ),
-    var(--white-bg);
+/* ============================= */
+/* ===== GRID LAYOUT ========== */
+/* ============================= */
+.policy-grid{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:60px;
+  align-items:start;
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 1024px) {
-  .whyus-proof .whyus-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* ============================= */
+/* ===== LEFT NAV ============= */
+/* ============================= */
+.policy-nav{
+  position:sticky;
+  top:50px;
+  height:calc(100vh - 100px);
+  height:calc(100dvh - 100px);
+  overflow-y:auto;
+  padding-right:20px;
+  border-right:1px solid var(--border-soft);
+}
+
+.policy-nav h3{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  margin:0 0 20px 0;
+  color:var(--text-muted);
+}
+
+.toc-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.toc-list li{
+  margin-bottom:12px;
+}
+
+.toc-list a{
+  text-decoration:none;
+  font-size:15px;
+  font-weight:600;
+  color:var(--text-muted);
+  transition:.25s ease;
+  display:inline-block;
+}
+
+.toc-list a:hover{
+  color:var(--brand-blue);
+}
+
+.toc-list a.active{
+  color:var(--brand-green);
+}
+
+/* ============================= */
+/* ===== ARTICLE ============== */
+/* ============================= */
+.policy-article{
+  height:calc(100vh - 100px);
+  height:calc(100dvh - 100px);
+  overflow-y:auto;
+  padding-right:10px;
+  scroll-behavior:smooth;
+}
+
+.policy-article::-webkit-scrollbar{
+  width:6px;
+}
+.policy-article::-webkit-scrollbar-thumb{
+  background:var(--brand-cyan);
+  border-radius:6px;
+}
+
+.policy-block{
+  margin-bottom:50px;
+  padding-left:20px;
+  border-left:3px solid transparent;
+  transition:.3s ease;
+}
+
+.policy-block:hover{
+  border-left:3px solid var(--brand-green);
+}
+
+.policy-article h2{
+  font-size:24px;
+  font-weight:700;
+  margin:0 0 16px 0;
+  color:var(--brand-dark);
+}
+
+.policy-article p{
+  font-size:16px;
+  line-height:1.85;
+  color:var(--text-muted);
+  margin:0 0 16px 0;
+}
+
+.policy-article ul{
+  margin:12px 0 20px 20px;
+  padding:0;
+  color:var(--text-muted);
+}
+
+.policy-article ul li{
+  margin-bottom:10px;
+}
+
+.policy-divider{
+  height:1px;
+  background:var(--border-soft);
+  margin:50px 0;
+}
+
+.policy-article strong{
+  color:var(--brand-dark);
+}
+
+.policy-quote{
+  margin-top:20px;
+  padding:18px 20px;
+  background:#f4fbff;
+  border-left:4px solid var(--brand-cyan);
+  font-weight:600;
+  color:var(--brand-dark);
+}
+
+/* ============================= */
+/* ===== CTA =================== */
+/* ============================= */
+.cta-bar{
+  max-width:var(--max-width);
+  margin:90px auto 70px auto;
+  padding:40px 0 0 0;
+  border-top:3px solid var(--brand-blue);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.cta-left h4{
+  margin:0;
+  font-size:20px;
+  color:var(--brand-dark);
+}
+
+.cta-left p{
+  margin:8px 0 0 0;
+  color:var(--text-muted);
+}
+
+.cta-actions{
+  display:flex;
+  gap:16px;
+}
+
+.small-print{
+  font-size:13px;
+  color:var(--text-muted);
+  margin-top:20px;
+}
+
+/* ============================= */
+/* ===== RESPONSIVE =========== */
+/* ============================= */
+@media (max-width:1024px){
+  .policy-grid{
+    grid-template-columns:1fr;
+    padding:0 24px;
+  }
+
+  .policy-nav{
+    position:relative;
+    height:auto;
+    border-right:none;
+    border-bottom:1px solid var(--border-soft);
+    margin-bottom:40px;
+  }
+
+  .policy-article{
+    height:auto;
+  }
+
+  .cta-bar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+    padding:40px 24px 0 24px;
   }
 }
 
-@media (max-width: 640px) {
-  .whyus-grid {
-    grid-template-columns: 1fr !important;
+@media (max-width:600px){
+  .hero h1{
+    font-size:34px;
   }
 }
 </style>
 
+  <div class="decor-blob" aria-hidden="true"></div>
 
-
-<!-- HERO -->
-<section class="whyus-hero">
-  <div class="whyus-overlay"></div>
-  <div class="whyus-hero-content">
-    <span class="whyus-eyebrow">WHY MMA INFOSEC</span>
-    <h1>Security That Delivers<br>Proof, Trust & Real Results</h1>
-    <p>
-      MMA InfoSec empowers organizations to proactively measure, validate, and
-      continuously strengthen their cybersecurity posture against real-world
-      threats. We go beyond assumptions and checklists by delivering outcome-driven,
-      evidence-based security programs that executives, auditors, and security teams
-      can trust.
-    </p>
-    <p>
-      Our approach focuses on continuous validation, attacker-centric testing,
-      and measurable improvements—ensuring your security investments translate
-      directly into reduced risk, faster response, and stronger resilience.
-    </p>
-    <a href="#proof-results" class="whyus-btn">Explore Why Us →</a>
-  </div>
-</section>
-
-<!-- WHY US – SHARED VIDEO WRAPPER -->
-<section class="mma-why-wrapper">
-
-  <!-- Shared Background Video -->
-  <video class="mma-why-video" autoplay muted loop playsinline>
-    <source src="../images/why-us_background.mp4" type="video/mp4">
-  </video>
-
-  <!-- Overlay Gradient -->
-  <div class="mma-why-overlay"></div>
-
-  <!-- PROOF -->
-  <section class="mma-proof-section" id="proof-results">
-    <h2 class="mma-proof-title">Proof & Measurable Results</h2>
-
-    <div class="mma-proof-grid">
-      <div class="mma-proof-card">
-        <h3>Customer Success</h3>
-        <p>
-          Enterprises across industries rely on MMA InfoSec to strengthen defenses,
-          minimize security incidents, and validate protection across cloud, on-prem,
-          and hybrid environments.
-        </p>
-        <p>
-          Our engagements consistently deliver tangible improvements in detection,
-          response, and overall cyber resilience.
-        </p>
-      </div>
-
-      <div class="mma-proof-card">
-        <h3>Business Impact</h3>
-        <p>
-          Measurable outcomes include reduced breach dwell time, improved SOC efficiency,
-          and enhanced visibility for leadership and risk committees.
-        </p>
-        <p>
-          Security leaders gain confidence knowing decisions are backed by real data
-          and proven testing.
-        </p>
-      </div>
-
-      <div class="mma-proof-card">
-        <h3>Case Studies</h3>
-        <p>
-          Real-world case studies demonstrate how advanced threats were identified,
-          contained, and neutralized before causing business disruption.
-        </p>
-        <p>
-          Each engagement highlights clear metrics, lessons learned, and continuous
-          improvement paths.
-        </p>
-      </div>
-
-      <div class="mma-proof-card">
-        <h3>Continuous Validation</h3>
-        <p>
-          Security controls are continuously tested against evolving attacker techniques,
-          threat intelligence, and emerging vulnerabilities.
-        </p>
-        <p>
-          This ensures your defenses remain effective—not just compliant.
-        </p>
-      </div>
+  <!-- HERO -->
+  <section class="hero" role="banner" aria-labelledby="policy-title">
+    <div class="hero-inner">
+      <div class="eyebrow">Transparency & Trust</div>
+      <h1 id="policy-title">Privacy Notice</h1>
+      <p class="lead">
+        MMA InfoSec is committed to transparency about how we collect, use,
+        and protect your personal information. This Privacy Notice describes
+        our data practices in clear, straightforward language.
+      </p>
     </div>
   </section>
 
-  <!-- INDUSTRY -->
-  <section class="mma-industry-section">
-    <h2 class="mma-industry-title">Industry Recognition & Validation</h2>
+  <!-- GRID SECTION -->
+  <section class="policy-grid" role="main">
 
-    <div class="mma-industry-grid">
-      <div class="mma-industry-card">
-        <h3>Analyst Recognition</h3>
-        <p>
-          MMA InfoSec is recognized by independent analysts for delivering modern,
-          outcome-focused cybersecurity solutions that prioritize validation over theory.
-        </p>
-        <p>
-          Our approach aligns security programs with real business risk and measurable value.
-        </p>
-      </div>
+    <!-- LEFT: Table of contents -->
+    <nav class="policy-nav" aria-label="Privacy notice table of contents">
+      <h3>On this page</h3>
 
-      <div class="mma-industry-card">
-        <h3>Framework Alignment</h3>
+      <ul class="toc-list" role="list">
+        <li><a href="#notice-collection">1. Notice at Collection</a></li>
+        <li><a href="#categories">2. Categories of Personal Data</a></li>
+        <li><a href="#collection-methods">3. How We Collect Data</a></li>
+        <li><a href="#business-purpose">4. Business Purpose for Collection</a></li>
+        <li><a href="#sharing">5. Data Sharing & Disclosure</a></li>
+        <li><a href="#choices">6. Your Choices & Rights</a></li>
+        <li><a href="#updates">7. Updates to This Notice</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- RIGHT: Full policy content -->
+    <article class="policy-article" aria-labelledby="policy-title">
+
+      <!-- 1 -->
+      <section id="notice-collection" class="policy-block" tabindex="-1">
+        <h2>1. Notice at Collection</h2>
         <p>
-          Our methodologies align with global security frameworks, threat intelligence
-          models, and modern enterprise architectures.
+          At the time of collection, we provide individuals with clear notice
+          regarding the categories of personal information we collect and the
+          purposes for which the information will be used. This notice is
+          provided at or before the point of data collection.
         </p>
+
         <p>
-          This enables seamless integration with existing governance, risk, and compliance
-          initiatives.
+          We collect personal data only to the extent reasonably necessary to
+          deliver enterprise cybersecurity services, respond to inquiries,
+          and maintain secure, reliable operations.
         </p>
-      </div>
-    </div>
+
+        <div class="policy-quote">
+          <strong>Transparency is foundational to trust. We will never collect your data without a clear purpose.</strong>
+        </div>
+      </section>
+
+      <div class="policy-divider" aria-hidden="true"></div>
+
+      <!-- 2 -->
+      <section id="categories" class="policy-block" tabindex="-1">
+        <h2>2. Categories of Personal Data</h2>
+        <p>
+          The categories of personal information we may collect include:
+        </p>
+
+        <ul>
+          <li><strong>Identifiers:</strong> Full name, email address, phone number, postal address, IP address</li>
+          <li><strong>Professional information:</strong> Job title, company name, industry, work history</li>
+          <li><strong>Commercial information:</strong> Products or services purchased, billing details</li>
+          <li><strong>Technical data:</strong> Browser type, device information, operating system, log data</li>
+          <li><strong>Communications:</strong> Records of inquiries, support tickets, and correspondence</li>
+          <li><strong>Inferences:</strong> Preferences, security interests, and engagement patterns</li>
+        </ul>
+
+        <p>
+          We do not collect sensitive personal information unless voluntarily
+          provided by you in the context of a specific inquiry or engagement.
+        </p>
+      </section>
+
+      <div class="policy-divider" aria-hidden="true"></div>
+
+      <!-- 3 -->
+      <section id="collection-methods" class="policy-block" tabindex="-1">
+        <h2>3. How We Collect Data</h2>
+        <p>
+          We collect personal data through the following channels:
+        </p>
+
+        <ul>
+          <li><strong>Direct interactions:</strong> Forms on our website, email communications, phone calls, and meetings</li>
+          <li><strong>Automated technologies:</strong> Cookies, analytics tools, server logs, and session recordings</li>
+          <li><strong>Third-party sources:</strong> Public databases, business partners, and event registration platforms</li>
+          <li><strong>Service delivery:</strong> Security assessments, onboarding documents, and support interactions</li>
+        </ul>
+
+        <p>
+          Where we receive data from third parties, we verify that such parties
+          have obtained consent or are otherwise legally permitted to share
+          the information with us.
+        </p>
+      </section>
+
+      <div class="policy-divider" aria-hidden="true"></div>
+
+      <!-- 4 -->
+      <section id="business-purpose" class="policy-block" tabindex="-1">
+        <h2>4. Business Purpose for Collection</h2>
+        <p>
+          We use collected personal data for the following business purposes:
+        </p>
+
+        <ul>
+          <li>Delivering and managing cybersecurity services and solutions</li>
+          <li>Responding to inquiries, requests, and support needs</li>
+          <li>Improving platform performance, security, and user experience</li>
+          <li>Marketing and communications with your consent or legitimate interest</li>
+          <li>Compliance with legal, regulatory, and contractual obligations</li>
+          <li>Fraud prevention, threat detection, and security monitoring</li>
+        </ul>
+
+        <p>
+          We do not sell personal information to third parties. Any sharing
+          of data is conducted under strict contractual safeguards.
+        </p>
+      </section>
+
+      <div class="policy-divider" aria-hidden="true"></div>
+
+      <!-- 5 -->
+      <section id="sharing" class="policy-block" tabindex="-1">
+        <h2>5. Data Sharing & Disclosure</h2>
+        <p>
+          We may share personal data with the following categories of recipients:
+        </p>
+
+        <ul>
+          <li><strong>Service providers:</strong> Cloud infrastructure, analytics, CRM, and security tool vendors</li>
+          <li><strong>Professional advisors:</strong> Legal, accounting, and compliance consultants</li>
+          <li><strong>Regulatory authorities:</strong> When required by applicable law or legal process</li>
+          <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or asset sale</li>
+        </ul>
+
+        <p>
+          All third-party recipients are subject to data processing agreements
+          and contractual obligations to maintain confidentiality and security.
+        </p>
+      </section>
+
+      <div class="policy-divider" aria-hidden="true"></div>
+
+      <!-- 6 -->
+      <section id="choices" class="policy-block" tabindex="-1">
+        <h2>6. Your Choices & Rights</h2>
+        <p>
+          Depending on your jurisdiction, you may have the following rights
+          regarding your personal data:
+        </p>
+
+        <ul>
+          <li><strong>Right to know:</strong> Request disclosure of categories and specific pieces of data collected</li>
+          <li><strong>Right to access:</strong> Obtain a copy of your personal data we hold</li>
+          <li><strong>Right to correction:</strong> Request correction of inaccurate or incomplete data</li>
+          <li><strong>Right to deletion:</strong> Request deletion of your personal data, subject to legal exceptions</li>
+          <li><strong>Right to opt-out:</strong> Opt out of the sale or sharing of personal information</li>
+          <li><strong>Right to nondiscrimination:</strong> We will not discriminate against you for exercising any of these rights</li>
+        </ul>
+
+        <p>
+          To exercise your rights, contact us using the information in the
+          Contact section below. We will respond to verified requests within
+          the timeframe required by applicable law.
+        </p>
+      </section>
+
+      <div class="policy-divider" aria-hidden="true"></div>
+
+      <!-- 7 -->
+      <section id="updates" class="policy-block" tabindex="-1">
+        <h2>7. Updates to This Notice</h2>
+        <p>
+          We may update this Privacy Notice from time to time to reflect
+          changes in our practices, legal requirements, or operational needs.
+          When material changes are made, we will update the effective date
+          at the top of this notice and, where appropriate, provide additional
+          notice such as a site banner or email notification.
+        </p>
+
+        <p>
+          We encourage you to review this notice periodically to stay informed
+          about how we are protecting your information.
+        </p>
+      </section>
+
+      <div class="policy-divider" aria-hidden="true"></div>
+
+      <!-- CONTACT -->
+      <section id="contact" class="policy-block" tabindex="-1">
+        <h2>Contact & Data Requests</h2>
+        <p>
+          If you have questions about this Privacy Notice, wish to exercise
+          your data rights, or need to report a privacy concern, please
+          contact our Privacy Team:
+        </p>
+
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:privacy@mma-infosec.example">privacy@mma-infosec.example</a></li>
+          <li><strong>Address:</strong> MMA InfoSec, 123 Security Ave, City, Country</li>
+          <li><strong>Phone:</strong> +1 (555) 555-5555</li>
+        </ul>
+
+        <p class="small-print">
+          We aim to respond to all verified privacy requests within 30 days.
+        </p>
+      </section>
+
+    </article>
+
   </section>
 
-</section>
-
-
-<!-- TRUST -->
-<section class="whyus-trust">
-  <h2>Trust, Compliance & Governance</h2>
-
-  <div class="whyus-grid">
-    <div class="whyus-card">
-      <h3>Regulatory Readiness</h3>
-      <p>
-        Designed for finance, healthcare, technology, and highly regulated industries
-        that require continuous assurance and audit-ready reporting.
-      </p>
-      <p>
-        Our solutions support regulatory expectations without slowing innovation.
-      </p>
+  <!-- CTA bar -->
+  <section class="cta-bar" aria-hidden="false">
+    <div class="cta-left">
+      <h4>Have questions about your data?</h4>
+      <p>Our privacy team is available to help with any inquiries or requests.</p>
     </div>
 
-    <div class="whyus-card">
-      <h3>ISO, SOC2, GDPR</h3>
-      <p>
-        Alignment with international compliance, privacy, and data protection standards
-        ensures confidence for customers, partners, and regulators.
-      </p>
-      <p>
-        Security validation supports both internal governance and external audits.
-      </p>
+    <div class="cta-actions">
+      <a class="btn btn-outline" href="../contact/">Contact Us</a>
     </div>
-
-    <div class="whyus-card">
-      <h3>Certifications</h3>
-      <p>
-        Security maturity is validated through globally recognized certifications
-        and independent assessments.
-      </p>
-      <p>
-        This reinforces trust across stakeholders and executive leadership.
-      </p>
-    </div>
-
-    <div class="whyus-card">
-      <h3>Threat Benchmarking</h3>
-      <p>
-        Continuous benchmarking against real attacker behavior and industry threat
-        models keeps defenses aligned with the current threat landscape.
-      </p>
-      <p>
-        Organizations stay ahead of emerging risks—not behind them.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- LEADERSHIP -->
-<section class="whyus-leadership">
-  <h2>Experienced Leadership</h2>
-  <div class="whyus-leadership-card">
-    <h3>Cybersecurity Veterans</h3>
-    <p>
-      Our leadership team brings decades of hands-on experience across incident response,
-      security engineering, red teaming, and enterprise risk management.
-    </p>
-    <p>
-      This depth of expertise ensures strategic guidance, practical execution,
-      and trusted partnership throughout every stage of your security journey.
-    </p>
-  </div>
-</section>
-
-<!-- INTRO -->
-<section class="whyus-intro">
-  <h2>Built on Proof. Trusted by Outcomes.</h2>
-  <p>
-    Unlike traditional security vendors that rely on static assessments and
-    periodic audits, MMA InfoSec focuses on real performance in real environments.
-    We simulate authentic attacker behavior, continuously validate controls,
-    and provide clear, actionable insights that support confident decision-making.
-  </p>
-  <p>
-    Our customers gain visibility into what truly works, what needs improvement,
-    and how their defenses perform against evolving threats—without complexity
-    or guesswork.
-  </p>
-</section>
-
-<!-- CTA -->
-<section class="whyus-cta">
-  <h2>Choose Security That’s Proven</h2>
-  <p>
-    Partner with MMA InfoSec to build measurable, resilient, and future-ready
-    cybersecurity programs that deliver real protection and lasting confidence.
-  </p>
-  <a href="#" class="whyus-btn">Talk to Our Experts →</a>
-</section>
-
-<script>
-const cards = document.querySelectorAll('.whyus-card');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.2 });
-
-cards.forEach(card => observer.observe(card));
-</script>
+  </section>
 
     <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
       <i class="bi bi-arrow-up"></i>
@@ -1311,9 +1102,9 @@ cards.forEach(card => observer.observe(card));
     <p>© 2026 MMA InfoSec. All Rights Reserved.</p>
 
     <div class="footer-links">
-      <a href="/Privacy-Notice/">Privacy Notice</a>
-      <a href="/Terms-of-Use/">Terms of Use</a>
-      <a href="/Security/">Security</a>
+      <a href="../Privacy-Notice/">Privacy Notice</a>
+      <a href="../Terms-of-Use/">Terms of Use</a>
+      <a href="../Security/">Security</a>
     </div>
   </div>
 </footer>
@@ -1362,6 +1153,25 @@ cards.forEach(card => observer.observe(card));
       })();
     </script>
 
+<script>
+  const text =
+    "Ultimately business protection comes at the speed at which you can hunt and contain an attack.";
+  const speed = 38;
+
+  let i = 0;
+  const target = document.querySelector(".typed-text");
+  if (!target) return;
+
+  function typeText() {
+    if (i < text.length) {
+      target.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeText, speed);
+    }
+  }
+
+  typeText();
+</script>
     <!-- AOS Library Script Initialization -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
