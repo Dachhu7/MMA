@@ -7,8 +7,38 @@
   </url>
 
   <url>
+    <loc>https://alaman.me/services/</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://alaman.me/solutions/</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://alaman.me/company/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://alaman.me/industries/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://alaman.me/resources/</loc>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
     <loc>https://alaman.me/contact/</loc>
     <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://alaman.me/why-us/</loc>
+    <priority>0.70</priority>
   </url>
 
 </urlset>

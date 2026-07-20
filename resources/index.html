@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resources — MMA InfoSec Blogs, Threat Reports & Webinars</title>
-    <meta name="description" content="Explore MMA InfoSec's library of cybersecurity blogs, threat reports, webinars, research labs, and educational resources.">
+    <title>Resources — MMA InfoSec</title>
+    <meta name="description" content="Access MMA InfoSec's latest threat reports, research, and cybersecurity resources.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Resources — MMA InfoSec Blogs, Threat Reports & Webinars">
-    <meta property="og:description" content="Explore MMA InfoSec's library of cybersecurity blogs, threat reports, webinars, research labs, and educational resources.">
+    <meta property="og:title" content="Resources — MMA InfoSec">
+    <meta property="og:description" content="Access MMA InfoSec's latest threat reports, research, and cybersecurity resources.">
     <meta property="og:url" content="https://alaman.me/resources/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="../images/favicon.png">
@@ -21,6 +21,11 @@
 
     <!-- Custom CSS File -->
     <link rel="stylesheet" href="../css/style.css" />
+
+    <!-- Navbar override styles -->
+    <style>
+      .nav-item.no-dropdown > a::after { display: none; }
+    </style>
 
     <!-- Google Font Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,6 +54,368 @@
 
     <!-- EmailJS Library -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <style>
+      :root {
+        --dark-bg: #020916;
+        --dark-card: rgba(255,255,255,0.05);
+        --text-light: #cbd5e1;
+        --text-muted: #94a3b8;
+        --accent-cyan: #06b6d4;
+        --accent-green: #22c55e;
+        --accent-blue: #2563eb;
+        --gradient-main: linear-gradient(135deg, #22c55e, #06b6d4, #3b82f6);
+        --glass-bg: rgba(255,255,255,0.06);
+        --glass-border: rgba(255,255,255,0.10);
+        --radius-lg: 24px;
+        --radius-md: 16px;
+      }
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body { background: var(--dark-bg); color: var(--text-light); }
+
+      /* =====================================
+         HERO – VIDEO DARK PREMIUM
+      ===================================== */
+      .resources-hero {
+        position: relative;
+        min-height: 78vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 160px 8% 100px;
+        text-align: center;
+        isolation: isolate;
+      }
+
+      .resources-hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+      }
+
+      .resources-hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          linear-gradient(180deg, rgba(2,9,22,0.85) 0%, rgba(2,9,22,0.70) 50%, rgba(2,9,22,0.90) 100%),
+          radial-gradient(800px 400px at 50% 30%, rgba(6,182,212,0.20), transparent 70%);
+      }
+
+      .resources-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+      }
+
+      .resources-hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent-cyan);
+        background: rgba(6,182,212,0.10);
+        border: 1px solid rgba(6,182,212,0.30);
+        border-radius: 999px;
+        margin-bottom: 28px;
+      }
+
+      .resources-hero h1 {
+        font-size: clamp(44px, 5vw, 72px);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .resources-hero p {
+        font-size: 18px;
+        line-height: 1.85;
+        color: rgba(203,213,225,0.85);
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      /* =====================================
+         LEAD CAPTURE – WHITE THEME
+      ===================================== */
+      .lead-capture {
+        padding: 100px 8%;
+        background: #f8fafc;
+      }
+
+      .lead-capture-container {
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .lead-capture-header {
+        text-align: center;
+        margin-bottom: 56px;
+      }
+
+      .lead-capture-header h2 {
+        font-size: clamp(32px, 3.6vw, 48px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 18px;
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .lead-capture-header p {
+        font-size: 17px;
+        color: #475569;
+        line-height: 1.8;
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      /* ---------- FORM CONTAINER ---------- */
+      .lead-form {
+        background: #ffffff;
+        border-radius: var(--radius-lg);
+        padding: 56px 52px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+        transition: opacity 0.5s ease;
+      }
+
+      .lead-form.hidden {
+        display: none;
+      }
+
+      .lead-form .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .lead-form .full-width { grid-column: 1 / -1; }
+
+      .lead-form label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .lead-form label .required { color: #ef4444; margin-left: 2px; }
+
+      .lead-form input,
+      .lead-form select {
+        width: 100%;
+        padding: 15px 18px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: var(--radius-md);
+        font-size: 15px;
+        color: #1e293b;
+        background: #ffffff;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      .lead-form input::placeholder,
+      .lead-form select::placeholder {
+        color: #94a3b8;
+      }
+
+      .lead-form input:focus,
+      .lead-form select:focus {
+        outline: none;
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 0 4px rgba(6,182,212,0.12);
+        background: #ffffff;
+      }
+
+      .lead-form input.error,
+      .lead-form select.error {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 4px rgba(239,68,68,0.12);
+      }
+
+      .lead-form .field-error {
+        font-size: 13px;
+        color: #ef4444;
+        margin-top: 6px;
+        display: none;
+      }
+
+      .lead-form .field-error.show { display: block; }
+
+      /* ---------- SUBMIT ---------- */
+      .lead-form .submit-btn {
+        grid-column: 1 / -1;
+        padding: 18px 40px;
+        border: none;
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        background: var(--gradient-main);
+        cursor: pointer;
+        transition: all 0.35s ease;
+        box-shadow: 0 12px 35px rgba(6,182,212,0.30);
+        letter-spacing: 0.3px;
+        margin-top: 12px;
+        font-family: inherit;
+      }
+
+      .lead-form .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 50px rgba(6,182,212,0.45);
+      }
+
+      .lead-form .submit-btn:active { transform: translateY(0); }
+      .lead-form .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+      .lead-form .submit-btn .spinner {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 2.5px solid rgba(255,255,255,0.25);
+        border-top-color: #ffffff;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      @keyframes spin { to { transform: rotate(360deg); } }
+
+      /* =====================================
+         ADDITIONAL RESOURCES
+      ===================================== */
+      .additional-resources {
+        padding: 100px 8% 120px;
+        background: #ffffff;
+      }
+
+      .additional-resources .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .additional-resources .section-header h2 {
+        font-size: clamp(30px, 3.4vw, 44px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .additional-resources .section-header p {
+        font-size: 17px;
+        color: #475569;
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .resource-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--radius-lg);
+        padding: 48px 40px;
+        transition: all 0.45s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      }
+
+      .resource-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: var(--radius-lg);
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(6,182,212,0.25), transparent, rgba(34,197,94,0.15));
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+      }
+
+      .resource-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(6,182,212,0.30);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+      }
+
+      .resource-card .icon-wrap {
+        width: 56px;
+        height: 56px;
+        border-radius: var(--radius-md);
+        background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(34,197,94,0.10));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        font-size: 24px;
+        color: var(--accent-cyan);
+      }
+
+      .resource-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+      }
+
+      .resource-card p {
+        font-size: 15px;
+        color: #475569;
+        line-height: 1.85;
+        margin-bottom: 0;
+      }
+
+      /* =====================================
+         RESPONSIVE
+      ===================================== */
+      @media (max-width: 992px) {
+        .resources-grid { grid-template-columns: 1fr 1fr; }
+        .lead-form .form-grid { grid-template-columns: 1fr; }
+        .lead-form { padding: 40px 28px; }
+      }
+
+      @media (max-width: 600px) {
+        .resources-hero { min-height: 65vh; padding: 120px 6% 70px; }
+        .resources-hero h1 { font-size: 32px; }
+        .resources-hero p { font-size: 16px; }
+        .lead-capture { padding: 70px 6%; }
+        .additional-resources { padding: 70px 6% 90px; }
+        .resources-grid { grid-template-columns: 1fr; }
+        .resource-card { padding: 36px 28px; }
+        .lead-form { padding: 32px 20px; }
+      }
+    </style>
   </head>
 
   <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
@@ -71,353 +438,73 @@
     <!-- Nav -->
     <ul class="nav-links">
 
-      <!-- PLATFORM -->
-      <li class="nav-item has-dropdown">
-        <a href="../platform/"><span>Platform</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>Security Platform</h4>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Endpoint Security</span>
-                  <small>Devices, servers & workstations</small>
-                  <small>Advanced endpoint detection and response (EDR)</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Cloud Security</span>
-                  <small>AWS, Azure & Kubernetes</small>
-                  <small>Cloud workload protection & posture management</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Identity Protection</span>
-                  <small>Zero-trust access control</small>
-                  <small>Identity governance and privileged access security</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Email Security</span>
-                  <small>Phishing & ransomware defense</small>
-                  <small>AI-based email threat prevention system</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Capabilities</h4>
-
-                <a class="menu-item" href="../platform/">
-                  <span>AI Threat Detection</span>
-                  <small>Behavior-based analysis</small>
-                  <small>Machine learning anomaly detection engine</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Autonomous Response</span>
-                  <small>Instant containment</small>
-                  <small>Automated mitigation & attack isolation</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Threat Intelligence</span>
-                  <small>Global attack telemetry</small>
-                  <small>Real-time intelligence feed integration</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Risk Scoring</span>
-                  <small>Prioritized alerts</small>
-                  <small>AI-driven vulnerability scoring engine</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Enterprise Platform</div>
-              <h3>Unified AI-Driven Protection</h3>
-              <p>
-                A consolidated cybersecurity platform combining endpoint,
-                cloud, identity and AI-based detection into one intelligent defense layer.
-              </p>
-              <a href="../platform/" class="highlight-btn">Explore Platform →</a>
-            </div>
-
-          </div>
-        </div>
+      <!-- OUR STORY -->
+      <li class="nav-item no-dropdown">
+        <a href="../company/"><span>Our Story</span></a>
       </li>
 
-      <!-- WHY US -->
+      <!-- OFFERINGS -->
       <li class="nav-item has-dropdown">
-        <a href="../why-us/"><span>Why Us</span></a>
-
+        <a href="#"><span>Offerings</span></a>
         <div class="mega-menu">
           <div class="mega-inner">
             <div class="mega-content">
-
               <div class="menu-col">
-                <h4>Proof & Results</h4>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Customer Success</span>
-                  <small>Real business impact</small>
-                  <small>Enterprise deployment success stories</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Case Studies</span>
-                  <small>Measured outcomes</small>
-                  <small>Proven ROI and security performance metrics</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Analyst Reports</span>
-                  <small>Industry validation</small>
-                  <small>Recognized by global security analysts</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Trust & Compliance</h4>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Compliance</span>
-                  <small>ISO, SOC2, GDPR</small>
-                  <small>Regulatory and governance alignment</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Certifications</span>
-                  <small>Security benchmarks</small>
-                  <small>Certified enterprise-grade protection</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Leadership</span>
-                  <small>Cybersecurity veterans</small>
-                  <small>Experienced global security leadership team</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Trusted Security</div>
-              <h3>Enterprise-Grade Trust</h3>
-              <p>
-                Recognized industry validation, measurable results,
-                and compliance-ready cybersecurity architecture.
-              </p>
-              <a href="../why-us/" class="highlight-btn">Discover Why →</a>
-            </div>
-
-          </div>
-        </div>
-      </li>
-
-      <!-- SERVICES -->
-      <li class="nav-item has-dropdown">
-        <a href="../services/"><span>Services</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>Managed Security</h4>
-
+                <h4>Services</h4>
                 <a class="menu-item" href="../services/">
-                  <span>MDR</span>
-                  <small>24×7 monitoring</small>
-                  <small>Managed detection & response operations</small>
+                  <span>Managed Security</span>
+                  <small>24×7 monitoring & response</small>
+                  <small>MDR, threat hunting & incident response</small>
                 </a>
-
                 <a class="menu-item" href="../services/">
-                  <span>Threat Hunting</span>
-                  <small>Proactive detection</small>
-                  <small>Advanced adversary behavior analysis</small>
-                </a>
-
-                <a class="menu-item" href="../services/">
-                  <span>Incident Response</span>
-                  <small>Rapid containment</small>
-                  <small>Immediate response & digital forensics</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Advisory</h4>
-
-                <a class="menu-item" href="../services/">
-                  <span>Deployment</span>
-                  <small>Secure rollout</small>
-                  <small>Enterprise-grade platform integration</small>
-                </a>
-
-                <a class="menu-item" href="../services/">
-                  <span>Security Consulting</span>
+                  <span>Advisory</span>
                   <small>Expert guidance</small>
-                  <small>Strategic cybersecurity transformation</small>
-                </a>
-
-                <a class="menu-item" href="../services/">
-                  <span>Training</span>
-                  <small>Team readiness</small>
-                  <small>Hands-on security awareness programs</small>
+                  <small>Deployment, consulting & training</small>
                 </a>
               </div>
-
+              <div class="menu-col">
+                <h4>Solutions</h4>
+                <a class="menu-item" href="../solutions/">
+                  <span>Platform Overview</span>
+                  <small>Unified AI-driven protection</small>
+                  <small>Endpoint, cloud, identity & email security</small>
+                </a>
+                <a class="menu-item" href="../solutions/">
+                  <span>Custom Solutions</span>
+                  <small>Tailored security</small>
+                  <small>Enterprise-grade custom implementations</small>
+                </a>
+              </div>
             </div>
-
             <div class="mega-highlight">
-              <div class="highlight-badge">Expert Services</div>
-              <h3>24×7 Security Operations</h3>
+              <div class="highlight-badge">Our Offerings</div>
+              <h3>Comprehensive Cyber Resilience</h3>
               <p>
-                Continuous monitoring, proactive threat hunting,
-                and rapid incident containment by experts.
+                Integrated services and solutions designed
+                to protect, detect, and respond to evolving threats.
               </p>
-              <a href="../services/" class="highlight-btn">View Services →</a>
+              <a href="../services/" class="highlight-btn">Explore Offerings →</a>
             </div>
-
           </div>
         </div>
+      </li>
+
+      <!-- INDUSTRIES -->
+      <li class="nav-item no-dropdown">
+        <a href="../industries/"><span>Industries</span></a>
       </li>
 
       <!-- RESOURCES -->
-      <li class="nav-item has-dropdown">
+      <li class="nav-item no-dropdown">
         <a href="../resources/"><span>Resources</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>Knowledge</h4>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Blogs</span>
-                  <small>Insights & trends</small>
-                  <small>Latest cybersecurity thought leadership</small>
-                </a>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Reports</span>
-                  <small>Threat research</small>
-                  <small>In-depth global threat intelligence reports</small>
-                </a>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Webinars</span>
-                  <small>Live & on-demand</small>
-                  <small>Expert-led cybersecurity sessions</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Learning</h4>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Cybersecurity 101</span>
-                  <small>Foundations</small>
-                  <small>Essential security fundamentals</small>
-                </a>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Research Labs</span>
-                  <small>Advanced studies</small>
-                  <small>Innovation-driven security experimentation</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Stay Informed</div>
-              <h3>Latest Cyber Insights</h3>
-              <p>
-                Access expert blogs, reports and research
-                to stay ahead of evolving cyber threats.
-              </p>
-              <a href="../resources/" class="highlight-btn">Explore Resources →</a>
-            </div>
-
-          </div>
-        </div>
       </li>
 
-      <!-- COMPANY -->
-      <li class="nav-item has-dropdown">
-        <a href="../company/"><span>Company</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>About</h4>
-
-                <a class="menu-item" href="../company/">
-                  <span>About Us</span>
-                  <small>Mission & vision</small>
-                  <small>Our cybersecurity journey & purpose</small>
-                </a>
-
-                <a class="menu-item" href="../company/">
-                  <span>Leadership</span>
-                  <small>Our people</small>
-                  <small>Executive & security leadership team</small>
-                </a>
-
-                <a class="menu-item" href="../company/">
-                  <span>Careers</span>
-                  <small>Join our team</small>
-                  <small>Explore opportunities in cyber innovation</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Connect</h4>
-
-                <a class="menu-item" href="../company/">
-                  <span>Contact</span>
-                  <small>Sales & support</small>
-                  <small>Connect with our security experts</small>
-                </a>
-
-                <a class="menu-item" href="../company/">
-                  <span>Support</span>
-                  <small>Help center</small>
-                  <small>Technical assistance & documentation</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Our Company</div>
-              <h3>Driven by Cyber Excellence</h3>
-              <p>
-                Built by cybersecurity veterans committed
-                to protecting digital ecosystems worldwide.
-              </p>
-              <a href="../company/" class="highlight-btn">About Company →</a>
-            </div>
-
-          </div>
-        </div>
+      <!-- CONTACT US -->
+      <li class="nav-item no-dropdown">
+        <a href="../contact/"><span>Contact Us</span></a>
       </li>
 
     </ul>
-
-    <!-- CTA -->
-    <div class="nav-actions">
-      <a href="../contact/" class="btn primary">Get Started</a>
-      <a href="../contact/" class="btn outline">Contact Us</a>
-    </div>
 
   </div>
 </nav>
@@ -425,13 +512,12 @@
 <!-- Mobile Navigation -->
 <div class="navbar-nav-mobile" id="navbarNav">
   <button type="button" class="nav-close">&times;</button>
-  <a href="../platform/">Platform</a>
-  <a href="../why-us/">Why Us</a>
+  <a href="../company/">Our Story</a>
   <a href="../services/">Services</a>
+  <a href="../solutions/">Solutions</a>
+  <a href="../industries/">Industries</a>
   <a href="../resources/">Resources</a>
-  <a href="../company/">Company</a>
-  <a href="../contact/" class="btn primary">Get Started</a>
-  <a href="../contact/" class="btn outline">Contact Us</a>
+  <a href="../contact/">Contact Us</a>
 </div>
 
 <script>
@@ -470,1172 +556,224 @@ dropdownItems.forEach(item => {
 </script>
 
 <!-- ========================================= -->
-<!-- MMA INFOSEC – KNOWLEDGE & RESEARCH BLOCK -->
+<!-- HERO SECTION -->
 <!-- ========================================= -->
 
-
-<style>
-
-/* =========================================
-   GLOBAL ROOT SYSTEM (CLEANED & CENTRALIZED)
-========================================= */
-
-:root{
-  --white-bg:#f8fbff;
-  --light-bg:#eef7ff;
-  --dark-bg:#061a2e;
-
-  --text-dark:#06263d;
-  --text-gray:#475569;
-  --text-muted:#64748b;
-  --text-light:#cbd5e1;
-
-  --accent-green:#22c55e;
-  --accent-cyan:#06b6d4;
-  --accent-blue:#2563eb;
-  --accent-gradient:linear-gradient(135deg,#22c55e,#06b6d4,#2563eb);
-
-  --radius-lg:20px;
-
-  --shadow-soft:0 12px 30px rgba(0,0,0,0.06);
-  --shadow-medium:0 20px 60px rgba(6,182,212,0.12);
-  --shadow-strong:0 30px 80px rgba(6,182,212,0.20);
-
-  --transition-smooth:all .45s cubic-bezier(.4,0,.2,1);
-}
-
-
-
-/* =========================================
-   HERO SECTION – PREMIUM CYBER VIDEO VERSION
-========================================= */
-.resources-hero{
-  position:relative;
-  min-height:100vh;
-  padding:80px 8%;
-  display:flex;
-  align-items:center;
-  justify-content:center; /* ADDED FOR PERFECT CENTER */
-  overflow:hidden;
-  background:#020617;
-  text-align:center; /* CENTER TEXT */
-}
-
-/* ===== VIDEO BACKGROUND ===== */
-
-.resources-hero-bg{
-  position:absolute;
-  inset:0;
-  z-index:1;
-  overflow:hidden;
-}
-
-.resources-hero-video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(0.85) contrast(1.05) saturate(1.05);
-}
-
-/* ===== DARK PREMIUM OVERLAY ===== */
-
-.resources-hero-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(90deg, rgba(2,6,23,0.75) 20%, rgba(2,6,23,0.55) 55%, rgba(2,6,23,0.75)),
-    radial-gradient(circle at 70% 40%, rgba(6,182,212,0.25), transparent 60%);
-  z-index:2;
-}
-
-/* ===== CONTAINER ===== */
-
-.resources-hero-container{
-  position:relative;
-  z-index:3;
-  display:flex;
-  flex-direction:column; /* STACK LINE + CONTENT */
-  align-items:center; /* CENTER CONTENT */
-  justify-content:center;
-  gap:40px;
-  max-width:1300px;
-  width:100%;
-  text-align:center;
-}
-
-
-/* ===== CONTENT ===== */
-
-.resources-hero-content{
-  max-width:900px;
-  animation:fadeSlideUp 1.2s ease forwards;
-}
-
-.resources-hero h1{
-  font-size:clamp(42px,5vw,72px);
-  font-weight:800;
-  line-height:1.05;
-  letter-spacing:-0.02em;
-  margin-bottom:30px;
-  background:linear-gradient(90deg,#22c55e,#06b6d4,#38bdf8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.resources-hero p{
-  font-size:19px;
-  line-height:1.9;
-  color:#cbd5e1;
-  margin:0 auto 45px auto; /* PERFECT CENTER */
-  max-width:780px;
-  opacity:0.9;
-}
-
-/* ===== BUTTON ===== */
-
-.resources-btn{
-  display:inline-block;
-  padding:18px 38px;
-  border-radius:999px;
-  font-weight:600;
-  text-decoration:none;
-  color:#ffffff;
-  background:linear-gradient(90deg,#22c55e,#06b6d4);
-  box-shadow:0 15px 45px rgba(6,182,212,0.4);
-  transition:all .4s ease;
-  position:relative;
-  overflow:hidden;
-}
-
-.resources-btn:hover{
-  transform:translateY(-5px);
-  box-shadow:0 25px 70px rgba(6,182,212,0.6);
-}
-
-.resources-btn::after{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-  background:linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
-  transition:all .6s ease;
-}
-
-.resources-btn:hover::after{
-  left:100%;
-}
-
-/* ===== ANIMATIONS ===== */
-
-@keyframes fadeSlideUp{
-  from{
-    opacity:0;
-    transform:translateY(40px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-@keyframes glowPulse{
-  0%,100%{
-    box-shadow:0 0 25px rgba(6,182,212,0.6);
-  }
-  50%{
-    box-shadow:0 0 40px rgba(34,197,94,0.8);
-  }
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media(max-width:992px){
-
-  .resources-hero{
-    padding:100px 6%;
-  }
-
-  .resources-hero-container{
-    flex-direction:column;
-    gap:30px;
-  }
-
-
-}
-
-@media(max-width:600px){
-
-  .resources-hero{
-    padding:120px 6%;
-    min-height:90vh;
-  }
-
-  .resources-hero h1{
-    font-size:34px;
-  }
-
-  .resources-hero p{
-    font-size:16px;
-  }
-
-  .resources-btn{
-    padding:14px 26px;
-    font-size:14px;
-  }
-
-}
-
-/* =========================================
-   NEXT-GEN CYBER INTELLIGENCE GRID
-   (Editorial Premium Layout - No Cards)
-========================================= */
-
-.resources-grid{
-  position:relative;
-  padding: 40px 8%;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:80px 60px;
-  background:
-    radial-gradient(1200px 600px at 50% -10%, rgba(6,182,212,.12), transparent 70%),
-    linear-gradient(180deg,#ffffff 0%,#f6f9ff 100%);
-  overflow:hidden;
-}
-
-/* SECTION HEADER */
-.resources-grid-header{
-  grid-column:1/-1;
-  text-align:center;
-  max-width:880px;
-  margin:0 auto 0px auto;
-}
-
-.resources-eyebrow{
-  display:inline-block;
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-weight:600;
-  color:var(--accent-cyan);
-  margin-bottom:22px;
-  position:relative;
-}
-
-.resources-eyebrow::after{
-  content:"";
-  display:block;
-  width:60px;
-  height:2px;
-  margin:14px auto 0;
-  background:linear-gradient(90deg,var(--accent-cyan),var(--accent-blue));
-}
-
-.resources-title{
-  font-size:clamp(38px,4vw,54px);
-  font-weight:800;
-  margin-bottom:26px;
-  color:var(--text-dark);
-  line-height:1.15;
-}
-
-.resources-subtitle{
-  font-size:18px;
-  line-height:1.9;
-  color:var(--text-muted);
-}
-
-/* CONTENT BLOCK (NOT CARD) */
-.resources-card{
-  position:relative;
-  padding:0 0 40px 40px;
-  border-left:1px solid rgba(0,0,0,.06);
-  transition:all .5s cubic-bezier(.16,1,.3,1);
-}
-
-/* premium vertical accent line */
-.resources-card::before{
-  content:"";
-  position:absolute;
-  left:-1px;
-  top:0;
-  width:4px;
-  height:0%;
-  background:linear-gradient(180deg,var(--accent-cyan),var(--accent-blue));
-  transition:height .5s ease;
-}
-
-/* hover effect */
-.resources-card:hover{
-  transform:translateX(12px);
-}
-
-.resources-card:hover::before{
-  height:100%;
-}
-
-/* TITLE */
-.resources-card h3{
-  font-size:24px;
-  margin-bottom:20px;
-  font-weight:700;
-  color:var(--text-dark);
-  letter-spacing:.4px;
-}
-
-/* PARAGRAPH */
-.resources-card p{
-  font-size:16px;
-  color:var(--text-muted);
-  margin-bottom:22px;
-  line-height:1.9;
-}
-
-/* LIST */
-.resources-card ul{
-  padding-left:0;
-  margin-bottom:28px;
-  list-style:none;
-}
-
-.resources-card ul li{
-  font-size:15px;
-  color:var(--text-gray);
-  margin-bottom:14px;
-  line-height:1.8;
-  position:relative;
-  padding-left:22px;
-}
-
-/* custom bullet */
-.resources-card ul li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:9px;
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--accent-cyan);
-  box-shadow:0 0 10px rgba(6,182,212,.6);
-}
-
-/* LINK */
-.resources-card a{
-  display:inline-block;
-  font-weight:600;
-  font-size:14px;
-  letter-spacing:.6px;
-  color:var(--accent-cyan);
-  text-decoration:none;
-  position:relative;
-  transition:all .4s ease;
-}
-
-.resources-card a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-6px;
-  width:100%;
-  height:1px;
-  background:rgba(6,182,212,.4);
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .4s ease;
-}
-
-.resources-card a:hover{
-  color:var(--accent-blue);
-}
-
-.resources-card a:hover::after{
-  transform:scaleX(1);
-}
-
-/* =========================================
-   FEATURE SECTION (Refined Dark Premium)
-========================================= */
-
-.resources-feature{
-  padding:180px 6%;
-  text-align:center;
-  background:
-    radial-gradient(900px 600px at 50% 0%, rgba(6,182,212,.25), transparent 70%),
-    var(--dark-bg);
-  color:#ffffff;
-}
-
-.resources-feature h2{
-  font-size:clamp(40px,4vw,56px);
-  margin-bottom:34px;
-  background:linear-gradient(135deg,#ffffff,#67e8f9,#22c55e);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.resources-feature p{
-  max-width:920px;
-  margin:0 auto 40px;
-  font-size:19px;
-  line-height:1.9;
-  color:var(--text-light);
-}
-
-/* =========================================
-   RESPONSIVE SYSTEM
-========================================= */
-
-@media(max-width:1200px){
-  .mma-knowledge-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-  .resources-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:60px;
-  }
-}
-
-@media(max-width:768px){
-  .mma-knowledge-grid{
-    grid-template-columns:1fr;
-  }
-  .resources-grid{
-    grid-template-columns:1fr;
-    padding:120px 6%;
-    gap:50px;
-  }
-
-  .resources-title{
-    font-size:32px;
-  }
-
-  .resources-subtitle{
-    font-size:16px;
-  }
-
-  .resources-card{
-    padding-left:28px;
-  }
-}
-
-
-/* =========================================
-   KNOWLEDGE SECTION – PREMIUM ENTERPRISE UI
-========================================= */
-
-.mma-knowledge-section{
-  position:relative;
-  padding:40px 7%;
-  background:
-    radial-gradient(900px 500px at 50% -10%, rgba(6,182,212,.08), transparent 60%),
-    linear-gradient(180deg,#eef3f7 0%, #e8eef4 100%);
-}
-
-.mma-knowledge-header{
-  text-align:center;
-  margin-bottom:100px;
-}
-
-.mma-knowledge-title{
-  font-size:clamp(44px,4vw,64px);
-  font-weight:800;
-  letter-spacing:-0.03em;
-  margin-bottom:26px;
-  background:linear-gradient(135deg,#0f172a,#06b6d4);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.mma-knowledge-subtitle{
-  font-size:18px;
-  color:#526277;
-  max-width:880px;
-  margin:0 auto;
-  line-height:1.9;
-}
-
-/* =========================================
-   GRID – 4 CARDS IN SINGLE ROW
-========================================= */
-
-.mma-knowledge-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:48px;
-  align-items:stretch;
-}
-
-/* =========================================
-   CARD – PREMIUM STYLE
-========================================= */
-
-.mma-knowledge-card{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  background:#ffffff;
-  border-radius:24px;
-  padding:55px 42px;
-  min-height:420px;
-  border:1px solid rgba(6,182,212,0.12);
-  box-shadow:
-    0 25px 60px rgba(15,23,42,.05),
-    0 10px 25px rgba(15,23,42,.04);
-  transition:all .45s cubic-bezier(.4,0,.2,1);
-  overflow:hidden;
-}
-
-/* subtle top highlight line */
-.mma-knowledge-card::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:5px;
-  background:linear-gradient(90deg,#06b6d4,#0ea5e9);
-  opacity:.7;
-  transition:.4s ease;
-}
-
-.mma-knowledge-card:hover{
-  transform:translateY(-18px);
-  box-shadow:
-    0 40px 90px rgba(6,182,212,.18),
-    0 15px 35px rgba(15,23,42,.08);
-  border-color:rgba(6,182,212,.4);
-}
-
-.mma-knowledge-card:hover::before{
-  height:6px;
-}
-
-/* TITLE */
-.mma-knowledge-card h3{
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:22px;
-  color:#0f172a;
-}
-
-/* DESCRIPTION */
-.mma-knowledge-card p{
-  flex-grow:1;
-  font-size:15.5px;
-  line-height:1.9;
-  color:#5f6f82;
-  margin-bottom:40px;
-}
-
-/* =========================================
-   BUTTON – PREMIUM SAAS STYLE
-========================================= */
-
-.mma-knowledge-btn{
-  align-self:flex-start;
-  padding:14px 28px;
-  font-size:14px;
-  font-weight:600;
-  border-radius:50px;
-  border:none;
-  cursor:pointer;
-  background:linear-gradient(135deg,#06b6d4,#0ea5e9);
-  color:#ffffff;
-  transition:all .35s ease;
-  box-shadow:0 10px 30px rgba(6,182,212,.35);
-}
-
-.mma-knowledge-btn:hover{
-  transform:translateY(-5px);
-  box-shadow:0 20px 45px rgba(6,182,212,.45);
-}
-
-.mma-knowledge-btn:active{
-  transform:translateY(-2px);
-}
-
-/* =========================================
-   MODAL – ENTERPRISE GLASS
-========================================= */
-
-.mma-modal-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(15,23,42,.75);
-  backdrop-filter:blur(10px);
-  opacity:0;
-  visibility:hidden;
-  transition:.4s ease;
-  z-index:999;
-}
-
-.mma-modal-overlay.active{
-  opacity:1;
-  visibility:visible;
-}
-
-.mma-modal{
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%) scale(.85);
-  width:92%;
-  max-width:680px;
-  background:#ffffff;
-  border-radius:26px;
-  box-shadow:0 50px 120px rgba(15,23,42,.3);
-  opacity:0;
-  visibility:hidden;
-  transition:all .4s cubic-bezier(.4,0,.2,1);
-  z-index:1000;
-}
-
-.mma-modal.active{
-  opacity:1;
-  visibility:visible;
-  transform:translate(-50%,-50%) scale(1);
-}
-
-.mma-modal-content{
-  padding:60px 50px;
-  position:relative;
-}
-
-.mma-modal-content h3{
-  margin-bottom:28px;
-  font-size:30px;
-  font-weight:700;
-  color:#0f172a;
-  padding-bottom:18px;
-  border-bottom:1px solid rgba(6,182,212,.25);
-}
-
-.mma-modal-content p{
-  font-size:16px;
-  line-height:2;
-  color:#556678;
-  margin-top:20px;
-}
-
-/* CLOSE ICON */
-.mma-modal-close{
-  position:absolute;
-  top:24px;
-  right:28px;
-  font-size:28px;
-  cursor:pointer;
-  color:#64748b;
-  transition:.3s ease;
-}
-
-.mma-modal-close:hover{
-  color:#06b6d4;
-  transform:rotate(90deg) scale(1.1);
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-/* Large tablets */
-@media(max-width:1200px){
-  .mma-knowledge-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-/* Tablets */
-@media(max-width:1024px){
-  .mma-knowledge-section{
-    padding:140px 6%;
-  }
-
-  .mma-knowledge-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-}
-
-/* Mobile */
-@media(max-width:768px){
-  .mma-knowledge-section{
-    padding:110px 6%;
-  }
-
-  .mma-knowledge-grid{
-    grid-template-columns:1fr;
-  }
-
-  .mma-knowledge-card{
-    padding:42px 28px;
-    min-height:auto;
-  }
-
-  .mma-modal-content{
-    padding:40px 28px;
-  }
-}
-
-
-/* =========================================
-   MMA PREMIUM INSIGHT SPOTLIGHT SECTION
-   (Modern Enterprise Editorial Layout)
-========================================= */
-
-.mma-insight-block{
-  position:relative;
-  padding:180px 8%;
-  background:
-    radial-gradient(1000px 500px at 50% 0%, rgba(6,182,212,.18), transparent 70%),
-    linear-gradient(180deg,#0f172a 0%, #111827 100%);
-  text-align:center;
-  overflow:hidden;
-  color:#ffffff;
-}
-
-/* subtle animated glow layer */
-.mma-insight-block::before{
-  content:"";
-  position:absolute;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle, rgba(34,211,238,.25), transparent 70%);
-  top:-200px;
-  left:50%;
-  transform:translateX(-50%);
-  filter:blur(80px);
-  opacity:.6;
-  pointer-events:none;
-}
-
-/* =========================================
-   HEADING STYLE
-========================================= */
-
-.mma-insight-heading{
-  position:relative;
-  font-size:clamp(40px,4vw,58px);
-  font-weight:800;
-  line-height:1.15;
-  margin-bottom:40px;
-  letter-spacing:-.5px;
-  background:linear-gradient(135deg,#ffffff,#67e8f9,#22d3ee);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-/* elegant accent divider */
-.mma-insight-heading::after{
-  content:"";
-  display:block;
-  width:90px;
-  height:3px;
-  margin:28px auto 0;
-  border-radius:3px;
-  background:linear-gradient(90deg,#22d3ee,#3b82f6);
-  box-shadow:0 0 20px rgba(59,130,246,.6);
-}
-
-/* =========================================
-   PARAGRAPH STYLE
-========================================= */
-
-.mma-insight-text{
-  max-width:900px;
-  margin:0 auto;
-  font-size:19px;
-  line-height:1.9;
-  font-weight:400;
-  color:rgba(255,255,255,.85);
-  letter-spacing:.3px;
-  position:relative;
-  transition:all .4s ease;
-}
-
-/* premium soft highlight hover effect */
-.mma-insight-text:hover{
-  color:#ffffff;
-  transform:translateY(-4px);
-}
-
-/* =========================================
-   RESPONSIVE SYSTEM
-========================================= */
-
-@media(max-width:1200px){
-  .mma-insight-block{
-    padding:150px 6%;
-  }
-
-  .mma-insight-heading{
-    font-size:clamp(36px,5vw,46px);
-  }
-
-  .mma-insight-text{
-    font-size:17px;
-  }
-}
-
-@media(max-width:768px){
-  .mma-insight-block{
-    padding:120px 6%;
-  }
-
-  .mma-insight-heading{
-    font-size:32px;
-    margin-bottom:30px;
-  }
-
-  .mma-insight-text{
-    font-size:16px;
-    line-height:1.8;
-  }
-}
-
-</style>
-
-<!-- HERO -->
 <section class="resources-hero">
-
-  <!-- Background Video -->
-  <div class="resources-hero-bg">
-    <video class="resources-hero-video" autoplay muted loop playsinline preload="auto">
-      <source src="../images/Hero_Background_resources.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- Dark Overlay -->
+  <video class="resources-hero-video" autoplay muted loop playsinline>
+    <source src="../images/6963744-hd_1280_720_25fps.mp4" type="video/mp4">
+  </video>
   <div class="resources-hero-overlay"></div>
-
-  <div class="resources-hero-container">
-
-
-    <!-- Content -->
-    <div class="resources-hero-content">
-      <h1>Insights. Research. Intelligence.</h1>
-
-      <p>
-        Explore expert insights, threat research, educational materials,
-        strategic intelligence, and real-world cybersecurity knowledge from MMA InfoSec.
-        Designed to empower leaders, security teams, and decision-makers with measurable clarity.
-      </p>
-
-      <a href="#library" class="resources-btn">Browse Resources →</a>
-    </div>
-
+  <div class="resources-hero-content">
+    <span class="resources-hero-eyebrow"><i class="bi bi-grid-fill"></i> Resource Library</span>
+    <h1>Cybersecurity Intelligence<br>At Your Fingertips</h1>
+    <p>Threat reports, research papers, and expert guides to help your team stay ahead of evolving cyber threats.</p>
   </div>
-
-</section>
-
-
-<!-- GRID -->
-<section class="resources-grid" id="library">
-
-  <!-- SECTION HEADER -->
-  <div class="resources-grid-header">
-    <span class="resources-eyebrow">Knowledge Center</span>
-    <h2 class="resources-title">Cybersecurity Intelligence Library</h2>
-    <p class="resources-subtitle">
-      Explore expert insights, advanced research, and actionable frameworks
-      engineered to strengthen enterprise resilience in a threat-driven world.
-    </p>
-  </div>
-
-  <div class="resources-card">
-    <h3>Blog Articles</h3>
-    <p>
-      Expert analysis on emerging threats, zero-day vulnerabilities, AI-driven attacks,
-      ransomware trends, and advanced defense strategies.
-    </p>
-    <ul>
-      <li>Industry insights & threat intelligence updates</li>
-      <li>Detection & response best practices</li>
-      <li>Real-world attack breakdowns</li>
-    </ul>
-    <a href="#">Read Articles →</a>
-  </div>
-
-  <div class="resources-card">
-    <h3>Threat Research Reports</h3>
-    <p>
-      Deep technical research covering adversary tactics, attack simulations,
-      vulnerability trends, and global telemetry intelligence.
-    </p>
-    <ul>
-      <li>Attack surface assessments</li>
-      <li>Red team simulation findings</li>
-      <li>Security maturity benchmarks</li>
-    </ul>
-    <a href="#">Download Reports →</a>
-  </div>
-
-  <div class="resources-card">
-    <h3>Webinars</h3>
-    <p>
-      Live and on-demand sessions led by cybersecurity veterans
-      exploring modern security architecture and executive-level strategies.
-    </p>
-    <ul>
-      <li>Incident response planning</li>
-      <li>Threat hunting methodologies</li>
-      <li>Cloud & hybrid security design</li>
-    </ul>
-    <a href="#">Watch Webinars →</a>
-  </div>
-
-  <div class="resources-card">
-    <h3>Case Studies</h3>
-    <p>
-      Measurable engagement outcomes showcasing detection improvements,
-      reduced dwell time, and operational transformation.
-    </p>
-    <ul>
-      <li>Real breach containment stories</li>
-      <li>Quantified resilience improvements</li>
-      <li>Executive reporting insights</li>
-    </ul>
-    <a href="#">Explore Cases →</a>
-  </div>
-
-  <div class="resources-card">
-    <h3>Compliance Guides</h3>
-    <p>
-      Strategic guidance aligned with ISO, SOC2, GDPR,
-      and global regulatory frameworks.
-    </p>
-    <ul>
-      <li>Audit preparation checklists</li>
-      <li>Governance alignment strategies</li>
-      <li>Continuous validation models</li>
-    </ul>
-    <a href="#">View Guides →</a>
-  </div>
-
-  <div class="resources-card">
-    <h3>Security Playbooks</h3>
-    <p>
-      Actionable response frameworks designed for SOC teams,
-      security engineers, and executive leadership.
-    </p>
-    <ul>
-      <li>Threat containment procedures</li>
-      <li>Recovery & resilience workflows</li>
-      <li>Incident communication models</li>
-    </ul>
-    <a href="#">Access Playbooks →</a>
-  </div>
-
-</section>
-
-
-
-<!-- ========================================= -->
-<!-- KNOWLEDGE SECTION – PREMIUM VERSION -->
-<!-- ========================================= -->
-
-<section class="mma-knowledge-section">
-
-  <div class="mma-knowledge-header">
-    <h2 class="mma-knowledge-title">Knowledge & Research</h2>
-    <p class="mma-knowledge-subtitle">
-      Explore cybersecurity intelligence, expert blogs, real-world threat research,
-      and strategic insights engineered to accelerate detection, response,
-      governance, and cyber resilience in a rapidly evolving threat landscape.
-    </p>
-  </div>
-
-  <div class="mma-knowledge-grid">
-
-    <div class="mma-knowledge-card">
-      <h3>Knowledge</h3>
-      <p>
-        Protection is a goal — Detection & Response are operational requirements.
-        Business resilience depends on how fast you can identify, investigate,
-        and neutralize adversarial activity.
-      </p>
-      <button class="mma-knowledge-btn" data-modal="knowledgeModal">
-        Explore Knowledge →
-      </button>
-    </div>
-
-    <div class="mma-knowledge-card">
-      <h3>Blogs</h3>
-      <p>
-        Insights from seasoned cybersecurity professionals sharing field-tested
-        strategies, emerging attack vectors, compliance updates, and architecture guidance.
-      </p>
-      <button class="mma-knowledge-btn" data-modal="blogsModal">
-        Read Blogs →
-      </button>
-    </div>
-
-    <div class="mma-knowledge-card">
-      <h3>Insights & Trends</h3>
-      <p>
-        From ransomware evolution to zero-trust adoption, we decode global
-        cyber trends and translate them into executive-ready intelligence.
-      </p>
-      <button class="mma-knowledge-btn" data-modal="insightsModal">
-        View Insights →
-      </button>
-    </div>
-
-    <div class="mma-knowledge-card">
-      <h3>Reports & Threat Research</h3>
-      <p>
-        Attack surface assessments, vulnerability analytics, threat hunting reports,
-        and sector-specific risk intelligence designed for measurable cyber maturity.
-      </p>
-      <button class="mma-knowledge-btn" data-modal="reportsModal">
-        Download Reports →
-      </button>
-    </div>
-
-  </div>
-
 </section>
 
 <!-- ========================================= -->
-<!-- MODALS -->
+<!-- LEAD CAPTURE SECTION -->
 <!-- ========================================= -->
 
-<div class="mma-modal-overlay" id="modalOverlay"></div>
+<section class="lead-capture" id="leadCapture">
+  <div class="lead-capture-container">
 
-<!-- Knowledge Modal -->
-<div class="mma-modal" id="knowledgeModal">
-  <div class="mma-modal-content">
-    <span class="mma-modal-close">&times;</span>
-    <h3>Cybersecurity Knowledge Hub</h3>
-    <p>
-      • SOC Modernization Frameworks<br>
-      • Threat Hunting Playbooks<br>
-      • Zero Trust Architecture Implementation<br>
-      • MITRE ATT&CK Mapping Guides<br>
-      • Incident Response Lifecycle Models<br><br>
-      Our knowledge center equips security teams with practical,
-      real-world defensive methodologies used across enterprise environments.
-    </p>
-  </div>
-</div>
+    <div class="lead-capture-header">
+      <h2>Download Our Latest Threat Reports</h2>
+      <p>Fill in your details to access exclusive cybersecurity resources from MMA InfoSec's research team.</p>
+    </div>
 
-<!-- Blogs Modal -->
-<div class="mma-modal" id="blogsModal">
-  <div class="mma-modal-content">
-    <span class="mma-modal-close">&times;</span>
-    <h3>Expert Blogs</h3>
-    <p>
-      • Ransomware Defense Strategies 2026<br>
-      • AI in Cybersecurity: Threat or Shield?<br>
-      • Cloud Security Misconfigurations Explained<br>
-      • Executive Guide to Cyber Risk Quantification<br><br>
-      Practical, field-driven content crafted by senior cyber analysts.
-    </p>
-  </div>
-</div>
+    <!-- Form -->
+    <div class="lead-form" id="leadForm">
+      <form id="downloadForm">
+        <div class="form-grid">
+          <div class="full-width">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required autocomplete="name">
+            <div class="field-error" id="fullNameError">Please enter your full name.</div>
+          </div>
 
-<!-- Insights Modal -->
-<div class="mma-modal" id="insightsModal">
-  <div class="mma-modal-content">
-    <span class="mma-modal-close">&times;</span>
-    <h3>Industry Insights & Trends</h3>
-    <p>
-      • Global Threat Landscape Reports<br>
-      • Supply Chain Risk Intelligence<br>
-      • Regulatory & Compliance Trends<br>
-      • Digital Transformation Security Models<br><br>
-      Strategic intelligence designed for CISOs and executive leadership.
-    </p>
-  </div>
-</div>
+          <div>
+            <label for="company">Company <span class="required">*</span></label>
+            <input type="text" id="company" name="company" placeholder="Where do you work?" required autocomplete="organization">
+            <div class="field-error" id="companyError">Please enter your company name.</div>
+          </div>
 
-<!-- Reports Modal -->
-<div class="mma-modal" id="reportsModal">
-  <div class="mma-modal-content">
-    <span class="mma-modal-close">&times;</span>
-    <h3>Threat Research & Reports</h3>
-    <p>
-      • Annual Threat Intelligence Report<br>
-      • Vulnerability Exposure Analytics<br>
-      • Red Team Assessment Findings<br>
-      • Industry-Specific Cyber Risk Reports<br><br>
-      Actionable reports engineered for measurable risk reduction.
-    </p>
+          <div>
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            <div class="field-error" id="emailError">Please enter a valid email address.</div>
+          </div>
+
+          <div>
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+            <div class="field-error" id="phoneError">Please enter your phone number.</div>
+          </div>
+
+          <div class="full-width">
+            <label for="resourceInterest">Resource Interest <span class="required">*</span></label>
+            <select id="resourceInterest" name="resourceInterest" required>
+              <option value="">Select a resource...</option>
+              <option value="CrowdStrike 2026 Global Threat Report">CrowdStrike 2026 Global Threat Report</option>
+              <option value="CloudSEK Threat Landscape Report">CloudSEK Threat Landscape Report</option>
+              <option value="Hybrid Cloud Security Survey">Hybrid Cloud Security Survey</option>
+              <option value="CIAM Essentials eBook">CIAM Essentials eBook</option>
+              <option value="Fortinet Cloud Security Report">Fortinet Cloud Security Report</option>
+              <option value="Gartner Strategic Predictions">Gartner Strategic Predictions</option>
+            </select>
+            <div class="field-error" id="resourceInterestError">Please select a resource.</div>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">Download Resource →</button>
+        </div>
+      </form>
+    </div>
+
   </div>
-</div>
+</section>
 
 <!-- ========================================= -->
-<!-- MODAL SCRIPT -->
+<!-- ADDITIONAL RESOURCES -->
+<!-- ========================================= -->
+
+<section class="additional-resources">
+  <div class="section-header">
+    <h2>Explore More Resources</h2>
+    <p>Dive deeper into our library of cybersecurity intelligence and guidance.</p>
+  </div>
+
+  <div class="resources-grid">
+    <div class="resource-card">
+      <div class="icon-wrap">
+        <i class="bi bi-shield-shaded"></i>
+      </div>
+      <h3>Threat Intelligence Reports</h3>
+      <p>Regular threat intelligence briefings covering adversary TTPs, emerging malware campaigns, and sector-specific risk analysis to keep your team informed and prepared.</p>
+    </div>
+
+    <div class="resource-card">
+      <div class="icon-wrap">
+        <i class="bi bi-file-earmark-text"></i>
+      </div>
+      <h3>Research &amp; Whitepapers</h3>
+      <p>In-depth research papers on zero-trust architecture, AI-driven security operations, cloud security posture management, and advanced persistent threat detection methodologies.</p>
+    </div>
+
+    <div class="resource-card">
+      <div class="icon-wrap">
+        <i class="bi bi-book"></i>
+      </div>
+      <h3>Cybersecurity Guides</h3>
+      <p>Practical guides for SOC teams, CISOs, and security engineers covering incident response planning, compliance readiness, and enterprise resilience frameworks.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- LEAD CAPTURE SCRIPT -->
 <!-- ========================================= -->
 
 <script>
-const buttons = document.querySelectorAll(".mma-knowledge-btn");
-const overlay = document.getElementById("modalOverlay");
-const modals = document.querySelectorAll(".mma-modal");
-const closes = document.querySelectorAll(".mma-modal-close");
+(function () {
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const modal = document.getElementById(btn.dataset.modal);
-    overlay.classList.add("active");
-    modal.classList.add("active");
-  });
-});
+  emailjs.init('user_1PqIjpp0BWEfAfe6FahEA');
 
-closes.forEach(close => {
-  close.addEventListener("click", () => {
-    overlay.classList.remove("active");
-    modals.forEach(m => m.classList.remove("active"));
-  });
-});
+  var form = document.getElementById('downloadForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var leadForm = document.getElementById('leadForm');
 
-overlay.addEventListener("click", () => {
-  overlay.classList.remove("active");
-  modals.forEach(m => m.classList.remove("active"));
-});
-</script>
+  function triggerDownload() {
+    var link = document.createElement('a');
+    link.href = '../images/favicon.png';
+    link.download = 'MMA-InfoSec-Threat-Report.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
+  function resetForm() {
+    form.reset();
+    document.querySelectorAll('.field-error').forEach(function (el) {
+      el.classList.remove('show');
+    });
+    document.querySelectorAll('.error').forEach(function (el) {
+      el.classList.remove('error');
+    });
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = 'Download Resource →';
+  }
 
-<!-- ========================================= -->
-<!-- INSIGHT STATEMENT BLOCK -->
-<!-- ========================================= -->
+  function validateField(id) {
+    var el = document.getElementById(id);
+    var errorEl = document.getElementById(id + 'Error');
+    var valid = true;
 
-<section class="mma-insight-block">
-  <h2 class="mma-insight-heading">
-    From Prevention to Detection & Response
-  </h2>
-  <p class="mma-insight-text">
-    MMA InfoSec is poised to transform organizations beyond basic prevention strategies —
-    building capability and capacity to detect, contain, and recover from advanced cyber-attacks.
-    Our research-driven approach ensures measurable resilience, operational clarity,
-    and continuous security validation.
-  </p>
-</section>
-
-<script>
-const resourceCards=document.querySelectorAll('.resources-card');
-const resourceObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
+    if (!el.value || el.value.trim() === '') {
+      valid = false;
     }
-  });
-},{threshold:0.2});
-resourceCards.forEach(card=>resourceObserver.observe(card));
-</script>
 
-
-<script>
-const knowledgeCards=document.querySelectorAll('.mma-knowledge-card');
-const knowledgeObserver=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
+    if (id === 'email' && el.value) {
+      var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!re.test(el.value)) valid = false;
     }
+
+    if (!valid) {
+      el.classList.add('error');
+      if (errorEl) errorEl.classList.add('show');
+    } else {
+      el.classList.remove('error');
+      if (errorEl) errorEl.classList.remove('show');
+    }
+
+    return valid;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var fields = ['fullName', 'company', 'email', 'phone', 'resourceInterest'];
+    var allValid = true;
+    fields.forEach(function (f) {
+      if (!validateField(f)) allValid = false;
+    });
+
+    if (!allValid) return;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner"></span> Sending...';
+
+    var templateParams = {
+      from_name: document.getElementById('fullName').value,
+      from_company: document.getElementById('company').value,
+      from_email: document.getElementById('email').value,
+      from_phone: document.getElementById('phone').value,
+      message: 'Resource interest: ' + document.getElementById('resourceInterest').value,
+    };
+
+    emailjs.send('service_h1a7end', 'template_f24dmuj', templateParams)
+      .then(function () {
+        triggerDownload();
+        resetForm();
+      })
+      .catch(function () {
+        // Download even if email fails
+        triggerDownload();
+        resetForm();
+      });
   });
-},{threshold:0.2});
-knowledgeCards.forEach(card=>knowledgeObserver.observe(card));
+
+  // Real-time validation clearing
+  form.querySelectorAll('input, select').forEach(function (el) {
+    el.addEventListener('input', function () {
+      validateField(el.id);
+    });
+    el.addEventListener('change', function () {
+      if (el.tagName === 'SELECT') validateField(el.id);
+    });
+  });
+
+})();
 </script>
 
     <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
@@ -1666,16 +804,16 @@ knowledgeCards.forEach(card=>knowledgeObserver.observe(card));
       <div class="footer-brand-line"></div>
     </div>
 
-    <!-- PLATFORM -->
+    <!-- SOLUTIONS -->
     <div class="footer-col">
-      <h4>Platform</h4>
+      <h4>Solutions</h4>
       <ul>
-        <li><a href="../platform/">Endpoint Security</a></li>
-        <li><a href="../platform/">Cloud Security</a></li>
-        <li><a href="../platform/">Identity Protection</a></li>
-        <li><a href="../platform/">Email Security</a></li>
-        <li><a href="../platform/">AI Threat Detection</a></li>
-        <li><a href="../platform/">Risk Scoring & Intelligence</a></li>
+        <li><a href="../solutions/">Endpoint Security</a></li>
+        <li><a href="../solutions/">Cloud Security</a></li>
+        <li><a href="../solutions/">Identity Protection</a></li>
+        <li><a href="../solutions/">Email Security</a></li>
+        <li><a href="../solutions/">AI Threat Detection</a></li>
+        <li><a href="../solutions/">Risk Scoring & Intelligence</a></li>
       </ul>
     </div>
 
@@ -1692,7 +830,7 @@ knowledgeCards.forEach(card=>knowledgeObserver.observe(card));
       </ul>
     </div>
 
-    <!-- SOLUTIONS -->
+    <!-- RESOURCES & INSIGHTS -->
     <div class="footer-col">
       <h4>Resources & Insights</h4>
       <ul>
@@ -1709,10 +847,9 @@ knowledgeCards.forEach(card=>knowledgeObserver.observe(card));
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="../company/">About Us</a></li>
+        <li><a href="../company/">Our Story</a></li>
         <li><a href="../why-us/">Why Us</a></li>
-        <li><a href="../company/">Leadership</a></li>
-        <li><a href="../company/">Support</a></li>
+        <li><a href="../industries/">Industries</a></li>
         <li><a href="../contact/">Contact Us</a></li>
       </ul>
     </div>
@@ -1724,14 +861,13 @@ knowledgeCards.forEach(card=>knowledgeObserver.observe(card));
     <p>© 2026 MMA InfoSec. All Rights Reserved.</p>
 
     <div class="footer-links">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" style="margin-right:8px;vertical-align:middle;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       <a href="/Privacy-Notice/">Privacy Notice</a>
       <a href="/Terms-of-Use/">Terms of Use</a>
       <a href="/Security/">Security</a>
     </div>
   </div>
 </footer>
-
-
 
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>
@@ -1783,7 +919,6 @@ knowledgeCards.forEach(card=>knowledgeObserver.observe(card));
 
     <!-- Bootstrap JS (Include Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 
     <!-- Custom JS File Linking -->
     <script src="/js/script.js"></script>

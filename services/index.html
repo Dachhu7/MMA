@@ -22,6 +22,11 @@
     <!-- Custom CSS File -->
     <link rel="stylesheet" href="../css/style.css" />
 
+    <!-- Navbar override styles -->
+    <style>
+      .nav-item.no-dropdown > a::after { display: none; }
+    </style>
+
     <!-- Google Font Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -71,353 +76,73 @@
     <!-- Nav -->
     <ul class="nav-links">
 
-      <!-- PLATFORM -->
-      <li class="nav-item has-dropdown">
-        <a href="../platform/"><span>Platform</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>Security Platform</h4>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Endpoint Security</span>
-                  <small>Devices, servers & workstations</small>
-                  <small>Advanced endpoint detection and response (EDR)</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Cloud Security</span>
-                  <small>AWS, Azure & Kubernetes</small>
-                  <small>Cloud workload protection & posture management</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Identity Protection</span>
-                  <small>Zero-trust access control</small>
-                  <small>Identity governance and privileged access security</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Email Security</span>
-                  <small>Phishing & ransomware defense</small>
-                  <small>AI-based email threat prevention system</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Capabilities</h4>
-
-                <a class="menu-item" href="../platform/">
-                  <span>AI Threat Detection</span>
-                  <small>Behavior-based analysis</small>
-                  <small>Machine learning anomaly detection engine</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Autonomous Response</span>
-                  <small>Instant containment</small>
-                  <small>Automated mitigation & attack isolation</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Threat Intelligence</span>
-                  <small>Global attack telemetry</small>
-                  <small>Real-time intelligence feed integration</small>
-                </a>
-
-                <a class="menu-item" href="../platform/">
-                  <span>Risk Scoring</span>
-                  <small>Prioritized alerts</small>
-                  <small>AI-driven vulnerability scoring engine</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Enterprise Platform</div>
-              <h3>Unified AI-Driven Protection</h3>
-              <p>
-                A consolidated cybersecurity platform combining endpoint,
-                cloud, identity and AI-based detection into one intelligent defense layer.
-              </p>
-              <a href="../platform/" class="highlight-btn">Explore Platform →</a>
-            </div>
-
-          </div>
-        </div>
+      <!-- OUR STORY -->
+      <li class="nav-item no-dropdown">
+        <a href="../company/"><span>Our Story</span></a>
       </li>
 
-      <!-- WHY US -->
+      <!-- OFFERINGS -->
       <li class="nav-item has-dropdown">
-        <a href="../why-us/"><span>Why Us</span></a>
-
+        <a href="#"><span>Offerings</span></a>
         <div class="mega-menu">
           <div class="mega-inner">
             <div class="mega-content">
-
               <div class="menu-col">
-                <h4>Proof & Results</h4>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Customer Success</span>
-                  <small>Real business impact</small>
-                  <small>Enterprise deployment success stories</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Case Studies</span>
-                  <small>Measured outcomes</small>
-                  <small>Proven ROI and security performance metrics</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Analyst Reports</span>
-                  <small>Industry validation</small>
-                  <small>Recognized by global security analysts</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Trust & Compliance</h4>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Compliance</span>
-                  <small>ISO, SOC2, GDPR</small>
-                  <small>Regulatory and governance alignment</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Certifications</span>
-                  <small>Security benchmarks</small>
-                  <small>Certified enterprise-grade protection</small>
-                </a>
-
-                <a class="menu-item" href="../why-us/">
-                  <span>Leadership</span>
-                  <small>Cybersecurity veterans</small>
-                  <small>Experienced global security leadership team</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Trusted Security</div>
-              <h3>Enterprise-Grade Trust</h3>
-              <p>
-                Recognized industry validation, measurable results,
-                and compliance-ready cybersecurity architecture.
-              </p>
-              <a href="../why-us/" class="highlight-btn">Discover Why →</a>
-            </div>
-
-          </div>
-        </div>
-      </li>
-
-      <!-- SERVICES -->
-      <li class="nav-item has-dropdown">
-        <a href="../services/"><span>Services</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>Managed Security</h4>
-
+                <h4>Services</h4>
                 <a class="menu-item" href="../services/">
-                  <span>MDR</span>
-                  <small>24×7 monitoring</small>
-                  <small>Managed detection & response operations</small>
+                  <span>Managed Security</span>
+                  <small>24×7 monitoring & response</small>
+                  <small>MDR, threat hunting & incident response</small>
                 </a>
-
                 <a class="menu-item" href="../services/">
-                  <span>Threat Hunting</span>
-                  <small>Proactive detection</small>
-                  <small>Advanced adversary behavior analysis</small>
-                </a>
-
-                <a class="menu-item" href="../services/">
-                  <span>Incident Response</span>
-                  <small>Rapid containment</small>
-                  <small>Immediate response & digital forensics</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Advisory</h4>
-
-                <a class="menu-item" href="../services/">
-                  <span>Deployment</span>
-                  <small>Secure rollout</small>
-                  <small>Enterprise-grade platform integration</small>
-                </a>
-
-                <a class="menu-item" href="../services/">
-                  <span>Security Consulting</span>
+                  <span>Advisory</span>
                   <small>Expert guidance</small>
-                  <small>Strategic cybersecurity transformation</small>
-                </a>
-
-                <a class="menu-item" href="../services/">
-                  <span>Training</span>
-                  <small>Team readiness</small>
-                  <small>Hands-on security awareness programs</small>
+                  <small>Deployment, consulting & training</small>
                 </a>
               </div>
-
+              <div class="menu-col">
+                <h4>Solutions</h4>
+                <a class="menu-item" href="../solutions/">
+                  <span>Platform Overview</span>
+                  <small>Unified AI-driven protection</small>
+                  <small>Endpoint, cloud, identity & email security</small>
+                </a>
+                <a class="menu-item" href="../solutions/">
+                  <span>Custom Solutions</span>
+                  <small>Tailored security</small>
+                  <small>Enterprise-grade custom implementations</small>
+                </a>
+              </div>
             </div>
-
             <div class="mega-highlight">
-              <div class="highlight-badge">Expert Services</div>
-              <h3>24×7 Security Operations</h3>
+              <div class="highlight-badge">Our Offerings</div>
+              <h3>Comprehensive Cyber Resilience</h3>
               <p>
-                Continuous monitoring, proactive threat hunting,
-                and rapid incident containment by experts.
+                Integrated services and solutions designed
+                to protect, detect, and respond to evolving threats.
               </p>
-              <a href="../services/" class="highlight-btn">View Services →</a>
+              <a href="../services/" class="highlight-btn">Explore Offerings →</a>
             </div>
-
           </div>
         </div>
+      </li>
+
+      <!-- INDUSTRIES -->
+      <li class="nav-item no-dropdown">
+        <a href="../industries/"><span>Industries</span></a>
       </li>
 
       <!-- RESOURCES -->
-      <li class="nav-item has-dropdown">
+      <li class="nav-item no-dropdown">
         <a href="../resources/"><span>Resources</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>Knowledge</h4>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Blogs</span>
-                  <small>Insights & trends</small>
-                  <small>Latest cybersecurity thought leadership</small>
-                </a>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Reports</span>
-                  <small>Threat research</small>
-                  <small>In-depth global threat intelligence reports</small>
-                </a>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Webinars</span>
-                  <small>Live & on-demand</small>
-                  <small>Expert-led cybersecurity sessions</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Learning</h4>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Cybersecurity 101</span>
-                  <small>Foundations</small>
-                  <small>Essential security fundamentals</small>
-                </a>
-
-                <a class="menu-item" href="../resources/">
-                  <span>Research Labs</span>
-                  <small>Advanced studies</small>
-                  <small>Innovation-driven security experimentation</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Stay Informed</div>
-              <h3>Latest Cyber Insights</h3>
-              <p>
-                Access expert blogs, reports and research
-                to stay ahead of evolving cyber threats.
-              </p>
-              <a href="../resources/" class="highlight-btn">Explore Resources →</a>
-            </div>
-
-          </div>
-        </div>
       </li>
 
-      <!-- COMPANY -->
-      <li class="nav-item has-dropdown">
-        <a href="../company/"><span>Company</span></a>
-
-        <div class="mega-menu">
-          <div class="mega-inner">
-            <div class="mega-content">
-
-              <div class="menu-col">
-                <h4>About</h4>
-
-                <a class="menu-item" href="../company/">
-                  <span>About Us</span>
-                  <small>Mission & vision</small>
-                  <small>Our cybersecurity journey & purpose</small>
-                </a>
-
-                <a class="menu-item" href="../company/">
-                  <span>Leadership</span>
-                  <small>Our people</small>
-                  <small>Executive & security leadership team</small>
-                </a>
-
-                <a class="menu-item" href="../company/">
-                  <span>Careers</span>
-                  <small>Join our team</small>
-                  <small>Explore opportunities in cyber innovation</small>
-                </a>
-              </div>
-
-              <div class="menu-col">
-                <h4>Connect</h4>
-
-                <a class="menu-item" href="../company/">
-                  <span>Contact</span>
-                  <small>Sales & support</small>
-                  <small>Connect with our security experts</small>
-                </a>
-
-                <a class="menu-item" href="../company/">
-                  <span>Support</span>
-                  <small>Help center</small>
-                  <small>Technical assistance & documentation</small>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="mega-highlight">
-              <div class="highlight-badge">Our Company</div>
-              <h3>Driven by Cyber Excellence</h3>
-              <p>
-                Built by cybersecurity veterans committed
-                to protecting digital ecosystems worldwide.
-              </p>
-              <a href="../company/" class="highlight-btn">About Company →</a>
-            </div>
-
-          </div>
-        </div>
+      <!-- CONTACT US -->
+      <li class="nav-item no-dropdown">
+        <a href="../contact/"><span>Contact Us</span></a>
       </li>
 
     </ul>
-
-    <!-- CTA -->
-    <div class="nav-actions">
-      <a href="../contact/" class="btn primary">Get Started</a>
-      <a href="../contact/" class="btn outline">Contact Us</a>
-    </div>
 
   </div>
 </nav>
@@ -425,13 +150,12 @@
 <!-- Mobile Navigation -->
 <div class="navbar-nav-mobile" id="navbarNav">
   <button type="button" class="nav-close">&times;</button>
-  <a href="../platform/">Platform</a>
-  <a href="../why-us/">Why Us</a>
+  <a href="../company/">Our Story</a>
   <a href="../services/">Services</a>
+  <a href="../solutions/">Solutions</a>
+  <a href="../industries/">Industries</a>
   <a href="../resources/">Resources</a>
-  <a href="../company/">Company</a>
-  <a href="../contact/" class="btn primary">Get Started</a>
-  <a href="../contact/" class="btn outline">Contact Us</a>
+  <a href="../contact/">Contact Us</a>
 </div>
 
 <script>
@@ -1800,6 +1524,30 @@ section {
       </p>
     </div>
 
+    <div class="svc-card">
+      <h3>Vulnerability Assessment</h3>
+      <p>
+        Comprehensive vulnerability assessments identify, classify, and prioritize
+        weaknesses across your infrastructure, applications, and cloud environments.
+      </p>
+      <p>
+        Our methodology combines automated scanning with expert manual validation
+        to deliver actionable remediation roadmaps.
+      </p>
+    </div>
+
+    <div class="svc-card">
+      <h3>Government Regulatory Compliance (GRC)</h3>
+      <p>
+        Navigate complex regulatory landscapes with our GRC services, designed to
+        align your security posture with government mandates and industry standards.
+      </p>
+      <p>
+        We provide gap analysis, policy development, and continuous compliance
+        monitoring for frameworks such as NIST, ISO 27001, and regional regulations.
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -1845,7 +1593,6 @@ section {
         Ongoing testing of controls against real attacker techniques ensures
         defenses remain effective over time.
       </p>
-      <p class="pltf-link">Learn About Validation →</p>
     </div>
 
     <div class="pltf-column">
@@ -1857,7 +1604,6 @@ section {
         Automated and manual simulations validate security controls across
         endpoints, networks, and cloud workloads.
       </p>
-      <p class="pltf-link">Explore Simulation →</p>
     </div>
 
     <div class="pltf-column">
@@ -1967,21 +1713,7 @@ section {
 
 </section>
 
-<!-- SERVICES CTA -->
-<section class="proven-cta-section">
-  <h2 class="proven-cta-heading">
-    Secure What Matters Most
-  </h2>
-
-  <p class="proven-cta-description">
-    Engage MMA InfoSec for cybersecurity services that are validated,
-    measurable, and built to withstand real-world threats.
-  </p>
-
-  <a href="../contact/" class="proven-cta-button">
-    Request Service Consultation →
-  </a>
-</section>
+<!-- SERVICES CTA removed per Phase 2 -->
 
     <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
       <i class="bi bi-arrow-up"></i>
@@ -2011,16 +1743,16 @@ section {
       <div class="footer-brand-line"></div>
     </div>
 
-    <!-- PLATFORM -->
+    <!-- SOLUTIONS -->
     <div class="footer-col">
-      <h4>Platform</h4>
+      <h4>Solutions</h4>
       <ul>
-        <li><a href="../platform/">Endpoint Security</a></li>
-        <li><a href="../platform/">Cloud Security</a></li>
-        <li><a href="../platform/">Identity Protection</a></li>
-        <li><a href="../platform/">Email Security</a></li>
-        <li><a href="../platform/">AI Threat Detection</a></li>
-        <li><a href="../platform/">Risk Scoring & Intelligence</a></li>
+        <li><a href="../solutions/">Endpoint Security</a></li>
+        <li><a href="../solutions/">Cloud Security</a></li>
+        <li><a href="../solutions/">Identity Protection</a></li>
+        <li><a href="../solutions/">Email Security</a></li>
+        <li><a href="../solutions/">AI Threat Detection</a></li>
+        <li><a href="../solutions/">Risk Scoring & Intelligence</a></li>
       </ul>
     </div>
 
@@ -2037,7 +1769,7 @@ section {
       </ul>
     </div>
 
-    <!-- SOLUTIONS -->
+    <!-- RESOURCES -->
     <div class="footer-col">
       <h4>Resources & Insights</h4>
       <ul>
@@ -2054,10 +1786,9 @@ section {
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="../company/">About Us</a></li>
+        <li><a href="../company/">Our Story</a></li>
         <li><a href="../why-us/">Why Us</a></li>
-        <li><a href="../company/">Leadership</a></li>
-        <li><a href="../company/">Support</a></li>
+        <li><a href="../industries/">Industries</a></li>
         <li><a href="../contact/">Contact Us</a></li>
       </ul>
     </div>
@@ -2069,6 +1800,9 @@ section {
     <p>© 2026 MMA InfoSec. All Rights Reserved.</p>
 
     <div class="footer-links">
+      <a href="https://linkedin.com/company/mma-infosec" target="_blank" rel="noopener" class="footer-social">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
       <a href="/Privacy-Notice/">Privacy Notice</a>
       <a href="/Terms-of-Use/">Terms of Use</a>
       <a href="/Security/">Security</a>

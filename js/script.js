@@ -46,8 +46,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (isValid) {
-        alert("Form submitted successfully!");
-        form.reset();
+        if (typeof emailjs !== 'undefined') {
+          emailjs.sendForm('service_h1a7end', 'template_f24dmuj', form, 'user_1PqIjpp0BWEfAfe6FahEA')
+            .then(function() {
+              form.reset();
+              alert('Thank you! We will get back to you shortly.');
+            }, function(err) {
+              alert('Something went wrong. Please try again later.');
+            });
+        } else {
+          form.reset();
+          alert("Form submitted successfully!");
+        }
       } else {
         alert("Please fill in all required fields correctly.");
       }
@@ -78,38 +88,25 @@ document.addEventListener("DOMContentLoaded", function () {
             '<div class="contact-bg"></div>' +
             '<form class="contact-form" id="demoForm">' +
               '<div class="form-grid">' +
-                '<div class="form-group">' +
-                  '<label for="demo-fname">First Name*</label>' +
-                  '<input id="demo-fname" type="text" placeholder="Enter your first name" required>' +
-                '</div>' +
-                '<div class="form-group">' +
-                  '<label for="demo-lname">Last Name*</label>' +
-                  '<input id="demo-lname" type="text" placeholder="Enter your last name" required>' +
-                '</div>' +
-                '<div class="form-group">' +
-                  '<label for="demo-email">Business Email*</label>' +
-                  '<input id="demo-email" type="email" placeholder="Enter your email" required>' +
-                '</div>' +
-                '<div class="form-group">' +
-                  '<label for="demo-phone">Phone*</label>' +
-                  '<input id="demo-phone" type="text" placeholder="Enter your phone number" required>' +
-                '</div>' +
-                '<div class="form-group">' +
-                  '<label for="demo-company">Company*</label>' +
-                  '<input id="demo-company" type="text" placeholder="Where do you work?" required>' +
-                '</div>' +
-                '<div class="form-group">' +
-                  '<label for="demo-title">Job Title*</label>' +
-                  '<input id="demo-title" type="text" placeholder="What\'s your title?" required>' +
+                '<div class="form-group full">' +
+                  '<label for="demo-name">Name*</label>' +
+                  '<input id="demo-name" name="from_name" type="text" placeholder="Enter your full name" required>' +
                 '</div>' +
                 '<div class="form-group full">' +
-                  '<label for="demo-help">How can we assist you?*</label>' +
-                  '<select id="demo-help" required>' +
-                    '<option value="">Select...</option>' +
-                    '<option>Request Demo</option>' +
-                    '<option>Pricing</option>' +
-                    '<option>General Inquiry</option>' +
-                  '</select>' +
+                  '<label for="demo-company">Company*</label>' +
+                  '<input id="demo-company" name="from_company" type="text" placeholder="Where do you work?" required>' +
+                '</div>' +
+                '<div class="form-group full">' +
+                  '<label for="demo-email">Email Address*</label>' +
+                  '<input id="demo-email" name="from_email" type="email" placeholder="Enter your email" required>' +
+                '</div>' +
+                '<div class="form-group full">' +
+                  '<label for="demo-phone">Phone Number*</label>' +
+                  '<input id="demo-phone" name="from_phone" type="text" placeholder="Enter your phone number" required>' +
+                '</div>' +
+                '<div class="form-group full">' +
+                  '<label for="demo-message">Message*</label>' +
+                  '<textarea id="demo-message" name="message" rows="4" placeholder="How can we help you?" required></textarea>' +
                 '</div>' +
               '</div>' +
               '<button type="submit" class="submit-btn">Contact MMA InfoSec →</button>' +
@@ -171,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (!valid) { alert('Please fill in all required fields correctly.'); return; }
       if (typeof emailjs !== 'undefined') {
-        emailjs.sendForm('service_default', 'template_default', this, 'user_default')
+        emailjs.sendForm('service_h1a7end', 'template_f24dmuj', this, 'user_1PqIjpp0BWEfAfe6FahEA')
           .then(function () {
             demoForm.reset(); if (modal) modal.classList.remove('open');
             alert('Thank you! We will get back to you shortly.');
