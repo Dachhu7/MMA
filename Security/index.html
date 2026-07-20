@@ -25,6 +25,7 @@
     <!-- Navbar override styles -->
     <style>
       .nav-item.no-dropdown > a::after { display: none; }
+      .topbar.scrolled { background: rgba(5,5,8,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
     </style>
 
     <!-- Google Font Link -->
@@ -191,268 +192,281 @@ dropdownItems.forEach(item => {
 </script>
 
 <style>
-*,
-*::before,
-*::after{
-  box-sizing:border-box;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-:root{
-  --brand-green:#1ec98a;
-  --brand-cyan:#1aa7e6;
-  --brand-blue:#0f5fa8;
-  --brand-dark:#0b1f33;
+:root {
+  --brand-green: #00c896;
+  --brand-cyan: #00d4ff;
+  --brand-blue: #2a6cff;
 
-  --text-main:#0b1f33;
-  --text-muted:#5c6f82;
-  --border-soft:#e3edf5;
+  --bg-primary: #0b1120;
+  --bg-card: rgba(255,255,255,0.05);
 
-  --max-width:1180px;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --border-soft: rgba(255,255,255,0.08);
+
+  --max-width: 1180px;
 }
 
-.decor-blob{
-  display:none;
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-.hero{
-  position:relative;
-  max-width:var(--max-width);
-  margin:90px auto 60px auto;
-  padding:0 24px 40px 24px;
-  border-top:4px solid var(--brand-green);
-  border-bottom:1px solid var(--border-soft);
+.decor-blob {
+  display: none;
 }
 
-.hero-inner{
-  max-width:920px;
-  padding-top:30px;
+.hero {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 90px auto 60px auto;
+  padding: 0 24px 40px 24px;
+  border-top: 4px solid var(--brand-green);
+  border-bottom: 1px solid var(--border-soft);
 }
 
-.eyebrow{
-  display:inline-block;
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--brand-cyan);
-  padding:6px 14px;
-  border-left:3px solid var(--brand-green);
-  background:linear-gradient(90deg,rgba(30,201,138,0.08),rgba(26,167,230,0.05));
-  margin-bottom:22px;
+.hero-inner {
+  max-width: 920px;
+  padding-top: 30px;
 }
 
-.hero h1{
-  font-size:clamp(40px,4vw,56px);
-  font-weight:800;
-  margin:0 0 22px 0;
-  color:var(--brand-dark);
-  letter-spacing:-0.025em;
-  line-height:1.1;
-  text-shadow:0 1px 0 rgba(0,0,0,0.03);
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--brand-cyan);
+  padding: 6px 14px;
+  border-left: 3px solid var(--brand-green);
+  background: linear-gradient(90deg, rgba(0,200,150,0.10), rgba(0,212,255,0.06));
+  margin-bottom: 22px;
 }
 
-.hero p.lead{
-  font-size:19px;
-  line-height:1.9;
-  color:var(--text-muted);
-  margin:0;
-  max-width:880px;
-  letter-spacing:.01em;
+.hero h1 {
+  font-size: clamp(40px,4vw,56px);
+  font-weight: 800;
+  margin: 0 0 22px 0;
+  background: linear-gradient(135deg, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
-.hero::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:100%;
-  height:1px;
-  background:linear-gradient(to right,transparent,var(--brand-cyan),transparent);
-  opacity:.15;
+.hero p.lead {
+  font-size: 19px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 880px;
+  letter-spacing: .01em;
 }
 
-.policy-grid{
-  max-width:var(--max-width);
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:280px 1fr;
-  gap:60px;
-  align-items:start;
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--brand-cyan), transparent);
+  opacity: .20;
 }
 
-.policy-nav{
-  position:sticky;
-  top:50px;
-  height:calc(100vh - 100px);
-  height:calc(100dvh - 100px);
-  overflow-y:auto;
-  padding-right:20px;
-  border-right:1px solid var(--border-soft);
+.policy-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
 }
 
-.policy-nav h3{
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.15em;
-  margin:0 0 20px 0;
-  color:var(--text-muted);
+.policy-nav {
+  position: sticky;
+  top: 50px;
+  height: calc(100vh - 100px);
+  height: calc(100dvh - 100px);
+  overflow-y: auto;
+  padding-right: 20px;
+  border-right: 1px solid var(--border-soft);
 }
 
-.toc-list{
-  list-style:none;
-  margin:0;
-  padding:0;
+.policy-nav h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  margin: 0 0 20px 0;
+  color: var(--text-muted);
 }
 
-.toc-list li{
-  margin-bottom:12px;
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.toc-list a{
-  text-decoration:none;
-  font-size:15px;
-  font-weight:600;
-  color:var(--text-muted);
-  transition:.25s ease;
-  display:inline-block;
+.toc-list li {
+  margin-bottom: 12px;
 }
 
-.toc-list a:hover{
-  color:var(--brand-blue);
+.toc-list a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: .25s ease;
+  display: inline-block;
 }
 
-.toc-list a.active{
-  color:var(--brand-green);
+.toc-list a:hover {
+  color: var(--brand-cyan);
 }
 
-.policy-article{
-  height:calc(100vh - 100px);
-  height:calc(100dvh - 100px);
-  overflow-y:auto;
-  padding-right:10px;
-  scroll-behavior:smooth;
+.toc-list a.active {
+  color: var(--brand-green);
 }
 
-.policy-article::-webkit-scrollbar{
-  width:6px;
-}
-.policy-article::-webkit-scrollbar-thumb{
-  background:var(--brand-cyan);
-  border-radius:6px;
-}
-
-.policy-block{
-  margin-bottom:50px;
-  padding-left:20px;
-  border-left:3px solid transparent;
-  transition:.3s ease;
+.policy-article {
+  height: calc(100vh - 100px);
+  height: calc(100dvh - 100px);
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
 }
 
-.policy-block:hover{
-  border-left:3px solid var(--brand-green);
+.policy-article::-webkit-scrollbar {
+  width: 6px;
 }
 
-.policy-article h2{
-  font-size:24px;
-  font-weight:700;
-  margin:0 0 16px 0;
-  color:var(--brand-dark);
+.policy-article::-webkit-scrollbar-thumb {
+  background: var(--brand-cyan);
+  border-radius: 6px;
 }
 
-.policy-article p{
-  font-size:16px;
-  line-height:1.85;
-  color:var(--text-muted);
-  margin:0 0 16px 0;
+.policy-block {
+  margin-bottom: 50px;
+  padding-left: 20px;
+  border-left: 3px solid transparent;
+  transition: .3s ease;
 }
 
-.policy-article ul{
-  margin:12px 0 20px 20px;
-  padding:0;
-  color:var(--text-muted);
+.policy-block:hover {
+  border-left: 3px solid var(--brand-green);
 }
 
-.policy-article ul li{
-  margin-bottom:10px;
+.policy-article h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  color: var(--text-primary);
 }
 
-.policy-divider{
-  height:1px;
-  background:var(--border-soft);
-  margin:50px 0;
+.policy-article p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin: 0 0 16px 0;
 }
 
-.policy-article strong{
-  color:var(--brand-dark);
+.policy-article ul {
+  margin: 12px 0 20px 20px;
+  padding: 0;
+  color: var(--text-secondary);
 }
 
-.policy-quote{
-  margin-top:20px;
-  padding:18px 20px;
-  background:#f4fbff;
-  border-left:4px solid var(--brand-cyan);
-  font-weight:600;
-  color:var(--brand-dark);
+.policy-article ul li {
+  margin-bottom: 10px;
 }
 
-.cta-bar{
-  max-width:var(--max-width);
-  margin:90px auto 70px auto;
-  padding:40px 0 0 0;
-  border-top:3px solid var(--brand-blue);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.policy-divider {
+  height: 1px;
+  background: var(--border-soft);
+  margin: 50px 0;
 }
 
-.cta-left h4{
-  margin:0;
-  font-size:20px;
-  color:var(--brand-dark);
+.policy-article strong {
+  color: var(--text-primary);
 }
 
-.cta-left p{
-  margin:8px 0 0 0;
-  color:var(--text-muted);
+.policy-quote {
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: var(--bg-card);
+  border-left: 4px solid var(--brand-cyan);
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
-.cta-actions{
-  display:flex;
-  gap:16px;
+.cta-bar {
+  max-width: var(--max-width);
+  margin: 90px auto 70px auto;
+  padding: 40px 0 0 0;
+  border-top: 3px solid var(--brand-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.small-print{
-  font-size:13px;
-  color:var(--text-muted);
-  margin-top:20px;
+.cta-left h4 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text-primary);
 }
 
-@media (max-width:1024px){
-  .policy-grid{
-    grid-template-columns:1fr;
-    padding:0 24px;
+.cta-left p {
+  margin: 8px 0 0 0;
+  color: var(--text-secondary);
+}
+
+.cta-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.small-print {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .policy-grid {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
   }
-  .policy-nav{
-    position:relative;
-    height:auto;
-    border-right:none;
-    border-bottom:1px solid var(--border-soft);
-    margin-bottom:40px;
+
+  .policy-nav {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 40px;
   }
-  .policy-article{
-    height:auto;
+
+  .policy-article {
+    height: auto;
   }
-  .cta-bar{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:20px;
-    padding:40px 24px 0 24px;
+
+  .cta-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px 24px 0 24px;
   }
 }
 
-@media (max-width:600px){
-  .hero h1{
-    font-size:34px;
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 34px;
   }
 }
 </style>
@@ -706,15 +720,6 @@ dropdownItems.forEach(item => {
     </div>
   </section>
 
-    <a
-      href="https://wa.me/1234567890"
-      target="_blank"
-      rel="noopener"
-      id="whatsapp-btn"
-      aria-label="Chat on WhatsApp"
-    >
-      <i class="bi bi-whatsapp"></i>
-    </a>
     <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
       <i class="bi bi-arrow-up"></i>
     </button>
@@ -885,5 +890,16 @@ dropdownItems.forEach(item => {
 
     <!-- Custom JS File Linking -->
     <script src="/js/script.js"></script>
+      <!-- Navbar scroll effect -->
+    <script>
+      window.addEventListener('scroll', function() {
+        var topbar = document.querySelector('.topbar');
+        if (window.scrollY > 50) {
+          topbar.classList.add('scrolled');
+        } else {
+          topbar.classList.remove('scrolled');
+        }
+      });
+    </script>
   </body>
 </html>

@@ -80,12 +80,12 @@
       ===================================== */
       .resources-hero {
         position: relative;
-        min-height: 78vh;
+        min-height: 50vh;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        padding: 160px 8% 100px;
+        padding: 120px 8% 70px;
         text-align: center;
         isolation: isolate;
       }
@@ -118,8 +118,8 @@
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 8px 20px;
-        font-size: 12px;
+        padding: 6px 18px;
+        font-size: 11px;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -127,25 +127,25 @@
         background: rgba(6,182,212,0.10);
         border: 1px solid rgba(6,182,212,0.30);
         border-radius: 999px;
-        margin-bottom: 28px;
+        margin-bottom: 20px;
       }
 
       .resources-hero h1 {
-        font-size: clamp(44px, 5vw, 72px);
+        font-size: clamp(36px, 4vw, 56px);
         font-weight: 800;
         line-height: 1.08;
         letter-spacing: -0.03em;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
         background: var(--gradient-main);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
       .resources-hero p {
-        font-size: 18px;
-        line-height: 1.85;
+        font-size: 16px;
+        line-height: 1.7;
         color: rgba(203,213,225,0.85);
-        max-width: 720px;
+        max-width: 680px;
         margin: 0 auto;
       }
 
@@ -153,7 +153,7 @@
          LEAD CAPTURE – WHITE THEME
       ===================================== */
       .lead-capture {
-        padding: 100px 8%;
+        padding: 50px 8%;
         background: #f8fafc;
       }
 
@@ -164,32 +164,32 @@
 
       .lead-capture-header {
         text-align: center;
-        margin-bottom: 56px;
+        margin-bottom: 32px;
       }
 
       .lead-capture-header h2 {
-        font-size: clamp(32px, 3.6vw, 48px);
+        font-size: clamp(26px, 3vw, 36px);
         font-weight: 800;
         letter-spacing: -0.02em;
-        margin-bottom: 18px;
+        margin-bottom: 12px;
         background: var(--gradient-main);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
       .lead-capture-header p {
-        font-size: 17px;
+        font-size: 15px;
         color: #475569;
-        line-height: 1.8;
-        max-width: 640px;
+        line-height: 1.6;
+        max-width: 560px;
         margin: 0 auto;
       }
 
       /* ---------- FORM CONTAINER ---------- */
       .lead-form {
         background: #ffffff;
-        border-radius: var(--radius-lg);
-        padding: 56px 52px;
+        border-radius: var(--radius-md);
+        padding: 32px 36px;
         border: 1px solid #e2e8f0;
         box-shadow: 0 8px 40px rgba(0,0,0,0.06);
         transition: opacity 0.5s ease;
@@ -202,17 +202,17 @@
       .lead-form .form-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 24px;
+        gap: 16px;
       }
 
       .lead-form .full-width { grid-column: 1 / -1; }
 
       .lead-form label {
         display: block;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 600;
         color: #1e293b;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         letter-spacing: 0.5px;
         text-transform: uppercase;
       }
@@ -222,10 +222,10 @@
       .lead-form input,
       .lead-form select {
         width: 100%;
-        padding: 15px 18px;
+        padding: 12px 16px;
         border: 1.5px solid #e2e8f0;
         border-radius: var(--radius-md);
-        font-size: 15px;
+        font-size: 14px;
         color: #1e293b;
         background: #ffffff;
         transition: all 0.3s ease;
@@ -252,9 +252,9 @@
       }
 
       .lead-form .field-error {
-        font-size: 13px;
+        font-size: 12px;
         color: #ef4444;
-        margin-top: 6px;
+        margin-top: 4px;
         display: none;
       }
 
@@ -263,10 +263,10 @@
       /* ---------- SUBMIT ---------- */
       .lead-form .submit-btn {
         grid-column: 1 / -1;
-        padding: 18px 40px;
+        padding: 14px 36px;
         border: none;
         border-radius: 999px;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 700;
         color: #ffffff;
         background: var(--gradient-main);
@@ -274,7 +274,7 @@
         transition: all 0.35s ease;
         box-shadow: 0 12px 35px rgba(6,182,212,0.30);
         letter-spacing: 0.3px;
-        margin-top: 12px;
+        margin-top: 8px;
         font-family: inherit;
       }
 
@@ -304,13 +304,13 @@
          ADDITIONAL RESOURCES
       ===================================== */
       .additional-resources {
-        padding: 100px 8% 120px;
-        background: #ffffff;
+        padding: 80px 8% 100px;
+        background: #050508;
       }
 
       .additional-resources .section-header {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
       }
 
       .additional-resources .section-header h2 {
@@ -325,7 +325,7 @@
 
       .additional-resources .section-header p {
         font-size: 17px;
-        color: #475569;
+        color: rgba(255,255,255,0.5);
         line-height: 1.8;
         max-width: 600px;
         margin: 0 auto;
@@ -340,14 +340,14 @@
       }
 
       .resource-card {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
         border-radius: var(--radius-lg);
-        padding: 48px 40px;
+        padding: 40px 36px;
         transition: all 0.45s ease;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+        backdrop-filter: blur(12px);
       }
 
       .resource-card::before {
@@ -356,7 +356,7 @@
         inset: 0;
         border-radius: var(--radius-lg);
         padding: 1px;
-        background: linear-gradient(135deg, rgba(6,182,212,0.25), transparent, rgba(34,197,94,0.15));
+        background: linear-gradient(135deg, rgba(6,182,212,0.15), transparent, rgba(34,197,94,0.10));
         -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
@@ -366,14 +366,14 @@
       .resource-card:hover {
         transform: translateY(-8px);
         border-color: rgba(6,182,212,0.30);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
       }
 
       .resource-card .icon-wrap {
         width: 56px;
         height: 56px;
         border-radius: var(--radius-md);
-        background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(34,197,94,0.10));
+        background: rgba(6,182,212,0.1);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -385,13 +385,13 @@
       .resource-card h3 {
         font-size: 20px;
         font-weight: 700;
-        color: #0f172a;
-        margin-bottom: 16px;
+        color: #ffffff;
+        margin-bottom: 14px;
       }
 
       .resource-card p {
         font-size: 15px;
-        color: #475569;
+        color: rgba(255,255,255,0.5);
         line-height: 1.85;
         margin-bottom: 0;
       }
@@ -402,18 +402,18 @@
       @media (max-width: 992px) {
         .resources-grid { grid-template-columns: 1fr 1fr; }
         .lead-form .form-grid { grid-template-columns: 1fr; }
-        .lead-form { padding: 40px 28px; }
+        .lead-form { padding: 28px 24px; }
       }
 
       @media (max-width: 600px) {
-        .resources-hero { min-height: 65vh; padding: 120px 6% 70px; }
-        .resources-hero h1 { font-size: 32px; }
-        .resources-hero p { font-size: 16px; }
-        .lead-capture { padding: 70px 6%; }
-        .additional-resources { padding: 70px 6% 90px; }
+        .resources-hero { min-height: 40vh; padding: 100px 6% 50px; }
+        .resources-hero h1 { font-size: 28px; }
+        .resources-hero p { font-size: 15px; }
+        .lead-capture { padding: 40px 6%; }
+        .additional-resources { padding: 60px 6% 80px; }
         .resources-grid { grid-template-columns: 1fr; }
-        .resource-card { padding: 36px 28px; }
-        .lead-form { padding: 32px 20px; }
+        .resource-card { padding: 30px 24px; }
+        .lead-form { padding: 24px 18px; }
       }
     </style>
   </head>
@@ -776,15 +776,6 @@ dropdownItems.forEach(item => {
 })();
 </script>
 
-    <a
-      href="https://wa.me/1234567890"
-      target="_blank"
-      rel="noopener"
-      id="whatsapp-btn"
-      aria-label="Chat on WhatsApp"
-    >
-      <i class="bi bi-whatsapp"></i>
-    </a>
     <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
       <i class="bi bi-arrow-up"></i>
     </button>
@@ -931,5 +922,16 @@ dropdownItems.forEach(item => {
 
     <!-- Custom JS File Linking -->
     <script src="/js/script.js"></script>
+      <!-- Navbar scroll effect -->
+    <script>
+      window.addEventListener('scroll', function() {
+        var topbar = document.querySelector('.topbar');
+        if (window.scrollY > 50) {
+          topbar.classList.add('scrolled');
+        } else {
+          topbar.classList.remove('scrolled');
+        }
+      });
+    </script>
   </body>
 </html>

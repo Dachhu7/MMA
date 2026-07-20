@@ -25,6 +25,7 @@
     <!-- Navbar override styles -->
     <style>
       .nav-item.no-dropdown > a::after { display: none; }
+      .topbar.scrolled { background: rgba(5,5,8,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
     </style>
 
     <!-- Google Font Link -->
@@ -314,15 +315,6 @@ body{
   </div>
 </section>
 
-    <a
-      href="https://wa.me/1234567890"
-      target="_blank"
-      rel="noopener"
-      id="whatsapp-btn"
-      aria-label="Chat on WhatsApp"
-    >
-      <i class="bi bi-whatsapp"></i>
-    </a>
     <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
       <i class="bi bi-arrow-up"></i>
     </button>
@@ -476,5 +468,16 @@ body{
 
     <!-- Custom JS File Linking -->
     <script src="/js/script.js"></script>
+      <!-- Navbar scroll effect -->
+    <script>
+      window.addEventListener('scroll', function() {
+        var topbar = document.querySelector('.topbar');
+        if (window.scrollY > 50) {
+          topbar.classList.add('scrolled');
+        } else {
+          topbar.classList.remove('scrolled');
+        }
+      });
+    </script>
   </body>
 </html>

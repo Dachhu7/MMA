@@ -217,7 +217,7 @@ section {
 
 .svc-hero {
   position: relative;
-  min-height: 90vh;
+  min-height: 70vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -1525,28 +1525,32 @@ section {
     </div>
 
     <div class="svc-card">
-      <h3>Vulnerability Assessment</h3>
-      <p>
-        Comprehensive vulnerability assessments identify, classify, and prioritize
-        weaknesses across your infrastructure, applications, and cloud environments.
-      </p>
-      <p>
-        Our methodology combines automated scanning with expert manual validation
-        to deliver actionable remediation roadmaps.
-      </p>
-    </div>
+  <h3>Vulnerability Assessment</h3>
+  <p>
+    Cyber resilience begins with visibility. Our Vulnerability Assessment services
+    help organizations proactively identify security weaknesses, assess risk, and
+    prioritize remediation before they can be exploited.
+  </p>
+  <p>
+    Through continuous assessments and actionable insights, we have helped our
+    customers strengthen their security posture and stay ahead of evolving threats.
+  </p>
+</div>
 
-    <div class="svc-card">
-      <h3>Government Regulatory Compliance (GRC)</h3>
-      <p>
-        Navigate complex regulatory landscapes with our GRC services, designed to
-        align your security posture with government mandates and industry standards.
-      </p>
-      <p>
-        We provide gap analysis, policy development, and continuous compliance
-        monitoring for frameworks such as NIST, ISO 27001, and regional regulations.
-      </p>
-    </div>
+<div class="svc-card">
+  <h3>Governance, Risk &amp; Compliance (GRC)</h3>
+  <p>
+    Regulatory compliance is more than meeting standards—it’s about building
+    trust. MMA Infosec helps organizations establish effective governance
+    frameworks, manage cyber risk, and achieve compliance with industry and
+    regulatory requirements.
+  </p>
+  <p>
+    We enable organizations to operate with confidence in an increasingly complex
+    digital landscape through practical governance, risk management, and
+    compliance-driven security strategies.
+  </p>
+</div>
 
   </div>
 </section>
@@ -1715,15 +1719,6 @@ section {
 
 <!-- SERVICES CTA removed per Phase 2 -->
 
-    <a
-      href="https://wa.me/1234567890"
-      target="_blank"
-      rel="noopener"
-      id="whatsapp-btn"
-      aria-label="Chat on WhatsApp"
-    >
-      <i class="bi bi-whatsapp"></i>
-    </a>
     <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
       <i class="bi bi-arrow-up"></i>
     </button>
@@ -1875,5 +1870,16 @@ section {
 
     <!-- Custom JS File Linking -->
     <script src="/js/script.js"></script>
+      <!-- Navbar scroll effect -->
+    <script>
+      window.addEventListener('scroll', function() {
+        var topbar = document.querySelector('.topbar');
+        if (window.scrollY > 50) {
+          topbar.classList.add('scrolled');
+        } else {
+          topbar.classList.remove('scrolled');
+        }
+      });
+    </script>
   </body>
 </html>
