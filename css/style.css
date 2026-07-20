@@ -625,7 +625,7 @@ footer p {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('/images/hero_background.png') center/cover no-repeat;
+  background: url('../images/hero_background.png') center/cover no-repeat;
   z-index: 0;
 }
 
