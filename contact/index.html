@@ -529,6 +529,7 @@
       .contact-visual {
         min-height: auto;
         align-items: flex-start;
+        margin-top: 70px;
       }
 
       .contact-content {
@@ -552,6 +553,145 @@
       .demo-modal-body .contact-bg {
         border-radius: var(--radius-lg);
         background: linear-gradient(135deg, rgba(6,182,212,0.06), rgba(34,197,94,0.04));
+      }
+
+      /* ===== CONTACT TRUST SECTION ===== */
+      .contact-trust {
+        padding: 80px 8%;
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        text-align: center;
+      }
+
+      .contact-trust-header {
+        margin-bottom: 52px;
+      }
+
+      .contact-trust-header h2 {
+        font-size: clamp(30px, 3.4vw, 42px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .contact-trust-header p {
+        font-size: 17px;
+        color: #475569;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        max-width: 960px;
+        margin: 0 auto 52px;
+      }
+
+      .trust-stat {
+        text-align: center;
+        padding: 28px 16px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .trust-stat:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      }
+
+      .trust-stat .stat-number {
+        font-size: 36px;
+        font-weight: 800;
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.2;
+      }
+
+      .trust-stat .stat-label {
+        font-size: 14px;
+        color: #64748b;
+        font-weight: 500;
+        margin-top: 8px;
+      }
+
+      .badge-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .badge-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 24px;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1e293b;
+        transition: all 0.3s ease;
+      }
+
+      .badge-item:hover {
+        background: #ffffff;
+        border-color: var(--accent-cyan);
+        box-shadow: 0 4px 16px rgba(6,182,212,0.12);
+        transform: translateY(-2px);
+      }
+
+      .badge-item i {
+        font-size: 18px;
+        color: var(--accent-cyan);
+      }
+
+      @media (max-width: 900px) {
+        .trust-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .contact-trust {
+          padding: 60px 6%;
+        }
+        .trust-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+        .trust-stat {
+          padding: 20px 12px;
+        }
+        .trust-stat .stat-number {
+          font-size: 28px;
+        }
+        .badge-row {
+          gap: 12px;
+        }
+        .badge-item {
+          padding: 10px 16px;
+          font-size: 12px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .trust-grid {
+          grid-template-columns: 1fr;
+          max-width: 280px;
+        }
       }
 
       /* ===== FORM PREMIUM OVERRIDES ===== */
@@ -661,7 +801,6 @@
       }
 
       @media (max-width: 1024px) {
-        .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
         .support-grid { grid-template-columns: 1fr; max-width: 480px; }
         .contact-visual {
           min-height: auto;
@@ -673,10 +812,6 @@
         .contact-hero { min-height: 60vh; padding: 120px 6% 60px; }
         .contact-hero h1 { font-size: 32px; }
         .contact-hero p { font-size: 16px; }
-        .trust-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-        .trust-stat .stat-number { font-size: 28px; }
-        .badge-row { gap: 12px; }
-        .badge-item { padding: 10px 16px; font-size: 12px; }
         .support-card { padding: 32px 24px; }
         .testimonial-card { padding: 36px 24px; }
         .testimonial-text { font-size: 16px; }
@@ -686,7 +821,6 @@
       }
 
       @media (max-width: 480px) {
-        .trust-grid { grid-template-columns: 1fr; }
         .contact-detail-item { padding: 14px 16px; }
       }
     </style>
@@ -861,7 +995,7 @@ dropdownItems.forEach(item => {
   <div class="contact-hero-overlay"></div>
   <div class="contact-hero-content">
     <span class="contact-hero-eyebrow">Get in Touch</span>
-    <h1>Let's Talk Security</h1>
+    <h1>Secure Your Enterprise Today</h1>
     <p>
       Ready to strengthen your security posture? Our team of experts is here
       to help — whether you need a demo, pricing, or a consultation.
@@ -898,7 +1032,7 @@ dropdownItems.forEach(item => {
           <div class="contact-detail-icon"><i class="bi bi-telephone-fill"></i></div>
           <div class="contact-detail-text">
             <h4>Call Us</h4>
-            <p>+1 (555) 123-4567</p>
+            <p>---</p>
           </div>
         </div>
         <div class="contact-detail-item">
@@ -1112,6 +1246,15 @@ dropdownItems.forEach(item => {
 </div>
 
     <!-- Back to Top Button -->
+    <a
+      href="https://wa.me/1234567890"
+      target="_blank"
+      rel="noopener"
+      id="whatsapp-btn"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
     <button
       type="button"
       class="btn btn-floating btn-lg rounded-pill"
