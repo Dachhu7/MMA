@@ -25,6 +25,7 @@
     <!-- Navbar override styles -->
     <style>
       .nav-item.no-dropdown > a::after { display: none; }
+      body { padding-top: 0; }
     </style>
 
     <style>
@@ -893,7 +894,7 @@
 
       <!-- OUR STORY -->
       <li class="nav-item no-dropdown">
-        <a href="../company/"><span>Our Story</span></a>
+        <a href="../our-story/"><span>Our Story</span></a>
       </li>
 
       <!-- OFFERINGS -->
@@ -905,38 +906,17 @@
               <div class="menu-col">
                 <h4>Services</h4>
                 <a class="menu-item" href="../services/">
-                  <span>Managed Security</span>
-                  <small>24×7 monitoring & response</small>
-                  <small>MDR, threat hunting & incident response</small>
-                </a>
-                <a class="menu-item" href="../services/">
-                  <span>Advisory</span>
-                  <small>Expert guidance</small>
-                  <small>Deployment, consulting & training</small>
+                  <span>All Services</span>
+                  <small>MDR, threat hunting, consulting, testing & more</small>
                 </a>
               </div>
               <div class="menu-col">
                 <h4>Solutions</h4>
                 <a class="menu-item" href="../solutions/">
-                  <span>Platform Overview</span>
-                  <small>Unified AI-driven protection</small>
+                  <span>All Solutions</span>
                   <small>Endpoint, cloud, identity & email security</small>
                 </a>
-                <a class="menu-item" href="../solutions/">
-                  <span>Custom Solutions</span>
-                  <small>Tailored security</small>
-                  <small>Enterprise-grade custom implementations</small>
-                </a>
               </div>
-            </div>
-            <div class="mega-highlight">
-              <div class="highlight-badge">Our Offerings</div>
-              <h3>Comprehensive Cyber Resilience</h3>
-              <p>
-                Integrated services and solutions designed
-                to protect, detect, and respond to evolving threats.
-              </p>
-              <a href="../services/" class="highlight-btn">Explore Offerings →</a>
             </div>
           </div>
         </div>
@@ -965,7 +945,7 @@
 <!-- Mobile Navigation -->
 <div class="navbar-nav-mobile" id="navbarNav">
   <button type="button" class="nav-close">&times;</button>
-  <a href="../company/">Our Story</a>
+  <a href="../our-story/">Our Story</a>
   <a href="../services/">Services</a>
   <a href="../solutions/">Solutions</a>
   <a href="../industries/">Industries</a>
@@ -1130,7 +1110,8 @@ dropdownItems.forEach(item => {
 
   <div class="badge-row">
     <div class="badge-item"><i class="bi bi-shield-check"></i> SOC 2 Type II</div>
-    <div class="badge-item"><i class="bi bi-patch-check-fill"></i> ISO 27001 Certified</div>
+    <div class="badge-item"><i class="bi bi-patch-check-fill"></i> ISO/IEC 27001:2022 Certified</div>
+    <div class="badge-item"><i class="bi bi-patch-check-fill"></i> ISO 9001:2015 Certified</div>
     <div class="badge-item"><i class="bi bi-star-fill"></i> Gartner Peer Insights 4.9</div>
     <div class="badge-item"><i class="bi bi-award-fill"></i> Top MDR Provider 2026</div>
   </div>
@@ -1221,7 +1202,7 @@ dropdownItems.forEach(item => {
         <i class="bi bi-chevron-down"></i>
       </button>
       <div class="faq-answer">
-        <p>Absolutely. We are SOC 2 Type II certified and ISO 27001 compliant. All data is encrypted at rest and in transit, with strict access controls and regular third-party audits.</p>
+        <p>Absolutely. We are SOC 2 Type II certified and ISO/IEC 27001:2022 and ISO 9001:2015 compliant. All data is encrypted at rest and in transit, with strict access controls and regular third-party audits.</p>
       </div>
     </div>
   </div>
@@ -1299,7 +1280,7 @@ dropdownItems.forEach(item => {
 
       <p class="footer-tagline">
         Transforming organizations from <strong>Reactive</strong> to
-        <strong>Resilient</strong> through AI-driven cybersecurity,
+        <strong>Resilient</strong> through advanced cybersecurity,
         unified detection, and enterprise-grade resilience.
       </p>
 
@@ -1314,7 +1295,7 @@ dropdownItems.forEach(item => {
         <li><a href="../platform/">Cloud Security</a></li>
         <li><a href="../platform/">Identity Protection</a></li>
         <li><a href="../platform/">Email Security</a></li>
-        <li><a href="../platform/">AI Threat Detection</a></li>
+        <li><a href="../platform/">Threat Detection</a></li>
         <li><a href="../platform/">Risk Scoring & Intelligence</a></li>
       </ul>
     </div>
@@ -1349,7 +1330,8 @@ dropdownItems.forEach(item => {
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="../company/">Our Story</a></li>
+        <li><a href="../company/">About Us</a></li>
+        <li><a href="../our-story/">Our Story</a></li>
         <li><a href="../why-us/">Why Us</a></li>
         <li><a href="../industries/">Industries</a></li>
         <li><a href="../contact/">Contact Us</a></li>
@@ -1465,7 +1447,7 @@ dropdownItems.forEach(item => {
     demoForm.addEventListener('submit', function(e) {
       e.preventDefault();
       if (typeof emailjs !== 'undefined') {
-        emailjs.sendForm('service_h1a7end', 'template_f24dmuj', this, 'user_1PqIjpp0BWEfAfe6FahEA')
+        emailjs.sendForm('service_ak980si', 'template_3az6qp9', this, 'h_eq-MuFpNf1CyphV')
           .then(function() {
             demoForm.reset();
             modal.classList.remove('open');
@@ -1485,7 +1467,7 @@ dropdownItems.forEach(item => {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       if (typeof emailjs !== 'undefined') {
-        emailjs.sendForm('service_h1a7end', 'template_f24dmuj', this, 'user_1PqIjpp0BWEfAfe6FahEA')
+        emailjs.sendForm('service_ak980si', 'template_3az6qp9', this, 'h_eq-MuFpNf1CyphV')
           .then(function() {
             contactForm.reset();
             alert('Thank you! We will get back to you shortly.');

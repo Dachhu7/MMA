@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (isValid) {
         if (typeof emailjs !== 'undefined') {
-          emailjs.sendForm('service_h1a7end', 'template_f24dmuj', form, 'user_1PqIjpp0BWEfAfe6FahEA')
+          emailjs.sendForm('service_ak980si', 'template_3az6qp9', form, 'h_eq-MuFpNf1CyphV')
             .then(function() {
               form.reset();
               alert('Thank you! We will get back to you shortly.');
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (!valid) { alert('Please fill in all required fields correctly.'); return; }
       if (typeof emailjs !== 'undefined') {
-        emailjs.sendForm('service_h1a7end', 'template_f24dmuj', this, 'user_1PqIjpp0BWEfAfe6FahEA')
+        emailjs.sendForm('service_ak980si', 'template_3az6qp9', this, 'h_eq-MuFpNf1CyphV')
           .then(function () {
             demoForm.reset(); if (modal) modal.classList.remove('open');
             alert('Thank you! We will get back to you shortly.');

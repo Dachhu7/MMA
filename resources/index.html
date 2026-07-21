@@ -73,29 +73,29 @@
 
       * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      body { background: var(--dark-bg); color: var(--text-light); }
+      body { padding-top: 0; background: var(--dark-bg); color: var(--text-light); }
 
       /* =====================================
          HERO – VIDEO DARK PREMIUM
       ===================================== */
       .resources-hero {
         position: relative;
-        min-height: 50vh;
+        min-height: 60vh;
         display: flex;
         align-items: center;
-        justify-content: center;
         overflow: hidden;
-        padding: 120px 8% 70px;
-        text-align: center;
+        padding: 140px 8% 80px;
         isolation: isolate;
       }
 
-      .resources-hero-video {
+      .resources-hero-bg {
         position: absolute;
         inset: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        background-image: url("../images/resource_report1.png");
+        background-size: cover;
+        background-position: center;
         z-index: 0;
       }
 
@@ -104,85 +104,553 @@
         inset: 0;
         z-index: 1;
         background:
-          linear-gradient(180deg, rgba(2,9,22,0.85) 0%, rgba(2,9,22,0.70) 50%, rgba(2,9,22,0.90) 100%),
-          radial-gradient(800px 400px at 50% 30%, rgba(6,182,212,0.20), transparent 70%);
+          linear-gradient(180deg, rgba(5,5,8,0.60) 0%, rgba(5,5,8,0.80) 50%, rgba(5,5,8,0.95) 100%);
+        pointer-events: none;
       }
 
       .resources-hero-content {
         position: relative;
         z-index: 2;
-        max-width: 900px;
+        max-width: 600px;
       }
 
       .resources-hero-eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 6px 18px;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 2px;
+        padding: 8px 20px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
         text-transform: uppercase;
-        color: var(--accent-cyan);
-        background: rgba(6,182,212,0.10);
-        border: 1px solid rgba(6,182,212,0.30);
-        border-radius: 999px;
-        margin-bottom: 20px;
+        color: #67e8f9;
+        background: rgba(6,182,212,0.15);
+        border: 1px solid rgba(6,182,212,0.25);
+        border-radius: 6px;
+        margin-bottom: 24px;
       }
 
       .resources-hero h1 {
         font-size: clamp(36px, 4vw, 56px);
-        font-weight: 800;
-        line-height: 1.08;
-        letter-spacing: -0.03em;
-        margin-bottom: 16px;
-        background: var(--gradient-main);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin-bottom: 18px;
+        color: #ffffff;
+      }
+
+      .resources-hero h1 em {
+        font-style: normal;
+        color: #67e8f9;
       }
 
       .resources-hero p {
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.7;
-        color: rgba(203,213,225,0.85);
-        max-width: 680px;
+        color: rgba(203,213,225,0.8);
+        max-width: 520px;
+        margin-bottom: 30px;
+      }
+
+      /* --- Hero Download Button --- */
+      .hero-download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 38px;
+        border: 2px solid #67e8f9;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        letter-spacing: 0.3px;
+      }
+
+      .hero-download-btn:hover {
+        background: #67e8f9;
+        color: #0f172a;
+        transform: translateY(-2px);
+        box-shadow: 0 14px 35px rgba(0,0,0,0.3);
+      }
+
+      /* --- Cloud Report Section --- */
+      .cloud-report-section {
+        position: relative;
+        min-height: 65vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding: 120px 8%;
+        isolation: isolate;
+      }
+
+      .cloud-report-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/resource_report3.png");
+        background-size: cover;
+        background-position: center top;
+        z-index: 0;
+      }
+
+      .cloud-report-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          linear-gradient(180deg, rgba(5,5,8,0.70) 0%, rgba(5,5,8,0.85) 50%, rgba(5,5,8,0.95) 100%);
+        pointer-events: none;
+      }
+
+      .cloud-report-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
         margin: 0 auto;
-      }
-
-      /* =====================================
-         LEAD CAPTURE – WHITE THEME
-      ===================================== */
-      .lead-capture {
-        padding: 50px 8%;
-        background: #f8fafc;
-      }
-
-      .lead-capture-container {
-        max-width: 860px;
-        margin: 0 auto;
-      }
-
-      .lead-capture-header {
         text-align: center;
-        margin-bottom: 32px;
       }
 
-      .lead-capture-header h2 {
-        font-size: clamp(26px, 3vw, 36px);
-        font-weight: 800;
+      .cloud-report-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #93c5fd;
+        background: rgba(59,130,246,0.15);
+        border: 1px solid rgba(59,130,246,0.25);
+        border-radius: 6px;
+        margin-bottom: 24px;
+      }
+
+      .cloud-report-content h2 {
+        font-size: clamp(32px, 3.6vw, 48px);
+        font-weight: 700;
+        line-height: 1.15;
         letter-spacing: -0.02em;
-        margin-bottom: 12px;
-        background: var(--gradient-main);
+        margin-bottom: 16px;
+        color: #ffffff;
+      }
+
+      .cloud-report-content h2 em {
+        font-style: normal;
+        color: #60a5fa;
+      }
+
+      .cloud-report-content p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: rgba(203,213,225,0.8);
+        margin-bottom: 20px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cloud-report-stat {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 24px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 8px;
+        margin-bottom: 36px;
+        font-size: 14px;
+        color: rgba(203,213,225,0.85);
+      }
+
+      .cloud-report-stat strong {
+        font-size: 22px;
+        color: #60a5fa;
+        letter-spacing: -0.03em;
+      }
+
+      .cloud-report-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 38px;
+        border: 2px solid #ffffff;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        letter-spacing: 0.3px;
+      }
+
+      .cloud-report-btn:hover {
+        background: #ffffff;
+        color: #0f172a;
+        transform: translateY(-2px);
+        box-shadow: 0 14px 35px rgba(0,0,0,0.3);
+      }
+
+      /* --- eBook Section (3D flipbook showcase) --- */
+      .ebook-section {
+        padding: 90px 8%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        min-height: 80vh;
+        isolation: isolate;
+      }
+
+      .ebook-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/resource_report4.png");
+        background-size: cover;
+        background-position: center top;
+        z-index: 0;
+      }
+
+      .ebook-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background:
+          linear-gradient(180deg, rgba(5,5,8,0.75) 0%, rgba(5,5,8,0.88) 50%, rgba(5,5,8,0.95) 100%);
+        pointer-events: none;
+      }
+
+      .ebook-section::before {
+        content: "";
+        position: absolute;
+        top: -200px;
+        right: -200px;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(217,119,6,0.1), transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .ebook-section::after {
+        content: "";
+        position: absolute;
+        bottom: -150px;
+        left: -150px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(139,92,246,0.08), transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .ebook-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+
+      /* --- 3D Book --- */
+      .ebook-book {
+        perspective: 1400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .book-3d {
+        position: relative;
+        width: 340px;
+        height: 470px;
+        transform-style: preserve-3d;
+        transform: rotateY(-18deg);
+        transition: transform 0.8s ease;
+      }
+
+      .book-3d:hover {
+        transform: rotateY(-12deg) translateY(-4px);
+      }
+
+      .book-cover {
+        position: absolute;
+        inset: 0;
+        background-image: url("../images/resource_report2.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 3px 8px 8px 3px;
+        box-shadow:
+          2px 4px 20px rgba(0,0,0,0.5),
+          0 0 0 1px rgba(217,119,6,0.08);
+        backface-visibility: hidden;
+      }
+
+      .book-spine {
+        position: absolute;
+        left: -8px;
+        top: 0;
+        width: 8px;
+        height: 100%;
+        background: linear-gradient(90deg, #1a1a2e, #2d2d44);
+        border-radius: 2px 0 0 2px;
+        transform-origin: right center;
+        transform: rotateY(90deg);
+      }
+
+      .book-page {
+        position: absolute;
+        inset: 0;
+        transform-origin: left center;
+        backface-visibility: hidden;
+        border-radius: 3px 8px 8px 3px;
+        transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        overflow: hidden;
+      }
+
+      .book-page-inner {
+        width: 100%;
+        height: 100%;
+        padding: 32px 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+
+      .book-page-inner .page-number {
+        position: absolute;
+        bottom: 16px;
+        right: 20px;
+        font-size: 12px;
+        opacity: 0.4;
+        font-weight: 600;
+      }
+
+      .book-page-inner h4 {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      .book-page-inner p {
+        font-size: 12px;
+        line-height: 1.6;
+        opacity: 0.75;
+      }
+
+      .book-page-inner .page-accent {
+        width: 30px;
+        height: 3px;
+        border-radius: 3px;
+        margin-bottom: 14px;
+      }
+
+      .page-1 {
+        background: #f5f0e8;
+        color: #1e1e2a;
+      }
+      .page-1 .page-accent { background: linear-gradient(90deg, #f59e0b, #d97706); }
+
+      .page-2 {
+        background: #efe8dc;
+        color: #1e1e2a;
+      }
+      .page-2 .page-accent { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+
+      .page-3 {
+        background: #e8e0d0;
+        color: #1e1e2a;
+      }
+      .page-3 .page-accent { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
+
+      .page-4 {
+        background: #e3dac8;
+        color: #1e1e2a;
+      }
+      .page-4 .page-accent { background: linear-gradient(90deg, #f59e0b, #ef4444); }
+
+      .page-1  { z-index: 4; transform: rotateY(0deg); }
+      .page-2  { z-index: 3; transform: rotateY(0deg); }
+      .page-3  { z-index: 2; transform: rotateY(0deg); }
+      .page-4  { z-index: 1; transform: rotateY(0deg); }
+
+      .book-3d.flip-page-1 .page-1  { transform: rotateY(-175deg); }
+      .book-3d.flip-page-2 .page-2  { transform: rotateY(-175deg); }
+      .book-3d.flip-page-3 .page-3  { transform: rotateY(-175deg); }
+      .book-3d.flip-page-4 .page-4  { transform: rotateY(-175deg); }
+
+      .book-click-hint {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 12px;
+        color: rgba(203,213,225,0.4);
+        letter-spacing: 0.5px;
+      }
+
+      .book-click-hint i {
+        margin-right: 4px;
+      }
+
+      /* --- Content --- */
+      .ebook-content {
+        max-width: 520px;
+        justify-self: end;
+      }
+
+      .ebook-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 16px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #fbbf24;
+        background: rgba(217,119,6,0.12);
+        border-radius: 4px;
+        margin-bottom: 20px;
+      }
+
+      .ebook-content h2 {
+        font-size: clamp(30px, 3.2vw, 42px);
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+        color: #f1f5f9;
+      }
+
+      .ebook-content h2 em {
+        font-style: normal;
+        background: linear-gradient(135deg, #f59e0b, #d97706);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
-      .lead-capture-header p {
+      .ebook-meta {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 18px;
+        font-size: 13px;
+        color: rgba(203,213,225,0.6);
+        flex-wrap: wrap;
+      }
+
+      .ebook-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .ebook-content p {
         font-size: 15px;
-        color: #475569;
+        line-height: 1.8;
+        color: rgba(203,213,225,0.7);
+        margin-bottom: 30px;
+      }
+
+      .ebook-download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 34px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffffff;
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        letter-spacing: 0.3px;
+        box-shadow: 0 8px 25px rgba(217,119,6,0.25);
+      }
+
+      .ebook-download-btn:hover {
+        background: linear-gradient(135deg, #d97706, #b45309);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 35px rgba(217,119,6,0.35);
+      }
+
+      /* --- Modal Overlay --- */
+      .download-modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        background: rgba(2,9,22,0.85);
+        backdrop-filter: blur(8px);
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+
+      .download-modal-overlay.active {
+        display: flex;
+      }
+
+      .download-modal {
+        background: #ffffff;
+        border-radius: var(--radius-lg);
+        padding: 44px 42px;
+        max-width: 580px;
+        width: 100%;
+        position: relative;
+        box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 32px;
+        line-height: 1;
+        color: #94a3b8;
+        cursor: pointer;
+        padding: 0 6px;
+        transition: color 0.2s ease;
+      }
+
+      .modal-close:hover {
+        color: #1e293b;
+      }
+
+      .download-modal h2 {
+        font-size: 26px;
+        font-weight: 800;
+        color: #0f172a;
+        margin-bottom: 10px;
+        letter-spacing: -0.02em;
+      }
+
+      .download-modal > p {
+        font-size: 15px;
+        color: #64748b;
+        margin-bottom: 28px;
         line-height: 1.6;
-        max-width: 560px;
-        margin: 0 auto;
       }
 
       /* ---------- FORM CONTAINER ---------- */
@@ -401,19 +869,35 @@
       ===================================== */
       @media (max-width: 992px) {
         .resources-grid { grid-template-columns: 1fr 1fr; }
-        .lead-form .form-grid { grid-template-columns: 1fr; }
-        .lead-form { padding: 28px 24px; }
+        .download-modal { padding: 32px 28px; }
+        .download-modal h2 { font-size: 22px; }
       }
 
       @media (max-width: 600px) {
-        .resources-hero { min-height: 40vh; padding: 100px 6% 50px; }
+        .resources-hero { min-height: 50vh; padding: 120px 6% 60px; }
         .resources-hero h1 { font-size: 28px; }
         .resources-hero p { font-size: 15px; }
-        .lead-capture { padding: 40px 6%; }
+        .ebook-section { padding: 70px 6%; min-height: auto; }
+        .ebook-container { grid-template-columns: 1fr; gap: 40px; }
+        .ebook-book { margin-bottom: 10px; }
+        .book-3d { width: 220px; height: 305px; }
+        .book-page-inner { padding: 22px 18px; }
+        .book-page-inner h4 { font-size: 13px; }
+        .book-page-inner p { font-size: 11px; }
+        .ebook-content { max-width: 100%; }
+        .ebook-content h2 { font-size: 28px; }
+        .ebook-content p { font-size: 15px; }
+        .ebook-meta { gap: 12px; font-size: 12px; }
+        .cloud-report-section { min-height: auto; padding: 80px 6%; }
+        .cloud-report-content h2 { font-size: 28px; }
+        .cloud-report-content p { font-size: 15px; }
+        .cloud-report-stat { font-size: 13px; flex-wrap: wrap; justify-content: center; }
         .additional-resources { padding: 60px 6% 80px; }
         .resources-grid { grid-template-columns: 1fr; }
         .resource-card { padding: 30px 24px; }
-        .lead-form { padding: 24px 18px; }
+        .download-modal { padding: 28px 20px; }
+        .download-modal h2 { font-size: 20px; }
+        .download-modal > p { font-size: 14px; }
       }
     </style>
   </head>
@@ -440,7 +924,7 @@
 
       <!-- OUR STORY -->
       <li class="nav-item no-dropdown">
-        <a href="../company/"><span>Our Story</span></a>
+        <a href="../our-story/"><span>Our Story</span></a>
       </li>
 
       <!-- OFFERINGS -->
@@ -452,38 +936,17 @@
               <div class="menu-col">
                 <h4>Services</h4>
                 <a class="menu-item" href="../services/">
-                  <span>Managed Security</span>
-                  <small>24×7 monitoring & response</small>
-                  <small>MDR, threat hunting & incident response</small>
-                </a>
-                <a class="menu-item" href="../services/">
-                  <span>Advisory</span>
-                  <small>Expert guidance</small>
-                  <small>Deployment, consulting & training</small>
+                  <span>All Services</span>
+                  <small>MDR, threat hunting, consulting, testing & more</small>
                 </a>
               </div>
               <div class="menu-col">
                 <h4>Solutions</h4>
                 <a class="menu-item" href="../solutions/">
-                  <span>Platform Overview</span>
-                  <small>Unified AI-driven protection</small>
+                  <span>All Solutions</span>
                   <small>Endpoint, cloud, identity & email security</small>
                 </a>
-                <a class="menu-item" href="../solutions/">
-                  <span>Custom Solutions</span>
-                  <small>Tailored security</small>
-                  <small>Enterprise-grade custom implementations</small>
-                </a>
               </div>
-            </div>
-            <div class="mega-highlight">
-              <div class="highlight-badge">Our Offerings</div>
-              <h3>Comprehensive Cyber Resilience</h3>
-              <p>
-                Integrated services and solutions designed
-                to protect, detect, and respond to evolving threats.
-              </p>
-              <a href="../services/" class="highlight-btn">Explore Offerings →</a>
             </div>
           </div>
         </div>
@@ -512,7 +975,7 @@
 <!-- Mobile Navigation -->
 <div class="navbar-nav-mobile" id="navbarNav">
   <button type="button" class="nav-close">&times;</button>
-  <a href="../company/">Our Story</a>
+  <a href="../our-story/">Our Story</a>
   <a href="../services/">Services</a>
   <a href="../solutions/">Solutions</a>
   <a href="../industries/">Industries</a>
@@ -560,31 +1023,80 @@ dropdownItems.forEach(item => {
 <!-- ========================================= -->
 
 <section class="resources-hero">
-  <video class="resources-hero-video" autoplay muted loop playsinline>
-    <source src="../images/6963744-hd_1280_720_25fps.mp4" type="video/mp4">
-  </video>
-  <div class="resources-hero-overlay"></div>
+  <div class="resources-hero-bg"></div>
   <div class="resources-hero-content">
     <span class="resources-hero-eyebrow"><i class="bi bi-grid-fill"></i> Resource Library</span>
-    <h1>Cybersecurity Intelligence<br>At Your Fingertips</h1>
-    <p>Threat reports, research papers, and expert guides to help your team stay ahead of evolving cyber threats.</p>
+    <h1>Download Our Latest<br><em>CrowdStrike 2026 Global Threat Report</em></h1>
+    <p>Access exclusive cybersecurity intelligence and threat reports from MMA InfoSec's research team.</p>
+    <button class="hero-download-btn" id="openDownloadForm">Download Reports <i class="bi bi-download"></i></button>
   </div>
 </section>
 
 <!-- ========================================= -->
-<!-- LEAD CAPTURE SECTION -->
+<!-- EBOOK SECTION -->
 <!-- ========================================= -->
 
-<section class="lead-capture" id="leadCapture">
-  <div class="lead-capture-container">
-
-    <div class="lead-capture-header">
-      <h2>Download Our Latest Threat Reports</h2>
-      <p>Fill in your details to access exclusive cybersecurity resources from MMA InfoSec's research team.</p>
+<section class="ebook-section">
+  <div class="ebook-bg"></div>
+  <div class="ebook-overlay"></div>
+  <div class="ebook-container">
+    <div class="ebook-book" id="ebookPreview">
+      <div class="book-3d" id="book3d">
+        <div class="book-cover"></div>
+        <div class="book-spine"></div>
+        <div class="book-page page-1"><div class="book-page-inner"><div class="page-accent"></div><h4>Executive Summary</h4><p>Customer Identity and Access Management (CIAM) represents the cornerstone of modern digital experiences, enabling secure, personalized interactions across every touchpoint.</p><span class="page-number">1</span></div></div>
+        <div class="book-page page-2"><div class="book-page-inner"><div class="page-accent"></div><h4>Key Pillars</h4><p>Explore the five essential pillars: secure authentication, seamless registration, consent management, identity federation, and adaptive security.</p><span class="page-number">2</span></div></div>
+        <div class="book-page page-3"><div class="book-page-inner"><div class="page-accent"></div><h4>Implementation</h4><p>Real-world strategies for deploying CIAM solutions that balance user experience with enterprise-grade security and compliance requirements.</p><span class="page-number">3</span></div></div>
+        <div class="book-page page-4"><div class="book-page-inner"><div class="page-accent"></div><h4>Future Trends</h4><p>Passwordless authentication, decentralized identity, and AI-driven security — the next frontier of customer identity management.</p><span class="page-number">4</span></div></div>
+      </div>
+      <div class="book-click-hint"><i class="bi bi-hand-index-thumb"></i> Click to download</div>
     </div>
+    <div class="ebook-content">
+      <span class="ebook-badge"><i class="bi bi-book"></i> eBook</span>
+      <h2>CIAM Essentials: <em>Key Pillars for Digital Success</em></h2>
+      <p>Customer Identity and Access Management (CIAM) is the foundation of modern digital experiences. This eBook explores the key pillars — from secure authentication and seamless registration to consent management and identity federation — that enable organizations to deliver trusted, frictionless customer journeys while maintaining compliance and security.</p>
+      <div class="ebook-meta">
+        <span><i class="bi bi-file-earmark-text"></i> 42 pages</span>
+        <span><i class="bi bi-calendar3"></i> Updated 2026</span>
+        <span><i class="bi bi-filetype-pdf"></i> PDF</span>
+      </div>
+      <button class="ebook-download-btn" id="openEbookForm">Download eBook <i class="bi bi-download"></i></button>
+    </div>
+  </div>
+</section>
 
-    <!-- Form -->
-    <div class="lead-form" id="leadForm">
+
+<!-- ========================================= -->
+<!-- CLOUD REPORT SECTION -->
+<!-- ========================================= -->
+
+<section class="cloud-report-section">
+  <div class="cloud-report-bg"></div>
+  <div class="cloud-report-overlay"></div>
+  <div class="cloud-report-content">
+    <span class="cloud-report-badge"><i class="bi bi-cloud"></i> Featured Research</span>
+    <h2>2026 Cloud Security Report Data Reveals <em>&ldquo;Complexity Gap&rdquo;</em></h2>
+    <p>Key insights from new survey of cybersecurity leaders worldwide.</p>
+    <div class="cloud-report-stat">
+      <strong>1,100+</strong> Security Leaders Surveyed
+      <span style="width:1px;height:20px;background:rgba(255,255,255,0.12);margin:0 12px;"></span>
+      <i class="bi bi-globe2"></i> Global Study
+    </div>
+    <button class="cloud-report-btn" id="openCloudReportForm">Cloud Security Report <i class="bi bi-download"></i></button>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- DOWNLOAD FORM MODAL -->
+<!-- ========================================= -->
+
+<div class="download-modal-overlay" id="downloadModal">
+  <div class="download-modal">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h2>Download Our Latest Threat Reports</h2>
+    <p>Fill in your details to access exclusive cybersecurity resources from MMA InfoSec's research team.</p>
+
+    <div class="lead-form">
       <form id="downloadForm">
         <div class="form-grid">
           <div class="full-width">
@@ -629,9 +1141,8 @@ dropdownItems.forEach(item => {
         </div>
       </form>
     </div>
-
   </div>
-</section>
+</div>
 
 <!-- ========================================= -->
 <!-- ADDITIONAL RESOURCES -->
@@ -657,7 +1168,7 @@ dropdownItems.forEach(item => {
         <i class="bi bi-file-earmark-text"></i>
       </div>
       <h3>Research &amp; Whitepapers</h3>
-      <p>In-depth research papers on zero-trust architecture, AI-driven security operations, cloud security posture management, and advanced persistent threat detection methodologies.</p>
+      <p>In-depth research papers on zero-trust architecture, security operations, cloud security posture management, and advanced persistent threat detection methodologies.</p>
     </div>
 
     <div class="resource-card">
@@ -670,19 +1181,52 @@ dropdownItems.forEach(item => {
   </div>
 </section>
 
-<!-- ========================================= -->
-<!-- LEAD CAPTURE SCRIPT -->
-<!-- ========================================= -->
-
 <script>
 (function () {
 
-  emailjs.init('user_1PqIjpp0BWEfAfe6FahEA');
+  emailjs.init('h_eq-MuFpNf1CyphV');
 
+  var modal = document.getElementById('downloadModal');
+  var openBtn = document.getElementById('openDownloadForm');
+  var openEbookBtn = document.getElementById('openEbookForm');
+  var openCloudBtn = document.getElementById('openCloudReportForm');
+  var closeBtn = document.getElementById('modalClose');
   var form = document.getElementById('downloadForm');
   var submitBtn = document.getElementById('submitBtn');
-  var leadForm = document.getElementById('leadForm');
+  var resourceSelect = document.getElementById('resourceInterest');
 
+  /* --- Modal open/close --- */
+  function openModal(presetResource) {
+    if (presetResource) {
+      resourceSelect.value = presetResource;
+    }
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', function () {
+    openModal();
+  });
+
+  openEbookBtn.addEventListener('click', function () {
+    openModal('CIAM Essentials eBook');
+  });
+
+  openCloudBtn.addEventListener('click', function () {
+    openModal('Fortinet Cloud Security Report');
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) closeModal();
+  });
+
+  /* --- Download helper --- */
   function triggerDownload() {
     var link = document.createElement('a');
     link.href = '../images/favicon.png';
@@ -751,19 +1295,19 @@ dropdownItems.forEach(item => {
       message: 'Resource interest: ' + document.getElementById('resourceInterest').value,
     };
 
-    emailjs.send('service_h1a7end', 'template_f24dmuj', templateParams)
+    emailjs.send('service_ak980si', 'template_jgjj5jw', templateParams)
       .then(function () {
         triggerDownload();
         resetForm();
+        closeModal();
       })
       .catch(function () {
-        // Download even if email fails
         triggerDownload();
         resetForm();
+        closeModal();
       });
   });
 
-  // Real-time validation clearing
   form.querySelectorAll('input, select').forEach(function (el) {
     el.addEventListener('input', function () {
       validateField(el.id);
@@ -797,7 +1341,7 @@ dropdownItems.forEach(item => {
 
       <p class="footer-tagline">
         Transforming organizations from <strong>Reactive</strong> to
-        <strong>Resilient</strong> through AI-driven cybersecurity,
+        <strong>Resilient</strong> through advanced cybersecurity,
         unified detection, and enterprise-grade resilience.
       </p>
 
@@ -812,7 +1356,7 @@ dropdownItems.forEach(item => {
         <li><a href="../solutions/">Cloud Security</a></li>
         <li><a href="../solutions/">Identity Protection</a></li>
         <li><a href="../solutions/">Email Security</a></li>
-        <li><a href="../solutions/">AI Threat Detection</a></li>
+        <li><a href="../solutions/">Threat Detection</a></li>
         <li><a href="../solutions/">Risk Scoring & Intelligence</a></li>
       </ul>
     </div>
@@ -847,7 +1391,8 @@ dropdownItems.forEach(item => {
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="../company/">Our Story</a></li>
+        <li><a href="../company/">About Us</a></li>
+        <li><a href="../our-story/">Our Story</a></li>
         <li><a href="../why-us/">Why Us</a></li>
         <li><a href="../industries/">Industries</a></li>
         <li><a href="../contact/">Contact Us</a></li>
@@ -862,9 +1407,9 @@ dropdownItems.forEach(item => {
 
     <div class="footer-links">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" style="margin-right:8px;vertical-align:middle;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      <a href="/Privacy-Notice/">Privacy Notice</a>
-      <a href="/Terms-of-Use/">Terms of Use</a>
-      <a href="/Security/">Security</a>
+      <a href="../Privacy-Notice/">Privacy Notice</a>
+      <a href="../Terms-of-Use/">Terms of Use</a>
+      <a href="../Security/">Security</a>
     </div>
   </div>
 </footer>
@@ -932,6 +1477,48 @@ dropdownItems.forEach(item => {
           topbar.classList.remove('scrolled');
         }
       });
+    </script>
+
+    <!-- Flipbook scroll effect -->
+    <script>
+      (function () {
+        var book = document.getElementById('book3d');
+        var section = document.querySelector('.ebook-section');
+        var preview = document.getElementById('ebookPreview');
+        var maxPages = 4;
+        var pageClasses = [];
+        for (var i = 1; i <= maxPages; i++) {
+          pageClasses.push('flip-page-' + i);
+        }
+
+        function updateFlipbook() {
+          if (!book || !section) return;
+          var rect = section.getBoundingClientRect();
+          var winH = window.innerHeight;
+          var totalH = rect.height;
+          var visible = Math.min(rect.bottom, winH) - Math.max(rect.top, 0);
+          var progress = visible / totalH;
+          progress = Math.max(0, Math.min(1, progress));
+          var pageToFlip = Math.floor(progress * maxPages);
+          pageToFlip = Math.max(0, Math.min(maxPages, pageToFlip));
+
+          book.className = 'book-3d';
+          if (pageToFlip > 0) {
+            book.classList.add(pageClasses[pageToFlip - 1]);
+          }
+        }
+
+        window.addEventListener('scroll', updateFlipbook);
+        window.addEventListener('resize', updateFlipbook);
+        updateFlipbook();
+
+        if (preview) {
+          preview.addEventListener('click', function () {
+            var btn = document.getElementById('openEbookForm');
+            if (btn) btn.click();
+          });
+        }
+      })();
     </script>
   </body>
 </html>

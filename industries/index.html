@@ -77,7 +77,7 @@
 
       <!-- OUR STORY -->
       <li class="nav-item no-dropdown">
-        <a href="../company/"><span>Our Story</span></a>
+        <a href="../our-story/"><span>Our Story</span></a>
       </li>
 
       <!-- OFFERINGS -->
@@ -89,38 +89,17 @@
               <div class="menu-col">
                 <h4>Services</h4>
                 <a class="menu-item" href="../services/">
-                  <span>Managed Security</span>
-                  <small>24×7 monitoring & response</small>
-                  <small>MDR, threat hunting & incident response</small>
-                </a>
-                <a class="menu-item" href="../services/">
-                  <span>Advisory</span>
-                  <small>Expert guidance</small>
-                  <small>Deployment, consulting & training</small>
+                  <span>All Services</span>
+                  <small>MDR, threat hunting, consulting, testing & more</small>
                 </a>
               </div>
               <div class="menu-col">
                 <h4>Solutions</h4>
                 <a class="menu-item" href="../solutions/">
-                  <span>Platform Overview</span>
-                  <small>Unified AI-driven protection</small>
+                  <span>All Solutions</span>
                   <small>Endpoint, cloud, identity & email security</small>
                 </a>
-                <a class="menu-item" href="../solutions/">
-                  <span>Custom Solutions</span>
-                  <small>Tailored security</small>
-                  <small>Enterprise-grade custom implementations</small>
-                </a>
               </div>
-            </div>
-            <div class="mega-highlight">
-              <div class="highlight-badge">Our Offerings</div>
-              <h3>Comprehensive Cyber Resilience</h3>
-              <p>
-                Integrated services and solutions designed
-                to protect, detect, and respond to evolving threats.
-              </p>
-              <a href="../services/" class="highlight-btn">Explore Offerings →</a>
             </div>
           </div>
         </div>
@@ -149,7 +128,7 @@
 <!-- Mobile Navigation -->
 <div class="navbar-nav-mobile" id="navbarNav">
   <button type="button" class="nav-close">&times;</button>
-  <a href="../company/">Our Story</a>
+  <a href="../our-story/">Our Story</a>
   <a href="../services/">Services</a>
   <a href="../solutions/">Solutions</a>
   <a href="../industries/">Industries</a>
@@ -223,6 +202,7 @@ dropdownItems.forEach(item => {
 
 body{
   margin:0;
+  padding-top:0;
   background:var(--bg-dark);
   color:var(--text-light);
   line-height:1.7;
@@ -308,10 +288,84 @@ body{
 
   <div class="industries-hero-content">
     <h1>Industries We Serve</h1>
-    <div class="subtitle">Coming Soon</div>
+    <div class="subtitle">Tailored Security for Every Sector</div>
     <p>
-      We are building comprehensive cybersecurity solutions tailored to the unique challenges of each industry. More details coming soon.
+      MMA InfoSec delivers ISO/IEC 27001:2022 and ISO 9001:2015 certified
+      cybersecurity solutions purpose-built for the unique regulatory,
+      operational, and threat landscapes of each industry.
     </p>
+  </div>
+</section>
+
+<!-- INDUSTRY GRID -->
+<section style="padding:80px 6%;background:var(--bg-darker);">
+  <div style="max-width:1100px;margin:auto;">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;">
+
+      <div style="background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:22px;padding:35px;">
+        <div style="font-size:36px;margin-bottom:15px;color:var(--secondary);"><i class="bi bi-bank"></i></div>
+        <h3 style="font-size:20px;margin-bottom:12px;">Financial Services</h3>
+        <p style="color:#b8e6ff;line-height:1.8;font-size:15px;">
+          Protect sensitive financial data, meet PCI DSS and SOX compliance, and defend
+          against targeted attacks with our certified security platform.
+        </p>
+      </div>
+
+      <div style="background:rgba(0,200,150,.05);border:1px solid rgba(0,200,150,.15);border-radius:22px;padding:35px;">
+        <div style="font-size:36px;margin-bottom:15px;color:var(--primary);"><i class="bi bi-heart-pulse"></i></div>
+        <h3 style="font-size:20px;margin-bottom:12px;">Healthcare</h3>
+        <p style="color:#b8e6ff;line-height:1.8;font-size:15px;">
+          Safeguard PHI and ePHI with HIPAA-compliant security controls, ensuring
+          patient data confidentiality while maintaining critical healthcare operations.
+        </p>
+      </div>
+
+      <div style="background:rgba(42,108,255,.05);border:1px solid rgba(42,108,255,.15);border-radius:22px;padding:35px;">
+        <div style="font-size:36px;margin-bottom:15px;color:var(--accent);"><i class="bi bi-building"></i></div>
+        <h3 style="font-size:20px;margin-bottom:12px;">Government &amp; Public Sector</h3>
+        <p style="color:#b8e6ff;line-height:1.8;font-size:15px;">
+          Meet FedRAMP, NIST 800-53, and FISMA requirements with certified security
+          controls designed for government-grade threat protection.
+        </p>
+      </div>
+
+      <div style="background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:22px;padding:35px;">
+        <div style="font-size:36px;margin-bottom:15px;color:var(--secondary);"><i class="bi bi-cpu"></i></div>
+        <h3 style="font-size:20px;margin-bottom:12px;">Technology &amp; SaaS</h3>
+        <p style="color:#b8e6ff;line-height:1.8;font-size:15px;">
+          Secure cloud infrastructure, APIs, and customer data with scalable
+          security solutions that grow with your technology business.
+        </p>
+      </div>
+
+      <div style="background:rgba(0,200,150,.05);border:1px solid rgba(0,200,150,.15);border-radius:22px;padding:35px;">
+        <div style="font-size:36px;margin-bottom:15px;color:var(--primary);"><i class="bi bi-fuel-pump"></i></div>
+        <h3 style="font-size:20px;margin-bottom:12px;">Energy &amp; Critical Infrastructure</h3>
+        <p style="color:#b8e6ff;line-height:1.8;font-size:15px;">
+          Defend OT and ICS environments against cyber-physical threats while
+          maintaining operational continuity and regulatory compliance.
+        </p>
+      </div>
+
+      <div style="background:rgba(42,108,255,.05);border:1px solid rgba(42,108,255,.15);border-radius:22px;padding:35px;">
+        <div style="font-size:36px;margin-bottom:15px;color:var(--accent);"><i class="bi bi-cart3"></i></div>
+        <h3 style="font-size:20px;margin-bottom:12px;">Retail &amp; E-Commerce</h3>
+        <p style="color:#b8e6ff;line-height:1.8;font-size:15px;">
+          Protect payment systems, customer PII, and supply chain operations with
+          PCI DSS-aligned security and real-time threat monitoring.
+        </p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:60px;">
+      <p style="color:#9edfff;font-size:16px;max-width:600px;margin:0 auto;">
+        All solutions are delivered under our ISO/IEC 27001:2022 and ISO 9001:2015
+        certified management systems, ensuring consistent quality and information security.
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -336,7 +390,7 @@ body{
 
       <p class="footer-tagline">
         Transforming organizations from <strong>Reactive</strong> to
-        <strong>Resilient</strong> through AI-driven cybersecurity,
+        <strong>Resilient</strong> through advanced cybersecurity,
         unified detection, and enterprise-grade resilience.
       </p>
 
@@ -351,7 +405,7 @@ body{
         <li><a href="../solutions/">Cloud Security</a></li>
         <li><a href="../solutions/">Identity Protection</a></li>
         <li><a href="../solutions/">Email Security</a></li>
-        <li><a href="../solutions/">AI Threat Detection</a></li>
+        <li><a href="../solutions/">Threat Detection</a></li>
         <li><a href="../solutions/">Risk Scoring & Intelligence</a></li>
       </ul>
     </div>
@@ -386,7 +440,8 @@ body{
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="../company/">Our Story</a></li>
+        <li><a href="../company/">About Us</a></li>
+        <li><a href="../our-story/">Our Story</a></li>
         <li><a href="../why-us/">Why Us</a></li>
         <li><a href="../industries/">Industries</a></li>
         <li><a href="../contact/">Contact Us</a></li>
@@ -405,9 +460,9 @@ body{
           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
         </svg>
       </a>
-      <a href="/Privacy-Notice/">Privacy Notice</a>
-      <a href="/Terms-of-Use/">Terms of Use</a>
-      <a href="/Security/">Security</a>
+      <a href="../Privacy-Notice/">Privacy Notice</a>
+      <a href="../Terms-of-Use/">Terms of Use</a>
+      <a href="../Security/">Security</a>
     </div>
   </div>
 </footer>

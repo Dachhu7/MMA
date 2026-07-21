@@ -78,7 +78,7 @@
 
       <!-- OUR STORY -->
       <li class="nav-item no-dropdown">
-        <a href="../company/"><span>Our Story</span></a>
+        <a href="../our-story/"><span>Our Story</span></a>
       </li>
 
       <!-- OFFERINGS -->
@@ -90,38 +90,17 @@
               <div class="menu-col">
                 <h4>Services</h4>
                 <a class="menu-item" href="../services/">
-                  <span>Managed Security</span>
-                  <small>24×7 monitoring & response</small>
-                  <small>MDR, threat hunting & incident response</small>
-                </a>
-                <a class="menu-item" href="../services/">
-                  <span>Advisory</span>
-                  <small>Expert guidance</small>
-                  <small>Deployment, consulting & training</small>
+                  <span>All Services</span>
+                  <small>MDR, threat hunting, consulting, testing & more</small>
                 </a>
               </div>
               <div class="menu-col">
                 <h4>Solutions</h4>
                 <a class="menu-item" href="../solutions/">
-                  <span>Platform Overview</span>
-                  <small>Unified AI-driven protection</small>
+                  <span>All Solutions</span>
                   <small>Endpoint, cloud, identity & email security</small>
                 </a>
-                <a class="menu-item" href="../solutions/">
-                  <span>Custom Solutions</span>
-                  <small>Tailored security</small>
-                  <small>Enterprise-grade custom implementations</small>
-                </a>
               </div>
-            </div>
-            <div class="mega-highlight">
-              <div class="highlight-badge">Our Offerings</div>
-              <h3>Comprehensive Cyber Resilience</h3>
-              <p>
-                Integrated services and solutions designed
-                to protect, detect, and respond to evolving threats.
-              </p>
-              <a href="../services/" class="highlight-btn">Explore Offerings →</a>
             </div>
           </div>
         </div>
@@ -150,7 +129,7 @@
 <!-- Mobile Navigation -->
 <div class="navbar-nav-mobile" id="navbarNav">
   <button type="button" class="nav-close">&times;</button>
-  <a href="../company/">Our Story</a>
+  <a href="../our-story/">Our Story</a>
   <a href="../services/">Services</a>
   <a href="../solutions/">Solutions</a>
   <a href="../industries/">Industries</a>
@@ -416,18 +395,6 @@ section {
   overflow: hidden;
 }
 
-/* Subtle luxury divider (visual anchor) */
-.svc-intro::before {
-  content: "";
-  position: absolute;
-  top: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, #1ec96b, #00bcd4, #2a6cff);
-  border-radius: 3px;
-}
 
 /* ---------- HEADING ---------- */
 
@@ -912,8 +879,8 @@ section {
 }
 
 /* =====================================
-   DATA PRIVACY & COMPLIANCE – PREMIUM WHITE
-   Editorial Layout + Light Hover Effect
+   DATA PRIVACY & COMPLIANCE – PREMIUM LIGHT
+   Clean White Theme with Teal Accents
 ===================================== */
 
 /* ---------- SECTION ---------- */
@@ -921,11 +888,11 @@ section {
 .dp-section {
   position: relative;
   padding: 40px 8% 50px;
-  background: #f8fcff;
+  background: #f8fafc;
   overflow: hidden;
 }
 
-/* Authority divider */
+/* Gradient accent bar under heading */
 
 .dp-section::before {
   content: "";
@@ -961,58 +928,55 @@ section {
 .dp-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 70px 60px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* =====================================
-   CONTENT BLOCK (NON-CARD)
+   CARD – LIGHT PANEL
 ===================================== */
 
 .dp-card {
   position: relative;
-  padding: 22px 24px 22px 0;
-  background: transparent;
+  padding: 36px 32px;
+  background: #ffffff;
   border-radius: 14px;
-  transition: 
-    background 0.35s ease,
+  border: 1px solid #e8edf4;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition:
     transform 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    border-color 0.3s ease;
 }
 
-/* Left accent line */
+/* Top accent bar */
 
 .dp-card::before {
   content: "";
   position: absolute;
-  left: -24px;
-  top: 10px;
-  width: 4px;
-  height: 30px;
-  background: linear-gradient(180deg, #00c896, #00d4ff);
-  border-radius: 3px;
-  transition: height 0.35s ease;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00c896, #00d4ff, #2a6cff);
+  border-radius: 14px 14px 0 0;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 /* =====================================
-   HOVER EFFECT – LIGHT THEME
+   HOVER
 ===================================== */
 
 .dp-card:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 200, 150, 0.06),
-    rgba(0, 212, 255, 0.08)
-  );
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 110, 255, 0.10);
+  border-color: #c8d8e8;
+  box-shadow: 0 12px 40px rgba(0, 110, 255, 0.10);
 }
 
-/* Accent line grows slightly */
-
 .dp-card:hover::before {
-  height: 44px;
+  opacity: 1;
 }
 
 /* =====================================
@@ -1020,11 +984,11 @@ section {
 ===================================== */
 
 .dp-title {
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.3;
-  color: #0a3b4f;
-  margin: 0 0 22px 0;
+  color: #0a2a3a;
+  margin: 0 0 18px 0;
   transition: color 0.3s ease;
 }
 
@@ -1037,14 +1001,14 @@ section {
 ===================================== */
 
 .dp-text {
-  font-size: 17px;
-  line-height: 1.85;
-  color: #355c6f;
-  margin: 0 0 16px 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #3a5a6a;
+  margin: 0 0 14px 0;
 }
 
 .dp-text-muted {
-  color: #4f7f95;
+  color: #6a8a9a;
 }
 
 .dp-text:last-of-type {
@@ -1064,7 +1028,7 @@ section {
 @media (max-width: 900px) {
   .dp-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 24px;
   }
 }
 
@@ -1078,16 +1042,16 @@ section {
     margin-bottom: 60px;
   }
 
+  .dp-card {
+    padding: 28px 22px;
+  }
+
   .dp-title {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .dp-text {
-    font-size: 16px;
-  }
-
-  .dp-card::before {
-    left: -18px;
+    font-size: 15px;
   }
 }
 
@@ -1740,7 +1704,7 @@ section {
 
       <p class="footer-tagline">
         Transforming organizations from <strong>Reactive</strong> to
-        <strong>Resilient</strong> through AI-driven cybersecurity,
+        <strong>Resilient</strong> through advanced cybersecurity,
         unified detection, and enterprise-grade resilience.
       </p>
 
@@ -1755,7 +1719,7 @@ section {
         <li><a href="../solutions/">Cloud Security</a></li>
         <li><a href="../solutions/">Identity Protection</a></li>
         <li><a href="../solutions/">Email Security</a></li>
-        <li><a href="../solutions/">AI Threat Detection</a></li>
+        <li><a href="../solutions/">Threat Detection</a></li>
         <li><a href="../solutions/">Risk Scoring & Intelligence</a></li>
       </ul>
     </div>
@@ -1790,7 +1754,8 @@ section {
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="../company/">Our Story</a></li>
+        <li><a href="../company/">About Us</a></li>
+        <li><a href="../our-story/">Our Story</a></li>
         <li><a href="../why-us/">Why Us</a></li>
         <li><a href="../industries/">Industries</a></li>
         <li><a href="../contact/">Contact Us</a></li>
@@ -1807,9 +1772,9 @@ section {
       <a href="https://linkedin.com/company/mma-infosec" target="_blank" rel="noopener" class="footer-social">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
       </a>
-      <a href="/Privacy-Notice/">Privacy Notice</a>
-      <a href="/Terms-of-Use/">Terms of Use</a>
-      <a href="/Security/">Security</a>
+      <a href="../Privacy-Notice/">Privacy Notice</a>
+      <a href="../Terms-of-Use/">Terms of Use</a>
+      <a href="../Security/">Security</a>
     </div>
   </div>
 </footer>
