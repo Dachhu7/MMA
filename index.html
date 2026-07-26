@@ -35,6 +35,7 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Icon CDN Link -->
     <link
@@ -55,7 +56,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
 
-  <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <body class="home" style="background-size: cover; background-position: center; background-repeat: no-repeat;">
 <!-- ======= TOP NAVBAR ======= -->
 <nav class="topbar" role="navigation" aria-label="Main navigation">
   <div class="topbar-container">
@@ -177,7 +178,7 @@ dropdownItems.forEach(item => {
     <div class="hero-content">
       <span class="hero-badge">Cybersecurity</span>
       <h1>In Pursuit of Excellence.</h1>
-      <p class="hero-desc">Helping You Defeat Every Cyber Goliath with next-generation threat detection, unified response, and enterprise resilience.</p>
+      <p class="hero-desc">Outsmarting the Hidden Goliath in Your Cyber World.</p>
     </div>
   </div>
 </section>
@@ -243,16 +244,95 @@ dropdownItems.forEach(item => {
   </div>
 </section>
 
+<!-- ===== AI-SOC SECTION ===== -->
+<section class="ai-soc-section">
+  <div class="ai-soc-container">
+    <div class="ai-soc-content">
+      <span class="ai-soc-badge">AI-POWERED DEFENSE</span>
+      <h2>Introducing the Very First AI-SOC</h2>
+      <p>Get in touch with us to know more.</p>
+      <a href="contact/" class="ai-soc-cta hero-download-btn">Get in Touch →</a>
+    </div>
+    <div class="ai-soc-image">
+      <img src="images/ai-soc.png" alt="AI-SOC Platform">
+    </div>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-container">
+
+    <div class="about-content-left">
+      <span class="about-badge">ABOUT MMA INFOSEC</span>
+      <h2>Certified for Quality and Information Security</h2>
+      <p class="about-description">
+        MMA Infosec operates under internationally recognized management standards, demonstrating our commitment to secure service delivery, operational discipline, and continuous improvement.
+      </p>
+    </div>
+
+    <div class="about-features">
+      <div class="feature-card cert-card" data-detail="Our ISO/IEC 27001:2022 certification reflects the implementation of structured controls for protecting sensitive information, managing cybersecurity risks, and maintaining the confidentiality, integrity, and availability of business and customer data.">
+        <div class="feature-icon">
+          <i class="fas fa-shield-halved"></i>
+        </div>
+        <h3>ISO/IEC 27001:2022 Certified</h3>
+        <p class="cert-subtitle">Information Security Management System</p>
+        <p class="cert-detail">Our ISO/IEC 27001:2022 certification reflects the implementation of structured controls for protecting sensitive information, managing cybersecurity risks, and maintaining the confidentiality, integrity, and availability of business and customer data.</p>
+      </div>
+
+      <div class="feature-card cert-card" data-detail="Our ISO 9001:2015 certification demonstrates our commitment to consistent service quality, clearly defined processes, customer satisfaction, performance monitoring, and continuous improvement across our operations.">
+        <div class="feature-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3>ISO 9001:2015 Certified</h3>
+        <p class="cert-subtitle">Quality Management System</p>
+        <p class="cert-detail">Our ISO 9001:2015 certification demonstrates our commitment to consistent service quality, clearly defined processes, customer satisfaction, performance monitoring, and continuous improvement across our operations.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.cert-card').forEach(card => {
+  card.addEventListener('click', function() {
+    this.classList.toggle('show-detail');
+  });
+  card.addEventListener('mouseenter', function() {
+    this.classList.add('show-detail');
+  });
+  card.addEventListener('mouseleave', function() {
+    this.classList.remove('show-detail');
+  });
+});
+</script>
+
+<!-- ABOUT STATS SECTION -->
+<section class="about-stats-section">
+  <div class="stats-container">
+    <div class="about-stats">
+      <div class="stat-item">
+        <span class="stat-number">99.9%</span>
+        <span class="stat-label">Threat Detection Rate</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Security Operations</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Enterprise Clients</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- OUR CLIENTS SECTION -->
 <section class="our-clients">
   <div class="clients-wrap">
 
     <header class="clients-header">
-      <span class="clients-kicker">Trusted By</span>
-      <h2>Delivering Excellence In Collaboration With Trusted Technology Partners</h2>
-      <p class="clients-subtitle">
-        Industry leaders who trust MMA Infosec to strengthen cyber resilience
-      </p>
+      <h2>Delivering Excellence in<br />Collaboration with Trusted Technology Partners</h2>
     </header>
 
     <div class="clients-marquee">
@@ -320,77 +400,48 @@ dropdownItems.forEach(item => {
 </script>
 
 
-<section class="about-section">
-  <div class="about-container">
+<!-- INTERACTIVE CYBERSECURITY SECTION -->
+<section class="cyber-interactive">
+  <div class="cyber-container">
 
-    <div class="about-content-left">
-      <span class="about-badge">ABOUT MMA INFOSEC</span>
-      <h2>Certified for Quality &amp;<br />Information Security</h2>
-      <p class="about-description">
-        MMA Infosec operates under internationally recognized management standards, demonstrating our commitment to secure service delivery, operational discipline, and continuous improvement.
-      </p>
-      <div class="about-stats">
-        <div class="stat-item">
-          <span class="stat-number">99.9%</span>
-          <span class="stat-label">Threat Detection Rate</span>
+    <div class="cyber-header">
+      <h2>Smarter Triage for Threats &amp; Alerts.</h2>
+      <p>Faster investigations. More time for strategic impact.</p>
+    </div>
+
+    <div class="cyber-grid">
+      <div class="cyber-card">
+        <div class="cyber-card-icon">
+          <i class="fas fa-brain"></i>
         </div>
-        <div class="stat-item">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">Security Operations</span>
+        <h3>AI-Powered Triage</h3>
+        <p>Automatically prioritize and categorize threats in real-time, reducing noise and focusing on what matters most.</p>
+      </div>
+
+      <div class="cyber-card">
+        <div class="cyber-card-icon">
+          <i class="fas fa-bolt"></i>
         </div>
-        <div class="stat-item">
-          <span class="stat-number">500+</span>
-          <span class="stat-label">Enterprise Clients</span>
+        <h3>Rapid Investigations</h3>
+        <p>Accelerate incident response with intelligent workflows and contextual threat intelligence at your fingertips.</p>
+      </div>
+
+      <div class="cyber-card">
+        <div class="cyber-card-icon">
+          <i class="fas fa-chart-line"></i>
         </div>
+        <h3>Strategic Impact</h3>
+        <p>Reclaim hours of analyst time daily and shift from alert fatigue to proactive security strategy.</p>
       </div>
     </div>
 
-    <div class="about-features">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-shield-halved"></i>
-        </div>
-        <h3>ISO/IEC 27001:2022 Certified</h3>
-        <p><strong>Information Security Management System</strong> — Structured controls for protecting sensitive information, managing cybersecurity risks, and maintaining the confidentiality, integrity, and availability of business and customer data.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-award"></i>
-        </div>
-        <h3>ISO 9001:2015 Certified</h3>
-        <p><strong>Quality Management System</strong> — Consistent service quality, clearly defined processes, customer satisfaction, performance monitoring, and continuous improvement across our operations.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-lock"></i>
-        </div>
-        <h3>Secure Service Delivery</h3>
-        <p>Commitment to secure service delivery and operational discipline through internationally recognized management standards and structured controls.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-arrow-trend-up"></i>
-        </div>
-        <h3>Continuous Improvement</h3>
-        <p>Dedication to performance monitoring, clearly defined processes, customer satisfaction, and ongoing enhancement across all operations.</p>
-      </div>
+    <div class="cyber-cta-area">
+      <p>Ready to transform your security operations?</p>
+      <a href="contact/" class="cyber-cta-btn hero-download-btn">Get Started Today →</a>
     </div>
 
   </div>
 </section>
-
-<script>
-document.querySelectorAll('.feature-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    card.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
-    card.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
-  });
-});
-</script>
 
 <section class="david-banner">
   <div class="david-banner-overlay"></div>
@@ -404,231 +455,6 @@ document.querySelectorAll('.feature-card').forEach(card => {
     </p>
   </div>
 </section>
-
-<!-- PLATFORM VISUAL MODELS -->
-<section class="platform-models">
-  <div class="platform-container">
-
-    <!-- HEADER -->
-    <div class="platform-header">
-      <h2>
-        Where Platforms<br />
-        Meet Protection
-      </h2>
-
-      <p>
-        Secure your cloud, endpoints, and identities with 24/7 threat hunting and managed services for comprehensive cybersecurity protection.
-      </p>
-    </div>
-
-    <!-- SLIDER WRAPPER -->
-    <div class="platform-slider-wrapper">
-
-      <!-- CARD SLIDER -->
-      <div class="platform-cards">
-
-        <!-- PLATFORM -->
-        <div class="platform-card">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <h3>Security Platform</h3>
-            <p class="card-subtitle">Unified Protection</p>
-            <ul class="card-list">
-              <li>Endpoint & XDR Security</li>
-              <li>Cloud Workload Protection</li>
-              <li>Identity & Email Defense</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- WHY US -->
-        <div class="platform-card">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <h3>Why MMA Infosec</h3>
-            <p class="card-subtitle">Trusted Cyber Defense Partner</p>
-            <ul class="card-list">
-              <li>Enterprise-grade expertise</li>
-              <li>Compliance-ready security</li>
-              <li>Proven breach prevention</li>
-            </ul>
-          </div>
-          
-        </div>
-
-        <!-- SERVICES -->
-        <div class="platform-card">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <h3>Security Services</h3>
-            <p class="card-subtitle">24/7 Managed Detection</p>
-            <ul class="card-list">
-              <li>MDR & SOC Operations</li>
-              <li>Threat Hunting</li>
-              <li>Incident Response</li>
-            </ul>
-          </div>
-          
-        </div>
-
-        <!-- RESOURCES -->
-        <div class="platform-card">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <h3>Resources & Research</h3>
-            <p class="card-subtitle">Knowledge That Defends</p>
-            <ul class="card-list">
-              <li>Threat Reports</li>
-              <li>Blogs & Whitepapers</li>
-              <li>Webinars & Labs</li>
-            </ul>
-          </div>
-          
-        </div>
-
-        <!-- ZERO TRUST -->
-        <div class="platform-card">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <h3>Zero Trust Architecture</h3>
-            <p class="card-subtitle">Never Trust, Always Verify</p>
-            <ul class="card-list">
-              <li>Continuous Validation</li>
-              <li>Least Privilege Access</li>
-              <li>Micro-Segmentation</li>
-            </ul>
-          </div>
-          
-        </div>
-
-
-
-        <!-- COMPLIANCE -->
-        <div class="platform-card">
-          <div class="card-overlay"></div>
-          <div class="card-content">
-            <h3>Compliance & Governance</h3>
-            <p class="card-subtitle">Security With Confidence</p>
-            <ul class="card-list">
-              <li>ISO/IEC 27001:2022, ISO 9001:2015, SOC 2, GDPR</li>
-              <li>Risk Management</li>
-              <li>Audit Readiness</li>
-            </ul>
-          </div>
-          
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<script>
-  const slider = document.querySelector(".platform-cards");
-  const nextBtn = document.querySelector(".slider-btn.next");
-  const prevBtn = document.querySelector(".slider-btn.prev");
-
-  nextBtn.addEventListener("click", () => {
-    slider.scrollBy({ left: 380, behavior: "smooth" });
-  });
-
-  prevBtn.addEventListener("click", () => {
-    slider.scrollBy({ left: -380, behavior: "smooth" });
-  });
-
-  document.querySelectorAll(".platform-card").forEach(card => {
-    card.addEventListener("mousemove", e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      card.style.backgroundPosition =
-        `${50 + (x - rect.width / 2) / 40}% ${50 + (y - rect.height / 2) / 40}%`;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.backgroundPosition = "center";
-    });
-  });
-</script>
-
-
-
-
-<section class="why-infosec">
-  <div class="why-container">
-
-    <header class="why-header">
-      <span class="why-badge">WHY MMA INFOSEC</span>
-      <h2>Security That Works<br />When It Matters Most</h2>
-      <p>
-        Cybersecurity isn’t about tools — it’s about outcomes.  
-        We design security programs that perform under real attack conditions.
-      </p>
-    </header>
-
-    <div class="why-grid">
-      <div class="why-card">
-        <h3>Threat-Driven Strategy</h3>
-        <p>
-          Our approach begins with adversary behavior, not assumptions.
-          Every control is aligned to real-world attack paths.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Operational Readiness</h3>
-        <p>
-          We validate detection and response continuously so teams
-          know exactly how they’ll perform during an incident.
-        </p>
-      </div>
-
-      <div class="why-card">
-        <h3>Business-Aligned Security</h3>
-        <p>
-          Security decisions are mapped directly to business risk,
-          regulatory exposure, and operational continuity.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-<section class="response-readiness">
-  <div class="response-bg"></div>
-
-  <div class="response-container">
-    <div class="response-content">
-      <span class="response-badge">INCIDENT RESPONSE</span>
-
-      <h2>
-        When Attacks Happen,<br />
-        Confidence Is Everything
-      </h2>
-
-      <p class="response-text">
-        Most organizations fail not because of missing tools,
-        but because response processes are untested.
-        We ensure your teams are prepared before the first alert.
-      </p>
-
-      <ul class="response-points">
-        <li>Live breach simulation & response validation</li>
-        <li>Executive-level incident decision training</li>
-        <li>Detection tuning based on attacker behavior</li>
-        <li>Post-incident improvement & resilience planning</li>
-      </ul>
-
-    </div>
-  </div>
-</section>
-
 
 <section class="contact-forward">
 
@@ -689,7 +515,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
 
         </div>
 
-        <button type="submit" class="submit-btn">
+        <button type="submit" class="submit-btn hero-download-btn">
           Contact MMA InfoSec →
         </button>
 
@@ -734,7 +560,7 @@ document.querySelectorAll('.feature-card').forEach(card => {
               <textarea id="demo-message" name="message" rows="4" placeholder="How can we help you?" required></textarea>
             </div>
           </div>
-          <button type="submit" class="submit-btn">Contact MMA InfoSec →</button>
+          <button type="submit" class="submit-btn hero-download-btn">Contact MMA InfoSec →</button>
         </form>
       </div>
     </div>
