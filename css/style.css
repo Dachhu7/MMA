@@ -668,6 +668,10 @@ footer p {
   .hero-content h1 {
     font-size: 32px;
   }
+  .hero-video {
+    object-fit: contain;
+    background: #050508;
+  }
 }
 
 
