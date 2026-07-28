@@ -2732,9 +2732,9 @@ footer p {
 
 .contact-forward{
   padding:60px 8% 50px;
-  background:#f8fbff;
+  background:#020916;
   font-family:Inter,system-ui,sans-serif;
-  color:#06263d;
+  color:#e2e8f0;
   position: relative;
   z-index: 2;
   margin-top: -80px;
@@ -2771,12 +2771,12 @@ footer p {
   font-weight:700;
   letter-spacing:-.04em;
   margin-bottom:26px;
-  color:#06263d;
+  color:#ffffff;
 }
 
 .contact-content .lead{
   font-size:18px;
-  color:#475569;
+  color:#cbd5e1;
   max-width:520px;
   line-height:1.7;
   margin-bottom:42px;
@@ -2785,7 +2785,7 @@ footer p {
 .contact-content .statement{
   font-size:24px;
   line-height:1.4;
-  color:#475569;
+  color:#cbd5e1;
 }
 
 .contact-content .statement span{
@@ -2806,8 +2806,8 @@ footer p {
   inset:0;
   border-radius:12px;
   background:
-    linear-gradient(90deg,rgba(248,251,255,.92),rgba(248,251,255,0)),
-    linear-gradient(180deg,#e0f7f4,#b6ecff);
+    linear-gradient(90deg,rgba(2,9,22,.95),rgba(2,9,22,.6)),
+    linear-gradient(180deg,#0a1a2e,#020916);
 }
 
 /* FORM */
@@ -2818,9 +2818,10 @@ footer p {
   max-width:520px;
   margin:0 0 40px 40px;
   padding:32px 44px;
-  background:rgba(255,255,255,.95);
+  background:rgba(255,255,255,0.04);
   border-radius:12px;
-  box-shadow:0 20px 50px rgba(2,132,199,0.10),0 0 0 1px rgba(6,182,212,0.08);
+  box-shadow:0 20px 50px rgba(0,0,0,0.4),0 0 0 1px rgba(255,255,255,0.06);
+  backdrop-filter:blur(12px);
 }
 
 /* FORM GRID */
@@ -2843,7 +2844,7 @@ label{
   font-size:13px;
   font-weight:600;
   margin-bottom:10px;
-  color:#1e293b;
+  color:rgba(255,255,255,0.75);
 }
 
 input,
@@ -2852,12 +2853,12 @@ textarea{
   padding:12px 14px;
   font-size:15px;
   border:none;
-  border-bottom:1.5px solid #cfe8ff;
+  border-bottom:1.5px solid rgba(255,255,255,0.15);
   background:transparent;
   transition:.3s ease;
   font-family:inherit;
   resize:vertical;
-  color:#0f172a;
+  color:#ffffff;
 }
 
 textarea{
@@ -2866,21 +2867,21 @@ textarea{
 
 input::placeholder,
 textarea::placeholder{
-  color:#94a3b8;
+  color:rgba(255,255,255,0.35);
 }
 
 input:focus,
 select:focus,
 textarea:focus{
   outline:none;
-  border-bottom-color:#06b6d4;
+  border-bottom-color:#67e8f9;
 }
 
 /* BUTTON */
 .submit-btn{
   margin-top:28px;
   padding:18px 36px;
-  background:#06263d;
+  background:linear-gradient(135deg,#22c55e,#06b6d4,#3b82f6);
   color:#fff;
   border:none;
   border-radius:8px;

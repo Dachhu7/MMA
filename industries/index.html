@@ -210,71 +210,190 @@ body{
 
 /* =====================================================
    INDUSTRIES HERO
-===================================================== */
+   ===================================================== */
 
 .industries-hero{
   position:relative;
-  padding:120px 6% 100px;
+  padding:140px 6% 120px;
   text-align:center;
   overflow:hidden;
-  background:var(--bg-darker);
+  background:var(--bg-darker) url('../images/identity_security_footer@2x-scaled.jpg') center/cover no-repeat;
 }
 
-.industries-hero-overlay{
+.industries-hero::before{
+  content:'';
   position:absolute;
   inset:0;
-  background:
-    radial-gradient(800px 400px at 50% 0%, rgba(0,212,255,.18), transparent 60%),
-    radial-gradient(600px 300px at 80% 20%, rgba(0,200,150,.15), transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,.4), rgba(0,0,0,.6));
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0,212,255,.12), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(0,200,150,.1), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 90%, rgba(42,108,255,.08), transparent),
+    linear-gradient(180deg, rgba(3,16,31,.3) 0%, rgba(3,16,31,.7) 100%);
   z-index:1;
+  pointer-events:none;
+}
+
+.industries-hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.02) 1px, transparent 1px);
+  background-size:60px 60px;
+  z-index:1;
+  pointer-events:none;
+  opacity:.4;
+}
+
+.industries-hero-glow{
+  position:absolute;
+  top:-200px;
+  left:50%;
+  transform:translateX(-50%);
+  width:800px;
+  height:400px;
+  background:radial-gradient(ellipse, rgba(0,212,255,.15) 0%, transparent 70%);
+  z-index:1;
+  pointer-events:none;
+  animation:heroPulse 6s ease-in-out infinite;
+}
+
+@keyframes heroPulse{
+  0%, 100%{ opacity:.6; transform:translateX(-50%) scale(1); }
+  50%{ opacity:1; transform:translateX(-50%) scale(1.05); }
 }
 
 .industries-hero-content{
   position:relative;
   z-index:2;
-  max-width:800px;
+  max-width:900px;
   margin:auto;
 }
 
 .industries-hero h1{
-  font-size:clamp(48px, 6vw, 72px);
-  line-height:1.1;
-  margin-bottom:20px;
-  background:linear-gradient(135deg,#00c896,#00d4ff,#2a6cff);
+  font-size:clamp(42px, 5vw, 68px);
+  font-weight:700;
+  line-height:1.05;
+  margin-bottom:24px;
+  background:linear-gradient(135deg, #00c896 0%, #00d4ff 35%, #2a6cff 70%, #00d4ff 100%);
+  background-size:200% 200%;
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  text-shadow:0 0 40px rgba(0,212,255,.25);
+  background-clip:text;
+  text-shadow:0 0 60px rgba(0,212,255,.15);
+  animation:gradientShift 8s ease-in-out infinite;
+  letter-spacing:-1px;
+}
+
+@keyframes gradientShift{
+  0%, 100%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
 }
 
 .industries-hero .subtitle{
-  font-size:22px;
+  font-size:clamp(18px, 2.2vw, 24px);
   color:#00d4ff;
-  margin-bottom:30px;
-  letter-spacing:2px;
-  font-weight:500;
+  margin-bottom:36px;
+  letter-spacing:3px;
+  font-weight:600;
+  text-transform:uppercase;
+  position:relative;
+  display:inline-block;
+}
+
+.industries-hero .subtitle::before,
+.industries-hero .subtitle::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  width:60px;
+  height:1px;
+  background:linear-gradient(90deg, transparent, #00d4ff, transparent);
+}
+
+.industries-hero .subtitle::before{
+  left:-80px;
+  transform:translateY(-50%);
+}
+
+.industries-hero .subtitle::after{
+  right:-80px;
+  transform:translateY(-50%);
+}
+
+.industries-hero .divider{
+  width:80px;
+  height:2px;
+  margin:0 auto 36px;
+  background:linear-gradient(90deg, transparent, #00c896, #00d4ff, #2a6cff, transparent);
+  border-radius:2px;
+  position:relative;
+}
+
+.industries-hero .divider::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:#00d4ff;
+  box-shadow:0 0 20px #00d4ff, 0 0 40px #00c896;
 }
 
 .industries-hero p{
-  font-size:18px;
-  color:#b8e6ff;
-  line-height:1.8;
-  max-width:700px;
+  font-size:clamp(17px, 2vw, 20px);
+  color:#c8efff;
+  line-height:1.9;
+  max-width:780px;
   margin:0 auto;
+  font-weight:300;
+}
+
+.industries-hero p em{
+  font-style:normal;
+  color:#00d4ff;
+  font-weight:500;
+}
+
+.industries-hero-scroll{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:2;
+  animation:scrollBounce 2.5s ease-in-out infinite;
+}
+
+.industries-hero-scroll svg{
+  width:28px;
+  height:28px;
+  stroke:#00d4ff;
+  opacity:.6;
+  filter:drop-shadow(0 0 8px rgba(0,212,255,.4));
+}
+
+@keyframes scrollBounce{
+  0%, 100%{ transform:translateX(-50%) translateY(0); opacity:.4; }
+  50%{ transform:translateX(-50%) translateY(10px); opacity:1; }
 }
 
 @media(max-width:768px){
   .industries-hero{
-    padding:80px 6% 60px;
+    padding:100px 6% 80px;
   }
-  .industries-hero h1{
-    font-size:36px;
+  .industries-hero .subtitle::before,
+  .industries-hero .subtitle::after{
+    display:none;
   }
-  .industries-hero .subtitle{
-    font-size:18px;
-  }
-  .industries-hero p{
-    font-size:16px;
+  .industries-hero-glow{
+    width:100vw;
+    left:0;
+    transform:none;
+    top:-100px;
   }
 }
 
@@ -284,17 +403,24 @@ body{
 <!-- INDUSTRIES HERO -->
 <section class="industries-hero">
 
-  <div class="industries-hero-overlay"></div>
+  <div class="industries-hero-glow"></div>
 
   <div class="industries-hero-content">
     <h1>Industries We Understand</h1>
-    <div class="subtitle">Every industry has something it cannot afford to lose.</div>
+    <div class="subtitle">Every industry has something it cannot afford to lose</div>
+    <div class="divider"></div>
     <p>
-      For a financial institution, it is trust.<br>
-      For a hospital, it is continuity of care.<br>
-      For an airport, it is uninterrupted operations.<br><br>
+      For a financial institution, it is <em>trust</em>.<br>
+      For a hospital, it is <em>continuity of care</em>.<br>
+      For an airport, it is <em>uninterrupted operations</em>.<br><br>
       At MMA Infosec, we begin by understanding what must remain protected — and what must continue running — before recommending any security control.
     </p>
+  </div>
+
+  <div class="industries-hero-scroll" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M19 12l-7 7-7-7"/>
+    </svg>
   </div>
 </section>
 
@@ -372,7 +498,7 @@ body{
       <p style="color:#b8e6ff; font-size:16px; max-width:650px; margin:0 auto 40px;">
         Our experience has been shaped by environments where security decisions have operational consequences.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px; max-width:900px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:20px; max-width:1100px; margin:0 auto;">
         <div style="padding:20px;">
           <div style="font-size:28px; font-weight:700; color:var(--secondary);">6+</div>
           <div style="color:#9edfff; font-size:14px; margin-top:5px;">years of cybersecurity delivery</div>
