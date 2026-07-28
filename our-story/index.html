@@ -364,36 +364,74 @@ dropdownItems.forEach(item => {
 
 /* =====================================================
    7 — VALUES  (alternating list)
-===================================================== */
+==================================================== */
 
-.sec-values{background:#08080c;}
-.sec-values .tag{color:#a78bfa;border:1px solid rgba(167,139,250,.18);background:rgba(167,139,250,.06);}
-.sec-values .hdg{color:#ffffff;}
-.sec-values > .inner > .txt{color:rgba(255,255,255,.45);margin-bottom:0;}
+.sec-values{background:#040404;position:relative;overflow:hidden;}
+.sec-values::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,18,38,.3) 0%,rgba(8,8,12,.8) 50%,rgba(4,4,4,.95) 100%);z-index:0;}
+.sec-values .inner{max-width:900px;position:relative;z-index:1;}
+.sec-values .tag{color:#c4b5fb;border:1px solid rgba(167,139,250,.25);background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(79,70,229,.08));backdrop-filter:blur(6px);}
+.sec-values .hdg{color:#fff;font-size:clamp(28px,3.2vw,36px);margin-bottom:16px;}
+.sec-values > .inner > .txt{color:rgba(255,255,255,.55);margin-bottom:0;font-size:16px;line-height:1.7;max-width:600px;margin-left:auto;margin-right:auto;}
 
-.values-list{
-  margin-top:48px;display:flex;flex-direction:column;gap:0;
+.values-list{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;position:relative;z-index:1;}
+
+.vrow-group{padding:0;background:transparent;height:auto;}
+
+.vrow{display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 32px;border:1px solid rgba(167,139,250,.08);border-radius:16px;background:rgba(167,139,250,.01);transition:all .4s cubic-bezier(0.16,1,0.3,1);position:relative;overflow:hidden;}
+
+.vrow::before{content:"";position:absolute;top:0;left:-100%;width:100%;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);transition:all .6s ease;}
+.vrow:hover::before{left:100%;}
+
+.vrow:hover{border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.03);transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.3),inset 0 0 30px rgba(167,139,250,.05);}
+
+.vrow-icon{width:80px;height:80px;display:flex;align-items:center;justify-content:center;
+border-radius:50%;border:2px solid rgba(167,139,250,.2);background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(139,92,246,.08));font-size:32px;color:#c4b5fb;margin-bottom:24px;position:relative;}
+
+.vrow-icon::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:1px solid transparent;background:linear-gradient(135deg,#a78bfa,#c4b5fc) border-box;border-radius:50%;-webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);-webkit-mask-composite: xor;masks: radial-gradient(circle at center, transparent 0%, transparent 65%, #fff 66%, #fff 100%);}
+
+.vrow-text .vrow-num{display:none;}
+
+.vrow-text h4{font-size:18px;font-weight:700;color:#fff;margin:0 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+.vrow-text p{font-size:15px;color:rgba(255,255,255,.65);margin:0;line-height:1.7;font-weight:300;}
+
+/* Premium hover effect for cards */
+.vrow:hover .vrow-icon{border-color:#c4b5fb;box-shadow:0 0 30px rgba(167,139,250,.4);transform:rotate(360deg);transition:all .8s cubic-bezier(0.34,1.56,0.64,1);}
+
+.vrow:hover .vrow-text h4{color:#c4b5fb;}
+
+/* Innovation card centered horizontally */
+.innovation-card {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.vrow{
-  display:grid;grid-template-columns:40px 44px 1fr;gap:24px;
-  align-items:center;padding:22px 0;
-  border-bottom:1px solid rgba(255,255,255,.04);
+/* Responsive design for values section */
+@media(max-width:768px){
+  .values-list{grid-template-columns:1fr;margin-top:40px;}
+  .vrow{padding:32px 24px;}
+  .vrow-icon{width:64px;height:64px;font-size:26px;margin-bottom:20px;}
+  .vrow-text h4{font-size:16px;}
+  .vrow-text p{font-size:14px;}
+  .innovation-card{
+    grid-column: auto;
+    justify-self: auto;
+    max-width: 100%;
+  }
 }
 
-.vrow:first-child{border-top:1px solid rgba(255,255,255,.04);}
-
-.vrow-num{
-  font-size:13px;font-weight:700;color:rgba(167,139,250,.35);
+@media(max-width:480px){
+  .vrow{padding:28px 20px;}
+  .vrow-icon{width:56px;height:56px;font-size:22px;margin-bottom:16px;}
+  .vrow-text h4{font-size:15px;}
+  .vrow-text p{font-size:13.5px;}
 }
-
-.vrow-icon{
-  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
-  border-radius:10px;background:rgba(167,139,250,.06);font-size:18px;color:#a78bfa;
-}
-
-.vrow-text h4{font-size:14px;font-weight:700;color:#fff;margin:0 0 4px;}
-.vrow-text p{font-size:13px;color:rgba(255,255,255,.45);margin:0;line-height:1.55;}
 
 /* =====================================================
    8 — CERT  (side-by-side cards)
@@ -681,44 +719,49 @@ dropdownItems.forEach(item => {
     <h2 class="hdg" data-aos="fade-up">Our Values</h2>
     <p class="txt" data-aos="fade-up">Everything we do is guided by five core principles.</p>
     <div class="values-list">
-      <div class="vrow" data-aos="fade-up" data-aos-delay="0">
-        <span class="vrow-num">01</span>
-        <div class="vrow-icon"><i class="fas fa-hand-holding-heart"></i></div>
-        <div class="vrow-text">
-          <h4>Customer First</h4>
-          <p>Our customers are at the heart of every decision we make.</p>
+      <div class="vrow-group" data-aos="fade-up" data-aos-delay="0">
+        <div class="vrow">
+          <div class="vrow-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <div class="vrow-text">
+            <h4>Customer First</h4>
+            <p>Our customers are at the heart of every decision we make.</p>
+          </div>
         </div>
       </div>
-      <div class="vrow" data-aos="fade-up" data-aos-delay="60">
-        <span class="vrow-num">02</span>
-        <div class="vrow-icon"><i class="fas fa-trophy"></i></div>
-        <div class="vrow-text">
-          <h4>Pursue Excellence</h4>
-          <p>We challenge ourselves every day to raise the bar.</p>
+      <div class="vrow-group" data-aos="fade-up" data-aos-delay="60">
+        <div class="vrow">
+          <div class="vrow-icon"><i class="fas fa-trophy"></i></div>
+          <div class="vrow-text">
+            <h4>Pursue Excellence</h4>
+            <p>We challenge ourselves every day to raise the bar.</p>
+          </div>
         </div>
       </div>
-      <div class="vrow" data-aos="fade-up" data-aos-delay="120">
-        <span class="vrow-num">03</span>
-        <div class="vrow-icon"><i class="fas fa-shield"></i></div>
-        <div class="vrow-text">
-          <h4>Warrior Mindset</h4>
-          <p>We approach every challenge with courage, resilience, accountability, and determination.</p>
+      <div class="vrow-group" data-aos="fade-up" data-aos-delay="120">
+        <div class="vrow">
+          <div class="vrow-icon"><i class="fas fa-shield"></i></div>
+          <div class="vrow-text">
+            <h4>Warrior Mindset</h4>
+            <p>We approach every challenge with courage, resilience, accountability, and determination.</p>
+          </div>
         </div>
       </div>
-      <div class="vrow" data-aos="fade-up" data-aos-delay="180">
-        <span class="vrow-num">04</span>
-        <div class="vrow-icon"><i class="fas fa-scale-balanced"></i></div>
-        <div class="vrow-text">
-          <h4>Integrity</h4>
-          <p>We build lasting relationships through honesty, trust, and transparency.</p>
+      <div class="vrow-group" data-aos="fade-up" data-aos-delay="180">
+        <div class="vrow">
+          <div class="vrow-icon"><i class="fas fa-scale-balanced"></i></div>
+          <div class="vrow-text">
+            <h4>Integrity</h4>
+            <p>We build lasting relationships through honesty, trust, and transparency.</p>
+          </div>
         </div>
       </div>
-      <div class="vrow" data-aos="fade-up" data-aos-delay="240">
-        <span class="vrow-num">05</span>
-        <div class="vrow-icon"><i class="fas fa-lightbulb"></i></div>
-        <div class="vrow-text">
-          <h4>Innovation</h4>
-          <p>We continuously evolve to stay ahead of an ever-changing cybersecurity landscape.</p>
+      <div class="vrow-group" data-aos="fade-up" data-aos-delay="240">
+        <div class="vrow innovation-card">
+          <div class="vrow-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="vrow-text">
+            <h4>Innovation</h4>
+            <p>We continuously evolve to stay ahead of an ever-changing cybersecurity landscape.</p>
+          </div>
         </div>
       </div>
     </div>
