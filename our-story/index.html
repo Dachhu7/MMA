@@ -368,9 +368,9 @@ dropdownItems.forEach(item => {
 
 .sec-values{background:#040404;position:relative;overflow:hidden;}
 .sec-values::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,18,38,.3) 0%,rgba(8,8,12,.8) 50%,rgba(4,4,4,.95) 100%);z-index:0;}
-.sec-values .inner{max-width:900px;position:relative;z-index:1;}
+.sec-values .inner{max-width:900px;position:relative;z-index:1;margin:0 auto;}
 .sec-values .tag{color:#c4b5fb;border:1px solid rgba(167,139,250,.25);background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(79,70,229,.08));backdrop-filter:blur(6px);}
-.sec-values .hdg{color:#fff;font-size:clamp(28px,3.2vw,36px);margin-bottom:16px;}
+.sec-values .hdg{color:#fff;font-size:clamp(28px,3.2vw,36px);margin-bottom:16px;text-align:center;}
 .sec-values > .inner > .txt{color:rgba(255,255,255,.55);margin-bottom:0;font-size:16px;line-height:1.7;max-width:600px;margin-left:auto;margin-right:auto;}
 
 .values-list{margin-top:56px;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;position:relative;z-index:1;}
@@ -726,7 +726,7 @@ border-radius:50%;border:2px solid rgba(167,139,250,.2);background:linear-gradie
             <h4>Customer First</h4>
             <p>Our customers are at the heart of every decision we make.</p>
           </div>
-        </div>
+        </div>  
       </div>
       <div class="vrow-group" data-aos="fade-up" data-aos-delay="60">
         <div class="vrow">
@@ -768,28 +768,6 @@ border-radius:50%;border:2px solid rgba(167,139,250,.2);background:linear-gradie
   </div>
 </section>
 
-<!-- 8 — ISO CERTIFICATIONS (side-by-side cards) -->
-<section class="sec sec-cert">
-  <div class="inner">
-    <span class="tag" data-aos="fade-up">ISO Certifications</span>
-    <h2 class="hdg" data-aos="fade-up">Certified for Quality and Information Security</h2>
-    <p class="txt" data-aos="fade-up">MMA Infosec operates under internationally recognized management standards, demonstrating our commitment to secure service delivery, operational discipline, and continuous improvement.</p>
-    <div class="cert-row">
-      <div class="cert-card-custom" data-aos="fade-up" data-aos-delay="0" onclick="this.classList.toggle('show-detail')">
-        <div class="ci"><i class="fas fa-shield-halved"></i></div>
-        <h3>ISO/IEC 27001:2022 Certified</h3>
-        <p class="cert-sub">Information Security Management System</p>
-        <p class="cert-det">Our ISO/IEC 27001:2022 certification reflects the implementation of structured controls for protecting sensitive information, managing cybersecurity risks, and maintaining the confidentiality, integrity, and availability of business and customer data.</p>
-      </div>
-      <div class="cert-card-custom" data-aos="fade-up" data-aos-delay="120" onclick="this.classList.toggle('show-detail')">
-        <div class="ci"><i class="fas fa-award"></i></div>
-        <h3>ISO 9001:2015 Certified</h3>
-        <p class="cert-sub">Quality Management System</p>
-        <p class="cert-det">Our ISO 9001:2015 certification demonstrates our commitment to consistent service quality, clearly defined processes, customer satisfaction, performance monitoring, and continuous improvement across our operations.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- 9 — RECOGNITION (partner logos marquee) -->
 <section class="our-clients">
