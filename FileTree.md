@@ -15,7 +15,7 @@
 │   │   ├── 🖼️ Cynerio.png
 │   │   ├── 🖼️ Drivelock.png
 │   │   ├── 🖼️ Fortinet.png
-│   │   ├── 🖼️ Gigamon.jpeg
+│   │   ├── 🖼️ Gigamon.png
 │   │   ├── 🖼️ PowerDMARC_logo.png
 │   │   ├── 🖼️ Protiviti.png
 │   │   ├── 🖼️ Thales-Logo.png
