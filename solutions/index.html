@@ -177,6 +177,79 @@ dropdownItems.forEach(item => {
 
 <style>
   /* =====================================
+   THEME VARIABLES
+===================================== */
+:root {
+  --dark-bg: #020916;
+  --dark-card: rgba(255,255,255,0.05);
+  --text-light: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-cyan: #06b6d4;
+  --accent-green: #22c55e;
+  --accent-blue: #2563eb;
+  --gradient-main: linear-gradient(135deg, #22c55e, #06b6d4, #3b82f6);
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.10);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+}
+
+/* =====================================
+   SCROLL SNAP – Parallax Ready
+===================================== */
+html {
+  scroll-snap-type: y proximity;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  overflow: hidden;
+}
+
+.snap-section .p-bg {
+  will-change: transform, opacity;
+  transform: scale(1.18);
+  opacity: 0.35;
+  transition: transform 3.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 3s ease;
+}
+
+.snap-section.visible .p-bg {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.snap-section .p-overlay {
+  opacity: 0;
+  transition: opacity 2.5s ease 0.5s;
+}
+
+.snap-section.visible .p-overlay {
+  opacity: 1;
+}
+
+.snap-section .p-content > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.6s ease, transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.snap-section.visible .p-content > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.snap-section .p-content > *:nth-child(1) { transition-delay: 0.10s; }
+.snap-section .p-content > *:nth-child(2) { transition-delay: 0.30s; }
+.snap-section .p-content > *:nth-child(3) { transition-delay: 0.55s; }
+.snap-section .p-content > *:nth-child(4) { transition-delay: 0.80s; }
+.snap-section .p-content > *:nth-child(5) { transition-delay: 1.05s; }
+.snap-section .p-content > *:nth-child(6) { transition-delay: 1.25s; }
+.snap-section .p-content > *:nth-child(7) { transition-delay: 1.45s; }
+.snap-section .p-content > *:nth-child(8) { transition-delay: 1.65s; }
+
+  /* =====================================
    ENDPOINT SECURITY – PREMIUM STYLES
 ===================================== */
 
@@ -782,10 +855,10 @@ body {
 ========================= -->
 
 <!-- HERO SECTION -->
-<section class="endpoint-hero">
-  <div class="endpoint-hero-overlay"></div>
+<section class="endpoint-hero snap-section">
+  <div class="endpoint-hero-overlay p-overlay"></div>
 
-  <div class="endpoint-hero-content">
+  <div class="endpoint-hero-content p-content">
     <span class="eyebrow">Solutions</span>
 
     <h1>
@@ -803,9 +876,9 @@ body {
 </section>
 
 <!-- INTRO SECTION -->
-<section class="endpoint-intro">
+<section class="endpoint-intro snap-section">
 
-  <div class="endpoint-intro-container">
+  <div class="endpoint-intro-container p-content">
 
     <span class="endpoint-intro-label">ADVANCED PROTECTION</span>
 
@@ -829,17 +902,17 @@ body {
 </section>
 
 <!-- CAPABILITIES SECTION -->
-<section class="endpoint-capabilities" id="capabilities">
+<section class="endpoint-capabilities snap-section" id="capabilities">
 
   <!-- Background Video -->
-  <video class="endpoint-bg-video" autoplay muted loop playsinline>
+  <video class="endpoint-bg-video p-bg" autoplay muted loop playsinline>
     <source src="../images/14810342_1920_1080_30fps.mp4" type="video/mp4">
   </video>
 
   <!-- Dark Overlay -->
-  <div class="endpoint-overlay"></div>
+  <div class="endpoint-overlay p-overlay"></div>
 
-  <div class="endpoint-capabilities-container">
+  <div class="endpoint-capabilities-container p-content">
 
     <span class="endpoint-capabilities-label">PLATFORM CAPABILITIES</span>
 
@@ -887,9 +960,9 @@ body {
 </section>
 
 <!-- VALUE SECTION -->
-<section class="endpoint-value">
+<section class="endpoint-value snap-section">
 
-  <div class="endpoint-value-container">
+  <div class="endpoint-value-container p-content">
 
     <span class="endpoint-value-label">ENDPOINT DEFENSE</span>
 
@@ -912,7 +985,6 @@ body {
       <li>Automated containment & remediation</li>
       <li>Continuous endpoint monitoring</li>
     </ul>
-
 
   </div>
 
@@ -956,10 +1028,9 @@ body {
     <div class="footer-col">
       <h4>Solutions</h4>
       <ul>
-        <li><a href="../solutions/">Endpoint Security</a></li>
         <li><a href="../solutions/">Threat Detection</a></li>
-        <li><a href="../solutions/">Automated Response</a></li>
-        <li><a href="../solutions/">Endpoint Visibility</a></li>
+        <li><a href="../solutions/">Autonomous Threat Response</a></li>
+        <li><a href="../solutions/">Unified Endpoint Visibility</a></li>
       </ul>
     </div>
 
@@ -980,10 +1051,12 @@ body {
     <div class="footer-col">
       <h4>Resources & Insights</h4>
       <ul>
-        <li><a href="../resources/">Threat Reports</a></li>
-        <li><a href="../resources/">Research & Whitepapers</a></li>
-        <li><a href="../resources/">Cybersecurity Guides</a></li>
-        <li><a href="../why-us/">Case Studies</a></li>
+        <li><a href="../resources/">Global Threat Report</a></li>
+        <li><a href="../resources/">CIAM Essentials EBook</a></li>
+        <li><a href="../resources/">Cloud Security Report</a></li>
+        <li><a href="../resources/">CloudSEK Threat Landscape Middle East Report</a></li>
+        <li><a href="../resources/">2026 Hybrid Cloud Security Survey</a></li>
+        <li><a href="../resources/">2026 Gartner Strategic Predictions</a></li>
       </ul>
     </div>
 
@@ -1079,6 +1152,27 @@ body {
 
   typeText();
 </script>
+    <!-- Snap Section Parallax Entrance Animation -->
+    <script>
+    (function () {
+      var sections = document.querySelectorAll('.snap-section');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            } else {
+              entry.target.classList.remove('visible');
+            }
+          });
+        }, { threshold: 0 });
+        sections.forEach(function (s) { observer.observe(s); });
+      } else {
+        sections.forEach(function (s) { s.classList.add('visible'); });
+      }
+    })();
+    </script>
+
     <!-- AOS Library Script Initialization -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
