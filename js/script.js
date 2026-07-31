@@ -1,4 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* ===== SCROLL PROGRESS BAR ===== */
+  function updateScrollProgress() {
+    var progress = document.getElementById("scroll-progress");
+    if (!progress) return;
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progress.style.width = scrollPercent + "%";
+  }
+  window.addEventListener("scroll", updateScrollProgress);
+  updateScrollProgress();
+
+  /* ===== CURSOR GLOW ===== */
+  var cursorGlow = document.getElementById("cursor-glow");
+  if (cursorGlow) {
+    document.addEventListener("mousemove", function (e) {
+      cursorGlow.style.left = e.clientX + "px";
+      cursorGlow.style.top = e.clientY + "px";
+    });
+    document.addEventListener("mouseleave", function () {
+      cursorGlow.style.opacity = "0";
+    });
+    document.addEventListener("mouseenter", function () {
+      cursorGlow.style.opacity = "1";
+    });
+  }
+
+  /* ===== HERO PARALLAX ===== */
+  var heroVideo = document.querySelector(".hero-video");
+  var heroSection = document.querySelector(".hero-section");
+  if (heroVideo && heroSection) {
+    window.addEventListener("scroll", function () {
+      var rect = heroSection.getBoundingClientRect();
+      var scrollProgress = 1 - (rect.bottom / (window.innerHeight + rect.height));
+      var offset = Math.max(0, Math.min(1, scrollProgress)) * 30;
+      heroVideo.style.transform = "scale(1.05) translateY(" + (-offset) + "px)";
+    });
+  }
+
+  /* ===== COUNT-UP ANIMATION ===== */
+  function animateCounters() {
+    var stats = document.querySelectorAll(".impact-stats .stat-number");
+    if (!stats.length) return;
+    stats.forEach(function (el) {
+      var target = parseFloat(el.getAttribute("data-count"));
+      if (isNaN(target)) return;
+      var suffix = el.textContent.replace(/[\d.]+/, "").trim();
+      var current = 0;
+      var increment = target / 60;
+      var timer = setInterval(function () {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        if (Number.isInteger(target)) {
+          el.textContent = Math.floor(current) + suffix;
+        } else {
+          el.textContent = current.toFixed(1) + suffix;
+        }
+      }, 20);
+    });
+  }
+
+  /* Trigger count-up on scroll into view */
+  var impactSection = document.querySelector(".impact-stats");
+  if (impactSection) {
+    var counted = false;
+    function checkCounters() {
+      if (counted) return;
+      var rect = impactSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        counted = true;
+        animateCounters();
+      }
+    }
+    window.addEventListener("scroll", checkCounters);
+    checkCounters();
+  }
+
   function refreshBackToTop() {
     const btn = document.getElementById("btn-back-to-top");
     if (!btn) return;

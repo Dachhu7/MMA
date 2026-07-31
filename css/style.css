@@ -10,6 +10,56 @@
 /* ===== ROOT ===== */
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #22c55e, #2563eb);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #16a34a, #1d4ed8);
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #22c55e, #06b6d4, #2563eb, #a78bfa);
+  background-size: 300% 100%;
+  animation: progressGrad 4s ease infinite;
+  z-index: 10001;
+  width: 0%;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+}
+
+@keyframes progressGrad {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== CURSOR GLOW ===== */
+#cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+  will-change: transform;
 }
 
 /* ===== BODY ===== */
@@ -26,7 +76,7 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: 9998;
+  z-index: 9996;
   pointer-events: none;
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
@@ -34,9 +84,80 @@ body::after {
   background-size: 256px 256px;
 }
 
-
 body.menu-open {
   overflow: hidden;
+}
+
+/* ===== SECTION TRANSITION OVERLAY ===== */
+.solutions-section::after,
+.ai-soc-section::after,
+.cyber-interactive::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #050508);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ===== IMPACT STATS ===== */
+.impact-stats {
+  background: #07070c;
+  padding: 60px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+.impact-stats .stats-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.impact-stats .about-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: 60px;
+}
+.impact-stats .stat-item {
+  text-align: center;
+}
+.impact-stats .stat-number {
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #22c55e, #06b6d4, #2563eb);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+  animation: statGrad 4s ease infinite alternate;
+}
+@keyframes statGrad {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.impact-stats .stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .impact-stats .about-stats {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .impact-stats .stat-number {
+    font-size: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .impact-stats .about-stats {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 
 /* =====================================================
@@ -3495,4 +3616,218 @@ textarea:focus{
   color: #0f172a;
   transform: translateY(-2px);
   box-shadow: 0 14px 35px rgba(0,0,0,0.3);
+}
+
+/* ======================================================
+   CARD REVEAL — ICON FIRST ENTRANCE ANIMATION
+   ====================================================== */
+
+/* Hide card until AOS triggers */
+[data-aos="card-reveal"] {
+  opacity: 0;
+}
+
+[data-aos="card-reveal"].aos-animate {
+  opacity: 1;
+}
+
+/* Icon positioned relative for ::after glow, overflow hidden to clip initial state */
+[data-aos="card-reveal"] .solutions-card-icon {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-80px) scale(0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Meteor drop: icon falls from above with bounce, glow burst on landing */
+[data-aos="card-reveal"].aos-animate .solutions-card-icon {
+  animation: iconMeteorDrop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes iconMeteorDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.3);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.2);
+  }
+  50% {
+    transform: translateY(-6px) scale(0.92);
+  }
+  70% {
+    transform: translateY(3px) scale(1.03);
+  }
+  85% {
+    transform: translateY(-1px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Glow ring burst on icon landing */
+[data-aos="card-reveal"] .solutions-card-icon::after {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.3), transparent 70%);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-aos="card-reveal"].aos-animate .solutions-card-icon::after {
+  animation: iconGlowBurst 1s ease-out 0.25s forwards;
+}
+
+@keyframes iconGlowBurst {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+/* Content cascade — staggered entrance after icon lands */
+[data-aos="card-reveal"] h3 {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.5s ease 0.25s;
+}
+
+[data-aos="card-reveal"] p {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: all 0.5s ease 0.4s;
+}
+
+[data-aos="card-reveal"] .solutions-card-arrow {
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: all 0.5s ease 0.55s;
+}
+
+[data-aos="card-reveal"].aos-animate h3,
+[data-aos="card-reveal"].aos-animate p,
+[data-aos="card-reveal"].aos-animate .solutions-card-arrow {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-aos="card-reveal"],
+  [data-aos="card-reveal"] .solutions-card-icon,
+  [data-aos="card-reveal"] h3,
+  [data-aos="card-reveal"] p,
+  [data-aos="card-reveal"] .solutions-card-arrow {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+  [data-aos="card-reveal"] .solutions-card-icon::after {
+    display: none;
+  }
+}
+
+/* ======================================================
+   HERO PARALLAX WRAPPER
+   ====================================================== */
+.hero-parallax-layer {
+  will-change: transform;
+}
+
+/* ======================================================
+   SUBTLE AMBIENT ANIMATIONS
+   ====================================================== */
+
+/* Floating geometry — subtle hex/poly shapes */
+.solutions-section::before,
+.ai-soc-section::before,
+.cyber-interactive::before {
+  z-index: 0;
+}
+
+/* Solutions cards link reset */
+a.solutions-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+a.solutions-card h3 {
+  color: #ffffff;
+}
+a.solutions-card p {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Glow pulse on David banner */
+.david-banner::before {
+  transition: opacity 0.5s ease;
+}
+
+/* Scroll-driven gradient shift on sections */
+@media (prefers-reduced-motion: no-preference) {
+  .solutions-section,
+  .ai-soc-section,
+  .cyber-interactive,
+  .david-banner {
+    transition: background-color 0.3s ease;
+  }
+}
+
+/* ======================================================
+   SMOOTH ON SCROLL FOR ALL SECTIONS
+   ====================================================== */
+section {
+  position: relative;
+}
+
+/* ======================================================
+   SUBTLE GRADIENT MESH ON HERO
+   ====================================================== */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 25%, rgba(34, 197, 94, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 75%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.04) 0%, transparent 50%);
+  z-index: 2;
+  pointer-events: none;
+  animation: meshShift 12s ease-in-out infinite alternate;
+}
+
+@keyframes meshShift {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.02); }
+}
+
+/* ======================================================
+   HERO VIDEO PARALLAX
+   ====================================================== */
+.hero-video {
+  transform: scale(1.05);
+  transition: transform 0.1s linear;
+}
+
+/* ======================================================
+   RESPONSIVE ADJUSTMENTS FOR NEW ELEMENTS
+   ====================================================== */
+@media (max-width: 768px) {
+  #cursor-glow {
+    display: none;
+  }
+  #scroll-progress {
+    height: 2px;
+  }
 }
