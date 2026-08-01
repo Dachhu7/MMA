@@ -1413,14 +1413,14 @@ dropdownItems.forEach(item => {
           .then(function() {
             demoForm.reset();
             modal.classList.remove('open');
-            alert('Thank you! We will get back to you shortly.');
+            showStatusModal(true);
           }, function(err) {
-            alert('Something went wrong. Please try again later.');
+            showStatusModal(false);
           });
       } else {
         demoForm.reset();
         modal.classList.remove('open');
-        alert('Thank you! We will get back to you shortly.');
+        showStatusModal(true);
       }
     });
   }
@@ -1432,13 +1432,13 @@ dropdownItems.forEach(item => {
         emailjs.sendForm('service_ak980si', 'template_3az6qp9', this, 'h_eq-MuFpNf1CyphV')
           .then(function() {
             contactForm.reset();
-            alert('Thank you! We will get back to you shortly.');
+            showStatusModal(true);
           }, function(err) {
-            alert('Something went wrong. Please try again later.');
+            showStatusModal(false);
           });
       } else {
         contactForm.reset();
-        alert('Thank you! We will get back to you shortly.');
+        showStatusModal(true);
       }
     });
   }

@@ -101,8 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () { logo.style.opacity = 1; }, 200);
   }
 
-  const form = document.querySelector(".contact-form") || document.getElementById("contact-form");
-  if (form) {
+  var form = document.querySelector("form.contact-form");
+  if (form && form.id !== "contactForm" && form.id !== "demoForm") {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       var isValid = true;
@@ -131,16 +131,16 @@ document.addEventListener("DOMContentLoaded", function () {
           emailjs.sendForm('service_ak980si', 'template_3az6qp9', form, 'h_eq-MuFpNf1CyphV')
             .then(function() {
               form.reset();
-              alert('Thank you! We will get back to you shortly.');
+              showStatusModal(true);
             }, function(err) {
-              alert('Something went wrong. Please try again later.');
+              showStatusModal(false);
             });
         } else {
           form.reset();
-          alert("Form submitted successfully!");
+          showStatusModal(true);
         }
       } else {
-        alert("Please fill in all required fields correctly.");
+        showStatusModal(false, "Missing details", "Please fill in all required fields correctly.");
       }
     });
   }
@@ -197,12 +197,14 @@ document.addEventListener("DOMContentLoaded", function () {
       '</div>' +
     '</div>';
 
+  var injectedDemoModal = false;
   if (!document.getElementById('demoModal')) {
     document.body.insertAdjacentHTML('beforeend', modalHtml);
+    injectedDemoModal = true;
   }
 
   var modal = document.getElementById('demoModal');
-  var demoForm = document.getElementById('demoForm');
+  var demoForm = injectedDemoModal ? document.getElementById('demoForm') : null;
 
   function openDemoModal(e) {
     e.preventDefault();
@@ -247,19 +249,68 @@ document.addEventListener("DOMContentLoaded", function () {
           emailF.style.borderColor = '#ef4444'; valid = false;
         }
       }
-      if (!valid) { alert('Please fill in all required fields correctly.'); return; }
+      if (!valid) { showStatusModal(false, "Missing details", "Please fill in all required fields correctly."); return; }
       if (typeof emailjs !== 'undefined') {
         emailjs.sendForm('service_ak980si', 'template_3az6qp9', this, 'h_eq-MuFpNf1CyphV')
           .then(function () {
             demoForm.reset(); if (modal) modal.classList.remove('open');
-            alert('Thank you! We will get back to you shortly.');
+            showStatusModal(true);
           }, function () {
-            alert('Something went wrong. Please try again later.');
+            showStatusModal(false);
           });
       } else {
         demoForm.reset(); if (modal) modal.classList.remove('open');
-        alert('Thank you! We will get back to you shortly.');
+        showStatusModal(true);
       }
     });
   }
+
+  /* ===== GLOBAL STATUS MODAL (SUCCESS / FAILURE) ===== */
+  function ensureStatusModal() {
+    var existing = document.getElementById('statusModal');
+    if (existing) return existing;
+
+    var statusModal = document.createElement('div');
+    statusModal.className = 'demo-modal-overlay';
+    statusModal.id = 'statusModal';
+    statusModal.innerHTML =
+      '<div class="demo-status-container">' +
+        '<button type="button" class="demo-modal-close" aria-label="Close">&times;</button>' +
+        '<div class="status-icon success">' +
+          '<svg viewBox="0 0 52 52">' +
+            '<circle class="status-circle" cx="26" cy="26" r="24"/>' +
+            '<path class="status-check" d="M14 27l8 8 16-16"/>' +
+            '<path class="status-cross" d="M18 18l16 16M34 18L18 34"/>' +
+          '</svg>' +
+        '</div>' +
+        '<h3></h3>' +
+        '<p></p>' +
+        '<button type="button" class="submit-btn">OK</button>' +
+      '</div>';
+    document.body.appendChild(statusModal);
+
+    function hideStatus() { statusModal.classList.remove('open'); }
+    statusModal.querySelector('.demo-modal-close').addEventListener('click', hideStatus);
+    statusModal.querySelector('.submit-btn').addEventListener('click', hideStatus);
+    statusModal.addEventListener('click', function (e) {
+      if (e.target === statusModal) hideStatus();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') hideStatus();
+    });
+
+    return statusModal;
+  }
+
+  window.showStatusModal = function (success, title, message) {
+    var statusModal = ensureStatusModal();
+    var icon = statusModal.querySelector('.status-icon');
+    icon.classList.remove('success', 'fail');
+    icon.classList.add(success ? 'success' : 'fail');
+    statusModal.querySelector('h3').textContent = title || (success ? 'Success!' : 'Something went wrong');
+    statusModal.querySelector('p').textContent = message || (success
+      ? 'Thank you! We will get back to you shortly.'
+      : 'Something went wrong. Please try again later.');
+    statusModal.classList.add('open');
+  };
 });

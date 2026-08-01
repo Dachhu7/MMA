@@ -252,7 +252,7 @@ dropdownItems.forEach(item => {
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/></svg>
         </div>
         <h3>Risk &amp; Compliance</h3>
-        <p>End-to-end risk management and regulatory compliance solutions spanning ISMS, IEC 62443, NIST 2, Data Privacy Frameworks, GDPR, HIPAA, PCI-DSS, and ISO/IEC 27001 standards.</p>
+        <p>End-to-end risk management and regulatory compliance solutions spanning ISMS, IEC 62443, NIST 2, Data Privacy Frameworks, GDPR, HIPAA, PCI-DSS, and ISO/IEC 27001:2022 standards.</p>
         <span class="solutions-card-arrow">→</span>
       </a>
     </div>
@@ -699,14 +699,14 @@ dropdownItems.forEach(item => {
           .then(function() {
             demoForm.reset();
             modal.classList.remove('open');
-            alert('Thank you! We will get back to you shortly.');
+            showStatusModal(true);
           }, function(err) {
-            alert('Something went wrong. Please try again later.');
+            showStatusModal(false);
           });
       } else {
         demoForm.reset();
         modal.classList.remove('open');
-        alert('Thank you! We will get back to you shortly.');
+        showStatusModal(true);
       }
     });
   }

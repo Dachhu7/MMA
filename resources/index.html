@@ -1929,11 +1929,12 @@ dropdownItems.forEach(item => {
         triggerDownload();
         resetForm();
         closeModal();
+        showStatusModal(true, 'Success!', 'Thank you! Your details have been received and your download has started.');
       })
       .catch(function () {
-        triggerDownload();
         resetForm();
         closeModal();
+        showStatusModal(false);
       });
   });
 
