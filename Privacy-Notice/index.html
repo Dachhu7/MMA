@@ -56,6 +56,12 @@
   </head>
 
   <body style="background-size: cover; background-position: center; background-repeat: no-repeat;">
+<!-- Scroll Progress Indicator -->
+<div id="scroll-progress"></div>
+
+<!-- Ambient Light Follows Cursor -->
+<div id="cursor-glow"></div>
+
 <!-- ======= TOP NAVBAR ======= -->
 <nav class="topbar" role="navigation" aria-label="Main navigation">
   <div class="topbar-container">
@@ -177,16 +183,17 @@ dropdownItems.forEach(item => {
 }
 
 :root {
-  --brand-green: #00c896;
-  --brand-cyan: #00d4ff;
-  --brand-blue: #2a6cff;
+  --brand-green: #22c55e;
+  --brand-cyan: #06b6d4;
+  --brand-blue: #2563eb;
+  --brand-purple: #a78bfa;
 
-  --bg-primary: #0b1120;
-  --bg-card: rgba(255,255,255,0.05);
+  --bg-primary: #050508;
+  --bg-card: rgba(255,255,255,0.03);
 
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
 
   --border-soft: rgba(255,255,255,0.08);
 
@@ -200,8 +207,12 @@ body {
   color: var(--text-primary);
 }
 
-.decor-blob {
-  display: none;
+.topbar.scrolled {
+  background: rgba(5,5,8,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
 .hero {
@@ -227,7 +238,7 @@ body {
   color: var(--brand-cyan);
   padding: 6px 14px;
   border-left: 3px solid var(--brand-green);
-  background: linear-gradient(90deg, rgba(0,200,150,0.10), rgba(0,212,255,0.06));
+  background: linear-gradient(90deg, rgba(34,197,94,0.10), rgba(6,182,212,0.06));
   margin-bottom: 22px;
 }
 
@@ -235,11 +246,20 @@ body {
   font-size: clamp(40px,4vw,56px);
   font-weight: 800;
   margin: 0 0 22px 0;
-  background: linear-gradient(135deg, #ffffff, #94a3b8);
+  background: linear-gradient(135deg, #22c55e 0%, #06b6d4 35%, #2563eb 70%, #06b6d4 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 60px rgba(6,182,212,.15);
+  animation: heroGradientShift 8s ease-in-out infinite;
   letter-spacing: -0.025em;
   line-height: 1.1;
+}
+
+@keyframes heroGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .hero p.lead {
@@ -258,8 +278,8 @@ body {
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--brand-cyan), transparent);
-  opacity: .20;
+  background: linear-gradient(to right, transparent, var(--brand-green), var(--brand-cyan), var(--brand-blue), transparent);
+  opacity: .25;
 }
 
 .policy-grid {
@@ -273,9 +293,9 @@ body {
 
 .policy-nav {
   position: sticky;
-  top: 50px;
-  height: calc(100vh - 100px);
-  height: calc(100dvh - 100px);
+  top: 90px;
+  height: calc(100vh - 120px);
+  height: calc(100dvh - 120px);
   overflow-y: auto;
   padding-right: 20px;
   border-right: 1px solid var(--border-soft);
@@ -329,7 +349,7 @@ body {
 }
 
 .policy-article::-webkit-scrollbar-thumb {
-  background: var(--brand-cyan);
+  background: linear-gradient(180deg, var(--brand-green), var(--brand-blue));
   border-radius: 6px;
 }
 
@@ -338,6 +358,7 @@ body {
   padding-left: 20px;
   border-left: 3px solid transparent;
   transition: .3s ease;
+  scroll-margin-top: 24px;
 }
 
 .policy-block:hover {
@@ -391,7 +412,8 @@ body {
   max-width: var(--max-width);
   margin: 90px auto 70px auto;
   padding: 40px 0 0 0;
-  border-top: 3px solid var(--brand-blue);
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--brand-green), var(--brand-cyan), var(--brand-blue)) 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -452,14 +474,12 @@ body {
 }
 </style>
 
-  <div class="decor-blob" aria-hidden="true"></div>
-
   <!-- HERO -->
   <section class="hero" role="banner" aria-labelledby="policy-title">
     <div class="hero-inner">
-      <div class="eyebrow">Transparency & Trust</div>
-      <h1 id="policy-title">Privacy Notice</h1>
-      <p class="lead">
+      <div class="eyebrow" data-aos="fade-down">Transparency & Trust</div>
+      <h1 id="policy-title" data-aos="fade-up" data-aos-delay="80">Privacy Notice</h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="180">
         MMA InfoSec is committed to transparency about how we collect, use,
         and protect your personal information. This Privacy Notice describes
         our data practices in clear, straightforward language.
@@ -675,7 +695,7 @@ body {
   </section>
 
   <!-- CTA bar -->
-  <section class="cta-bar" aria-hidden="false">
+  <section class="cta-bar" aria-hidden="false" data-aos="fade-up">
     <div class="cta-left">
       <h4>Have questions about your data?</h4>
       <p>Our privacy team is available to help with any inquiries or requests.</p>
@@ -821,29 +841,16 @@ body {
       })();
     </script>
 
-<script>
-  const text =
-    "Ultimately business protection comes at the speed at which you can hunt and contain an attack.";
-  const speed = 38;
-
-  let i = 0;
-  const target = document.querySelector(".typed-text");
-  if (!target) return;
-
-  function typeText() {
-    if (i < text.length) {
-      target.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeText, speed);
-    }
-  }
-
-  typeText();
-</script>
     <!-- AOS Library Script Initialization -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: false,
+        mirror: true,
+        offset: 80
+      });
     </script>
 
     <!-- Bootstrap JS (Include Popper.js) -->
