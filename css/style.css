@@ -1359,7 +1359,7 @@ footer p {
 .clients-track {
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: 100px;
   width: max-content;
   animation: clients-scroll 32s linear infinite;
 }
@@ -1386,8 +1386,8 @@ footer p {
 }
 
 .client-logo img {
-  height: 60px;
-  max-width: 180px;
+  height: 84px;
+  max-width: 260px;
   object-fit: contain;
   filter: brightness(0) invert(1);
   opacity: 0.7;
@@ -1405,6 +1405,24 @@ footer p {
 .client-logo:hover img {
   filter: brightness(0) invert(1);
   opacity: 1;
+}
+
+/* ================================
+   LARGER LOGOS – GIGAMON & THREATLOCKER ONLY
+================================ */
+
+.client-logo img[alt="Gigamon"],
+.client-logo img[alt="ThreatLocker"] {
+  height: 128px;
+  max-width: 460px;
+}
+
+@media (max-width: 768px) {
+  .client-logo img[alt="Gigamon"],
+  .client-logo img[alt="ThreatLocker"] {
+    height: 88px;
+    max-width: 330px;
+  }
 }
 
 /* ================================
@@ -1426,11 +1444,12 @@ footer p {
 
 @media (max-width: 768px) {
   .clients-track {
-    gap: 48px;
+    gap: 64px;
   }
 
   .client-logo img {
-    height: 42px;
+    height: 56px;
+    max-width: 190px;
   }
 }
 
