@@ -35,10 +35,4 @@
     <loc>https://alaman.me/contact/</loc>
     <priority>0.80</priority>
   </url>
-
-  <url>
-    <loc>https://alaman.me/why-us/</loc>
-    <priority>0.70</priority>
-  </url>
-
 </urlset>

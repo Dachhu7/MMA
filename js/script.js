@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (modal) modal.classList.add('open');
   }
 
-  document.querySelectorAll('.btn.primary, .highlight-btn, .endpoint-btn.light, a.whyus-btn[href="#"], .cta-bar .btn-outline').forEach(function (btn) {
+  document.querySelectorAll('.btn.primary, .highlight-btn, .endpoint-btn.light, .cta-bar .btn-outline').forEach(function (btn) {
     btn.addEventListener('click', openDemoModal);
   });
 

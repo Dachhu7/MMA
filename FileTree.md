@@ -81,8 +81,7 @@
 │   ├── 🖼️ pexels-zkankeklik-15108227.jpg
 │   ├── 🖼️ resource_background.png
 │   ├── 🖼️ software-update.jpg
-│   ├── 🖼️ tam-header.jpg
-│   └── 🎬 why-us_background.mp4
+│   └── 🖼️ tam-header.jpg
 ├── 📁 js
 │   └── 📄 script.js
 ├── 📁 platform
@@ -90,8 +89,6 @@
 ├── 📁 resources
 │   └── 🌐 
 ├── 📁 services
-│   └── 🌐 
-├── 📁 why-us
 │   └── 🌐 
 ├── 📄 CNAME
 ├── 🌐 
