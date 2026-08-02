@@ -174,6 +174,23 @@ body.menu-open {
   transition: all 0.35s ease;
 }
 
+/* Navbar solid state after scrolling */
+.topbar.scrolled {
+  background: rgba(5, 5, 8, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.topbar.scrolled .topbar-container {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.topbar.scrolled .topbar-logo img {
+  height: 30px;
+}
 
 .topbar-container {
   max-width: 1440px;
@@ -243,6 +260,10 @@ body.menu-open {
   font-size: 11px;
   margin-left: 6px;
   transition: transform 0.3s ease;
+}
+
+.nav-item.no-dropdown > a::after {
+  display: none;
 }
 
 .nav-item:hover > a::after {
@@ -785,13 +806,15 @@ footer p {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 0;
+    min-height: 100vh;
+    min-height: 100svh;
     height: auto;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
     padding: 0;
+    align-items: center;
   }
   .hero-video {
-    object-fit: contain;
+    object-fit: cover;
     background: #050508;
   }
   .hero-overlay {
@@ -804,26 +827,32 @@ footer p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px 20px;
+    padding: 96px 24px 40px;
   }
   .hero-content {
     max-width: 100%;
     text-align: center;
   }
+  .hero-badge {
+    margin-bottom: 18px;
+  }
   .hero-content h1 {
-    font-size: 32px;
+    font-size: 34px;
+  }
+  .hero-desc {
+    margin-bottom: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-section {
-    min-height: 0;
-  }
   .hero-content h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
   .hero-desc {
     font-size: 16px;
+  }
+  .hero-inner {
+    padding: 84px 20px 32px;
   }
 }
 
@@ -2539,13 +2568,14 @@ footer p {
 
 .david-banner {
   position: relative;
+  margin-top: 0;
   min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  padding: 60px 24px;
+  padding: 24px 24px 60px;
   background: #050508;
 }
 
@@ -2665,7 +2695,7 @@ footer p {
 @media (max-width: 900px) {
   .david-banner {
     min-height: 40vh;
-    padding: 50px 24px;
+    padding: 24px 24px 50px;
   }
 
   .david-banner-content {
@@ -2680,7 +2710,7 @@ footer p {
 @media (max-width: 600px) {
   .david-banner {
     min-height: 35vh;
-    padding: 40px 20px;
+    padding: 24px 20px 40px;
   }
 
   .david-banner-content {
@@ -2696,7 +2726,7 @@ footer p {
 @media (max-width: 480px) {
   .david-banner {
     min-height: 30vh;
-    padding: 30px 16px;
+    padding: 24px 16px 30px;
   }
 
   .david-banner-content {
@@ -3177,6 +3207,7 @@ textarea:focus{
   }
   .contact-content {
     padding-left: 0;
+    margin-top: 0;
   }
   .contact-content h1 {
     font-size: 38px;
@@ -3426,6 +3457,11 @@ textarea:focus{
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 0 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    max-width: 440px;
   }
 }
 
@@ -3942,3 +3978,406 @@ section {
     height: 2px;
   }
 }
+
+/* ======================================================
+   RESPONSIVE REFINEMENTS — MOBILE / TABLET / DESKTOP
+   ====================================================== */
+
+/* ---------- NAVBAR ---------- */
+.topbar.scrolled .mega-menu {
+  top: 56px;
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .nav-links {
+    gap: 22px;
+  }
+  .nav-item > a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-container {
+    padding: 16px 20px;
+  }
+  .hamburger {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar-container {
+    padding: 14px 16px;
+  }
+  .topbar-logo img {
+    height: 32px;
+  }
+}
+
+/* ---------- MOBILE NAV MENU ---------- */
+@media (max-width: 420px) {
+  .navbar-nav-mobile {
+    gap: 14px;
+  }
+  .navbar-nav-mobile a {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+/* ---------- HERO (short landscape screens) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+  .hero-inner {
+    padding-top: 88px;
+    padding-bottom: 28px;
+  }
+  .hero-content h1 {
+    font-size: 30px;
+  }
+  .hero-desc {
+    margin-bottom: 20px;
+  }
+}
+
+/* ---------- SOLUTIONS ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .solutions-grid {
+    gap: 18px;
+  }
+  .solutions-card {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .solutions-section {
+    padding: 64px 16px;
+  }
+  .solutions-header {
+    margin-bottom: 44px;
+  }
+  .solutions-header h2 {
+    font-size: 26px;
+  }
+  .solutions-header p {
+    font-size: 15px;
+  }
+  .solutions-grid {
+    gap: 16px;
+  }
+  .solutions-card {
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+  .solutions-card h3 {
+    font-size: 18px;
+  }
+  .solutions-card p {
+    font-size: 14px;
+  }
+  .solutions-card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+}
+
+/* ---------- AI-SOC ---------- */
+@media (max-width: 480px) {
+  .ai-soc-section {
+    padding: 64px 16px;
+  }
+  .ai-soc-content h2 {
+    font-size: 28px;
+  }
+  .ai-soc-content p {
+    font-size: 15px;
+    margin-bottom: 26px;
+  }
+  .ai-soc-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 24px;
+  }
+  .ai-soc-image {
+    border-radius: 18px;
+  }
+}
+
+/* ---------- CLIENTS MARQUEE ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .clients-track {
+    gap: 72px;
+  }
+  .client-logo img {
+    height: 64px;
+    max-width: 220px;
+  }
+  .client-logo img[alt="Gigamon"],
+  .client-logo img[alt="ThreatLocker"] {
+    height: 96px;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 420px) {
+  .clients-track {
+    gap: 44px;
+  }
+  .clients-wrap {
+    padding: 0 16px;
+  }
+  .clients-header h2 {
+    font-size: 24px;
+  }
+}
+
+/* ---------- CYBER INTERACTIVE ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cyber-grid {
+    gap: 18px;
+  }
+  .cyber-card {
+    padding: 30px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cyber-interactive {
+    padding: 64px 16px;
+  }
+  .cyber-header {
+    margin-bottom: 42px;
+  }
+  .cyber-header h2 {
+    font-size: 26px;
+  }
+  .cyber-header p {
+    font-size: 15px;
+  }
+  .cyber-grid {
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .cyber-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+  .cyber-card h3 {
+    font-size: 18px;
+  }
+  .cyber-card p {
+    font-size: 14px;
+  }
+}
+
+/* ---------- CONTACT ---------- */
+@media (max-width: 768px) {
+  .contact-bg {
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-bg {
+    min-height: 120px;
+  }
+  .contact-content .lead {
+    margin-bottom: 24px;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+@media (max-width: 360px) {
+  .footer-links a {
+    margin: 0 8px;
+  }
+}
+
+/* ======================================================
+   PAGE-SPECIFIC RESPONSIVE OVERRIDES
+   Higher-specificity selectors (body ...) deliberately
+   beat each page's inline <style> rules on small screens.
+   ====================================================== */
+
+/* ---------- CONTACT PAGE (inline form / visual overrides) ---------- */
+@media (max-width: 1024px) {
+  body .contact-form {
+    max-width: 100%;
+    margin: 0 0 32px;
+  }
+  body .contact-visual {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body .contact-form {
+    padding: 28px 22px;
+  }
+  body .contact-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  body .contact-form {
+    padding: 20px 16px;
+  }
+}
+
+/* ---------- SOLUTIONS / PLATFORM (endpoint pages) ---------- */
+@media (max-width: 480px) {
+  .endpoint-capabilities h2,
+  .endpoint-intro h2,
+  .endpoint-value h2 {
+    font-size: 30px;
+  }
+  .endpoint-capabilities-description,
+  .endpoint-value-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  .endpoint-value-grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+  .endpoint-cta {
+    padding: 50px 5%;
+  }
+  .endpoint-cta h2 {
+    font-size: 28px;
+  }
+  .endpoint-cta p {
+    font-size: 16px;
+  }
+}
+
+/* ---------- SERVICES PAGE ---------- */
+@media (max-width: 480px) {
+  .svc-hero-content h1 {
+    font-size: 26px;
+  }
+}
+
+/* Short landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .svc-hero,
+  .endpoint-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+}
+
+/* ---------- LEGAL PAGES (Security / Privacy-Notice / Terms-of-Use) ---------- */
+@media (max-width: 600px) {
+  body .hero {
+    margin: 70px auto 40px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body .hero,
+  body .policy-grid,
+  body .cta-bar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  body .policy-article h2 {
+    font-size: 21px;
+  }
+}
+
+/* Legal pages: keep 24px gutters at small-desktop widths (1025-1180px) */
+body .policy-grid,
+body .cta-bar {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Legal pages: disable nested article scroll on desktop (page scrolls naturally) */
+@media (min-width: 1025px) {
+  body .policy-article {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+/* ---------- INDUSTRIES 5-COLUMN STAT ROW (inline-styled) ---------- */
+@media (max-width: 992px) {
+  .stat-row-5 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .stat-row-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+}
+
+/* ======================================================
+   SCROLL-SNAP / PARALLAX ENTRANCE (shared)
+   Drives the .snap-section entrance animations used on
+   services, solutions, platform, resources, industries
+   and contact pages.
+   ====================================================== */
+html {
+  scroll-snap-type: y proximity;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  overflow: hidden;
+}
+
+.snap-section .p-bg {
+  will-change: transform, opacity;
+  transform: scale(1.18);
+  opacity: 0.35;
+  transition: transform 3.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 3s ease;
+}
+
+.snap-section.visible .p-bg {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.snap-section .p-overlay {
+  opacity: 0;
+  transition: opacity 2.5s ease 0.5s;
+}
+
+.snap-section.visible .p-overlay {
+  opacity: 1;
+}
+
+.snap-section .p-content > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.6s ease, transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.snap-section.visible .p-content > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.snap-section .p-content > *:nth-child(1) { transition-delay: 0.10s; }
+.snap-section .p-content > *:nth-child(2) { transition-delay: 0.30s; }
+.snap-section .p-content > *:nth-child(3) { transition-delay: 0.55s; }
+.snap-section .p-content > *:nth-child(4) { transition-delay: 0.80s; }
+.snap-section .p-content > *:nth-child(5) { transition-delay: 1.05s; }
+.snap-section .p-content > *:nth-child(6) { transition-delay: 1.25s; }
+.snap-section .p-content > *:nth-child(7) { transition-delay: 1.45s; }
+.snap-section .p-content > *:nth-child(8) { transition-delay: 1.65s; }
