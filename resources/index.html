@@ -949,6 +949,7 @@
       ===================================== */
       html {
         scroll-snap-type: y proximity;
+        scroll-padding-top: 90px;
       }
 
       .snap-section {
@@ -1330,11 +1331,124 @@
         margin-bottom: 0;
       }
 
+      .vendor-reports-section {
+        padding: 80px 8% 0;
+        background: #050508;
+      }
+
+      .vendor-reports-section .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .vendor-reports-section .section-header h2 {
+        font-size: clamp(30px, 3.4vw, 44px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .vendor-reports-section .section-header p {
+        font-size: 17px;
+        color: rgba(255,255,255,0.5);
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .vendor-reports-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .vendor-report-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: var(--radius-lg);
+        padding: 36px 32px;
+        text-align: center;
+        transition: all 0.45s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .vendor-report-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(6,182,212,0.30);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      }
+
+      .vendor-report-logo {
+        width: 96px;
+        height: 96px;
+        border-radius: var(--radius-md);
+        background: #f8fafc;
+        border: 1px solid rgba(148,163,184,0.45);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px;
+        margin-bottom: 22px;
+      }
+
+      .vendor-report-logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .vendor-report-card h3 {
+        font-size: 19px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 12px;
+      }
+
+      .vendor-report-card p {
+        font-size: 14.5px;
+        color: rgba(255,255,255,0.5);
+        line-height: 1.85;
+        margin-bottom: 24px;
+      }
+
+      .vendor-report-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 26px;
+        border: 1px solid rgba(6,182,212,0.4);
+        border-radius: 999px;
+        background: rgba(6,182,212,0.1);
+        color: #67e8f9;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        margin-top: auto;
+      }
+
+      .vendor-report-btn:hover {
+        background: rgba(6,182,212,0.2);
+        border-color: rgba(6,182,212,0.7);
+      }
+
       /* =====================================
          RESPONSIVE
       ===================================== */
       @media (max-width: 992px) {
         .resources-grid { grid-template-columns: 1fr 1fr; }
+        .vendor-reports-grid { grid-template-columns: 1fr 1fr; }
         .download-modal { padding: 32px 28px; }
         .download-modal h2 { font-size: 22px; }
         .cloudsek-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1349,6 +1463,7 @@
         .snap-section.resources-hero { padding: 100px 6% 30px; }
         .resources-hero h1 { font-size: 26px; }
         .resources-hero p { font-size: 14px; }
+        .vendor-reports-grid { grid-template-columns: 1fr; }
         .snap-section.ebook-section { padding: 50px 6% 20px; }
         .ebook-container { grid-template-columns: 1fr; gap: 24px; }
         .ebook-book { margin-bottom: 6px; }
@@ -1723,6 +1838,12 @@ dropdownItems.forEach(item => {
               <option value="CIAM Essentials eBook">CIAM Essentials eBook</option>
               <option value="Fortinet Cloud Security Report">Fortinet Cloud Security Report</option>
               <option value="AI's Influence Runs Deeper Than You Think — 2026 Gartner Strategic Predictions">AI's Influence Runs Deeper Than You Think — 2026 Gartner Strategic Predictions</option>
+              <option value="ThreatLocker Report">ThreatLocker Report</option>
+              <option value="Netskope Report">Netskope Report</option>
+              <option value="Halcyon Report">Halcyon Report</option>
+              <option value="Cloudflare Report">Cloudflare Report</option>
+              <option value="Shieldworks Report">Shieldworks Report</option>
+              <option value="GoTrust Report">GoTrust Report</option>
             </select>
             <div class="field-error" id="resourceInterestError">Please select a resource.</div>
           </div>
@@ -1733,6 +1854,73 @@ dropdownItems.forEach(item => {
     </div>
   </div>
 </div>
+
+<!-- ========================================= -->
+<!-- VENDOR REPORTS -->
+<!-- ========================================= -->
+
+<section class="vendor-reports-section snap-section">
+  <div class="section-header">
+    <h2>Vendor Reports</h2>
+    <p>Expert-reviewed research and insights from our technology partners to sharpen your security strategy.</p>
+  </div>
+
+  <div class="vendor-reports-grid">
+    <div class="vendor-report-card">
+      <div class="vendor-report-logo">
+        <img src="images/clients/Threatlocker.png" alt="ThreatLocker">
+      </div>
+      <h3>ThreatLocker Report</h3>
+      <p>Application allowlisting and zero-trust endpoint controls that stop unauthorized software before it executes.</p>
+      <button class="vendor-report-btn" data-resource="ThreatLocker Report">Download <i class="bi bi-download"></i></button>
+    </div>
+
+    <div class="vendor-report-card">
+      <div class="vendor-report-logo">
+        <img src="images/clients/Netskope.png" alt="Netskope">
+      </div>
+      <h3>Netskope Report</h3>
+      <p>SSE and SASE insights for securing cloud, web and SaaS traffic from any user, anywhere.</p>
+      <button class="vendor-report-btn" data-resource="Netskope Report">Download <i class="bi bi-download"></i></button>
+    </div>
+
+    <div class="vendor-report-card">
+      <div class="vendor-report-logo">
+        <img src="images/clients/Halcyon.png" alt="Halcyon">
+      </div>
+      <h3>Halcyon Report</h3>
+      <p>Anti-ransomware platform analysis covering prevention, detection and automated recovery.</p>
+      <button class="vendor-report-btn" data-resource="Halcyon Report">Download <i class="bi bi-download"></i></button>
+    </div>
+
+    <div class="vendor-report-card">
+      <div class="vendor-report-logo">
+        <img src="images/clients/cloudflare.png" alt="Cloudflare">
+      </div>
+      <h3>Cloudflare Report</h3>
+      <p>Cloud, web and application security research on DDoS, bot and API protection.</p>
+      <button class="vendor-report-btn" data-resource="Cloudflare Report">Download <i class="bi bi-download"></i></button>
+    </div>
+
+    <div class="vendor-report-card">
+      <div class="vendor-report-logo">
+        <img src="images/clients/Shieldworkz.png" alt="Shieldworkz">
+      </div>
+      <h3>Shieldworks Report</h3>
+      <p>OT and ICS visibility, security and compliance for critical infrastructure environments.</p>
+      <button class="vendor-report-btn" data-resource="Shieldworks Report">Download <i class="bi bi-download"></i></button>
+    </div>
+
+    <div class="vendor-report-card">
+      <div class="vendor-report-logo">
+        <img src="images/clients/GoTurst.png" alt="GoTrust">
+      </div>
+      <h3>GoTrust Report</h3>
+      <p>Passwordless authentication and identity-first access strategies for modern workforces.</p>
+      <button class="vendor-report-btn" data-resource="GoTrust Report">Download <i class="bi bi-download"></i></button>
+    </div>
+  </div>
+</section>
 
 <!-- ========================================= -->
 <!-- ADDITIONAL RESOURCES -->
@@ -1848,6 +2036,13 @@ dropdownItems.forEach(item => {
 
   openGartnerBtn.addEventListener('click', function () {
     openModal("AI's Influence Runs Deeper Than You Think — 2026 Gartner Strategic Predictions");
+  });
+
+  var vendorReportBtns = document.querySelectorAll('.vendor-report-btn');
+  vendorReportBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      openModal(btn.getAttribute('data-resource'));
+    });
   });
 
   closeBtn.addEventListener('click', closeModal);

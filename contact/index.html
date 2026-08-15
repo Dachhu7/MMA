@@ -45,7 +45,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 40px 8%;
+        padding: 90px 8% 70px;
         overflow: hidden;
         text-align: center;
         background-image: url("../images/HeaderImg_Contact.jpg");
@@ -353,177 +353,6 @@
       .support-card .support-link:hover {
         gap: 10px;
         color: #ffffff;
-      }
-
-      /* ===== FAQ ===== */
-      .contact-faq {
-        padding: 90px 8% 100px;
-        background: #020916;
-      }
-
-      .contact-faq .section-header {
-        text-align: center;
-        margin-bottom: 52px;
-      }
-
-      .contact-faq .section-header h2 {
-        font-size: clamp(30px, 3.4vw, 42px);
-        font-weight: 800;
-        margin-bottom: 14px;
-        background: var(--gradient-main);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .contact-faq .section-header p {
-        font-size: 17px;
-        color: #94a3b8;
-        max-width: 600px;
-        margin: 0 auto;
-        line-height: 1.8;
-      }
-
-      .faq-list {
-        max-width: 820px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .faq-item {
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: 12px;
-        overflow: hidden;
-        transition: box-shadow 0.3s ease;
-      }
-
-      .faq-item:hover {
-        box-shadow: 0 4px 20px rgba(0,0,0,0.30);
-      }
-
-      .faq-question {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 26px;
-        background: none;
-        border: none;
-        font-size: 16px;
-        font-weight: 600;
-        color: #e2e8f0;
-        cursor: pointer;
-        font-family: inherit;
-        text-align: left;
-        transition: color 0.3s ease;
-      }
-
-      .faq-question:hover {
-        color: var(--accent-cyan);
-      }
-
-      .faq-question i {
-        font-size: 18px;
-        color: var(--accent-cyan);
-        transition: transform 0.3s ease;
-        flex-shrink: 0;
-        margin-left: 16px;
-      }
-
-      .faq-item.open .faq-question i {
-        transform: rotate(180deg);
-      }
-
-      .faq-answer {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease, padding 0.35s ease;
-        padding: 0 26px;
-      }
-
-      .faq-item.open .faq-answer {
-        max-height: 300px;
-        padding: 0 26px 20px;
-      }
-
-      .faq-answer p {
-        font-size: 15px;
-        color: #94a3b8;
-        line-height: 1.8;
-        margin: 0;
-      }
-
-      /* ===== TESTIMONIAL ===== */
-      .contact-testimonial {
-        padding: 80px 8%;
-        background: #0b1120;
-        text-align: center;
-      }
-
-      .testimonial-card {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 48px 56px;
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.08);
-        border-radius: var(--radius-lg);
-        position: relative;
-      }
-
-      .testimonial-card::before {
-        content: "\201C";
-        position: absolute;
-        top: 20px;
-        left: 30px;
-        font-size: 80px;
-        line-height: 1;
-        color: rgba(6,182,212,0.15);
-        font-family: Georgia, serif;
-      }
-
-      .testimonial-text {
-        font-size: 19px;
-        line-height: 1.8;
-        color: #cbd5e1;
-        font-style: italic;
-        margin-bottom: 28px;
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 14px;
-      }
-
-      .testimonial-avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--gradient-main);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-weight: 700;
-        font-size: 18px;
-      }
-
-      .testimonial-author-info {
-        text-align: left;
-      }
-
-      .testimonial-author-info strong {
-        display: block;
-        font-size: 15px;
-        color: #f1f5f9;
-      }
-
-      .testimonial-author-info span {
-        font-size: 13px;
-        color: #94a3b8;
       }
 
       /* ===== CONTACT VISUAL / BG ===== */
@@ -836,11 +665,6 @@
         .contact-hero h1 { font-size: 32px; }
         .contact-hero p { font-size: 16px; }
         .support-card { padding: 32px 24px; }
-        .testimonial-card { padding: 36px 24px; }
-        .testimonial-text { font-size: 16px; }
-        .faq-question { padding: 16px 18px; font-size: 15px; }
-        .faq-answer { padding: 0 18px; }
-        .faq-item.open .faq-answer { padding: 0 18px 16px; }
       }
 
       @media (max-width: 480px) {
@@ -1086,11 +910,13 @@ dropdownItems.forEach(item => {
   </div>
 
   <div class="badge-row">
-    <div class="badge-item"><i class="bi bi-shield-check"></i> SOC 2 Type II</div>
     <div class="badge-item"><i class="bi bi-patch-check-fill"></i> ISO/IEC 27001:2022 Certified</div>
     <div class="badge-item"><i class="bi bi-patch-check-fill"></i> ISO 9001:2015 Certified</div>
-    <div class="badge-item"><i class="bi bi-star-fill"></i> Gartner Peer Insights 4.9</div>
-    <div class="badge-item"><i class="bi bi-award-fill"></i> Top MDR Provider 2026</div>
+    <div class="badge-item"><i class="bi bi-award-fill"></i> Best Cyber Security Solutions Provider of the Year 2023 - Insight Media</div>
+    <div class="badge-item"><i class="bi bi-award-fill"></i> Best SI of the Year 2024 and 2025 - GEC Media and CPI Media</div>
+    <div class="badge-item"><i class="bi bi-award-fill"></i> OT SOC Provider of the Year 2025 - CPI Media</div>
+    <div class="badge-item"><i class="bi bi-award-fill"></i> Channel Growth Leader of the Year 2025 and 2026 - Insight Media</div>
+    <div class="badge-item"><i class="bi bi-award-fill"></i> Cloud Security Transformation Partner of the Year - CPI Media</div>
   </div>
 </section>
 
@@ -1118,69 +944,6 @@ dropdownItems.forEach(item => {
       <h3>Partnerships</h3>
       <p>Interested in becoming a partner or reseller? Let's explore how we can grow together.</p>
       <a href="mailto:partners@mainfosec.com" class="support-link">Partner With Us <i class="bi bi-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIAL ===== -->
-<section class="contact-testimonial snap-section p-content">
-  <div class="testimonial-card">
-    <p class="testimonial-text">
-      MMA InfoSec transformed our security operations. Their platform detected threats our previous solution missed entirely, and the response team's speed is unmatched.
-    </p>
-    <div class="testimonial-author">
-      <div class="testimonial-avatar">M</div>
-      <div class="testimonial-author-info">
-        <strong>Michael Chen</strong>
-        <span>CISO, FinTech Global</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="contact-faq snap-section p-content">
-  <div class="section-header">
-    <h2>Frequently Asked Questions</h2>
-    <p>Quick answers to common questions about working with MMA InfoSec.</p>
-  </div>
-
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-question">
-        How quickly can we get started?
-        <i class="bi bi-chevron-down"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Most clients are up and running within 48 hours of signing. Our onboarding team handles deployment, integration, and configuration so you can start seeing results immediately.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">
-        Do you offer a free trial or demo?
-        <i class="bi bi-chevron-down"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Yes. We offer a personalized demo and a 14-day proof of concept with full platform access, including deployment support and threat analysis tailored to your environment.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">
-        What industries do you serve?
-        <i class="bi bi-chevron-down"></i>
-      </button>
-      <div class="faq-answer">
-        <p>We serve finance, healthcare, government, technology, manufacturing, and more. Our platform adapts to industry-specific compliance and threat landscapes.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">
-        Is my data secure with your platform?
-        <i class="bi bi-chevron-down"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Absolutely. We are SOC 2 Type II certified and ISO/IEC 27001:2022 and ISO 9001:2015 compliant. All data is encrypted at rest and in transit, with strict access controls and regular third-party audits.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -1366,17 +1129,15 @@ dropdownItems.forEach(item => {
       })();
     </script>
 
-    <!-- FAQ Accordion Toggle -->
+    <!-- Navbar scroll effect -->
     <script>
-      document.querySelectorAll('.faq-question').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var item = this.parentElement;
-          var isOpen = item.classList.contains('open');
-          document.querySelectorAll('.faq-item.open').forEach(function(i) {
-            i.classList.remove('open');
-          });
-          if (!isOpen) item.classList.add('open');
-        });
+      window.addEventListener('scroll', function() {
+        var topbar = document.querySelector('.topbar');
+        if (window.scrollY > 50) {
+          topbar.classList.add('scrolled');
+        } else {
+          topbar.classList.remove('scrolled');
+        }
       });
     </script>
 

@@ -197,6 +197,7 @@ dropdownItems.forEach(item => {
 ===================================== */
 html {
   scroll-snap-type: y proximity;
+  scroll-padding-top: 90px;
 }
 
 .snap-section {
@@ -255,7 +256,6 @@ html {
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 main,
@@ -275,7 +275,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 6%;
+  padding: 90px 6% 70px;
   margin: 0;
   margin-top: 0;
   top: 0;                    /* 🔥 FIX */
@@ -434,7 +434,7 @@ section {
 
 @media (max-width: 900px) {
   .svc-hero {
-    padding: 0 5%;
+    padding: 90px 5% 60px;
   }
 
   .svc-hero-content h1 {
@@ -463,7 +463,7 @@ section {
 
 .svc-intro {
   position: relative;
-  padding: 20px 10% 20px;
+  padding: 110px 10% 90px;
   background: #020916; /* dark background */
   text-align: center;
   overflow: hidden;
@@ -539,7 +539,7 @@ section {
 
 .svc-solutions {
   position: relative;
-  padding: 40px 8% 40px;
+  padding: 90px 8% 70px;
   background: #041326; /* deep navy-blue base */
   overflow: hidden;
 }
@@ -699,7 +699,7 @@ section {
 
 .pltf-section {
   position: relative;
-  padding: 60px 6% 60px;
+  padding: 90px 6% 80px;
   background: radial-gradient(
     1200px 600px at 50% 0%,
     #0b2f3a,
@@ -852,7 +852,7 @@ section {
 
 .leadership-section {
   position: relative;
-  padding: 40px 8% 50px;
+  padding: 90px 8% 80px;
   background: #0b1120;
   text-align: center;
   overflow: hidden;
@@ -949,7 +949,7 @@ section {
 
 .dp-section {
   position: relative;
-  padding: 40px 8% 50px;
+  padding: 90px 8% 80px;
   background: #041326;
   overflow: hidden;
 }
@@ -959,7 +959,7 @@ section {
 .dp-section::before {
   content: "";
   position: absolute;
-  top: 110px;
+  top: 155px;
   left: 50%;
   transform: translateX(-50%);
   width: 96px;
@@ -1126,7 +1126,7 @@ section {
 
 .ebp-section {
   position: relative;
-  padding: 40px 8% 40px;
+  padding: 90px 8% 70px;
   background:
     radial-gradient(circle at 20% 20%, rgba(0, 200, 150, 0.10), transparent 40%),
     radial-gradient(circle at 80% 70%, rgba(0, 110, 255, 0.12), transparent 40%),
