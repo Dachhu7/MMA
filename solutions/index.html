@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cybersecurity Solutions — MMA InfoSec Endpoint & Cloud Protection</title>
-    <meta name="description" content="Explore MMA InfoSec's cybersecurity solutions: endpoint security, cloud security, identity protection, threat detection, and risk scoring.">
+    <title>Cybersecurity Solutions — MMA InfoSec</title>
+    <meta name="description" content="Explore MMA InfoSec's cybersecurity solutions: endpoint & ransomware defense, OT & critical infrastructure security, security operations, identity & zero trust, cloud security, exposure management, email security, data privacy and network security.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cybersecurity Solutions — MMA InfoSec Endpoint & Cloud Protection">
-    <meta property="og:description" content="Explore MMA InfoSec's cybersecurity solutions: endpoint security, cloud security, identity protection, threat detection, and risk scoring.">
+    <meta property="og:title" content="Cybersecurity Solutions — MMA InfoSec">
+    <meta property="og:description" content="Security platforms engineered around your environment. Explore MMA InfoSec's full cybersecurity portfolio across endpoints, OT, cloud, identity, data privacy and network security.">
     <meta property="og:url" content="https://alaman.me/solutions/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="../images/favicon.png">
@@ -44,8 +44,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- AOS Library for Animations -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Flag JS availability early (gates scroll-reveal hidden states) -->
+    <script>document.documentElement.classList.add('js');</script>
 
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -99,7 +99,7 @@
                 <h4>Solutions</h4>
                 <a class="menu-item" href="../solutions/">
                   <span>All Solutions</span>
-                  <small>Endpoint, cloud, identity & email security</small>
+                  <small>Endpoint, OT, cloud, identity, data privacy & network security</small>
                 </a>
               </div>
             </div>
@@ -176,866 +176,1792 @@ dropdownItems.forEach(item => {
 
 
 <style>
-  /* =====================================
-   THEME VARIABLES
-===================================== */
-:root {
-  --dark-bg: #020916;
-  --dark-card: rgba(255,255,255,0.05);
-  --text-light: #cbd5e1;
-  --text-muted: #94a3b8;
-  --accent-cyan: #06b6d4;
-  --accent-green: #22c55e;
-  --accent-blue: #2563eb;
-  --gradient-main: linear-gradient(135deg, #22c55e, #06b6d4, #3b82f6);
-  --glass-bg: rgba(255,255,255,0.06);
-  --glass-border: rgba(255,255,255,0.10);
-  --radius-lg: 24px;
-  --radius-md: 16px;
-}
+  /* ============================================================
+     MMA INFOSEC — CYBERSECURITY SOLUTIONS
+     Design System · Motion · Responsive
+  ============================================================ */
 
-/* =====================================
-   SCROLL SNAP – Parallax Ready
-===================================== */
-html {
-  scroll-snap-type: y proximity;
-}
+  /* ---------- THEME TOKENS ---------- */
+  :root {
+    --bg-deep: #04060f;
+    --bg-base: #050508;
+    --bg-panel: #0b1120;
+    --bg-card: rgba(255, 255, 255, 0.045);
+    --bg-card-hover: rgba(255, 255, 255, 0.07);
+    --line-soft: rgba(255, 255, 255, 0.09);
+    --line-cyan: rgba(34, 211, 238, 0.45);
+    --text-hi: #f8fafc;
+    --text-body: #cbd5e1;
+    --text-muted: #94a3b8;
+    --cyan: #06b6d4;
+    --cyan-bright: #22d3ee;
+    --green: #22c55e;
+    --blue: #2563eb;
+    --violet: #8b5cf6;
+    --grad-brand: linear-gradient(135deg, #22c55e, #14b8a6, #06b6d4, #2563eb);
+    --grad-hero: linear-gradient(90deg, #00f5ff, #00c3ff, #3b82f6);
+    --grad-head: linear-gradient(90deg, #22c55e, #14b8a6, #06b6d4, #2563eb);
+    --radius-lg: 22px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.55);
+    --shadow-glow: 0 22px 60px rgba(0, 0, 0, 0.65), 0 0 42px rgba(34, 211, 238, 0.16);
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
 
-.snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  position: relative;
-  overflow: hidden;
-}
+  /* ---------- PAGE SHELL ---------- */
+  body {
+    margin: 0;
+    padding-top: 0;
+    color: #e2e8f0;
+    background: var(--bg-base);
+    overflow-x: hidden;
+  }
 
-.snap-section .p-bg {
-  will-change: transform, opacity;
-  transform: scale(1.18);
-  opacity: 0.35;
-  transition: transform 3.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 3s ease;
-}
+  html {
+    scroll-snap-type: y proximity;
+  }
 
-.snap-section.visible .p-bg {
-  transform: scale(1);
-  opacity: 1;
-}
+  .snap-section {
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+  }
 
-.snap-section .p-overlay {
-  opacity: 0;
-  transition: opacity 2.5s ease 0.5s;
-}
+  /* smooth anchor offset under fixed navbar */
+  .sol-detail,
+  .sol-cards-section {
+    scroll-margin-top: 84px;
+  }
 
-.snap-section.visible .p-overlay {
-  opacity: 1;
-}
+  /* ---------- SCROLL HINT ---------- */
+  @keyframes bounceY {
+    0%, 100% { transform: translateY(0); opacity: 0.9; }
+    50% { transform: translateY(9px); opacity: 0.4; }
+  }
 
-.snap-section .p-content > * {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 1.6s ease, transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
-}
+  /* ============================================================
+     HERO
+  ============================================================ */
+  .sol-hero {
+    position: relative;
+    min-height: 70vh;
+    min-height: 70svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 8% 70px;
+    overflow: hidden;
+    text-align: center;
 
-.snap-section.visible .p-content > * {
-  opacity: 1;
-  transform: translateY(0);
-}
+    background-image: url("../images/HeaderImg_Contact.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    will-change: transform;
+  }
 
-.snap-section .p-content > *:nth-child(1) { transition-delay: 0.10s; }
-.snap-section .p-content > *:nth-child(2) { transition-delay: 0.30s; }
-.snap-section .p-content > *:nth-child(3) { transition-delay: 0.55s; }
-.snap-section .p-content > *:nth-child(4) { transition-delay: 0.80s; }
-.snap-section .p-content > *:nth-child(5) { transition-delay: 1.05s; }
-.snap-section .p-content > *:nth-child(6) { transition-delay: 1.25s; }
-.snap-section .p-content > *:nth-child(7) { transition-delay: 1.45s; }
-.snap-section .p-content > *:nth-child(8) { transition-delay: 1.65s; }
+  .sol-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(5, 15, 35, 0.74) 0%,
+        rgba(4, 10, 26, 0.82) 55%,
+        rgba(5, 5, 8, 0.96) 100%
+      ),
+      radial-gradient(
+        760px 460px at 50% 32%,
+        rgba(0, 200, 255, 0.20),
+        transparent 68%
+      );
+    transform: scale(1.04);
+    will-change: transform;
+  }
 
-  /* =====================================
-   ENDPOINT SECURITY – PREMIUM STYLES
-===================================== */
+  /* fine cyber-grid overlay */
+  .sol-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.22;
+    background-image:
+      linear-gradient(rgba(34, 211, 238, 0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.10) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 35%, transparent 78%);
+    mask-image: radial-gradient(ellipse at center, #000 35%, transparent 78%);
+  }
 
-body {
-  margin: 0;
-  padding-top: 0;
-  color: #e2e8f0;
-  background: #050508;
-}
+  .sol-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 960px;
+    color: #ffffff;
+    will-change: transform;
+  }
 
-/* ---------- HERO ---------- */
-.endpoint-hero {
-  position: relative;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 8%;
-  overflow: hidden;
-  text-align: center;
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 10px 24px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
 
-  background-image: url("../images/HeaderImg_Contact.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
+    color: #00e0ff;
+    background: rgba(0, 200, 255, 0.12);
+    border: 1px solid rgba(0, 200, 255, 0.4);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 0 28px rgba(0, 200, 255, 0.28), inset 0 0 14px rgba(0, 200, 255, 0.10);
+  }
 
-/* Balanced Overlay (Image Visible Now) */
-.endpoint-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+  .sol-hero-content h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.05;
+    font-weight: 700;
+    margin-bottom: 22px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(5, 15, 35, 0.70) 0%,
-      rgba(5, 15, 35, 0.75) 50%,
-      rgba(5, 15, 35, 0.80) 100%
-    ),
-    radial-gradient(
-      700px 400px at 50% 30%,
-      rgba(0, 200, 255, 0.25),
-      transparent 65%
-    );
-}
+    background: var(--grad-hero);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradShift 6s ease-in-out infinite;
+    text-shadow: 0 0 60px rgba(0, 200, 255, 0.25);
+  }
 
-/* Content */
-.endpoint-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  color: #ffffff;
-}
+  .sol-hero-content .sol-hero-sub {
+    font-size: clamp(18px, 2vw, 23px);
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: rgba(255, 255, 255, 0.94);
+    margin-bottom: 22px;
+  }
 
-/* Eyebrow */
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 28px;
-  padding: 10px 22px;
-  font-size: 13px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 700;
+  .sol-hero-content p.sol-hero-intro {
+    font-size: clamp(15px, 1.5vw, 17px);
+    line-height: 1.85;
+    color: rgba(226, 232, 240, 0.82);
+    max-width: 880px;
+    margin: 0 auto;
+  }
 
-  color: #00e0ff;
-  background: rgba(0, 200, 255, 0.12);
-  border: 1px solid rgba(0, 200, 255, 0.35);
-  border-radius: 999px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 25px rgba(0, 200, 255, 0.25);
-}
+  /* animated mouse scroll cue */
+  .sol-hero-content::after {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 42px;
+    margin: 42px auto 0;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 14px;
+    animation: bounceY 2.2s ease-in-out infinite;
+    background: radial-gradient(circle 4px at 50% 30%, var(--cyan-bright), transparent 70%) no-repeat;
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.4);
+  }
 
-/* Heading */
-.endpoint-hero-content h1 {
-  font-size: clamp(44px, 5vw, 72px);
-  line-height: 1.05;
-  font-weight: 700;
-  margin-bottom: 28px;
+  @keyframes gradShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
 
-  background: linear-gradient(
-    90deg,
-    #00f5ff,
-    #00c3ff,
-    #3b82f6
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  /* ============================================================
+     SOLUTION CARDS SECTION
+  ============================================================ */
+  .sol-cards-section {
+    position: relative;
+    padding: 96px 24px 104px;
+    background:
+      radial-gradient(720px 320px at 50% 0%, rgba(34, 211, 238, 0.07), transparent 70%),
+      var(--bg-deep);
+    text-align: center;
+    overflow: hidden;
+  }
 
-/* Paragraph */
-.endpoint-hero-content p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 820px;
-  margin: 0 auto 36px;
-}
+  .sol-cards-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
 
-/* BUTTON */
-.endpoint-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 32px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    #00e0ff,
-    #3b82f6
-  );
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.4);
-}
+  .sol-cards-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--cyan-bright);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    padding: 9px 24px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid rgba(34, 211, 238, 0.38);
+    box-shadow: 0 0 22px rgba(34, 211, 238, 0.2);
+  }
 
-.endpoint-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(0, 200, 255, 0.6);
-}
+  .sol-cards-section h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.12;
 
-.endpoint-btn.light {
-  background: rgba(255, 255, 255, 0.08);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
+    background: var(--grad-head);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradShift 7s ease-in-out infinite;
+  }
 
-/* ---------- INTRO SECTION – PREMIUM WHITE ENTERPRISE ---------- */
+  .sol-cards-desc {
+    font-size: 16px;
+    color: rgba(203, 213, 225, 0.9);
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    line-height: 1.85;
+  }
 
-.endpoint-intro {
-  position: relative;
-  padding: 40px 20px;
-  background: #0b1120;
-  text-align: center;
-  overflow: hidden;
-}
+  .sol-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+    perspective: 1400px;
+  }
 
-/* Container */
-.endpoint-intro-container {
-  max-width: 950px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
+  .sol-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 36px 32px;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-body);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
 
-/* Soft Brand Glow */
-.endpoint-intro::before {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  bottom: -250px;
-  right: -250px;
-  background: radial-gradient(
-    circle,
-    rgba(20, 184, 166, 0.08),
-    transparent 70%
-  );
-  z-index: 0;
-}
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-card);
 
-/* Label */
-.endpoint-intro-label {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #14b8a6;
-  margin-bottom: 18px;
-}
+    transition:
+      opacity 0.7s var(--ease-out),
+      transform 0.7s var(--ease-out),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background 0.35s ease;
+    will-change: transform;
+  }
 
-/* Heading */
-.endpoint-intro h2 {
-  font-size: clamp(36px, 4vw, 50px);
-  font-weight: 700;
-  margin-bottom: 26px;
-  line-height: 1.2;
-
-  background: linear-gradient(
-    90deg,
-    #22c55e,
-    #14b8a6,
-    #06b6d4,
-    #2563eb
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Primary Description */
-.endpoint-intro-description {
-  font-size: 19px;
-  color: #cbd5e1;
-  line-height: 1.85;
-  margin-bottom: 28px;
-}
-
-/* Supporting Paragraph */
-.endpoint-intro-sub {
-  font-size: 17px;
-  color: #94a3b8;
-  line-height: 1.8;
-  max-width: 820px;
-  margin: 0 auto;
-}
-
-/* ---------- CAPABILITIES SECTION – GLASSMORPHISM VIDEO VERSION ---------- */
-
-.endpoint-capabilities {
-  position: relative;
-  padding: 40px 20px;
-  overflow: hidden;
-  text-align: center;
-  background: #020617;
-  isolation: isolate;
-}
-
-/* Background Video */
-.endpoint-bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  filter: none; /* keep video sharp */
-}
-
-/* Dark Overlay (No heavy blur to avoid video softness) */
-.endpoint-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(3, 8, 20, 0.75),
-      rgba(5, 15, 35, 0.85)
-    ),
-    radial-gradient(
-      900px 500px at 50% 20%,
-      rgba(0, 200, 255, 0.18),
+  /* gradient edge ring */
+  .sol-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      rgba(34, 211, 238, 0.5),
+      rgba(59, 130, 246, 0.4),
       transparent 70%
     );
-
-  backdrop-filter: none;
-}
-
-/* Center Container */
-.endpoint-capabilities-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* Label */
-.endpoint-capabilities-label {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  color: #22d3ee;
-  margin-bottom: 22px;
-  text-transform: uppercase;
-  padding: 8px 22px;
-  border-radius: 999px;
-  background: rgba(34, 211, 238, 0.1);
-  border: 1px solid rgba(34, 211, 238, 0.35);
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
-}
-
-/* Heading */
-.endpoint-capabilities h2 {
-  font-size: clamp(40px, 4vw, 52px);
-  font-weight: 700;
-  margin-bottom: 24px;
-  line-height: 1.15;
-
-  background: linear-gradient(
-    90deg,
-    #22c55e 0%,
-    #14b8a6 30%,
-    #06b6d4 60%,
-    #2563eb 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow: 0 0 40px rgba(6, 182, 212, 0.2);
-}
-
-/* Description */
-.endpoint-capabilities-description {
-  font-size: 19px;
-  color: rgba(203, 213, 225, 0.9);
-  max-width: 820px;
-  margin: 0 auto 90px auto;
-  line-height: 1.9;
-}
-
-/* Grid */
-.capability-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 45px;
-}
-
-/* Glass Card */
-.capability-card {
-  padding: 55px 45px;
-  border-radius: 22px;
-  position: relative;
-  text-align: left;
-
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
-
-  box-shadow:
-    0 15px 45px rgba(0, 0, 0, 0.6),
-    inset 0 0 40px rgba(0, 200, 255, 0.05);
-
-  transition: all 0.45s ease;
-}
-
-/* Subtle glowing border effect */
-.capability-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 22px;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(34, 211, 238, 0.4),
-    rgba(59, 130, 246, 0.4),
-    transparent
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-/* Card Hover */
-.capability-card:hover {
-  transform: translateY(-14px) scale(1.02);
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.8),
-    0 0 60px rgba(34, 211, 238, 0.35);
-  border: 1px solid rgba(34, 211, 238, 0.4);
-}
-
-/* Icon Number */
-.capability-icon {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 17px;
-  margin-bottom: 26px;
-  color: #ffffff;
-
-  background: linear-gradient(
-    135deg,
-    #22c55e,
-    #14b8a6,
-    #06b6d4
-  );
-
-  box-shadow:
-    0 12px 35px rgba(20, 184, 166, 0.6),
-    0 0 25px rgba(6, 182, 212, 0.4);
-}
-
-/* Card Heading */
-.capability-card h3 {
-  font-size: 23px;
-  margin-bottom: 18px;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-/* Card Paragraph */
-.capability-card p {
-  font-size: 16px;
-  color: rgba(203, 213, 225, 0.9);
-  line-height: 1.8;
-}
-
-
-/* ---------- VALUE SECTION – PREMIUM WHITE CENTERED ---------- */
-
-.endpoint-value {
-  position: relative;
-  padding: 40px 20px;
-  background: #020916;
-  overflow: hidden;
-  text-align: center;
-}
-
-/* Container for Center Alignment */
-.endpoint-value-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-/* Soft Brand Glow */
-.endpoint-value::before {
-  content: "";
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  top: -200px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(
-    circle,
-    rgba(20, 184, 166, 0.10),
-    transparent 70%
-  );
-  z-index: 0;
-}
-
-/* Section Label */
-.endpoint-value-label {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #14b8a6;
-  margin-bottom: 18px;
-}
-
-/* Heading */
-.endpoint-value h2 {
-  font-size: clamp(36px, 4vw, 48px);
-  font-weight: 700;
-  margin-bottom: 24px;
-  line-height: 1.2;
-
-  background: linear-gradient(
-    90deg,
-    #22c55e,
-    #14b8a6,
-    #06b6d4,
-    #2563eb
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Description */
-.endpoint-value-description {
-  font-size: 18px;
-  color: #cbd5e1;
-  max-width: 820px;
-  margin: 0 auto 60px auto;
-  line-height: 1.8;
-}
-
-/* Feature Grid */
-.endpoint-value-grid {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto 80px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-}
-
-/* Feature Card */
-.endpoint-value-grid li {
-  background: #0a1c33;
-  padding: 26px 28px 26px 60px;
-  border-radius: 16px;
-  font-size: 16px;
-  color: #e2e8f0;
-  position: relative;
-  text-align: left;
-
-  border: 1px solid rgba(0, 200, 150, 0.25);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-  transition: all 0.35s ease;
-}
-
-/* Check Icon */
-.endpoint-value-grid li::before {
-  content: "✓";
-  position: absolute;
-  left: 22px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffffff;
-
-  background: linear-gradient(
-    135deg,
-    #22c55e,
-    #14b8a6,
-    #06b6d4
-  );
-
-  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.35);
-}
-
-/* Hover Effect */
-.endpoint-value-grid li:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
-  border-color: rgba(0, 212, 255, 0.55);
-}
-
-/* Stats Section */
-.endpoint-value-stats {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-/* Individual Stat */
-.stat h3 {
-  font-size: 40px;
-  font-weight: 700;
-  margin-bottom: 8px;
-
-  background: linear-gradient(
-    90deg,
-    #22c55e,
-    #06b6d4
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.stat p {
-  font-size: 15px;
-  color: #94a3b8;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 900px) {
-  .capability-grid {
-    grid-template-columns: 1fr;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: opacity 0.35s ease;
   }
 
-  .endpoint-hero {
-    min-height: 65vh;
-    padding: 0 6%;
+  /* top accent beam on hover */
+  .sol-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--grad-brand);
+    transition: width 0.45s var(--ease-out);
   }
 
-  .endpoint-hero-content h1 {
-    font-size: 38px;
+  .sol-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--line-cyan);
+    box-shadow: var(--shadow-glow);
+    color: var(--text-hi);
+    transform: translateY(-8px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(1.015);
+  }
+  .sol-card:hover::after {
+    width: 100%;
   }
 
-  .capability-card {
-    padding: 40px 28px;
-  }
-}
+  .sol-card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 22px;
 
-@media (max-width: 480px) {
-  .capability-card {
-    padding: 32px 20px;
+    background: var(--grad-brand);
+    box-shadow:
+      0 14px 32px rgba(20, 184, 166, 0.5),
+      0 0 24px rgba(6, 182, 212, 0.35);
+    transition: transform 0.35s var(--ease-spring), box-shadow 0.35s ease;
+  }
+  .sol-card:hover .sol-card-icon {
+    transform: scale(1.1) rotate(6deg);
+    box-shadow:
+      0 18px 40px rgba(20, 184, 166, 0.6),
+      0 0 34px rgba(6, 182, 212, 0.45);
   }
 
-  .endpoint-hero-content h1 {
-    font-size: 28px;
+  .sol-card h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-hi);
+    margin-bottom: 12px;
+    line-height: 1.35;
   }
-}
+
+  .sol-card p {
+    font-size: 14.5px;
+    color: rgba(203, 213, 225, 0.85);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .sol-card-num {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--cyan-bright);
+    text-transform: uppercase;
+  }
+  .sol-card-num::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
+
+  /* ============================================================
+     SOLUTION DETAIL SECTIONS
+  ============================================================ */
+  .sol-detail {
+    position: relative;
+    padding: 96px 24px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.035);
+  }
+
+  .sol-odd {
+    background: var(--bg-deep);
+  }
+  .sol-even {
+    background: var(--bg-panel);
+  }
+
+  /* soft brand glows, alternating corners */
+  .sol-odd::before,
+  .sol-even::before {
+    content: "";
+    position: absolute;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(10px);
+  }
+  .sol-odd::before {
+    top: -260px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(34, 211, 238, 0.09), transparent 70%);
+  }
+  .sol-even::before {
+    bottom: -260px;
+    left: -200px;
+    background: radial-gradient(circle, rgba(34, 197, 94, 0.08), transparent 70%);
+  }
+
+  .sol-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .sol-detail-main .sol-detail-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--cyan-bright);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.3);
+  }
+  .sol-detail-label::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 12px var(--green);
+    animation: pulseDot 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.55); opacity: 0.6; }
+  }
+
+  .sol-detail-main h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(28px, 3.4vw, 42px);
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.12;
+    color: var(--text-hi);
+    background: linear-gradient(90deg, #ffffff, #cbd5e1, #ffffff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradShift 8s ease-in-out infinite;
+  }
+
+  .sol-detail-main .sol-detail-tagline {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cyan-bright);
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .sol-detail-main .sol-detail-desc {
+    font-size: 15.5px;
+    color: var(--text-body);
+    line-height: 1.9;
+    margin-bottom: 28px;
+    max-width: 620px;
+  }
+
+  .sol-detail-proof {
+    margin: 0 0 28px 0;
+    padding: 16px 20px;
+    border-left: 3px solid var(--cyan-bright);
+    border-radius: 0 14px 14px 0;
+    background: rgba(34, 211, 238, 0.06);
+    border: 1px solid rgba(34, 211, 238, 0.14);
+    border-left: 3px solid var(--cyan-bright);
+    font-size: 13.5px;
+    color: rgba(203, 213, 225, 0.88);
+    line-height: 1.75;
+    max-width: 640px;
+  }
+  .sol-detail-proof strong {
+    color: #67e8f9;
+    font-weight: 600;
+  }
+
+  /* capabilities */
+  .sol-caps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    max-width: 640px;
+  }
+
+  .sol-caps li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 17px;
+    border-radius: var(--radius-md);
+    font-size: 14.5px;
+    color: var(--text-hi);
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    transition:
+      transform 0.35s var(--ease-out),
+      border-color 0.35s ease,
+      background 0.35s ease,
+      box-shadow 0.35s ease;
+    will-change: transform;
+  }
+  .sol-caps li:hover {
+    border-color: var(--line-cyan);
+    background: rgba(34, 211, 238, 0.07);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4), 0 0 22px rgba(34, 211, 238, 0.12);
+  }
+
+  .sol-caps li::before {
+    content: "✓";
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+
+    background: var(--grad-brand);
+    box-shadow: 0 6px 18px rgba(20, 184, 166, 0.4);
+  }
+
+  /* vendors */
+  .sol-vendors {
+    margin-top: 6px;
+  }
+
+  .sol-vendors-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+  }
+  .sol-vendors-label::after {
+    content: "";
+    flex: 0 0 auto;
+    width: 34px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(148, 163, 184, 0.6), transparent);
+  }
+
+  .vendor-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .vendor-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 66px;
+    padding: 13px 22px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    transition:
+      transform 0.35s var(--ease-spring),
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.35s ease,
+      opacity 0.5s var(--ease-out);
+    will-change: transform;
+  }
+
+  .vendor-logo img {
+    max-height: 44px;
+    max-width: 170px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.88;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .vendor-logo span {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--text-hi);
+    white-space: nowrap;
+  }
+
+  .vendor-logo:hover {
+    border-color: var(--line-cyan);
+    background: rgba(34, 211, 238, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(34, 211, 238, 0.14);
+  }
+  .vendor-logo:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  /* ============================================================
+     SCROLL-REVEAL MOTION (driven by .visible toggled in JS)
+     Hidden states only apply when JS is active (html.js)
+  ============================================================ */
+  .js .sol-hero-content > *,
+  .js .sol-cards-label,
+  .js .sol-cards-section h2,
+  .js .sol-cards-desc,
+  .js .sol-card,
+  .js .sol-detail-main > :not(.sol-caps),
+  .js .sol-vendors,
+  .js .sol-caps li,
+  .js .vendor-logo {
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  /* --- hero entrance --- */
+  .js .sol-hero-content > * {
+    transform: translateY(40px);
+    filter: blur(6px);
+    transition:
+      opacity 0.9s var(--ease-out),
+      transform 1s var(--ease-out),
+      filter 0.9s ease;
+    transition-delay: calc(0.1s + var(--d, 0) * 0.12s);
+  }
+  .js .sol-hero.visible .sol-hero-content > * {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* --- cards section header + cards stagger --- */
+  .js .sol-cards-label,
+  .js .sol-cards-section h2,
+  .js .sol-cards-desc {
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s var(--ease-out),
+      transform 0.9s var(--ease-out);
+  }
+  .js .sol-cards-label { transition-delay: 0.05s; }
+  .js .sol-cards-section h2 { transition-delay: 0.15s; }
+  .js .sol-cards-desc { transition-delay: 0.25s; }
+
+  .js .sol-card {
+    transform: translateY(46px) rotateX(14deg) scale(0.96);
+    transform-origin: top center;
+    transition:
+      opacity 0.7s var(--ease-out),
+      transform 0.75s var(--ease-out),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease,
+      background 0.35s ease;
+    transition-delay: calc(0.1s + var(--i, 0) * 0.08s);
+  }
+  .js .sol-cards-section.visible .sol-cards-label,
+  .js .sol-cards-section.visible .sol-cards-section h2,
+  .js .sol-cards-section.visible h2,
+  .js .sol-cards-section.visible .sol-cards-desc,
+  .js .sol-cards-section.visible .sol-card {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* --- detail main column: directional slide --- */
+  .js .sol-odd .sol-detail-main > :not(.sol-caps) {
+    transform: translateX(-56px);
+    transition:
+      opacity 0.75s var(--ease-out),
+      transform 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-even .sol-detail-main > :not(.sol-caps) {
+    transform: translateX(56px);
+    transition:
+      opacity 0.75s var(--ease-out),
+      transform 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.visible .sol-detail-main > :not(.sol-caps) {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* --- capabilities stagger --- */
+  .js .sol-caps li {
+    transform: translateY(20px) scale(0.96);
+    transition:
+      opacity 0.55s var(--ease-out),
+      transform 0.6s var(--ease-out),
+      border-color 0.35s ease,
+      background 0.35s ease,
+      box-shadow 0.35s ease;
+    transition-delay: calc(0.2s + var(--i, 0) * 0.07s);
+  }
+  .js .sol-detail.visible .sol-caps li {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* --- vendors: slide from opposite side + logos pop --- */
+  .js .sol-odd .sol-vendors {
+    transform: translateX(56px);
+    transition: opacity 0.8s var(--ease-out), transform 0.9s var(--ease-out);
+    transition-delay: 0.3s;
+  }
+  .js .sol-even .sol-vendors {
+    transform: translateX(-56px);
+    transition: opacity 0.8s var(--ease-out), transform 0.9s var(--ease-out);
+    transition-delay: 0.3s;
+  }
+  .js .sol-detail.visible .sol-vendors {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .js .vendor-logo {
+    transform: translateY(22px) scale(0.85);
+    transition-delay: calc(0.35s + var(--i, 0) * 0.07s);
+  }
+  .js .sol-detail.visible .vendor-logo {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* stagger indices are set inline by JS (--i) */
+  /* fallback when JS sets no index */
+  .sol-card:nth-child(1) { --i: 0; } .sol-card:nth-child(2) { --i: 1; }
+  .sol-card:nth-child(3) { --i: 2; } .sol-card:nth-child(4) { --i: 3; }
+  .sol-card:nth-child(5) { --i: 4; } .sol-card:nth-child(6) { --i: 5; }
+  .sol-card:nth-child(7) { --i: 6; } .sol-card:nth-child(8) { --i: 7; }
+  .sol-card:nth-child(9) { --i: 8; }
+  .sol-caps li:nth-child(1) { --i: 0; } .sol-caps li:nth-child(2) { --i: 1; }
+  .sol-caps li:nth-child(3) { --i: 2; } .sol-caps li:nth-child(4) { --i: 3; }
+  .sol-caps li:nth-child(5) { --i: 4; } .sol-caps li:nth-child(6) { --i: 5; }
+  .sol-caps li:nth-child(7) { --i: 6; } .sol-caps li:nth-child(8) { --i: 7; }
+  .sol-caps li:nth-child(9) { --i: 8; } .sol-caps li:nth-child(10) { --i: 9; }
+  .sol-caps li:nth-child(11) { --i: 10; } .sol-caps li:nth-child(12) { --i: 11; }
+  .sol-caps li:nth-child(13) { --i: 12; } .sol-caps li:nth-child(14) { --i: 13; }
+  .sol-caps li:nth-child(15) { --i: 14; } .sol-caps li:nth-child(16) { --i: 15; }
+  .vendor-row .vendor-logo:nth-child(1) { --i: 0; } .vendor-row .vendor-logo:nth-child(2) { --i: 1; }
+  .vendor-row .vendor-logo:nth-child(3) { --i: 2; } .vendor-row .vendor-logo:nth-child(4) { --i: 3; }
+  .vendor-row .vendor-logo:nth-child(5) { --i: 4; }
+
+  /* ============================================================
+     RESPONSIVE
+     Desktop >1200 · Laptop 992–1199 · Tablet 768–991
+     Mobile 480–767 · Small <480
+  ============================================================ */
+
+  /* LARGE DESKTOP */
+  @media (min-width: 1500px) {
+    .sol-cards-container { max-width: 1360px; }
+    .sol-detail-container { max-width: 1300px; gap: 76px; }
+    .sol-card { padding: 40px 36px; }
+  }
+
+  /* LAPTOP */
+  @media (max-width: 1199px) {
+    .sol-detail-container { gap: 44px; }
+    .sol-cards-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .sol-caps { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* TABLET */
+  @media (max-width: 991px) {
+    .sol-hero { padding: 100px 6% 64px; }
+    .sol-cards-section, .sol-detail { padding: 72px 20px; }
+    .sol-detail-container { grid-template-columns: 1fr; gap: 40px; }
+    .sol-vendors { margin-top: 0; }
+    .sol-caps { grid-template-columns: 1fr 1fr; max-width: 100%; }
+    .sol-detail-main .sol-detail-desc { max-width: 100%; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 767px) {
+    .sol-hero { min-height: 70vh; min-height: 70svh; padding: 118px 6% 64px; }
+    .sol-hero-content::after { display: none; }
+    .sol-cards-section, .sol-detail { padding: 60px 16px; }
+    .sol-cards-grid { grid-template-columns: 1fr; gap: 20px; }
+    .sol-caps { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .sol-caps li { padding: 13px 14px; font-size: 13.5px; }
+    .vendor-row { gap: 10px; }
+    .vendor-logo { padding: 11px 18px; min-height: 58px; }
+    .vendor-logo img { max-height: 38px; max-width: 140px; }
+    .sol-detail-container { gap: 30px; }
+    .sol-odd::before, .sol-even::before { display: none; }
+  }
+
+  /* SMALL MOBILE */
+  @media (max-width: 480px) {
+    .sol-hero { padding: 108px 5% 56px; }
+    .sol-hero-content h1 { font-size: 34px; }
+    .sol-hero-content .sol-hero-sub { font-size: 16px; }
+    .sol-cards-section h2 { font-size: 28px; }
+    .sol-cards-desc { margin-bottom: 44px; }
+    .sol-card { padding: 28px 24px; }
+    .sol-detail-main h2 { font-size: 26px; }
+    .sol-caps { grid-template-columns: 1fr; }
+    .sol-detail-main .sol-detail-tagline { font-size: 16px; }
+    .vendor-logo { flex: 1 1 44%; }
+    .vendor-logo span { font-size: 13.5px; white-space: normal; }
+  }
+
+  /* ============================================================
+     REDUCED MOTION
+  ============================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-snap-type: none; }
+    *, *::before, *::after {
+      animation-duration: 0.001s !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001s !important;
+    }
+    .js .sol-hero-content > *,
+    .js .sol-cards-label,
+    .js .sol-cards-section h2,
+    .js .sol-cards-desc,
+    .js .sol-card,
+    .js .sol-detail-main > :not(.sol-caps),
+    .js .sol-vendors,
+    .js .sol-caps li,
+    .js .vendor-logo {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+      clip-path: none !important;
+    }
+  }
+
+  /* ============================================================
+     HOVER RECOVERY (JS)
+     Revealed states use higher specificity than the base :hover
+     rules; these restore the hover transforms after reveal so
+     card tilt / lifts / logo pops keep working.
+  ============================================================ */
+  .js .sol-cards-section.visible .sol-card:hover {
+    transform: translateY(-8px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) scale(1.015);
+  }
+
+  .js .sol-detail.visible .sol-caps li:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-cyan);
+    background: rgba(34, 211, 238, 0.07);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4), 0 0 22px rgba(34, 211, 238, 0.12);
+  }
+
+  .js .sol-detail.visible .vendor-logo:hover {
+    transform: translateY(-5px);
+    border-color: var(--line-cyan);
+    background: rgba(34, 211, 238, 0.08);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 24px rgba(34, 211, 238, 0.14);
+  }
+  /* ============================================================
+     PER-SECTION THEMES (01–09)
+     Each solution area owns a distinct identity, palette, texture
+     and entrance motion — drawn from the real-world security
+     vendor palettes that appear in that section (CrowdStrike red,
+     SOC violet, Cloudflare orange, Tenable green, Proofpoint blue,
+     Thales emerald, Palo Alto indigo, etc.). Page content is
+     untouched; only classes + CSS change.
+  ============================================================ */
+
+  /* ---- 01 · Endpoint & Ransomware · Crimson ---- */
+  .sol-detail.theme-01 { --accent:#f43f5e; --accent-2:#fb7185; --accent-rgb:244,63,94; --accent-grad:linear-gradient(135deg,#f43f5e,#fb7185); --chip-radius:10px; --chip-hover:translateY(-5px); border-top-color:rgba(244,63,94,.22); }
+  /* ---- 02 · OT & Critical Infrastructure · Industrial Amber ---- */
+  .sol-detail.theme-02 { --accent:#f59e0b; --accent-2:#fbbf24; --accent-rgb:245,158,11; --accent-grad:linear-gradient(135deg,#f59e0b,#fbbf24); --chip-radius:999px; --chip-hover:translate(-3px,-4px) rotate(-2deg); border-top-color:rgba(245,158,11,.22); }
+  /* ---- 03 · Security Operations, SIEM & NDR · SOC Violet ---- */
+  .sol-detail.theme-03 { --accent:#8b5cf6; --accent-2:#a78bfa; --accent-rgb:139,92,246; --accent-grad:linear-gradient(135deg,#8b5cf6,#a78bfa); --chip-radius:6px; --chip-hover:translateY(-6px) rotate(1deg); border-top-color:rgba(139,92,246,.22); }
+  /* ---- 04 · Identity Security & Zero Trust · Trust Teal ---- */
+  .sol-detail.theme-04 { --accent:#14b8a6; --accent-2:#2dd4bf; --accent-rgb:20,184,166; --accent-grad:linear-gradient(135deg,#14b8a6,#2dd4bf); --chip-radius:999px; --chip-hover:translateY(-4px) scale(1.03); border-top-color:rgba(20,184,166,.22); }
+  /* ---- 05 · Cloud, Web & Application Security · Cloudflare Orange ---- */
+  .sol-detail.theme-05 { --accent:#fb923c; --accent-2:#fdba74; --accent-rgb:251,146,60; --accent-grad:linear-gradient(135deg,#fb923c,#fdba74); --chip-radius:14px; --chip-hover:translate(-3px,-5px); border-top-color:rgba(251,146,60,.22); }
+  /* ---- 06 · Exposure & Digital Risk · Tenable Green ---- */
+  .sol-detail.theme-06 { --accent:#22c55e; --accent-2:#4ade80; --accent-rgb:34,197,94; --accent-grad:linear-gradient(135deg,#22c55e,#4ade80); --chip-radius:6px 20px 6px 20px; --chip-hover:scale(1.06); border-top-color:rgba(34,197,94,.22); }
+  /* ---- 07 · Email & Collaboration · Proofpoint Sky ---- */
+  .sol-detail.theme-07 { --accent:#38bdf8; --accent-2:#7dd3fc; --accent-rgb:56,189,248; --accent-grad:linear-gradient(135deg,#38bdf8,#7dd3fc); --chip-radius:999px; --chip-hover:translateY(-6px); border-top-color:rgba(56,189,248,.22); }
+  /* ---- 08 · Data Privacy & Information Protection · Thales Emerald ---- */
+  .sol-detail.theme-08 { --accent:#10b981; --accent-2:#34d399; --accent-rgb:16,185,129; --accent-grad:linear-gradient(135deg,#10b981,#34d399); --chip-radius:4px; --chip-hover:translateY(-4px) scale(1.02); border-top-color:rgba(16,185,129,.22); }
+  /* ---- 09 · Network & Infrastructure · Palo Alto Indigo ---- */
+  .sol-detail.theme-09 { --accent:#6366f1; --accent-2:#818cf8; --accent-rgb:99,102,241; --accent-grad:linear-gradient(135deg,#6366f1,#818cf8); --chip-radius:12px 3px 12px 3px; --chip-hover:translateY(-5px) scale(1.04); border-top-color:rgba(99,102,241,.22); }
+
+  /* ---- generic themed visuals (driven by theme vars) ---- */
+  .sol-detail[class*="theme-"] .sol-detail-label {
+    color: var(--accent-2);
+    background: rgba(var(--accent-rgb), 0.1);
+    border-color: rgba(var(--accent-rgb), 0.38);
+    box-shadow: 0 0 22px rgba(var(--accent-rgb), 0.18);
+  }
+  .sol-detail[class*="theme-"] .sol-detail-label::before {
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+  }
+  .sol-detail[class*="theme-"] .sol-detail-main h2 {
+    background: linear-gradient(90deg, #ffffff 0%, var(--accent-2) 40%, var(--accent) 75%, #ffffff 100%);
+    background-size: 220% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradShift 8s ease-in-out infinite;
+  }
+  .sol-detail[class*="theme-"] .sol-detail-tagline { color: var(--accent-2); }
+  .sol-detail[class*="theme-"] .sol-detail-proof {
+    border-color: rgba(var(--accent-rgb), 0.32);
+    border-left-color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.08);
+  }
+  .sol-detail[class*="theme-"] .sol-detail-proof strong { color: var(--accent-2); }
+  .sol-detail[class*="theme-"] .sol-caps li:hover {
+    border-color: rgba(var(--accent-rgb), 0.55);
+    background: rgba(var(--accent-rgb), 0.09);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4), 0 0 22px rgba(var(--accent-rgb), 0.16);
+  }
+  .sol-detail[class*="theme-"] .sol-caps li::before {
+    background: var(--accent-grad);
+    box-shadow: 0 6px 18px rgba(var(--accent-rgb), 0.42);
+  }
+  .sol-detail[class*="theme-"].sol-odd::before,
+  .sol-detail[class*="theme-"].sol-even::before {
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.13), transparent 70%);
+  }
+
+  /* ---- vendor logos: accent tint + per-theme chip shape ---- */
+  .sol-detail[class*="theme-"] .vendor-logo {
+    border-radius: var(--chip-radius);
+    background: rgba(var(--accent-rgb), 0.07);
+    border-color: rgba(var(--accent-rgb), 0.28);
+  }
+  .sol-detail[class*="theme-"] .vendor-logo span { color: #ffffff; }
+  .sol-detail[class*="theme-"] .vendor-logo img { opacity: 0.92; }
+
+  /* ---- per-theme textures (decorative ::after) ---- */
+  .sol-detail[class*="theme-"]::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .sol-detail.theme-01::after {
+    top: 0; right: 0; width: 300px; height: 300px; opacity: 0.13;
+    background-image: repeating-linear-gradient(45deg, var(--accent) 0 8px, transparent 8px 18px);
+    -webkit-mask-image: linear-gradient(225deg, #000 0%, transparent 70%);
+    mask-image: linear-gradient(225deg, #000 0%, transparent 70%);
+  }
+  .sol-detail.theme-02::after {
+    top: 0; left: 0; right: 0; height: 220px; opacity: 0.15;
+    background-image: radial-gradient(rgba(var(--accent-rgb), 0.55) 1px, transparent 1.6px);
+    background-size: 24px 24px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+    mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+  }
+  .sol-detail.theme-03::after {
+    top: 0; right: 0; width: 360px; height: 360px; opacity: 0.12;
+    background-image: repeating-radial-gradient(circle at 100% 0%, transparent 0 54px, rgba(var(--accent-rgb), 0.5) 55px 56px);
+  }
+  .sol-detail.theme-04::after {
+    top: 0; left: 0; width: 220px; height: 100%; opacity: 0.16;
+    background-image: repeating-linear-gradient(0deg, rgba(var(--accent-rgb), 0.35) 0 1px, transparent 1px 7px);
+    -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 70%);
+    mask-image: linear-gradient(90deg, #000 0%, transparent 70%);
+  }
+  .sol-detail.theme-05::after {
+    bottom: 0; left: 0; width: 340px; height: 340px; opacity: 0.15;
+    background-image: radial-gradient(rgba(var(--accent-rgb), 0.5) 1px, transparent 1.6px);
+    background-size: 16px 16px;
+    -webkit-mask-image: linear-gradient(135deg, transparent 0%, #000 60%);
+    mask-image: linear-gradient(135deg, transparent 0%, #000 60%);
+  }
+  .sol-detail.theme-06::after {
+    bottom: 0; right: 0; width: 360px; height: 360px; opacity: 0.14;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(var(--accent-rgb), 0.35) 0 1px, transparent 1px 10px),
+      repeating-linear-gradient(-45deg, rgba(var(--accent-rgb), 0.35) 0 1px, transparent 1px 10px);
+    -webkit-mask-image: linear-gradient(315deg, #000 0%, transparent 70%);
+    mask-image: linear-gradient(315deg, #000 0%, transparent 70%);
+  }
+  .sol-detail.theme-07::after {
+    top: 0; left: 0; right: 0; height: 280px; opacity: 0.12;
+    background-image:
+      linear-gradient(rgba(var(--accent-rgb), 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--accent-rgb), 0.3) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 75%);
+    mask-image: linear-gradient(180deg, #000 0%, transparent 75%);
+  }
+  .sol-detail.theme-08::after {
+    bottom: 0; right: 0; width: 420px; height: 420px; opacity: 1;
+    background: radial-gradient(circle at 85% 95%, rgba(var(--accent-rgb), 0.18), transparent 60%);
+  }
+  .sol-detail.theme-09::after {
+    top: 0; right: 0; width: 300px; height: 100%; opacity: 0.15;
+    background-image: radial-gradient(rgba(var(--accent-rgb), 0.5) 1px, transparent 1.6px);
+    background-size: 18px 18px;
+    -webkit-mask-image: linear-gradient(270deg, #000 0%, transparent 70%);
+    mask-image: linear-gradient(270deg, #000 0%, transparent 70%);
+  }
+
+  /* ---- hover states restored after reveal (theme-scoped) ---- */
+  .js .sol-detail[class*="theme-"].visible .sol-caps li:hover {
+    transform: translateY(-4px);
+    border-color: rgba(var(--accent-rgb), 0.55);
+    background: rgba(var(--accent-rgb), 0.1);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4), 0 0 22px rgba(var(--accent-rgb), 0.16);
+  }
+  .js .sol-detail[class*="theme-"].visible .vendor-logo:hover {
+    transform: var(--chip-hover);
+    border-color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.16);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45), 0 0 26px rgba(var(--accent-rgb), 0.22);
+  }
+  .js .sol-detail[class*="theme-"].visible .vendor-logo:hover img { transform: scale(1.05); }
+
+  /* ============================================================
+     PER-THEME ENTRANCE MOTION
+  ============================================================ */
+
+  /* 01 · rise + blur */
+  .js .sol-detail.theme-01 .sol-detail-main > :not(.sol-caps) {
+    transform: translateY(46px);
+    filter: blur(4px);
+    transition: opacity 0.75s var(--ease-out), transform 0.85s var(--ease-out), filter 0.55s ease;
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-01.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; transform: none; filter: blur(0); }
+  .js .sol-detail.theme-01 .sol-caps li { transform: translateY(16px) scale(0.95); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-01.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-01 .sol-vendors { transform: translateY(34px); transition-delay: 0.3s; }
+  .js .sol-detail.theme-01.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-01 .vendor-logo { transform: translateY(18px) scale(0.8); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-01.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* 02 · curtain reveal (clip-path) */
+  .js .sol-detail.theme-02 .sol-detail-main > :not(.sol-caps) {
+    clip-path: inset(100% 0 0 0);
+    transition: opacity 0.75s var(--ease-out), clip-path 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-02.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; clip-path: inset(0 0 0 0); }
+  .js .sol-detail.theme-02 .sol-caps li { transform: translateX(-24px); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-02.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-02 .sol-vendors { transform: translateX(56px); transition-delay: 0.3s; }
+  .js .sol-detail.theme-02.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-02 .vendor-logo { transform: translateY(16px) rotate(-4deg); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-02.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* 03 · zoom-in */
+  .js .sol-detail.theme-03 .sol-detail-main > :not(.sol-caps) {
+    transform: translateY(24px) scale(0.92);
+    transition: opacity 0.7s var(--ease-out), transform 0.8s var(--ease-out);
+    transition-delay: calc(0.1s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-03.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; transform: none; }
+  .js .sol-detail.theme-03 .sol-caps li { transform: translateY(24px) scale(0.94); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-03.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-03 .sol-vendors { transform: translateY(24px) scale(0.97); transition-delay: 0.3s; }
+  .js .sol-detail.theme-03.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-03 .vendor-logo { transform: translateY(14px) scale(0.8); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-03.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* 04 · slide right (identity) */
+  .js .sol-detail.theme-04 .sol-detail-main > :not(.sol-caps) {
+    transform: translateX(56px);
+    transition: opacity 0.75s var(--ease-out), transform 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-04.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; transform: none; }
+  .js .sol-detail.theme-04 .sol-caps li { transform: translateX(24px); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-04.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-04 .sol-vendors { transform: translateX(-56px); transition-delay: 0.3s; }
+  .js .sol-detail.theme-04.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-04 .vendor-logo { transform: translateY(18px); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-04.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* 05 · rise + blur (cloud) */
+  .js .sol-detail.theme-05 .sol-detail-main > :not(.sol-caps) {
+    transform: translateY(36px);
+    filter: blur(3px);
+    transition: opacity 0.75s var(--ease-out), transform 0.85s var(--ease-out), filter 0.55s ease;
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-05.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; transform: none; filter: blur(0); }
+  .js .sol-detail.theme-05 .sol-caps li { transform: translateY(12px) scaleY(0.7); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-05.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-05 .sol-vendors { transform: translateX(56px); transition-delay: 0.3s; }
+  .js .sol-detail.theme-05.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-05 .vendor-logo { transform: translateY(16px) scale(0.9); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-05.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* 06 · slide left (exposure) */
+  .js .sol-detail.theme-06 .sol-detail-main > :not(.sol-caps) {
+    transform: translateX(-56px);
+    transition: opacity 0.75s var(--ease-out), transform 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-06.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; transform: none; }
+  .js .sol-detail.theme-06 .sol-caps li { transform: translateX(-24px); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-06.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-06 .sol-vendors { transform: translateY(30px); transition-delay: 0.3s; }
+  .js .sol-detail.theme-06.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-06 .vendor-logo { transform: translateY(14px); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-06.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* 07 · rise + tilt (email) */
+  .js .sol-detail.theme-07 .sol-detail-main > :not(.sol-caps) {
+    transform: translateY(40px) rotateX(12deg);
+    transform-origin: top center;
+    transition: opacity 0.75s var(--ease-out), transform 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-07.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; transform: none; }
+  .js .sol-detail.theme-07 .sol-caps li { transform: translateY(18px) rotate(-2deg); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-07.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-07 .sol-vendors { transform: translateY(24px); transition-delay: 0.3s; }
+  .js .sol-detail.theme-07.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-07 .vendor-logo { transform: translateY(18px) rotate(4deg); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-07.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* 08 · curtain reveal (privacy) */
+  .js .sol-detail.theme-08 .sol-detail-main > :not(.sol-caps) {
+    clip-path: inset(0 0 100% 0);
+    transition: opacity 0.75s var(--ease-out), clip-path 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-08.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; clip-path: inset(0 0 0 0); }
+  .js .sol-detail.theme-08 .sol-caps li { transform: translateY(16px); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-08.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-08 .sol-vendors { transform: translateX(-56px); transition-delay: 0.3s; }
+  .js .sol-detail.theme-08.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-08 .vendor-logo { transform: translateY(16px) scale(0.85); filter: blur(2px); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-08.visible .vendor-logo { opacity: 1; transform: none; filter: blur(0); }
+
+  /* 09 · rise + scale (network) */
+  .js .sol-detail.theme-09 .sol-detail-main > :not(.sol-caps) {
+    transform: translateY(40px) scale(0.97);
+    transition: opacity 0.75s var(--ease-out), transform 0.85s var(--ease-out);
+    transition-delay: calc(0.08s + var(--i, 0) * 0.1s);
+  }
+  .js .sol-detail.theme-09.visible .sol-detail-main > :not(.sol-caps) { opacity: 1; transform: none; }
+  .js .sol-detail.theme-09 .sol-caps li { transform: translateX(24px); transition-delay: calc(0.2s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-09.visible .sol-caps li { opacity: 1; transform: none; }
+  .js .sol-detail.theme-09 .sol-vendors { transform: translateY(30px) scale(0.97); transition-delay: 0.3s; }
+  .js .sol-detail.theme-09.visible .sol-vendors { opacity: 1; transform: none; }
+  .js .sol-detail.theme-09 .vendor-logo { transform: translateY(14px) scale(0.82); transition-delay: calc(0.35s + var(--i, 0) * 0.07s); }
+  .js .sol-detail.theme-09.visible .vendor-logo { opacity: 1; transform: none; }
+
+  /* ============================================================
+     CARDS HUB — foreshadows each section theme
+     Each card's icon + top beam adopt the accent of the area it
+     links to, creating a color thread down the page.
+  ============================================================ */
+  .sol-cards-grid .sol-card:nth-child(1) { --card-accent:#f43f5e; --card-accent2:#fb7185; --card-rgb:244,63,94; }
+  .sol-cards-grid .sol-card:nth-child(2) { --card-accent:#f59e0b; --card-accent2:#fbbf24; --card-rgb:245,158,11; }
+  .sol-cards-grid .sol-card:nth-child(3) { --card-accent:#8b5cf6; --card-accent2:#a78bfa; --card-rgb:139,92,246; }
+  .sol-cards-grid .sol-card:nth-child(4) { --card-accent:#14b8a6; --card-accent2:#2dd4bf; --card-rgb:20,184,166; }
+  .sol-cards-grid .sol-card:nth-child(5) { --card-accent:#fb923c; --card-accent2:#fdba74; --card-rgb:251,146,60; }
+  .sol-cards-grid .sol-card:nth-child(6) { --card-accent:#22c55e; --card-accent2:#4ade80; --card-rgb:34,197,94; }
+  .sol-cards-grid .sol-card:nth-child(7) { --card-accent:#38bdf8; --card-accent2:#7dd3fc; --card-rgb:56,189,248; }
+  .sol-cards-grid .sol-card:nth-child(8) { --card-accent:#10b981; --card-accent2:#34d399; --card-rgb:16,185,129; }
+  .sol-cards-grid .sol-card:nth-child(9) { --card-accent:#6366f1; --card-accent2:#818cf8; --card-rgb:99,102,241; }
+
+  .sol-cards-grid .sol-card .sol-card-icon {
+    background: linear-gradient(135deg, var(--card-accent, #22c55e), var(--card-accent2, #06b6d4));
+  }
+  .sol-cards-grid .sol-card::after {
+    background: linear-gradient(90deg, var(--card-accent, #22c55e), var(--card-accent2, #06b6d4));
+  }
+  .js .sol-cards-section.visible .sol-card:hover {
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.65), 0 0 42px rgba(var(--card-rgb, 34, 211, 238), 0.2);
+  }
+  .sol-cards-grid .sol-card:hover .sol-card-icon {
+    box-shadow: 0 18px 40px rgba(var(--card-rgb, 20, 184, 166), 0.6), 0 0 34px rgba(var(--card-rgb, 6, 182, 212), 0.45);
+  }
+
+  /* ============================================================
+     THEME RESPONSIVE
+  ============================================================ */
+  @media (max-width: 767px) {
+    .sol-detail[class*="theme-"]::after { opacity: 0.6; }
+  }
+  @media (max-width: 480px) {
+    .sol-detail[class*="theme-"]::after { display: none; }
+    .sol-detail[class*="theme-"] .vendor-logo { border-radius: 10px; }
+  }
 </style>
 
 
 <!-- =========================
-     ENDPOINT SECURITY PAGE
-     PREMIUM VERSION
+     CYBERSECURITY SOLUTIONS PAGE
 ========================= -->
 
 <!-- HERO SECTION -->
-<section class="endpoint-hero snap-section">
-  <div class="endpoint-hero-overlay p-overlay"></div>
+<section class="sol-hero snap-section" id="top">
+  <div class="sol-hero-overlay p-overlay"></div>
 
-  <div class="endpoint-hero-content p-content">
+  <div class="sol-hero-content p-content">
     <span class="eyebrow">Solutions</span>
 
-    <h1>
-      Endpoint Security for<br>
-      Devices, Servers & Workstations
-    </h1>
+    <h1>Cybersecurity Solutions</h1>
 
-    <p>
-      Modern cyber attacks begin at the endpoint. MMA InfoSec delivers
-      behavioral detection and autonomous response to secure every device,
-      server, and workstation—without delay.
+    <p class="sol-hero-sub">
+      Security platforms engineered around your environment.
+    </p>
+
+    <p class="sol-hero-intro">
+      From enterprise IT and cloud environments to operational technology and
+      critical infrastructure, MMA InfoSec brings together proven cybersecurity
+      platforms with the engineering expertise required to deploy, integrate and
+      operate them effectively.
     </p>
 
   </div>
 </section>
 
-<!-- INTRO SECTION -->
-<section class="endpoint-intro snap-section">
+<!-- SOLUTION CARDS SECTION -->
+<section class="sol-cards-section snap-section">
+  <div class="sol-cards-container p-content">
 
-  <div class="endpoint-intro-container p-content">
+    <span class="sol-cards-label">Our Portfolio</span>
 
-    <span class="endpoint-intro-label">ADVANCED PROTECTION</span>
+    <h2>Nine Solution Areas, One Portfolio</h2>
 
-    <h2>Engineered for Modern Endpoint Threats</h2>
-
-    <p class="endpoint-intro-description">
-      Endpoints remain the most exploited attack surface for ransomware,
-      credential abuse, and lateral movement. Traditional prevention tools
-      fail against modern adversaries.
+    <p class="sol-cards-desc">
+      Explore MMA InfoSec's broader cybersecurity portfolio. Select an area to
+      jump straight to its capabilities, platforms and technology partners.
     </p>
 
-    <p class="endpoint-intro-sub">
-      Our Endpoint Security platform leverages behavioral analytics,
-      real-time telemetry, and automated response capabilities to detect
-      attacker activity instantly — preventing impact before disruption
-      spreads across your environment.
-    </p>
+    <div class="sol-cards-grid">
 
-  </div>
+      <a href="#endpoint-ransomware-defense" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>Endpoint &amp; Ransomware Defense</h3>
+        <p>Protect endpoints and contain threats before they spread.</p>
+        <span class="sol-card-num">Solution 01</span>
+      </a>
 
-</section>
+      <a href="#ot-critical-infrastructure" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-industry"></i></div>
+        <h3>OT &amp; Critical Infrastructure Security</h3>
+        <p>Secure operational environments without disrupting operations.</p>
+        <span class="sol-card-num">Solution 02</span>
+      </a>
 
-<!-- CAPABILITIES SECTION -->
-<section class="endpoint-capabilities snap-section" id="capabilities">
+      <a href="#security-operations" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-tower-broadcast"></i></div>
+        <h3>Security Operations, SIEM &amp; NDR</h3>
+        <p>Turn security telemetry into actionable detection and response.</p>
+        <span class="sol-card-num">Solution 03</span>
+      </a>
 
-  <!-- Background Video -->
-  <video class="endpoint-bg-video p-bg" autoplay muted loop playsinline>
-    <source src="../images/14810342_1920_1080_30fps.mp4" type="video/mp4">
-  </video>
+      <a href="#identity-zero-trust" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-user-lock"></i></div>
+        <h3>Identity Security &amp; Zero Trust</h3>
+        <p>Secure access based on identity, privilege and context.</p>
+        <span class="sol-card-num">Solution 04</span>
+      </a>
 
-  <!-- Dark Overlay -->
-  <div class="endpoint-overlay p-overlay"></div>
+      <a href="#cloud-application-security" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-cloud"></i></div>
+        <h3>Cloud, Web &amp; Application Security</h3>
+        <p>Protect applications from code to cloud to edge.</p>
+        <span class="sol-card-num">Solution 05</span>
+      </a>
 
-  <div class="endpoint-capabilities-container p-content">
+      <a href="#exposure-management" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+        <h3>Exposure, Vulnerability &amp; Digital Risk</h3>
+        <p>Find exploitable exposure before attackers do.</p>
+        <span class="sol-card-num">Solution 06</span>
+      </a>
 
-    <span class="endpoint-capabilities-label">PLATFORM CAPABILITIES</span>
+      <a href="#email-collaboration-security" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <h3>Email &amp; Collaboration Security</h3>
+        <p>Protect users from phishing, BEC and account compromise.</p>
+        <span class="sol-card-num">Solution 07</span>
+      </a>
 
-    <h2>Core Endpoint Security Capabilities</h2>
+      <a href="#data-privacy-information-protection" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-lock"></i></div>
+        <h3>Data Privacy &amp; Information Protection</h3>
+        <p>Protect sensitive data. Govern its use. Maintain control wherever it travels.</p>
+        <span class="sol-card-num">Solution 08</span>
+      </a>
 
-    <p class="endpoint-capabilities-description">
-      Our platform combines advanced analytics, automated containment,
-      and centralized visibility to defend modern endpoints against
-      advanced threats in real time.
-    </p>
-
-    <div class="capability-grid">
-
-      <div class="capability-card">
-        <div class="capability-icon">01</div>
-        <h3>Threat Detection</h3>
-        <p>
-          Behavioral analytics detect zero-day, fileless, and evasive attacks
-          without relying on traditional signatures.
-        </p>
-      </div>
-
-      <div class="capability-card">
-        <div class="capability-icon">02</div>
-        <h3>Autonomous Threat Response</h3>
-        <p>
-          Instantly isolate compromised endpoints, terminate malicious
-          processes, and halt lateral movement automatically.
-        </p>
-      </div>
-
-      <div class="capability-card">
-        <div class="capability-icon">03</div>
-        <h3>Unified Endpoint Visibility</h3>
-        <p>
-          Centralized, real-time visibility across laptops, servers,
-          workstations, and virtual environments.
-        </p>
-      </div>
+      <a href="#network-infrastructure-security" class="sol-card">
+        <div class="sol-card-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Network &amp; Infrastructure Security</h3>
+        <p>Build security into the network and core infrastructure.</p>
+        <span class="sol-card-num">Solution 09</span>
+      </a>
 
     </div>
 
   </div>
-
 </section>
 
-<section class="about-section">
-  <div class="about-container">
+<!-- =========================
+     01 | ENDPOINT & RANSOMWARE DEFENSE
+========================= -->
+<section class="sol-detail sol-odd theme-01" id="endpoint-ransomware-defense">
+  <div class="sol-detail-container">
 
-    <div class="about-content-left">
-      <span class="about-badge">ABOUT MMA INFOSEC</span>
-      <h2>Certified for Quality and Information Security</h2>
-      <p class="about-description">
-        MMA Infosec operates under internationally recognized management standards, demonstrating our commitment to secure service delivery, operational discipline, and continuous improvement.
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 01</span>
+      <h2>Endpoint &amp; Ransomware Defense</h2>
+      <p class="sol-detail-tagline">Protect endpoints and contain threats before they spread.</p>
+      <p class="sol-detail-desc">
+        Protect laptops, servers and workloads using endpoint detection,
+        behavioral analytics, ransomware protection and automated response.
       </p>
+
+      <ul class="sol-caps">
+        <li>EDR / XDR</li>
+        <li>Ransomware protection</li>
+        <li>Behavioral threat detection</li>
+        <li>Automated isolation and containment</li>
+        <li>Threat hunting</li>
+        <li>Centralized endpoint visibility</li>
+      </ul>
     </div>
 
-    <div class="about-features">
-      <div class="feature-card cert-card" data-detail="Our ISO/IEC 27001:2022 certification reflects the implementation of structured controls for protecting sensitive information, managing cybersecurity risks, and maintaining the confidentiality, integrity, and availability of business and customer data.">
-        <div class="feature-icon">
-          <i class="fas fa-shield-halved"></i>
-        </div>
-        <h3>ISO/IEC 27001:2022 Certified</h3>
-        <p class="cert-subtitle">Information Security Management System</p>
-        <p class="cert-detail">Our ISO/IEC 27001:2022 certification reflects the implementation of structured controls for protecting sensitive information, managing cybersecurity risks, and maintaining the confidentiality, integrity, and availability of business and customer data.</p>
-      </div>
-
-      <div class="feature-card cert-card" data-detail="Our ISO 9001:2015 certification demonstrates our commitment to consistent service quality, clearly defined processes, customer satisfaction, performance monitoring, and continuous improvement across our operations.">
-        <div class="feature-icon">
-          <i class="fas fa-award"></i>
-        </div>
-        <h3>ISO 9001:2015 Certified</h3>
-        <p class="cert-subtitle">Quality Management System</p>
-        <p class="cert-detail">Our ISO 9001:2015 certification demonstrates our commitment to consistent service quality, clearly defined processes, customer satisfaction, performance monitoring, and continuous improvement across our operations.</p>
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://www.crowdstrike.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/CrowdStrike.png" alt="CrowdStrike">
+        </a>
+        <a class="vendor-logo" href="https://www.sentinelone.com/" target="_blank" rel="noopener">
+          <span>SentinelOne</span>
+        </a>
+        <a class="vendor-logo" href="https://www.halcyon.ai/" target="_blank" rel="noopener">
+          <img src="../images/clients/Halcyon.png" alt="Halcyon">
+        </a>
+        <a class="vendor-logo" href="https://www.threatlocker.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/Threatlocker.png" alt="ThreatLocker">
+        </a>
       </div>
     </div>
 
   </div>
 </section>
 
-<script>
-document.querySelectorAll('.cert-card').forEach(card => {
-  card.addEventListener('click', function() {
-    this.classList.toggle('show-detail');
-  });
-  card.addEventListener('mouseenter', function() {
-    this.classList.add('show-detail');
-  });
-  card.addEventListener('mouseleave', function() {
-    this.classList.remove('show-detail');
-  });
-});
-</script>
+<!-- =========================
+     02 | OT & CRITICAL INFRASTRUCTURE SECURITY
+========================= -->
+<section class="sol-detail sol-even theme-02" id="ot-critical-infrastructure">
+  <div class="sol-detail-container">
 
-<!-- VALUE SECTION -->
-<section class="endpoint-value snap-section">
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 02</span>
+      <h2>OT &amp; Critical Infrastructure Security</h2>
+      <p class="sol-detail-tagline">Secure operational environments without disrupting operations.</p>
+      <p class="sol-detail-desc">
+        Provide visibility and security monitoring for industrial and OT
+        environments while maintaining system availability and operational
+        continuity.
+      </p>
 
-  <div class="endpoint-value-container p-content">
+      <p class="sol-detail-proof">
+        <strong>MMA in practice:</strong> MMA InfoSec has delivered OT SOC
+        operations, OT asset inventory / CMDB, threat hunting, risk registers,
+        tabletop exercises, IR SOPs, and OT DMZ / segmentation work in live
+        operational environments.
+      </p>
 
-    <span class="endpoint-value-label">ENDPOINT DEFENSE</span>
+      <ul class="sol-caps">
+        <li>OT / ICS asset discovery</li>
+        <li>Industrial protocol visibility</li>
+        <li>OT NDR and anomaly detection</li>
+        <li>Purdue zoning and segmentation</li>
+        <li>OT threat hunting</li>
+        <li>OT SOC integration</li>
+      </ul>
+    </div>
 
-    <h2>Why Endpoint Security Matters</h2>
-
-    <p class="endpoint-value-description">
-      Modern attacks evolve in minutes. Organizations need intelligent,
-      automated, and adaptive endpoint protection that detects threats
-      instantly, prevents lateral movement, and ensures business continuity
-      across hybrid environments.
-    </p>
-
-    <ul class="endpoint-value-grid">
-      <li>Stop ransomware before encryption</li>
-      <li>Prevent lateral spread across networks</li>
-      <li>Reduce incident response time</li>
-      <li>Protect hybrid and remote endpoints</li>
-      <li>Real-time behavioral threat detection</li>
-      <li>Zero-trust endpoint access control</li>
-      <li>Automated containment & remediation</li>
-      <li>Continuous endpoint monitoring</li>
-    </ul>
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://shieldworkz.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/Shieldworkz.png" alt="Shieldworkz">
+        </a>
+        <a class="vendor-logo" href="https://www.nozominetworks.com/" target="_blank" rel="noopener">
+          <span>Nozomi Networks</span>
+        </a>
+      </div>
+    </div>
 
   </div>
+</section>
 
+<!-- =========================
+     03 | SECURITY OPERATIONS, SIEM & NDR
+========================= -->
+<section class="sol-detail sol-odd theme-03" id="security-operations">
+  <div class="sol-detail-container">
+
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 03</span>
+      <h2>Security Operations, SIEM &amp; NDR</h2>
+      <p class="sol-detail-tagline">Turn security telemetry into actionable detection and response.</p>
+      <p class="sol-detail-desc">
+        Centralize security events, correlate suspicious activity and improve
+        threat detection across endpoints, networks and infrastructure.
+      </p>
+
+      <ul class="sol-caps">
+        <li>SIEM and log management</li>
+        <li>Detection use cases and correlation</li>
+        <li>Network Detection and Response</li>
+        <li>SOC dashboards and monitoring</li>
+        <li>Threat hunting</li>
+        <li>Incident investigation</li>
+      </ul>
+    </div>
+
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://www.opentext.com/products/arcsight" target="_blank" rel="noopener">
+          <span>OpenText ArcSight</span>
+        </a>
+        <a class="vendor-logo" href="https://www.ibm.com/products/qradar-siem" target="_blank" rel="noopener">
+          <span>IBM QRadar</span>
+        </a>
+        <a class="vendor-logo" href="https://darktrace.com/" target="_blank" rel="noopener">
+          <span>Darktrace</span>
+        </a>
+        <a class="vendor-logo" href="https://vectra.ai/" target="_blank" rel="noopener">
+          <span>Vectra AI</span>
+        </a>
+        <a class="vendor-logo" href="https://tenex.ai/" target="_blank" rel="noopener">
+          <img src="../images/clients/Tenex.png" alt="Tenex.AI">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     04 | IDENTITY SECURITY & ZERO TRUST
+========================= -->
+<section class="sol-detail sol-even theme-04" id="identity-zero-trust">
+  <div class="sol-detail-container">
+
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 04</span>
+      <h2>Identity Security &amp; Zero Trust</h2>
+      <p class="sol-detail-tagline">Secure access based on identity, privilege and context.</p>
+      <p class="sol-detail-desc">
+        Reduce identity-driven risk by controlling privileged access, governing
+        identities and enforcing least-privilege access to applications and
+        resources.
+      </p>
+
+      <ul class="sol-caps">
+        <li>Privileged Access Management</li>
+        <li>Identity lifecycle and governance</li>
+        <li>MFA and adaptive access</li>
+        <li>ZTNA / secure remote access</li>
+        <li>Session monitoring</li>
+        <li>Least-privilege controls</li>
+      </ul>
+    </div>
+
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://www.cyberark.com/" target="_blank" rel="noopener">
+          <span>CyberArk</span>
+        </a>
+        <a class="vendor-logo" href="https://xage.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/Xage.png" alt="XAGE">
+        </a>
+        <a class="vendor-logo" href="https://www.netskope.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/Netskope.png" alt="Netskope">
+        </a>
+        <a class="vendor-logo" href="https://www.cloudflare.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/cloudflare.png" alt="Cloudflare">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     05 | CLOUD, WEB & APPLICATION SECURITY
+========================= -->
+<section class="sol-detail sol-odd theme-05" id="cloud-application-security">
+  <div class="sol-detail-container">
+
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 05</span>
+      <h2>Cloud, Web &amp; Application Security</h2>
+      <p class="sol-detail-tagline">Protect applications from code to cloud to edge.</p>
+      <p class="sol-detail-desc">
+        Protect internet-facing applications, APIs, cloud services and
+        Microsoft 365 environments with layered security controls.
+      </p>
+
+      <ul class="sol-caps">
+        <li>WAF and DDoS protection</li>
+        <li>API and bot protection</li>
+        <li>SAST / DAST / SCA</li>
+        <li>Cloud and SaaS security</li>
+        <li>Microsoft 365 protection</li>
+        <li>Secure migration and data protection</li>
+      </ul>
+    </div>
+
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://www.cloudflare.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/cloudflare.png" alt="Cloudflare">
+        </a>
+        <a class="vendor-logo" href="https://www.opentext.com/products/fortify" target="_blank" rel="noopener">
+          <span>OpenText Fortify</span>
+        </a>
+        <a class="vendor-logo" href="https://www.checkpoint.com/" target="_blank" rel="noopener">
+          <span>Check Point</span>
+        </a>
+        <a class="vendor-logo" href="https://www.avepoint.com/" target="_blank" rel="noopener">
+          <span>AvePoint</span>
+        </a>
+        <a class="vendor-logo" href="https://portswigger.net/burp" target="_blank" rel="noopener">
+          <span>Burp Suite Professional</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     06 | EXPOSURE, VULNERABILITY & DIGITAL RISK
+========================= -->
+<section class="sol-detail sol-even theme-06" id="exposure-management">
+  <div class="sol-detail-container">
+
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 06</span>
+      <h2>Exposure, Vulnerability &amp; Digital Risk</h2>
+      <p class="sol-detail-tagline">Find exploitable exposure before attackers do.</p>
+      <p class="sol-detail-desc">
+        Identify vulnerabilities and external digital risks, prioritize what
+        matters most and track remediation across internal and internet-facing
+        assets.
+      </p>
+
+      <ul class="sol-caps">
+        <li>Vulnerability management</li>
+        <li>Risk-based prioritization</li>
+        <li>External attack surface monitoring</li>
+        <li>Dark web monitoring</li>
+        <li>Credential and brand exposure</li>
+        <li>Remediation tracking</li>
+      </ul>
+    </div>
+
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://www.picus.io/" target="_blank" rel="noopener">
+          <span>Picus</span>
+        </a>
+        <a class="vendor-logo" href="https://www.cloudsek.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/Cloudsek.png" alt="CloudSEK">
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     07 | EMAIL & COLLABORATION SECURITY
+========================= -->
+<section class="sol-detail sol-odd theme-07" id="email-collaboration-security">
+  <div class="sol-detail-container">
+
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 07</span>
+      <h2>Email &amp; Collaboration Security</h2>
+      <p class="sol-detail-tagline">Protect users from phishing, BEC and account compromise.</p>
+      <p class="sol-detail-desc">
+        Protect email and collaboration channels against phishing, business
+        email compromise, malicious links, attachments and impersonation
+        attacks.
+      </p>
+
+      <ul class="sol-caps">
+        <li>BEC and impersonation protection</li>
+        <li>Phishing detection</li>
+        <li>Malicious link / attachment analysis</li>
+        <li>Account compromise detection</li>
+        <li>Microsoft 365 email protection</li>
+        <li>Automated response</li>
+      </ul>
+    </div>
+
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://darktrace.com/" target="_blank" rel="noopener">
+          <span>Darktrace</span>
+        </a>
+        <a class="vendor-logo" href="https://www.checkpoint.com/" target="_blank" rel="noopener">
+          <span>Check Point</span>
+        </a>
+        <a class="vendor-logo" href="https://www.proofpoint.com/" target="_blank" rel="noopener">
+          <span>Proofpoint</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     08 | DATA PRIVACY & INFORMATION PROTECTION
+========================= -->
+<section class="sol-detail sol-even theme-08" id="data-privacy-information-protection">
+  <div class="sol-detail-container">
+
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 08</span>
+      <h2>Data Privacy &amp; Information Protection</h2>
+      <p class="sol-detail-tagline">Protect sensitive data. Govern its use. Maintain control wherever it travels.</p>
+      <p class="sol-detail-desc">
+        MMA InfoSec helps organizations discover, classify, protect and govern
+        sensitive information across enterprise, cloud and third-party
+        environments. Our Data Privacy &amp; Information Protection solutions
+        combine privacy governance, encryption, access control and data-centric
+        security to help organizations reduce data exposure while supporting
+        regulatory and business requirements.
+      </p>
+
+      <ul class="sol-caps">
+        <li>Data Discovery &amp; Classification</li>
+        <li>Data Privacy Management</li>
+        <li>Privacy Compliance Automation</li>
+        <li>Consent &amp; Preference Management</li>
+        <li>Data Subject Request (DSR) Management</li>
+        <li>Data Encryption &amp; Tokenization</li>
+        <li>Enterprise Key Management</li>
+        <li>Hardware Security Modules (HSM)</li>
+        <li>Data-Centric Security</li>
+        <li>Enterprise Digital Rights Management (EDRM)</li>
+        <li>Sensitive Data Access Control</li>
+        <li>Data Loss &amp; Leakage Protection</li>
+        <li>Third-Party / Vendor Privacy Risk</li>
+        <li>Data Mapping &amp; Data Flow Visibility</li>
+        <li>AI Data Governance</li>
+        <li>Regulatory Compliance Management</li>
+      </ul>
+    </div>
+
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://www.thalesgroup.com/en/security" target="_blank" rel="noopener">
+          <span>THALES</span>
+        </a>
+        <a class="vendor-logo" href="https://www.gotrust.nl/" target="_blank" rel="noopener">
+          <span>GoTrust</span>
+        </a>
+        <a class="vendor-logo" href="https://www.seclore.com/" target="_blank" rel="noopener">
+          <span>SECLORE</span>
+        </a>
+        <a class="vendor-logo" href="https://securiti.ai/" target="_blank" rel="noopener">
+          <span>Securiti</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     09 | NETWORK & INFRASTRUCTURE SECURITY
+========================= -->
+<section class="sol-detail sol-odd theme-09" id="network-infrastructure-security">
+  <div class="sol-detail-container">
+
+    <div class="sol-detail-main">
+      <span class="sol-detail-label">Solution 09</span>
+      <h2>Network &amp; Infrastructure Security</h2>
+      <p class="sol-detail-tagline">Build security into the network and core infrastructure.</p>
+      <p class="sol-detail-desc">
+        Secure enterprise networks using next-generation firewalling,
+        segmentation, secure wireless, DNS security and DDI services.
+      </p>
+
+      <ul class="sol-caps">
+        <li>NGFW and network security</li>
+        <li>Network segmentation</li>
+        <li>Secure wireless</li>
+        <li>DNS security</li>
+        <li>DHCP / DNS / IPAM (DDI)</li>
+        <li>Network visibility and control</li>
+      </ul>
+    </div>
+
+    <div class="sol-vendors">
+      <span class="sol-vendors-label">Vendor / Technology Platforms</span>
+      <div class="vendor-row">
+        <a class="vendor-logo" href="https://www.fortinet.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/Fortinet.png" alt="Fortinet">
+        </a>
+        <a class="vendor-logo" href="https://www.paloaltonetworks.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/paloalto.png" alt="Palo Alto">
+        </a>
+        <a class="vendor-logo" href="https://www.efficientip.com/" target="_blank" rel="noopener">
+          <span>EfficientIP</span>
+        </a>
+        <a class="vendor-logo" href="https://www.infoblox.com/" target="_blank" rel="noopener">
+          <span>Infoblox</span>
+        </a>
+        <a class="vendor-logo" href="https://www.gigamon.com/" target="_blank" rel="noopener">
+          <img src="../images/clients/Gigamon.png" alt="Gigamon">
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
@@ -1076,9 +2002,13 @@ document.querySelectorAll('.cert-card').forEach(card => {
     <div class="footer-col">
       <h4>Solutions</h4>
       <ul>
-        <li><a href="../solutions/">Threat Detection</a></li>
-        <li><a href="../solutions/">Autonomous Threat Response</a></li>
-        <li><a href="../solutions/">Unified Endpoint Visibility</a></li>
+        <li><a href="#security-operations">Security Operations &amp; XDR</a></li>
+        <li><a href="#ot-critical-infrastructure">OT &amp; Critical Infrastructure</a></li>
+        <li><a href="#identity-zero-trust">Identity &amp; Zero Trust</a></li>
+        <li><a href="#cloud-application-security">Cloud &amp; Application Security</a></li>
+        <li><a href="#exposure-management">Exposure Management</a></li>
+        <li><a href="#data-privacy-information-protection">Data Privacy &amp; Information Protection</a></li>
+        <li><a href="#network-infrastructure-security">Network &amp; Infrastructure Security</a></li>
       </ul>
     </div>
 
@@ -1086,18 +2016,18 @@ document.querySelectorAll('.cert-card').forEach(card => {
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="../services/">Managed Detection & Response (MDR)</a></li>
+        <li><a href="../services/">Managed Detection &amp; Response (MDR)</a></li>
         <li><a href="../services/">Threat Hunting</a></li>
         <li><a href="../services/">Incident Response</a></li>
         <li><a href="../services/">Security Consulting</a></li>
-        <li><a href="../services/">Deployment & Integration</a></li>
+        <li><a href="../services/">Deployment &amp; Integration</a></li>
         <li><a href="../services/">Security Training</a></li>
       </ul>
     </div>
 
-    <!-- SOLUTIONS -->
+    <!-- RESOURCES -->
     <div class="footer-col">
-      <h4>Resources & Insights</h4>
+      <h4>Resources &amp; Insights</h4>
       <ul>
         <li><a href="../resources/">Global Threat Report</a></li>
         <li><a href="../resources/">CIAM Essentials EBook</a></li>
@@ -1179,31 +2109,35 @@ document.querySelectorAll('.cert-card').forEach(card => {
       })();
     </script>
 
-<script>
-  const text =
-    "Ultimately business protection comes at the speed at which you can hunt and contain an attack.";
-  const speed = 38;
-
-  let i = 0;
-  const target = document.querySelector(".typed-text");
-  if (!target) return;
-
-  function typeText() {
-    if (i < text.length) {
-      target.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeText, speed);
-    }
-  }
-
-  typeText();
-</script>
-    <!-- Snap Section Parallax Entrance Animation -->
+    <!-- Custom Scroll Animation Engine -->
     <script>
     (function () {
-      var sections = document.querySelectorAll('.snap-section');
-      if ('IntersectionObserver' in window) {
-        var observer = new IntersectionObserver(function (entries) {
+      'use strict';
+      var root = document.documentElement;
+      root.classList.add('js');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Stagger indices so CSS can delay each element from its sibling */
+      function setIndexes() {
+        document.querySelectorAll('.sol-cards-grid .sol-card').forEach(function (el, i) {
+          el.style.setProperty('--i', i);
+        });
+        document.querySelectorAll('.sol-caps').forEach(function (ul) {
+          Array.prototype.forEach.call(ul.children, function (li, j) { li.style.setProperty('--i', j); });
+        });
+        document.querySelectorAll('.vendor-row').forEach(function (row) {
+          Array.prototype.forEach.call(row.children, function (v, j) { v.style.setProperty('--i', j); });
+        });
+        document.querySelectorAll('.sol-detail-main').forEach(function (main) {
+          Array.prototype.forEach.call(main.children, function (c, j) { c.style.setProperty('--i', j); });
+        });
+      }
+      setIndexes();
+
+      /* Reveal sections as they enter the viewport */
+      var revealEls = document.querySelectorAll('.sol-hero, .sol-cards-section, .sol-detail');
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
@@ -1211,18 +2145,53 @@ document.querySelectorAll('.cert-card').forEach(card => {
               entry.target.classList.remove('visible');
             }
           });
-        }, { threshold: 0 });
-        sections.forEach(function (s) { observer.observe(s); });
+        }, { threshold: 0.12 });
+        revealEls.forEach(function (s) { io.observe(s); });
       } else {
-        sections.forEach(function (s) { s.classList.add('visible'); });
+        revealEls.forEach(function (s) { s.classList.add('visible'); });
+      }
+
+      /* Hero depth parallax tied to scroll position */
+      var hero = document.querySelector('.sol-hero');
+      var heroContent = document.querySelector('.sol-hero-content');
+      var heroOverlay = document.querySelector('.sol-hero-overlay');
+      var tick = false;
+
+      function parallax() {
+        tick = false;
+        if (!hero) return;
+        var r = hero.getBoundingClientRect();
+        var vh = window.innerHeight || 1;
+        var centre = r.top + r.height / 2 - vh / 2;
+        var shift = Math.max(-140, Math.min(140, centre * -0.06));
+        if (heroContent) heroContent.style.transform = 'translateY(' + shift + 'px)';
+        if (heroOverlay) heroOverlay.style.transform = 'translateY(' + (shift * 0.4 - 14) + 'px) scale(1.04)';
+      }
+
+      if (!reduceMotion) {
+        window.addEventListener('scroll', function () {
+          if (!tick) { tick = true; requestAnimationFrame(parallax); }
+        }, { passive: true });
+        parallax();
+      }
+
+      /* Card 3D tilt on precise pointers only */
+      if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.sol-card').forEach(function (card) {
+          card.addEventListener('mousemove', function (e) {
+            var r = card.getBoundingClientRect();
+            var px = (e.clientX - r.left) / r.width - 0.5;
+            var py = (e.clientY - r.top) / r.height - 0.5;
+            card.style.setProperty('--ry', (px * 8).toFixed(2) + 'deg');
+            card.style.setProperty('--rx', (-py * 8).toFixed(2) + 'deg');
+          });
+          card.addEventListener('mouseleave', function () {
+            card.style.setProperty('--ry', '0deg');
+            card.style.setProperty('--rx', '0deg');
+          });
+        });
       }
     })();
-    </script>
-
-    <!-- AOS Library Script Initialization -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
     </script>
 
     <!-- Bootstrap JS (Include Popper.js) -->
