@@ -905,6 +905,20 @@ footer p {
   margin-bottom: 20px;
 }
 
+.solutions-badges-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.solutions-badges-bar .solutions-badge {
+  text-transform: uppercase;
+  color: #a78bfa;
+  margin-bottom: 0;
+}
+
 .solutions-header h2 {
   font-size: clamp(32px, 3.8vw, 52px);
   font-weight: 800;
