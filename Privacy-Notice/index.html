@@ -178,26 +178,29 @@ dropdownItems.forEach(item => {
 </script>
 
 <style>
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 :root {
   --brand-green: #22c55e;
   --brand-cyan: #06b6d4;
   --brand-blue: #2563eb;
   --brand-purple: #a78bfa;
-
   --bg-primary: #050508;
-  --bg-card: rgba(255,255,255,0.03);
-
+  --bg-surface: rgba(255,255,255,0.03);
+  --bg-glass: rgba(255,255,255,0.04);
+  --bg-glass-hover: rgba(255,255,255,0.07);
   --text-primary: #ffffff;
   --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-
-  --border-soft: rgba(255,255,255,0.08);
-
-  --max-width: 1180px;
+  --text-muted: #64748b;
+  --border-soft: rgba(255,255,255,0.07);
+  --border-glow: rgba(34,197,94,0.20);
+  --glow-green: 0 0 30px rgba(34,197,94,0.10);
+  --glow-cyan: 0 0 30px rgba(6,182,212,0.08);
+  --max-width: 1100px;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 100px;
 }
 
 body {
@@ -205,210 +208,215 @@ body {
   padding-top: 0;
   background: var(--bg-primary);
   color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-.hero {
-  position: relative;
-  max-width: var(--max-width);
-  margin: 90px auto 60px auto;
-  padding: 0 24px 40px 24px;
-  border-top: 4px solid var(--brand-green);
-  border-bottom: 1px solid var(--border-soft);
-}
+/* ── Floating Mini TOC ────────────────────────── */
 
-.hero-inner {
-  max-width: 920px;
-  padding-top: 30px;
-}
-
-.eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--brand-cyan);
-  padding: 6px 14px;
-  border-left: 3px solid var(--brand-green);
-  background: linear-gradient(90deg, rgba(34,197,94,0.10), rgba(6,182,212,0.06));
-  margin-bottom: 22px;
-}
-
-.hero h1 {
-  font-size: clamp(40px,4vw,56px);
-  font-weight: 800;
-  margin: 0 0 22px 0;
-  background: linear-gradient(135deg, #22c55e 0%, #06b6d4 35%, #2563eb 70%, #06b6d4 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 60px rgba(6,182,212,.15);
-  animation: heroGradientShift 8s ease-in-out infinite;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-}
-
-@keyframes heroGradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-.hero p.lead {
-  font-size: 19px;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  margin: 0;
-  max-width: 880px;
-  letter-spacing: .01em;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--brand-green), var(--brand-cyan), var(--brand-blue), transparent);
-  opacity: .25;
-}
-
-.policy-grid {
+.floating-toc {
+  position: sticky;
+  top: 80px;
+  z-index: 50;
   max-width: var(--max-width);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 60px;
-  align-items: start;
+  padding: 0 48px;
 }
 
-.policy-nav {
-  position: sticky;
-  top: 90px;
-  height: calc(100vh - 120px);
-  height: calc(100dvh - 120px);
-  overflow-y: auto;
-  padding-right: 20px;
-  border-right: 1px solid var(--border-soft);
+.floating-toc-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin-top: 32px;
+  margin-bottom: 10px;
+  background: rgba(5,5,8,0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.policy-nav h3 {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  margin: 0 0 20px 0;
-  color: var(--text-muted);
-}
+.floating-toc-inner::-webkit-scrollbar { display: none; }
 
-.toc-list {
+.toc-pills {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  gap: 4px;
+  white-space: nowrap;
 }
 
-.toc-list li {
-  margin-bottom: 12px;
-}
-
-.toc-list a {
+.toc-pills a {
   text-decoration: none;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--text-secondary);
-  transition: .25s ease;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  transition: all .3s ease;
   display: inline-block;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-.toc-list a:hover {
-  color: var(--brand-cyan);
+.toc-pills a:hover {
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.05);
 }
 
-.toc-list a.active {
+.toc-pills a.active {
   color: var(--brand-green);
+  background: rgba(34,197,94,0.10);
+  box-shadow: 0 0 12px rgba(34,197,94,0.08);
 }
 
-.policy-article {
-  height: calc(100vh - 100px);
-  height: calc(100dvh - 100px);
-  overflow-y: auto;
-  padding-right: 10px;
-  scroll-behavior: smooth;
-}
+/* ── Policy Content ───────────────────────────── */
 
-.policy-article::-webkit-scrollbar {
-  width: 6px;
-}
-
-.policy-article::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--brand-green), var(--brand-blue));
-  border-radius: 6px;
+.policy-content {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 48px 0 48px;
+  z-index: 1;
 }
 
 .policy-block {
-  margin-bottom: 50px;
-  padding-left: 20px;
-  border-left: 3px solid transparent;
-  transition: .3s ease;
-  scroll-margin-top: 24px;
+  margin-bottom: 40px;
+  padding: 36px 36px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  transition: all .35s ease;
+  scroll-margin-top: 160px;
 }
 
 .policy-block:hover {
-  border-left: 3px solid var(--brand-green);
+  border-color: rgba(34,197,94,0.15);
+  box-shadow: var(--glow-green);
+  background: var(--bg-glass-hover);
 }
 
-.policy-article h2 {
-  font-size: 24px;
+.policy-content h2 {
+  font-size: 22px;
   font-weight: 700;
-  margin: 0 0 16px 0;
+  margin: 0 0 18px 0;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.policy-content h2::before {
+  content: '';
+  width: 4px;
+  height: 22px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--brand-green), var(--brand-cyan));
+  flex-shrink: 0;
+}
+
+.policy-content p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin: 0 0 14px 0;
+}
+
+.policy-content p:last-child { margin-bottom: 0; }
+
+.policy-content ul {
+  margin: 10px 0 14px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.policy-content ul li {
+  position: relative;
+  padding: 10px 0 10px 24px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.policy-content ul li:last-child { border-bottom: none; }
+
+.policy-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 18px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-green), var(--brand-cyan));
+  opacity: .6;
+}
+
+.policy-content strong {
   color: var(--text-primary);
 }
 
-.policy-article p {
-  font-size: 16px;
-  line-height: 1.85;
-  color: var(--text-secondary);
-  margin: 0 0 16px 0;
+.policy-content a {
+  color: var(--brand-cyan);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(6,182,212,0.25);
+  transition: all .25s ease;
 }
 
-.policy-article ul {
-  margin: 12px 0 20px 20px;
-  padding: 0;
-  color: var(--text-secondary);
-}
-
-.policy-article ul li {
-  margin-bottom: 10px;
+.policy-content a:hover {
+  color: var(--brand-green);
+  border-bottom-color: var(--brand-green);
 }
 
 .policy-divider {
-  height: 1px;
-  background: var(--border-soft);
-  margin: 50px 0;
-}
-
-.policy-article strong {
-  color: var(--text-primary);
+  display: none;
 }
 
 .policy-quote {
-  margin-top: 20px;
-  padding: 18px 20px;
-  background: var(--bg-card);
-  border-left: 4px solid var(--brand-cyan);
+  margin-top: 16px;
+  padding: 18px 22px;
+  background: rgba(6,182,212,0.04);
+  border: 1px solid rgba(6,182,212,0.12);
+  border-left: 3px solid var(--brand-cyan);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-weight: 600;
+  font-size: 14px;
   color: var(--text-primary);
+  line-height: 1.7;
 }
 
+/* ── CTA Bar ──────────────────────────────────── */
+
 .cta-bar {
+  position: relative;
   max-width: var(--max-width);
-  margin: 90px auto 70px auto;
-  padding: 40px 0 0 0;
-  border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, var(--brand-green), var(--brand-cyan), var(--brand-blue)) 1;
+  margin: 60px auto 80px auto;
+  padding: 44px 48px;
+  background: linear-gradient(135deg, rgba(34,197,94,0.05), rgba(6,182,212,0.03));
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.cta-bar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand-green), var(--brand-cyan), var(--brand-blue), transparent);
+  opacity: .4;
 }
 
 .cta-left h4 {
@@ -420,287 +428,421 @@ body {
 .cta-left p {
   margin: 8px 0 0 0;
   color: var(--text-secondary);
+  font-size: 15px;
 }
 
 .cta-actions {
   display: flex;
-  gap: 16px;
+  gap: 14px;
+}
+
+.cta-actions .btn,
+.cta-actions a {
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-green);
+  border: 1px solid rgba(34,197,94,0.30);
+  border-radius: var(--radius-pill);
+  background: rgba(34,197,94,0.08);
+  text-decoration: none;
+  transition: all .3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.cta-actions .btn:hover,
+.cta-actions a:hover {
+  background: rgba(34,197,94,0.16);
+  border-color: var(--brand-green);
+  box-shadow: 0 0 20px rgba(34,197,94,0.15);
 }
 
 .small-print {
   font-size: 13px;
   color: var(--text-muted);
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
+/* ── Tablet ───────────────────────────────────── */
+
 @media (max-width: 1024px) {
-  .policy-grid {
-    grid-template-columns: 1fr;
-    padding: 0 24px;
+  .floating-toc {
+    padding: 0 32px;
   }
 
-  .policy-nav {
-    position: relative;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--border-soft);
-    margin-bottom: 40px;
+  .floating-toc-inner {
+    margin-top: 24px;
   }
 
-  .policy-article {
-    height: auto;
+  .policy-content {
+    padding: 20px 32px 0 32px;
+  }
+
+  .policy-block {
+    padding: 28px 28px;
   }
 
   .cta-bar {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    padding: 40px 24px 0 24px;
+    padding: 36px 32px;
+    margin: 50px 32px 60px 32px;
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
+
+  .cta-actions a,
+  .cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
 
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 34px;
+/* ── Mobile ───────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .floating-toc {
+    padding: 0 16px;
+  }
+
+  .floating-toc-inner {
+    padding: 8px 10px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-radius: var(--radius-sm);
+  }
+
+  .toc-pills a {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
+
+  .policy-content {
+    padding: 16px 16px 0 16px;
+  }
+
+  .policy-block {
+    padding: 24px 20px;
+    margin-bottom: 20px;
+    scroll-margin-top: 120px;
+    border-radius: var(--radius-sm);
+  }
+
+  .policy-content h2 {
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+
+  .policy-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .policy-content ul li {
+    font-size: 14px;
+    padding: 8px 0 8px 20px;
+  }
+
+  .policy-content ul li::before {
+    width: 6px; height: 6px;
+    top: 15px;
+  }
+
+  .policy-quote {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+
+  .cta-bar {
+    margin: 40px 16px 50px 16px;
+    padding: 28px 20px;
+    border-radius: var(--radius-sm);
+  }
+
+  .cta-left h4 { font-size: 17px; }
+  .cta-left p { font-size: 14px; }
+}
+
+/* ── Small Mobile ─────────────────────────────── */
+
+@media (max-width: 480px) {
+  .floating-toc-inner {
+    padding: 6px 8px;
+    margin-top: 16px;
+  }
+
+  .toc-pills a {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .policy-content {
+    padding: 12px 12px 0 12px;
+  }
+
+  .policy-block {
+    padding: 20px 16px;
+    margin-bottom: 14px;
+    scroll-margin-top: 100px;
+  }
+
+  .policy-content h2 {
+    font-size: 17px;
+  }
+
+  .policy-content p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .policy-content ul li {
+    font-size: 13px;
+    padding: 7px 0 7px 18px;
+  }
+
+  .policy-quote {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  .cta-bar {
+    margin: 30px 12px 40px 12px;
+    padding: 24px 16px;
+  }
+
+  .cta-left h4 { font-size: 15px; }
+  .cta-left p { font-size: 13px; }
+
+  .cta-actions a,
+  .cta-actions .btn {
+    padding: 10px 22px;
+    font-size: 13px;
   }
 }
 </style>
 
-  <!-- HERO -->
-  <section class="hero" role="banner" aria-labelledby="policy-title">
-    <div class="hero-inner">
-      <div class="eyebrow" data-aos="fade-down">Transparency & Trust</div>
-      <h1 id="policy-title" data-aos="fade-up" data-aos-delay="80">Privacy Notice</h1>
-      <p class="lead" data-aos="fade-up" data-aos-delay="180">
-        MMA InfoSec is committed to transparency about how we collect, use,
-        and protect your personal information. This Privacy Notice describes
-        our data practices in clear, straightforward language.
-      </p>
-    </div>
-  </section>
-
-  <!-- GRID SECTION -->
-  <section class="policy-grid" role="main">
-
-    <!-- LEFT: Table of contents -->
-    <nav class="policy-nav" aria-label="Privacy notice table of contents">
-      <h3>On this page</h3>
-
-      <ul class="toc-list" role="list">
+  <!-- FLOATING MINI TOC -->
+  <div class="floating-toc">
+    <div class="floating-toc-inner">
+      <ul class="toc-pills" role="list">
         <li><a href="#notice-collection">1. Notice at Collection</a></li>
-        <li><a href="#categories">2. Categories of Personal Data</a></li>
-        <li><a href="#collection-methods">3. How We Collect Data</a></li>
-        <li><a href="#business-purpose">4. Business Purpose for Collection</a></li>
-        <li><a href="#sharing">5. Data Sharing & Disclosure</a></li>
-        <li><a href="#choices">6. Your Choices & Rights</a></li>
-        <li><a href="#updates">7. Updates to This Notice</a></li>
+        <li><a href="#categories">2. Personal Data</a></li>
+        <li><a href="#collection-methods">3. How We Collect</a></li>
+        <li><a href="#business-purpose">4. Business Purpose</a></li>
+        <li><a href="#sharing">5. Data Sharing</a></li>
+        <li><a href="#choices">6. Your Rights</a></li>
+        <li><a href="#updates">7. Updates</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </div>
+  </div>
 
-    <!-- RIGHT: Full policy content -->
-    <article class="policy-article" aria-labelledby="policy-title">
+  <!-- POLICY CONTENT -->
+  <section class="policy-content" role="main">
 
-      <!-- 1 -->
-      <section id="notice-collection" class="policy-block" tabindex="-1">
-        <h2>1. Notice at Collection</h2>
-        <p>
-          At the time of collection, we provide individuals with clear notice
-          regarding the categories of personal information we collect and the
-          purposes for which the information will be used. This notice is
-          provided at or before the point of data collection.
-        </p>
+    <section id="notice-collection" class="policy-block" tabindex="-1">
+      <h2>1. Notice at Collection</h2>
+      <p>
+        At the time of collection, we provide individuals with clear notice
+        regarding the categories of personal information we collect and the
+        purposes for which the information will be used. This notice is
+        provided at or before the point of data collection.
+      </p>
+      <p>
+        We collect personal data only to the extent reasonably necessary to
+        deliver enterprise cybersecurity services, respond to inquiries,
+        and maintain secure, reliable operations.
+      </p>
+      <div class="policy-quote">
+        <strong>Transparency is foundational to trust. We will never collect your data without a clear purpose.</strong>
+      </div>
+    </section>
 
-        <p>
-          We collect personal data only to the extent reasonably necessary to
-          deliver enterprise cybersecurity services, respond to inquiries,
-          and maintain secure, reliable operations.
-        </p>
+    <section id="categories" class="policy-block" tabindex="-1">
+      <h2>2. Categories of Personal Data</h2>
+      <p>The categories of personal information we may collect include:</p>
+      <ul>
+        <li><strong>Identifiers:</strong> Full name, email address, phone number, postal address, IP address</li>
+        <li><strong>Professional information:</strong> Job title, company name, industry, work history</li>
+        <li><strong>Commercial information:</strong> Products or services purchased, billing details</li>
+        <li><strong>Technical data:</strong> Browser type, device information, operating system, log data</li>
+        <li><strong>Communications:</strong> Records of inquiries, support tickets, and correspondence</li>
+        <li><strong>Inferences:</strong> Preferences, security interests, and engagement patterns</li>
+      </ul>
+      <p>
+        We do not collect sensitive personal information unless voluntarily
+        provided by you in the context of a specific inquiry or engagement.
+      </p>
+    </section>
 
-        <div class="policy-quote">
-          <strong>Transparency is foundational to trust. We will never collect your data without a clear purpose.</strong>
-        </div>
-      </section>
+    <section id="collection-methods" class="policy-block" tabindex="-1">
+      <h2>3. How We Collect Data</h2>
+      <p>We collect personal data through the following channels:</p>
+      <ul>
+        <li><strong>Direct interactions:</strong> Forms on our website, email communications, phone calls, and meetings</li>
+        <li><strong>Automated technologies:</strong> Cookies, analytics tools, server logs, and session recordings</li>
+        <li><strong>Third-party sources:</strong> Public databases, business partners, and event registration platforms</li>
+        <li><strong>Service delivery:</strong> Security assessments, onboarding documents, and support interactions</li>
+      </ul>
+      <p>
+        Where we receive data from third parties, we verify that such parties
+        have obtained consent or are otherwise legally permitted to share
+        the information with us.
+      </p>
+    </section>
 
-      <div class="policy-divider" aria-hidden="true"></div>
+    <section id="business-purpose" class="policy-block" tabindex="-1">
+      <h2>4. Business Purpose for Collection</h2>
+      <p>We use collected personal data for the following business purposes:</p>
+      <ul>
+        <li>Delivering and managing cybersecurity services and solutions</li>
+        <li>Responding to inquiries, requests, and support needs</li>
+        <li>Improving platform performance, security, and user experience</li>
+        <li>Marketing and communications with your consent or legitimate interest</li>
+        <li>Compliance with legal, regulatory, and contractual obligations</li>
+        <li>Fraud prevention, threat detection, and security monitoring</li>
+      </ul>
+      <p>
+        We do not sell personal information to third parties. Any sharing
+        of data is conducted under strict contractual safeguards.
+      </p>
+    </section>
 
-      <!-- 2 -->
-      <section id="categories" class="policy-block" tabindex="-1">
-        <h2>2. Categories of Personal Data</h2>
-        <p>
-          The categories of personal information we may collect include:
-        </p>
+    <section id="sharing" class="policy-block" tabindex="-1">
+      <h2>5. Data Sharing & Disclosure</h2>
+      <p>We may share personal data with the following categories of recipients:</p>
+      <ul>
+        <li><strong>Service providers:</strong> Cloud infrastructure, analytics, CRM, and security tool vendors</li>
+        <li><strong>Professional advisors:</strong> Legal, accounting, and compliance consultants</li>
+        <li><strong>Regulatory authorities:</strong> When required by applicable law or legal process</li>
+        <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or asset sale</li>
+      </ul>
+      <p>
+        All third-party recipients are subject to data processing agreements
+        and contractual obligations to maintain confidentiality and security.
+      </p>
+    </section>
 
-        <ul>
-          <li><strong>Identifiers:</strong> Full name, email address, phone number, postal address, IP address</li>
-          <li><strong>Professional information:</strong> Job title, company name, industry, work history</li>
-          <li><strong>Commercial information:</strong> Products or services purchased, billing details</li>
-          <li><strong>Technical data:</strong> Browser type, device information, operating system, log data</li>
-          <li><strong>Communications:</strong> Records of inquiries, support tickets, and correspondence</li>
-          <li><strong>Inferences:</strong> Preferences, security interests, and engagement patterns</li>
-        </ul>
+    <section id="choices" class="policy-block" tabindex="-1">
+      <h2>6. Your Choices & Rights</h2>
+      <p>
+        Depending on your jurisdiction, you may have the following rights
+        regarding your personal data:
+      </p>
+      <ul>
+        <li><strong>Right to know:</strong> Request disclosure of categories and specific pieces of data collected</li>
+        <li><strong>Right to access:</strong> Obtain a copy of your personal data we hold</li>
+        <li><strong>Right to correction:</strong> Request correction of inaccurate or incomplete data</li>
+        <li><strong>Right to deletion:</strong> Request deletion of your personal data, subject to legal exceptions</li>
+        <li><strong>Right to opt-out:</strong> Opt out of the sale or sharing of personal information</li>
+        <li><strong>Right to nondiscrimination:</strong> We will not discriminate against you for exercising any of these rights</li>
+      </ul>
+      <p>
+        To exercise your rights, contact us using the information in the
+        Contact section below. We will respond to verified requests within
+        the timeframe required by applicable law.
+      </p>
+    </section>
 
-        <p>
-          We do not collect sensitive personal information unless voluntarily
-          provided by you in the context of a specific inquiry or engagement.
-        </p>
-      </section>
-
-      <div class="policy-divider" aria-hidden="true"></div>
-
-      <!-- 3 -->
-      <section id="collection-methods" class="policy-block" tabindex="-1">
-        <h2>3. How We Collect Data</h2>
-        <p>
-          We collect personal data through the following channels:
-        </p>
-
-        <ul>
-          <li><strong>Direct interactions:</strong> Forms on our website, email communications, phone calls, and meetings</li>
-          <li><strong>Automated technologies:</strong> Cookies, analytics tools, server logs, and session recordings</li>
-          <li><strong>Third-party sources:</strong> Public databases, business partners, and event registration platforms</li>
-          <li><strong>Service delivery:</strong> Security assessments, onboarding documents, and support interactions</li>
-        </ul>
-
-        <p>
-          Where we receive data from third parties, we verify that such parties
-          have obtained consent or are otherwise legally permitted to share
-          the information with us.
-        </p>
-      </section>
-
-      <div class="policy-divider" aria-hidden="true"></div>
-
-      <!-- 4 -->
-      <section id="business-purpose" class="policy-block" tabindex="-1">
-        <h2>4. Business Purpose for Collection</h2>
-        <p>
-          We use collected personal data for the following business purposes:
-        </p>
-
-        <ul>
-          <li>Delivering and managing cybersecurity services and solutions</li>
-          <li>Responding to inquiries, requests, and support needs</li>
-          <li>Improving platform performance, security, and user experience</li>
-          <li>Marketing and communications with your consent or legitimate interest</li>
-          <li>Compliance with legal, regulatory, and contractual obligations</li>
-          <li>Fraud prevention, threat detection, and security monitoring</li>
-        </ul>
-
-        <p>
-          We do not sell personal information to third parties. Any sharing
-          of data is conducted under strict contractual safeguards.
-        </p>
-      </section>
-
-      <div class="policy-divider" aria-hidden="true"></div>
-
-      <!-- 5 -->
-      <section id="sharing" class="policy-block" tabindex="-1">
-        <h2>5. Data Sharing & Disclosure</h2>
-        <p>
-          We may share personal data with the following categories of recipients:
-        </p>
-
-        <ul>
-          <li><strong>Service providers:</strong> Cloud infrastructure, analytics, CRM, and security tool vendors</li>
-          <li><strong>Professional advisors:</strong> Legal, accounting, and compliance consultants</li>
-          <li><strong>Regulatory authorities:</strong> When required by applicable law or legal process</li>
-          <li><strong>Business transfers:</strong> In connection with a merger, acquisition, or asset sale</li>
-        </ul>
-
-        <p>
-          All third-party recipients are subject to data processing agreements
-          and contractual obligations to maintain confidentiality and security.
-        </p>
-      </section>
-
-      <div class="policy-divider" aria-hidden="true"></div>
-
-      <!-- 6 -->
-      <section id="choices" class="policy-block" tabindex="-1">
-        <h2>6. Your Choices & Rights</h2>
-        <p>
-          Depending on your jurisdiction, you may have the following rights
-          regarding your personal data:
-        </p>
-
-        <ul>
-          <li><strong>Right to know:</strong> Request disclosure of categories and specific pieces of data collected</li>
-          <li><strong>Right to access:</strong> Obtain a copy of your personal data we hold</li>
-          <li><strong>Right to correction:</strong> Request correction of inaccurate or incomplete data</li>
-          <li><strong>Right to deletion:</strong> Request deletion of your personal data, subject to legal exceptions</li>
-          <li><strong>Right to opt-out:</strong> Opt out of the sale or sharing of personal information</li>
-          <li><strong>Right to nondiscrimination:</strong> We will not discriminate against you for exercising any of these rights</li>
-        </ul>
-
-        <p>
-          To exercise your rights, contact us using the information in the
-          Contact section below. We will respond to verified requests within
-          the timeframe required by applicable law.
-        </p>
-      </section>
-
-      <div class="policy-divider" aria-hidden="true"></div>
-
-      <!-- 7 -->
-      <section id="updates" class="policy-block" tabindex="-1">
-        <h2>7. Updates to This Notice</h2>
-        <p>
-          We may update this Privacy Notice from time to time to reflect
-          changes in our practices, legal requirements, or operational needs.
-          When material changes are made, we will update the effective date
-          at the top of this notice and, where appropriate, provide additional
-          notice such as a site banner or email notification.
-        </p>
-
-        <p>
-          We encourage you to review this notice periodically to stay informed
-          about how we are protecting your information.
-        </p>
-      </section>
-
-      <div class="policy-divider" aria-hidden="true"></div>
-
-      <!-- CONTACT -->
-      <section id="contact" class="policy-block" tabindex="-1">
-        <h2>Contact & Data Requests</h2>
-        <p>
-          If you have questions about this Privacy Notice, wish to exercise
-          your data rights, or need to report a privacy concern, please
-          contact our Privacy Team:
-        </p>
-
-        <ul>
-          <li><strong>Email:</strong> <a href="mailto:privacy@mma-infosec.example">privacy@mma-infosec.example</a></li>
-          <li><strong>Address:</strong> MMA InfoSec, 123 Security Ave, City, Country</li>
-          <li><strong>Phone:</strong> +1 (555) 555-5555</li>
-        </ul>
-
-        <p class="small-print">
-          We aim to respond to all verified privacy requests within 30 days.
-        </p>
-      </section>
-
-    </article>
+    <section id="updates" class="policy-block" tabindex="-1">
+      <h2>7. Updates to This Notice</h2>
+      <p>
+        We may update this Privacy Notice from time to time to reflect
+        changes in our practices, legal requirements, or operational needs.
+        When material changes are made, we will update the effective date
+        at the top of this notice and, where appropriate, provide additional
+        notice such as a site banner or email notification.
+      </p>
+      <p>
+        We encourage you to review this notice periodically to stay informed
+        about how we are protecting your information.
+      </p>
+    </section>
 
   </section>
 
-  <!-- CTA bar -->
+  <!-- CTA Bar -->
   <section class="cta-bar" aria-hidden="false" data-aos="fade-up">
     <div class="cta-left">
       <h4>Have questions about your data?</h4>
       <p>Our privacy team is available to help with any inquiries or requests.</p>
     </div>
-
     <div class="cta-actions">
-      <a class="btn btn-outline" href="../contact/">Contact Us</a>
+      <a href="../contact/">Contact Us</a>
     </div>
   </section>
 
-    <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
-      <i class="bi bi-arrow-up"></i>
-    </button>
+  <button type="button" class="btn btn-floating btn-lg rounded-pill" id="btn-back-to-top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Floating TOC Scroll Spy -->
+  <script>
+  (function(){
+    var tocLinks = document.querySelectorAll('.toc-pills a');
+    var sections = [];
+    tocLinks.forEach(function(link){
+      var id = link.getAttribute('href').replace('#','');
+      var el = document.getElementById(id);
+      if(el) sections.push({id:id, el:el, link:link});
+    });
+    if(!sections.length) return;
+
+    function updateToc(){
+      var scrollY = window.scrollY || window.pageYOffset;
+      var offset = 200;
+      var current = sections[0];
+      for(var i=0;i<sections.length;i++){
+        if(sections[i].el.getBoundingClientRect().top <= offset){
+          current = sections[i];
+        }
+      }
+      tocLinks.forEach(function(l){l.classList.remove('active');});
+      current.link.classList.add('active');
+
+      var container = document.querySelector('.floating-toc-inner');
+      if(container){
+        var pill = current.link;
+        var targetLeft = pill.offsetLeft - container.clientWidth / 2 + pill.clientWidth / 2;
+        var maxLeft = container.scrollWidth - container.clientWidth;
+        targetLeft = Math.max(0, Math.min(targetLeft, maxLeft));
+        var diff = container.scrollLeft - targetLeft;
+        if(Math.abs(diff) > 4){
+          container.scrollLeft = targetLeft;
+        }
+      }
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function(){
+      if(!ticking){
+        window.requestAnimationFrame(function(){
+          updateToc();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    updateToc();
+
+    tocLinks.forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        var id = this.getAttribute('href').replace('#','');
+        var target = document.getElementById(id);
+        if(target){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  })();
+  </script>
 
 <footer class="site-footer">
   <div class="footer-container">
