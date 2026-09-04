@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://alaman.me/</loc>
+    <loc></loc>
     <priority>1.00</priority>
   </url>
 
   <url>
-    <loc>https://alaman.me/services/</loc>
+    <loc>services/</loc>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://alaman.me/solutions/</loc>
+    <loc>solutions/</loc>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://alaman.me/company/</loc>
+    <loc>company/</loc>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://alaman.me/industries/</loc>
+    <loc>industries/</loc>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://alaman.me/resources/</loc>
+    <loc>resources/</loc>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://alaman.me/contact/</loc>
+    <loc>contact/</loc>
     <priority>0.80</priority>
   </url>
 </urlset>
